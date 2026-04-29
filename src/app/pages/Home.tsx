@@ -117,7 +117,7 @@ export function Home() {
     <div>
       {/* ── HERO ── */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "92vh" }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#64B5F6] via-[#90CAF9] to-[#CE93D8]"/>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#030608] via-[#06091a] to-[#0a0618]"/>
         <div className="absolute inset-0 hero-mesh-overlay"/>
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div className="blob blob-1"/><div className="blob blob-2"/><div className="blob blob-3"/>
@@ -213,23 +213,23 @@ export function Home() {
       </section>
 
       {/* ── OPERATIONAL FRICTION MATRIX ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#eff6ff 0%,#faf5ff 55%,#eef2ff 100%)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 55%,#080c1a 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-50"/>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.16),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(206,147,216,0.13),transparent 70%)", filter: "blur(60px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow">Problem — Solution</span>
-              <h2 className="section-h2 text-[#1a2e5a] mt-3" style={{ fontWeight: 700 }}>Operational Friction Matrix</h2>
-              <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Click a business pain to see exactly how each ANTUTIVE practice area solves it.</p>
+              <span className="section-eyebrow-light">Problem — Solution</span>
+              <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Operational Friction Matrix</h2>
+              <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Click a business pain to see exactly how each ANTUTIVE practice area solves it.</p>
             </div>
           </Reveal>
           <Reveal variant="scale">
             <div className="overflow-x-auto rounded-2xl border shadow-sm" style={{ borderColor: "rgba(100,181,246,0.15)" }}>
               <table className="w-full min-w-[700px]">
                 <thead>
-                  <tr style={{ background: "#1a2e5a" }}>
+                  <tr style={{ background: "#030611" }}>
                     <th className="text-left px-6 py-4 text-sm font-bold text-white w-44 whitespace-nowrap">Business Pain</th>
                     {COLS.map((col, ci) => (
                       <th key={ci} className="px-4 py-4 text-xs font-semibold text-white/75 text-center whitespace-nowrap"
@@ -248,12 +248,12 @@ export function Home() {
                         onClick={() => setSelectedPain(selectedPain === ri ? null : ri)}
                         className="cursor-pointer transition-colors"
                         style={{
-                          background: selectedPain === ri ? "rgba(100,181,246,0.06)" : ri % 2 === 0 ? "white" : "#f8fbff",
-                          borderBottom: "1px solid rgba(100,181,246,0.08)",
+                          background: selectedPain === ri ? "rgba(100,181,246,0.1)" : ri % 2 === 0 ? "#07091a" : "#060818",
+                          borderBottom: "1px solid rgba(100,181,246,0.1)",
                         }}
                       >
                         <td className="px-6 py-4">
-                          <span className="text-sm font-bold text-[#1a2e5a] flex items-center gap-2.5">
+                          <span className="text-sm font-bold text-white flex items-center gap-2.5">
                             <span className="w-2 h-2 rounded-full flex-shrink-0 transition-transform"
                               style={{ background: selectedPain === ri ? "#64B5F6" : "#cbd5e1", transform: selectedPain === ri ? "scale(1.5)" : "scale(1)" }}/>
                             {row.pain}
@@ -262,7 +262,7 @@ export function Home() {
                         {row.solutions.map((sol, ci) => (
                           <td key={ci} className="px-4 py-4 text-center" style={{ borderLeft: "1px solid rgba(100,181,246,0.06)" }}>
                             <span className="text-xs font-semibold transition-colors"
-                              style={{ color: selectedPain === ri ? COL_COLORS[ci] : "#94a3b8" }}>
+                              style={{ color: selectedPain === ri ? COL_COLORS[ci] : "rgba(255,255,255,0.35)" }}>
                               {sol}
                             </span>
                           </td>
@@ -270,11 +270,11 @@ export function Home() {
                       </tr>
                       {selectedPain === ri && (
                         <tr key={`exp-${ri}`}>
-                          <td colSpan={5} style={{ background: "rgba(100,181,246,0.04)", borderBottom: "1px solid rgba(100,181,246,0.12)" }}>
+                          <td colSpan={5} style={{ background: "rgba(100,181,246,0.07)", borderBottom: "1px solid rgba(100,181,246,0.15)" }}>
                             <div className="px-6 py-4 flex flex-col sm:flex-row gap-4 items-start">
                               <div className="flex-1 min-w-0">
-                                <p className="text-xs font-bold text-[#1a2e5a] mb-1 uppercase tracking-wide">Typical Situation</p>
-                                <p className="text-xs text-slate-500 leading-relaxed">{row.context}</p>
+                                <p className="text-xs font-bold text-white mb-1 uppercase tracking-wide">Typical Situation</p>
+                                <p className="text-xs text-white/55 leading-relaxed">{row.context}</p>
                               </div>
                               <div className="flex flex-wrap gap-2 flex-shrink-0">
                                 {COLS.map((col, ci) => (
@@ -328,16 +328,16 @@ export function Home() {
       </section>
 
       {/* ── AI MATURITY PATH ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#dbeafe 0%,#e0e7ff 50%,#ede9fe 100%)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#090618 100%)" }}>
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.22),transparent 70%)", filter: "blur(80px)" }}/>
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.18),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* LEFT */}
             <Reveal variant="left">
-              <span className="section-eyebrow">Data Analytics</span>
-              <h2 className="section-h2 text-[#1a2e5a] mt-3 mb-4" style={{ fontWeight: 700 }}>Where Are You on<br/>the Maturity Path?</h2>
-              <p className="text-sm text-slate-500 leading-relaxed mb-8">
+              <span className="section-eyebrow-light">Data Analytics</span>
+              <h2 className="section-h2 text-white mt-3 mb-4" style={{ fontWeight: 700 }}>Where Are You on<br/>the Maturity Path?</h2>
+              <p className="text-sm text-white/55 leading-relaxed mb-8">
                 Most companies need clean, connected data before AI can work. We meet you where you are
                 and build a path to full intelligence — without skipping the foundations.
               </p>
@@ -346,14 +346,14 @@ export function Home() {
                   <Reveal key={i} variant="left" delay={i * 80}>
                     <div className="flex items-center gap-4">
                       <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: m.color }}/>
-                      <span className="text-sm font-bold text-[#1a2e5a] w-24 flex-shrink-0">{m.name}</span>
-                      <div className="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden">
+                      <span className="text-sm font-bold text-white w-24 flex-shrink-0">{m.name}</span>
+                      <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
                         <div className="h-full rounded-full transition-all duration-700"
                           style={{ width: `${(m.weeks / 12) * 100}%`, background: m.color }}/>
                       </div>
-                      <span className="text-xs font-semibold text-slate-400 w-14 text-right flex-shrink-0">{m.weeks} wks</span>
+                      <span className="text-xs font-semibold text-white/45 w-14 text-right flex-shrink-0">{m.weeks} wks</span>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed ml-7 mt-1">{m.desc}</p>
+                    <p className="text-xs text-white/45 leading-relaxed ml-7 mt-1">{m.desc}</p>
                   </Reveal>
                 ))}
               </div>
@@ -361,8 +361,8 @@ export function Home() {
 
             {/* RIGHT — bar chart */}
             <Reveal variant="right" delay={120}>
-              <div className="p-8 rounded-3xl border bg-white shadow-sm" style={{ borderColor: "rgba(100,181,246,0.14)" }}>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Typical Engagement Duration</p>
+              <div className="p-8 rounded-3xl border" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)", borderColor: "rgba(100,181,246,0.18)" }}>
+                <p className="text-xs font-bold text-white/45 uppercase tracking-widest mb-8">Typical Engagement Duration</p>
                 <div className="flex items-end gap-4" style={{ height: 160 }}>
                   {maturityLevels.map((m) => (
                     <div key={m.name} className="flex-1 flex flex-col items-center gap-3">
@@ -378,13 +378,13 @@ export function Home() {
                 <div className="flex gap-4 mt-4 border-t pt-4" style={{ borderColor: "rgba(100,181,246,0.1)" }}>
                   {maturityLevels.map((m) => (
                     <div key={m.name} className="flex-1 text-center">
-                      <span className="text-xs text-slate-400">{m.name}</span>
+                      <span className="text-xs text-white/45">{m.name}</span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(100,181,246,0.06)", border: "1px solid rgba(100,181,246,0.15)" }}>
-                  <p className="text-xs font-bold text-[#1a2e5a] mb-1">Not sure where you sit?</p>
-                  <p className="text-xs text-slate-500 leading-relaxed">The Business Understanding session maps your current data state in 90 minutes — at no cost for qualified prospects.</p>
+                  <p className="text-xs font-bold text-white mb-1">Not sure where you sit?</p>
+                  <p className="text-xs text-white/55 leading-relaxed">The Business Understanding session maps your current data state in 90 minutes — at no cost for qualified prospects.</p>
                   <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#64B5F6" }}>
                     Book free session <ArrowRight className="w-3.5 h-3.5"/>
                   </Link>
@@ -429,10 +429,10 @@ export function Home() {
                     <div className="feature-icon-wrap"><Icon className="w-5 h-5 text-white"/></div>
                     <div>
                       <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-bold text-[#1a2e5a]">{stat}</span>
+                        <span className="text-2xl font-bold text-white">{stat}</span>
                         <span className="text-sm font-semibold text-[#64B5F6]">{label}</span>
                       </div>
-                      <p className="text-xs text-slate-400 mt-0.5">{desc}</p>
+                      <p className="text-xs text-white/50 mt-0.5">{desc}</p>
                     </div>
                     <CheckCircle2 className="w-4 h-4 text-[#64B5F6] ml-auto flex-shrink-0"/>
                   </div>
@@ -444,7 +444,7 @@ export function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eff6ff 0%,#faf5ff 100%)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#080c18 100%)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="flip">
             <div className="cta-card">
@@ -454,10 +454,10 @@ export function Home() {
                   <Sparkles className="w-3.5 h-3.5 text-[#64B5F6]"/>
                   <span className="text-xs font-bold tracking-widest text-[#64B5F6] uppercase">Start the Conversation</span>
                 </div>
-                <h2 className="section-h2 text-[#1a2e5a] mb-4" style={{ fontWeight: 700 }}>
+                <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>
                   Ready to Build<br/>Your AI Advantage?
                 </h2>
-                <p className="text-sm text-slate-500 mb-10 max-w-md mx-auto leading-relaxed">
+                <p className="text-sm text-white/55 mb-10 max-w-md mx-auto leading-relaxed">
                   Book a free Business Understanding session. We begin with your goals and pain points —
                   not a sales pitch.
                 </p>

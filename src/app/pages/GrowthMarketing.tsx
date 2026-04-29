@@ -87,7 +87,7 @@ export function GrowthMarketing() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#064e3b 0%,#065f46 50%,#10b981 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
@@ -146,7 +146,7 @@ export function GrowthMarketing() {
 
       {/* ── GEO ── */}
       <section id="geo" className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#071a11 0%,#0a2218 50%,#061510 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(70px)" }} />
@@ -209,7 +209,7 @@ export function GrowthMarketing() {
 
       {/* ── AI VIDEO PRODUCTION ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#f0fdf4 0%,#dcfce7 60%,#d1fae5 100%)" }}>
+        style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 60%,#080c1a 100%)" }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}20,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
@@ -221,10 +221,10 @@ export function GrowthMarketing() {
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
               AI Video Production
             </span>
-            <h2 className="section-h2 text-[#064e3b] mt-3" style={{ fontWeight: 700 }}>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>
               AI Marketing Video Production
             </h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
               Video is the highest-converting marketing format. Traditional production is expensive and slow.
               ANTUTIVE delivers professional-quality video at a fraction of the time and cost.
             </p>
@@ -233,14 +233,14 @@ export function GrowthMarketing() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {videoDeliverables.map(({ Icon, title, desc }, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
-                <div className="p-6 rounded-2xl border bg-white h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ borderColor: `${A}18`, boxShadow: `0 4px 20px ${A}08` }}>
+                <div className="p-6 rounded-2xl border h-full transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}30`, boxShadow: "0 4px 20px rgba(0,0,0,0.2)" }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 6px 18px ${A}35` }}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#064e3b] mb-2">{title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                  <h3 className="text-sm font-bold text-white mb-2">{title}</h3>
+                  <p className="text-xs text-white/55 leading-relaxed">{desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -250,9 +250,9 @@ export function GrowthMarketing() {
           <Reveal variant="up" delay={200}>
             <div className="mt-10 max-w-lg mx-auto p-5 rounded-2xl border text-center"
               style={{ background: `${A}08`, borderColor: `${A}25` }}>
-              <p className="text-xs font-bold text-[#064e3b] uppercase tracking-widest mb-2">Cost Advantage</p>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Traditional video production: <span className="font-bold text-slate-800">€3,000–15,000 per video.</span><br />
+              <p className="text-xs font-bold text-emerald-300 uppercase tracking-widest mb-2">Cost Advantage</p>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Traditional video production: <span className="font-bold text-white/80">€3,000–15,000 per video.</span><br />
                 ANTUTIVE AI video production: <span className="font-bold" style={{ color: A }}>€300–800 per video.</span>
               </p>
             </div>
@@ -262,7 +262,7 @@ export function GrowthMarketing() {
 
       {/* ── SALES AUTOMATION ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#064e3b 0%,#065f46 55%,#10b981 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 55%,#060c18 100%)" }}>
         <div className="absolute inset-0 hero-mesh-overlay opacity-25" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(60px)" }} />
@@ -301,7 +301,7 @@ export function GrowthMarketing() {
 
       {/* ── TARGET CLIENTS ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#f0fdf4 0%,#dcfce7 55%,#ecfdf5 100%)" }}>
+        style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 55%,#080c1a 100%)" }}>
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none"
@@ -313,8 +313,8 @@ export function GrowthMarketing() {
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
               Who We Serve
             </span>
-            <h2 className="section-h2 text-[#064e3b] mt-3" style={{ fontWeight: 700 }}>Target Clients</h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Target Clients</h2>
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
               Each client type has a distinct entry point and natural expansion path through the growth stack.
             </p>
           </div>
@@ -322,24 +322,24 @@ export function GrowthMarketing() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {targetClients.map((client, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 90}>
-                <div className="p-6 rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                  style={{ borderColor: `${A}18`, boxShadow: `0 2px 16px ${A}08` }}>
+                <div className="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}28`, boxShadow: "0 2px 16px rgba(0,0,0,0.2)" }}>
                   <div className="flex items-center gap-2 mb-3">
                     <Users className="w-4 h-4 flex-shrink-0" style={{ color: A }} />
-                    <h3 className="text-sm font-bold text-[#064e3b]">{client.type}</h3>
+                    <h3 className="text-sm font-bold text-white">{client.type}</h3>
                   </div>
-                  <p className="text-xs text-slate-500 mb-4 pl-6">
-                    <span className="font-semibold text-slate-600">Typical pain: </span>{client.pain}
+                  <p className="text-xs text-white/50 mb-4 pl-6">
+                    <span className="font-semibold text-white/70">Typical pain: </span>{client.pain}
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 rounded-xl"
-                      style={{ background: `${A}08`, border: `1px solid ${A}18` }}>
+                      style={{ background: "rgba(16,185,129,0.1)", border: `1px solid ${A}28` }}>
                       <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>Entry Service</p>
-                      <p className="text-xs text-slate-600 leading-relaxed">{client.entry}</p>
+                      <p className="text-xs text-white/60 leading-relaxed">{client.entry}</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                      <p className="text-xs font-bold text-slate-500 mb-1 uppercase tracking-wide">Expansion Path</p>
-                      <p className="text-xs text-slate-500 leading-relaxed">{client.expansion}</p>
+                    <div className="p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                      <p className="text-xs font-bold text-white/45 mb-1 uppercase tracking-wide">Expansion Path</p>
+                      <p className="text-xs text-white/45 leading-relaxed">{client.expansion}</p>
                     </div>
                   </div>
                 </div>
@@ -351,7 +351,7 @@ export function GrowthMarketing() {
 
       {/* ── CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#064e3b 0%,#065f46 55%,#10b981 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 55%,#080c18 100%)" }}>
         <div className="absolute inset-0 hero-mesh-overlay opacity-20" />
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(60px)" }} />

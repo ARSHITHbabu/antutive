@@ -145,7 +145,7 @@ export function CustomPlatform() {
       </section>
 
       {/* PLATFORM CAPABILITIES */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#f5f3ff,#ede9fe,#faf5ff)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.08) 0%,transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.06) 0%,transparent 70%)", filter: "blur(50px)" }} />
@@ -153,18 +153,18 @@ export function CustomPlatform() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Platform Capabilities</span>
-            <h2 className="section-h2 text-[#1e1b4b] mt-3" style={{ fontWeight: 700 }}>What Your Platform Can Do</h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Six core capabilities that transform how your organisation works with AI — all running on your own infrastructure.</p>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>What Your Platform Can Do</h2>
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Six core capabilities that transform how your organisation works with AI — all running on your own infrastructure.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {capabilities.map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant="scale" delay={i * 70}>
-                <div className="p-6 rounded-2xl border bg-white h-full" style={{ borderColor: `${A}18` }}>
+                <div className="p-6 rounded-2xl border h-full" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}25` }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg,${A},#6d28d9)` }}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1e1b4b] mb-2">{title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                  <h3 className="text-sm font-bold text-white mb-2">{title}</h3>
+                  <p className="text-xs text-white/55 leading-relaxed">{desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -173,7 +173,7 @@ export function CustomPlatform() {
       </section>
 
       {/* DEPLOYMENT MODELS */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#1e1b4b,#3730a3,#8b5cf6)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#06041a 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
         <div className="absolute top-1/3 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.25) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
@@ -204,7 +204,7 @@ export function CustomPlatform() {
       </section>
 
       {/* COMPETITIVE DIFFERENTIATION */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.05) 0%,transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.04) 0%,transparent 70%)", filter: "blur(50px)" }} />
@@ -212,18 +212,18 @@ export function CustomPlatform() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Why ANTUTIVE</span>
-            <h2 className="section-h2 text-[#1e1b4b] mt-3" style={{ fontWeight: 700 }}>Competitive Differentiation</h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">How ANTUTIVE's custom AI platform compares against the alternatives your team may already be considering.</p>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Competitive Differentiation</h2>
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">How ANTUTIVE's custom AI platform compares against the alternatives your team may already be considering.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {competitors.map((c, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
-                <div className="p-6 rounded-2xl border bg-white" style={{ borderColor: `${A}18` }}>
-                  <p className="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">{c.them}</p>
+                <div className="p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}25` }}>
+                  <p className="text-xs font-bold text-white/40 mb-2 uppercase tracking-wide">{c.them}</p>
                   <p className="text-xs text-red-400 mb-3"><span className="font-semibold">Their limitation: </span>{c.weakness}</p>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: A }} />
-                    <p className="text-xs text-slate-600 font-medium leading-relaxed">{c.advantage}</p>
+                    <p className="text-xs text-white/60 font-medium leading-relaxed">{c.advantage}</p>
                   </div>
                 </div>
               </Reveal>

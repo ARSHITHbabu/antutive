@@ -11,18 +11,18 @@ const steps = [
 
 export function DeliveryMethod({ accentColor = "#64B5F6" }: { accentColor?: string }) {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
       <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-50" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal variant="up">
           <div className="text-center mb-14">
-            <span className="section-eyebrow" style={{ color: accentColor, borderColor: `${accentColor}33`, background: `${accentColor}10` }}>
+            <span className="section-eyebrow-light" style={{ color: accentColor, borderColor: `${accentColor}40`, background: `${accentColor}15` }}>
               How We Deliver
             </span>
-            <h2 className="section-h2 mt-3" style={{ color: "#1a2e5a", fontWeight: 700 }}>
+            <h2 className="section-h2 mt-3" style={{ color: "white", fontWeight: 700 }}>
               The ANTUTIVE Delivery Method
             </h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-lg mx-auto">
+            <p className="text-sm text-white/45 mt-3 max-w-lg mx-auto">
               A 6-step method that replaces generic pricing pages with a trust-building delivery flow.
             </p>
           </div>
