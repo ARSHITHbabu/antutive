@@ -77,7 +77,7 @@ export function Products() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#3b0764 0%,#6b21a8 50%,#be185d 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
@@ -135,7 +135,7 @@ export function Products() {
 
       {/* ── FAMANT OVERVIEW ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#1a0026 0%,#2d0048 50%,#1a0020 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(70px)" }} />
@@ -194,7 +194,7 @@ export function Products() {
 
       {/* ── PRICING ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#fdf2f8,#fce7f3,#fdf4ff)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}15,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
@@ -204,9 +204,9 @@ export function Products() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Pricing</span>
-              <h2 className="section-h2 text-[#4a044e] mt-3" style={{ fontWeight: 700 }}>Simple, Transparent Pricing</h2>
-              <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Start free. Upgrade when your family is ready. All tiers include GDPR-compliant EU-hosted infrastructure.</p>
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Pricing</span>
+              <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Simple, Transparent Pricing</h2>
+              <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Start free. Upgrade when your family is ready. All tiers include GDPR-compliant EU-hosted infrastructure.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -214,9 +214,10 @@ export function Products() {
               <Reveal key={i} variant={["left", "up", "right"][i] as any} delay={i * 100}>
                 <div className="p-7 rounded-3xl border h-full flex flex-col relative transition-all duration-300 hover:-translate-y-1"
                   style={{
-                    borderColor: tier.featured ? A : `${A}20`,
-                    background: tier.featured ? `linear-gradient(135deg,#4a044e,#be185d)` : "white",
-                    boxShadow: tier.featured ? `0 24px 60px ${A}30` : `0 4px 20px ${A}08`,
+                    borderColor: tier.featured ? A : `${A}22`,
+                    background: tier.featured ? `linear-gradient(135deg,#4a044e,#be185d)` : "rgba(255,255,255,0.04)",
+                    backdropFilter: "blur(10px)",
+                    boxShadow: tier.featured ? `0 24px 60px ${A}30` : `0 4px 20px rgba(0,0,0,0.3)`,
                   }}>
                   {tier.featured && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -225,17 +226,17 @@ export function Products() {
                       </span>
                     </div>
                   )}
-                  <h3 className={`text-sm font-bold mb-1 ${tier.featured ? "text-white" : "text-[#4a044e]"}`}>{tier.name}</h3>
+                  <h3 className="text-sm font-bold mb-1 text-white">{tier.name}</h3>
                   <div className="flex items-baseline gap-1 mb-5">
-                    <span className={`text-3xl font-bold ${tier.featured ? "text-white" : "text-[#4a044e]"}`}>{tier.price}</span>
-                    <span className={`text-xs ${tier.featured ? "text-pink-200" : "text-slate-400"}`}>{tier.period}</span>
+                    <span className={`text-3xl font-bold ${tier.featured ? "text-white" : "text-white"}`}>{tier.price}</span>
+                    <span className={`text-xs ${tier.featured ? "text-pink-200" : "text-white/45"}`}>{tier.period}</span>
                   </div>
                   <ul className="flex flex-col gap-2.5 mb-6 flex-1">
                     {tier.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5"
                           style={{ color: tier.featured ? "#f9a8d4" : A }} />
-                        <span className={`text-xs ${tier.featured ? "text-pink-100" : "text-slate-500"}`}>{item}</span>
+                        <span className={`text-xs ${tier.featured ? "text-pink-100" : "text-white/60"}`}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -256,10 +257,10 @@ export function Products() {
 
       {/* ── ROADMAP ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#4a044e,#be185d,#ec4899)" }}>
+        style={{ background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
         <div className="absolute top-1/3 left-1/3 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(236,72,153,0.25),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -285,50 +286,51 @@ export function Products() {
       </section>
 
       {/* ── EU SAAS DISTRIBUTION ── */}
-      <section id="saas" className="py-24 bg-white relative overflow-hidden">
+      <section id="saas" className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}06,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.04),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.10),transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>EU SaaS Distribution</span>
-              <h2 className="section-h2 text-[#4a044e] mt-3 mb-4" style={{ fontWeight: 700 }}>EU SaaS Distribution</h2>
-              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>EU SaaS Distribution</span>
+              <h2 className="section-h2 text-white mt-3 mb-4" style={{ fontWeight: 700 }}>EU SaaS Distribution</h2>
+              <p className="text-sm text-white/55 leading-relaxed mb-4">
                 ANTUTIVE identifies proven SaaS products built by development partners that serve validated
                 business needs but lack EU market presence. We acquire exclusive EU distribution rights,
                 ensure GDPR and EU AI Act compliance, provide localisation, and handle all EU sales and billing.
               </p>
-              <p className="text-sm text-slate-500 leading-relaxed mb-6">
+              <p className="text-sm text-white/55 leading-relaxed mb-6">
                 Commercial structure: ANTUTIVE receives 20–40% revenue share on EU subscriptions — generating
                 recurring licence revenue alongside the engineering and consulting service lines. Partners
                 gain EU market access without entity setup cost.
               </p>
-              <div className="p-4 rounded-2xl border" style={{ background: `${A}08`, borderColor: `${A}25` }}>
+              <div className="p-4 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}25`, backdropFilter: "blur(10px)" }}>
                 <div className="flex items-center gap-2 mb-2">
                   <Package className="w-4 h-4" style={{ color: A }} />
-                  <p className="text-xs font-bold text-[#4a044e] uppercase tracking-wide">Commercial Model</p>
+                  <p className="text-xs font-bold text-pink-300 uppercase tracking-wide">Commercial Model</p>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">Exclusive EU distribution rights. Localisation (EN + SV) within 4 weeks. All EU billing in SEK/EUR through ANTUTIVE AB. GDPR compliance guaranteed.</p>
+                <p className="text-xs text-white/55 leading-relaxed">Exclusive EU distribution rights. Localisation (EN + SV) within 4 weeks. All EU billing in SEK/EUR through ANTUTIVE AB. GDPR compliance guaranteed.</p>
               </div>
             </Reveal>
 
             <Reveal variant="right" delay={100}>
-              <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}20`, background: `${A}04` }}>
+              <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}22`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
                 <div className="flex items-center gap-2 mb-5">
                   <Globe className="w-4 h-4" style={{ color: A }} />
-                  <h3 className="text-sm font-bold text-[#4a044e] uppercase tracking-wide">Partner Evaluation Criteria</h3>
+                  <h3 className="text-sm font-bold text-pink-300 uppercase tracking-wide">Partner Evaluation Criteria</h3>
                 </div>
                 <div className="flex flex-col gap-3">
                   {saasEvaluation.map((item, i) => (
                     <Reveal key={i} variant="right" delay={i * 60}>
-                      <div className="p-4 rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"
-                        style={{ borderColor: `${A}15` }}>
+                      <div className="p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5"
+                        style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}18`, backdropFilter: "blur(8px)" }}>
                         <p className="text-xs font-bold mb-1" style={{ color: A }}>{item.criterion}</p>
-                        <p className="text-xs text-slate-500 leading-relaxed">{item.detail}</p>
+                        <p className="text-xs text-white/55 leading-relaxed">{item.detail}</p>
                       </div>
                     </Reveal>
                   ))}
@@ -341,11 +343,11 @@ export function Products() {
 
       {/* ── CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#fdf2f8,#fce7f3,#fdf4ff)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.10),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.12),transparent 70%)", filter: "blur(50px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
 
         <div className="relative z-10">
@@ -356,8 +358,8 @@ export function Products() {
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Join the Waitlist</span>
               </div>
-              <h2 className="section-h2 text-[#4a044e] mb-4" style={{ fontWeight: 700 }}>Join the FAMANT Waitlist</h2>
-              <p className="text-sm text-slate-500 mb-8 leading-relaxed">MVP launching Q3 2026. Be among the first Swedish families to access FAMANT — voice-first, EU-hosted, GDPR compliant.</p>
+              <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Join the FAMANT Waitlist</h2>
+              <p className="text-sm text-white/55 mb-8 leading-relaxed">MVP launching Q3 2026. Be among the first Swedish families to access FAMANT — voice-first, EU-hosted, GDPR compliant.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,${A},#be185d)` }}>
                   Request Early Access <ArrowRight className="w-4 h-4" />

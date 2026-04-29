@@ -97,17 +97,17 @@ export function RootLayout() {
 
   const headerCard: React.CSSProperties = glassed
     ? {
-        background:        "rgba(255,255,255,0.78)",
+        background:        "rgba(5,8,18,0.88)",
         backdropFilter:    "blur(22px)",
         WebkitBackdropFilter: "blur(22px)",
-        border:            "1px solid rgba(100,181,246,0.2)",
-        boxShadow:         "0 8px 32px rgba(100,181,246,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
+        border:            "1px solid rgba(100,181,246,0.15)",
+        boxShadow:         "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
       }
     : {
-        background:        "rgba(255,255,255,0.07)",
+        background:        "rgba(5,8,18,0.65)",
         backdropFilter:    "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
-        border:            "1px solid rgba(255,255,255,0.22)",
+        border:            "1px solid rgba(100,181,246,0.12)",
       };
 
   return (
@@ -116,7 +116,7 @@ export function RootLayout() {
       {/* ── FLOATING HEADER ── */}
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        style={{ padding: scrolled ? "8px 20px" : "14px 20px" }}
+        style={{ padding: scrolled ? "8px 20px" : "14px 20px", background: "#030608" }}
       >
         <div className="max-w-7xl mx-auto">
 
@@ -180,11 +180,11 @@ export function RootLayout() {
             <div
               className="lg:hidden mt-2 rounded-2xl p-4"
               style={{
-                background: "rgba(255,255,255,0.94)",
+                background: "rgba(5,8,18,0.96)",
                 backdropFilter: "blur(22px)",
                 WebkitBackdropFilter: "blur(22px)",
-                border: "1px solid rgba(100,181,246,0.18)",
-                boxShadow: "0 16px 40px rgba(100,181,246,0.14)",
+                border: "1px solid rgba(100,181,246,0.15)",
+                boxShadow: "0 16px 40px rgba(0,0,0,0.5)",
               }}
             >
               {[...nav, { name: "Contact", href: "/contact" }].map((item) => {
@@ -217,7 +217,7 @@ export function RootLayout() {
       {/* ── FOOTER ── */}
       <footer
         className="text-white"
-        style={{ background: "linear-gradient(135deg,#64B5F6 0%,#90CAF9 50%,#CE93D8 100%)" }}
+        style={{ background: "linear-gradient(135deg,#030608 0%,#07091a 50%,#0a0618 100%)", borderTop: "1px solid rgba(100,181,246,0.12)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">

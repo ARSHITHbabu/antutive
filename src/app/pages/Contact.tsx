@@ -71,7 +71,7 @@ export function Contact() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#0c4a6e 0%,#0369a1 50%,#0284c7 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
@@ -129,7 +129,7 @@ export function Contact() {
 
       {/* ── PROCESS ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#0a1628 0%,#0c2040 50%,#091525 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(70px)" }} />
@@ -162,12 +162,13 @@ export function Contact() {
       </section>
 
       {/* ── FORM + INFO ── */}
-      <section id="form" className="py-24 bg-white relative overflow-hidden">
+      <section id="form" className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}06,transparent 70%)`, filter: "blur(70px)" }} />
+          style={{ background: `radial-gradient(circle,${A}12,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}04,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}10,transparent 70%)`, filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -175,27 +176,27 @@ export function Contact() {
             {/* CONTACT INFO */}
             <Reveal variant="left">
               <div className="lg:col-span-1 flex flex-col gap-5">
-                <h2 className="section-h2 text-[#0c4a6e] mb-2" style={{ fontWeight: 700, fontSize: "1.4rem" }}>Contact Information</h2>
+                <h2 className="section-h2 text-white mb-2" style={{ fontWeight: 700, fontSize: "1.4rem" }}>Contact Information</h2>
                 {[
                   { icon: Mail,   label: "Email",          lines: ["contact@antutive.com"]                  },
                   { icon: MapPin, label: "Headquarters",   lines: ["Gothenburg, Sweden", "Västra Götalands län"] },
                   { icon: Clock,  label: "Business Hours", lines: ["Monday – Friday", "09:00 – 18:00 CET"]  },
                 ].map(({ icon: Icon, label, lines }, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"
-                    style={{ borderColor: `${A}18` }}>
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5"
+                    style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}20`, backdropFilter: "blur(8px)" }}>
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                       <Icon className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#0c4a6e] uppercase tracking-wide mb-1">{label}</p>
-                      {lines.map((line, j) => <p key={j} className="text-xs text-slate-500">{line}</p>)}
+                      <p className="text-xs font-bold text-blue-300 uppercase tracking-wide mb-1">{label}</p>
+                      {lines.map((line, j) => <p key={j} className="text-xs text-white/55">{line}</p>)}
                     </div>
                   </div>
                 ))}
 
-                <div className="p-5 rounded-2xl border" style={{ background: `${A}06`, borderColor: `${A}20` }}>
-                  <h3 className="text-xs font-bold text-[#0c4a6e] uppercase tracking-wide mb-3">What Happens After You Submit</h3>
+                <div className="p-5 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}22`, backdropFilter: "blur(8px)" }}>
+                  <h3 className="text-xs font-bold text-blue-300 uppercase tracking-wide mb-3">What Happens After You Submit</h3>
                   <div className="flex flex-col gap-2.5">
                     {[
                       "Response within one business day",
@@ -205,16 +206,16 @@ export function Contact() {
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: A }} />
-                        <span className="text-xs text-slate-600">{item}</span>
+                        <span className="text-xs text-white/55">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl border" style={{ borderColor: `${A}18` }}>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Company Registration</p>
-                  <p className="text-xs text-slate-600">ANTUTIVE AB · Org.nr 559576-7228</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Gothenburg, Västra Götalands län, Sweden</p>
+                <div className="p-5 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}18`, backdropFilter: "blur(8px)" }}>
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-wide mb-1">Company Registration</p>
+                  <p className="text-xs text-white/70">ANTUTIVE AB · Org.nr 559576-7228</p>
+                  <p className="text-xs text-white/50 mt-0.5">Gothenburg, Västra Götalands län, Sweden</p>
                 </div>
               </div>
             </Reveal>
@@ -223,20 +224,20 @@ export function Contact() {
             <div className="lg:col-span-2">
               <Reveal variant="right" delay={100}>
                 {submitted ? (
-                  <div className="p-10 rounded-3xl border text-center" style={{ borderColor: `${A}20`, background: `${A}06` }}>
+                  <div className="p-10 rounded-3xl border text-center" style={{ borderColor: `${A}22`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
                     <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
                       style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                       <CheckCircle2 className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-base font-bold text-[#0c4a6e] mb-3">Message Received</h3>
-                    <p className="text-sm text-slate-500 mb-6">Thank you for reaching out. We'll respond within one business day to schedule a qualification call.</p>
+                    <h3 className="text-base font-bold text-white mb-3">Message Received</h3>
+                    <p className="text-sm text-white/55 mb-6">Thank you for reaching out. We'll respond within one business day to schedule a qualification call.</p>
                     <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: A }}>
                       Back to Home <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 ) : (
-                  <div className="p-8 rounded-3xl border bg-white" style={{ borderColor: `${A}18`, boxShadow: `0 4px 30px ${A}08` }}>
-                    <h2 className="text-base font-bold text-[#0c4a6e] mb-6">Send Us a Message</h2>
+                  <div className="p-8 rounded-3xl border" style={{ borderColor: `${A}20`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(12px)" }}>
+                    <h2 className="text-base font-bold text-white mb-6">Send Us a Message</h2>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         {[
@@ -244,7 +245,7 @@ export function Contact() {
                           { id: "company", label: "Company Name", type: "text", required: false, placeholder: "Your Company AB"  },
                         ].map(({ id, label, type, required, placeholder }) => (
                           <div key={id}>
-                            <label htmlFor={id} className="block text-xs font-bold text-slate-600 mb-1.5 uppercase tracking-wide">
+                            <label htmlFor={id} className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">
                               {label}{required && " *"}
                             </label>
                             <input
@@ -253,8 +254,8 @@ export function Contact() {
                               onChange={handleChange}
                               required={required}
                               placeholder={placeholder}
-                              className="w-full px-4 py-3 rounded-xl border bg-white text-sm text-slate-700 placeholder:text-slate-300 outline-none transition-all focus:border-blue-300"
-                              style={{ borderColor: `${A}25` }}
+                              className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-blue-300"
+                              style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                             />
                           </div>
                         ))}
@@ -262,23 +263,23 @@ export function Contact() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                          <label htmlFor="email" className="block text-xs font-bold text-slate-600 mb-1.5 uppercase tracking-wide">Email Address *</label>
+                          <label htmlFor="email" className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">Email Address *</label>
                           <input
                             type="email" id="email" name="email"
                             value={formData.email} onChange={handleChange}
                             required placeholder="jane@company.com"
-                            className="w-full px-4 py-3 rounded-xl border bg-white text-sm text-slate-700 placeholder:text-slate-300 outline-none transition-all focus:border-blue-300"
-                            style={{ borderColor: `${A}25` }}
+                            className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-blue-300"
+                            style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                           />
                         </div>
                         <div>
-                          <label htmlFor="service" className="block text-xs font-bold text-slate-600 mb-1.5 uppercase tracking-wide">Service Interest *</label>
+                          <label htmlFor="service" className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">Service Interest *</label>
                           <select
                             id="service" name="service"
                             value={formData.service} onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 rounded-xl border bg-white text-sm text-slate-700 outline-none transition-all focus:border-blue-300"
-                            style={{ borderColor: `${A}25` }}
+                            className="w-full px-4 py-3 rounded-xl border text-sm text-white outline-none transition-all focus:border-blue-300"
+                            style={{ borderColor: `${A}25`, background: "rgba(15,20,40,0.85)" }}
                           >
                             <option value="">Select a service area</option>
                             <option value="genai">Generative AI Solutions</option>
@@ -296,14 +297,14 @@ export function Contact() {
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-xs font-bold text-slate-600 mb-1.5 uppercase tracking-wide">Your Message *</label>
+                        <label htmlFor="message" className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">Your Message *</label>
                         <textarea
                           id="message" name="message"
                           value={formData.message} onChange={handleChange}
                           required rows={5}
                           placeholder="Describe your project, challenge, or question. The more context you share, the more useful our first call will be."
-                          className="w-full px-4 py-3 rounded-xl border bg-white text-sm text-slate-700 placeholder:text-slate-300 outline-none transition-all resize-none focus:border-blue-300"
-                          style={{ borderColor: `${A}25` }}
+                          className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all resize-none focus:border-blue-300"
+                          style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                         />
                       </div>
 
@@ -312,7 +313,7 @@ export function Contact() {
                           className="mt-1 w-4 h-4 rounded flex-shrink-0"
                           style={{ accentColor: A }}
                         />
-                        <label htmlFor="gdpr" className="text-xs text-slate-500 leading-relaxed">
+                        <label htmlFor="gdpr" className="text-xs text-white/50 leading-relaxed">
                           I consent to ANTUTIVE AB processing my personal data in accordance with GDPR for the purpose of responding to this enquiry. Your data will not be shared with third parties. *
                         </label>
                       </div>
@@ -336,7 +337,7 @@ export function Contact() {
 
       {/* ── DIRECT CONTACT CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#f0f9ff,#e0f2fe,#dbeafe)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
@@ -351,8 +352,8 @@ export function Contact() {
                 <Mail className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Direct Email</span>
               </div>
-              <h2 className="section-h2 text-[#0c4a6e] mb-4" style={{ fontWeight: 700 }}>Prefer a Direct Email?</h2>
-              <p className="text-sm text-slate-500 mb-8 leading-relaxed">Email us directly at contact@antutive.com with a brief description of your project. We respond within one business day.</p>
+              <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Prefer a Direct Email?</h2>
+              <p className="text-sm text-white/55 mb-8 leading-relaxed">Email us directly at contact@antutive.com with a brief description of your project. We respond within one business day.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a href="mailto:contact@antutive.com" className="cta-btn-primary"
                   style={{ background: `linear-gradient(135deg,${A},${A2})` }}>

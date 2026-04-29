@@ -73,7 +73,7 @@ export function About() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4f46e5 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
@@ -130,32 +130,33 @@ export function About() {
       </section>
 
       {/* ── MISSION ── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}06,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A}12,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}04,transparent 70%)`, filter: "blur(50px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}10,transparent 70%)`, filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Our Mission</span>
-              <h2 className="section-h2 text-[#1e1b4b] mt-3 mb-5" style={{ fontWeight: 700 }}>
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Our Mission</span>
+              <h2 className="section-h2 text-white mt-3 mb-5" style={{ fontWeight: 700 }}>
                 Making Advanced AI<br />Accessible to European SMEs
               </h2>
-              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+              <p className="text-sm text-white/55 leading-relaxed mb-4">
                 European SMEs face compounding pressure: they need AI and data capabilities to remain competitive,
                 but lack the engineering depth to build them securely — especially with EU AI Act enforcement
                 beginning August 2026. Simultaneously, they need AI-native marketing to stay visible in a
                 market increasingly mediated by AI search engines.
               </p>
-              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+              <p className="text-sm text-white/55 leading-relaxed mb-4">
                 ANTUTIVE AB is the engineering partner that eliminates both gaps. We deliver custom AI solutions,
                 analytics infrastructure, growth automation, and ready-to-deploy SaaS products with Swedish-grade
                 trust and full EU regulatory compliance.
               </p>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className="text-sm text-white/55 leading-relaxed">
                 Our model is straightforward: a Swedish client-facing operation in Gothenburg backed by a
                 distributed specialist engineering capability — producing senior-quality output at the speed
                 and economics that European SMEs need to compete.
@@ -163,17 +164,17 @@ export function About() {
             </Reveal>
 
             <Reveal variant="right" delay={100}>
-              <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}20`, background: `${A}04` }}>
+              <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}22`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
                 <div className="flex items-center gap-2 mb-5">
                   <Building2 className="w-4 h-4" style={{ color: A }} />
-                  <h3 className="text-sm font-bold text-[#1e1b4b] uppercase tracking-wide">Company Registration</h3>
+                  <h3 className="text-sm font-bold text-indigo-300 uppercase tracking-wide">Company Registration</h3>
                 </div>
                 <div className="grid grid-cols-1 gap-0">
                   {companyFacts.map(({ label, value }, i) => (
                     <div key={i} className="flex justify-between items-center py-2.5 border-b last:border-0"
-                      style={{ borderColor: `${A}12` }}>
-                      <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{label}</span>
-                      <span className="text-xs font-bold text-[#1e1b4b]">{value}</span>
+                      style={{ borderColor: `${A}18` }}>
+                      <span className="text-xs font-semibold text-white/40 uppercase tracking-wide">{label}</span>
+                      <span className="text-xs font-bold text-white">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -185,32 +186,32 @@ export function About() {
 
       {/* ── VALUES ── */}
       <section id="values" className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#eef2ff,#e0e7ff,#ede9fe)" }}>
+        style={{ background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}10,transparent 70%)`, filter: "blur(80px)" }} />
+          style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}08,transparent 70%)`, filter: "blur(70px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}10,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Values</span>
-              <h2 className="section-h2 text-[#1e1b4b] mt-3" style={{ fontWeight: 700 }}>What We Stand For</h2>
-              <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Four principles that define how we work with clients and build our products.</p>
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Values</span>
+              <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>What We Stand For</h2>
+              <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Four principles that define how we work with clients and build our products.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {values.map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 90}>
-                <div className="p-7 rounded-3xl border bg-white h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                  style={{ borderColor: `${A}18`, boxShadow: `0 2px 16px ${A}06` }}>
+                <div className="p-7 rounded-3xl border h-full transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}20`, backdropFilter: "blur(10px)" }}>
                   <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5"
                     style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1e1b4b] mb-3">{title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                  <h3 className="text-sm font-bold text-white mb-3">{title}</h3>
+                  <p className="text-xs text-white/55 leading-relaxed">{desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -220,12 +221,12 @@ export function About() {
 
       {/* ── DIFFERENTIATORS ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#1e1b4b,#312e81,#4f46e5)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-20" />
         <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}20,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A}16,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}15,transparent 70%)`, filter: "blur(50px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}12,transparent 70%)`, filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -251,19 +252,20 @@ export function About() {
       </section>
 
       {/* ── EU COMPLIANCE ── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}06,transparent 70%)`, filter: "blur(70px)" }} />
+          style={{ background: `radial-gradient(circle,${A}12,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}04,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}10,transparent 70%)`, filter: "blur(60px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Regulatory Position</span>
-              <h2 className="section-h2 text-[#1e1b4b] mt-3" style={{ fontWeight: 700 }}>EU Compliance Built In</h2>
-              <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Every engagement is designed for the regulatory environment European businesses operate in — not retrofitted to it.</p>
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Regulatory Position</span>
+              <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>EU Compliance Built In</h2>
+              <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Every engagement is designed for the regulatory environment European businesses operate in — not retrofitted to it.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -273,14 +275,14 @@ export function About() {
               { icon: Award,  title: "Swedish Trust Mark", desc: "ANTUTIVE AB is a registered Swedish Aktiebolag. Swedish professional norms, local invoicing, and legal accountability — the trust foundation EU clients expect." },
             ].map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant={["left", "up", "right"][i] as any} delay={i * 100}>
-                <div className="p-7 rounded-3xl border h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                  style={{ borderColor: `${A}20`, background: `linear-gradient(135deg,${A}06,${A}02)` }}>
+                <div className="p-7 rounded-3xl border h-full transition-all duration-300 hover:-translate-y-1"
+                  style={{ borderColor: `${A}20`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
                   <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5"
                     style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1e1b4b] mb-3">{title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                  <h3 className="text-sm font-bold text-white mb-3">{title}</h3>
+                  <p className="text-xs text-white/55 leading-relaxed">{desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -290,7 +292,7 @@ export function About() {
 
       {/* ── CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#eef2ff,#e0e7ff,#ede9fe)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
@@ -305,8 +307,8 @@ export function About() {
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start the Conversation</span>
               </div>
-              <h2 className="section-h2 text-[#1e1b4b] mb-4" style={{ fontWeight: 700 }}>Let's Work Together</h2>
-              <p className="text-sm text-slate-500 mb-8 leading-relaxed">Ready to start your AI transformation? Book a Business Understanding session — our first step in the ANTUTIVE Delivery Method, offered free for qualified prospects.</p>
+              <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Let's Work Together</h2>
+              <p className="text-sm text-white/55 mb-8 leading-relaxed">Ready to start your AI transformation? Book a Business Understanding session — our first step in the ANTUTIVE Delivery Method, offered free for qualified prospects.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                   Get in Touch <ArrowRight className="w-4 h-4" />

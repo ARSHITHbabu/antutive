@@ -91,7 +91,7 @@ export function Consulting() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#1c0f00 0%,#2d1800 50%,#3d2200 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
@@ -149,7 +149,7 @@ export function Consulting() {
 
       {/* ── THREE SERVICE MODELS ── */}
       <section id="models" className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#1c0f00 0%,#2a1500 50%,#1a0c00 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}16,transparent 70%)`, filter: "blur(70px)" }} />
@@ -198,7 +198,7 @@ export function Consulting() {
 
       {/* ── TECH COVERAGE ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#fffbeb 0%,#fef9c3 60%,#fefce8 100%)" }}>
+        style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 60%,#080c1a 100%)" }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}25,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
@@ -210,24 +210,24 @@ export function Consulting() {
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
               Technology Coverage
             </span>
-            <h2 className="section-h2 text-[#78350f] mt-3" style={{ fontWeight: 700 }}>Full Stack Engineering</h2>
-            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Full Stack Engineering</h2>
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
               ANTUTIVE covers the full modern technology stack — from frontend applications to AI infrastructure and enterprise integrations.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {techStack.map(({ domain, tech, icon: Icon }, i) => (
               <Reveal key={i} variant="scale" delay={i * 70}>
-                <div className="p-6 rounded-2xl border bg-white h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                  style={{ borderColor: `${A}18`, boxShadow: `0 2px 12px ${A}08` }}>
+                <div className="p-6 rounded-2xl border h-full transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}28`, boxShadow: "0 2px 12px rgba(0,0,0,0.2)" }}>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center"
                       style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 4px 14px ${A}30` }}>
                       <Icon className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-sm font-bold text-[#78350f]">{domain}</h3>
+                    <h3 className="text-sm font-bold text-white">{domain}</h3>
                   </div>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tech}</p>
+                  <p className="text-xs text-white/55 leading-relaxed">{tech}</p>
                 </div>
               </Reveal>
             ))}
@@ -237,7 +237,7 @@ export function Consulting() {
 
       {/* ── DELIVERY MODEL / POSITIONING ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#78350f 0%,#b45309 55%,#f59e0b 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 55%,#060c18 100%)" }}>
         <div className="absolute inset-0 hero-mesh-overlay opacity-25" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(60px)" }} />
@@ -276,7 +276,7 @@ export function Consulting() {
 
       {/* ── CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#fffbeb 0%,#fef9c3 55%,#fefce8 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 55%,#080c18 100%)" }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
@@ -291,10 +291,10 @@ export function Consulting() {
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start the Conversation</span>
               </div>
-              <h2 className="section-h2 text-[#78350f] mb-4" style={{ fontWeight: 700 }}>
+              <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>
                 Discuss Your Engagement
               </h2>
-              <p className="text-sm text-slate-500 mb-8 leading-relaxed">
+              <p className="text-sm text-white/55 mb-8 leading-relaxed">
                 Whether you need a strategy review, a managed team, or end-to-end project delivery — start with a call to assess fit and scope. No commitment required.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
