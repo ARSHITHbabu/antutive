@@ -111,7 +111,7 @@ export function RootLayout() {
       };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: "#030608" }}>
 
       {/* ── FLOATING HEADER ── */}
       <header

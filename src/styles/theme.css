@@ -2,17 +2,17 @@
 
 :root {
   --font-size: 16px;
-  --background: #ffffff;
+  --background: #030608;
   --foreground: #64B5F6;
-  --card: #ffffff;
+  --card: #07091a;
   --card-foreground: #64B5F6;
-  --popover: #ffffff;
+  --popover: #07091a;
   --popover-foreground: #64B5F6;
   --primary: #64B5F6;
   --primary-foreground: #ffffff;
-  --secondary: #E3F2FD;
+  --secondary: #07091a;
   --secondary-foreground: #64B5F6;
-  --muted: #f5f5f5;
+  --muted: #0a0d1f;
   --muted-foreground: #90CAF9;
   --accent: #64B5F6;
   --accent-foreground: #ffffff;
@@ -20,7 +20,7 @@
   --destructive-foreground: #ffffff;
   --border: rgba(100, 181, 246, 0.2);
   --input: transparent;
-  --input-background: #ffffff;
+  --input-background: rgba(255,255,255,0.06);
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
@@ -31,7 +31,7 @@
   --chart-4: #2196F3;
   --chart-5: #1E88E5;
   --radius: 0.5rem;
-  --sidebar: #fafbfc;
+  --sidebar: #06091a;
   --sidebar-foreground: #64B5F6;
   --sidebar-primary: #64B5F6;
   --sidebar-primary-foreground: #ffffff;
@@ -889,8 +889,9 @@
   position: relative;
   padding: 28px;
   border-radius: 24px;
-  border: 1px solid rgba(100,181,246,0.14);
-  background: white;
-  box-shadow: 0 4px 24px rgba(100,181,246,0.06);
+  border: 1px solid rgba(100,181,246,0.16);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   transition: box-shadow 0.3s, transform 0.3s;
 }
