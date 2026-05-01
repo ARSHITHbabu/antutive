@@ -314,7 +314,7 @@ export function About() {
                   Get in Touch <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/services" className="cta-btn-secondary" style={{ borderColor: `${A}40`, color: A }}>
-                  View Our Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

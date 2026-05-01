@@ -124,7 +124,7 @@ export function GrowthMarketing() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>Get a GEO Audit</Link>
-                <Link to="#geo" className="hero-btn-secondary">Explore Services</Link>
+                <Link to="#geo" className="hero-btn-secondary">Explore Solutions</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -170,7 +170,7 @@ export function GrowthMarketing() {
               </p>
               <p className="text-sm text-white/55 leading-relaxed mb-6">
                 As AI search becomes the primary discovery channel for B2B buyers, companies without GEO become
-                invisible to the fastest-growing segment of qualified traffic. Delivered as a managed monthly retainer.
+                invisible to the fastest-growing segment of qualified traffic. Available as a monthly subscription.
               </p>
               <div className="p-4 rounded-2xl border"
                 style={{ background: `${A}10`, borderColor: `${A}30` }}>
@@ -178,7 +178,7 @@ export function GrowthMarketing() {
                   ANTUTIVE uses GEO for its own brand
                 </p>
                 <p className="text-xs text-white/55 leading-relaxed">
-                  We demonstrate the service by using it — creating a live portfolio of AI-native growth work
+                  We demonstrate the capability by using it — creating a live portfolio of AI-native growth work
                   alongside our own marketing content.
                 </p>
               </div>
@@ -334,7 +334,7 @@ export function GrowthMarketing() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 rounded-xl"
                       style={{ background: "rgba(16,185,129,0.1)", border: `1px solid ${A}28` }}>
-                      <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>Entry Service</p>
+                      <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>Entry Point</p>
                       <p className="text-xs text-white/60 leading-relaxed">{client.entry}</p>
                     </div>
                     <div className="p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
@@ -380,7 +380,7 @@ export function GrowthMarketing() {
                 </Link>
                 <Link to="/services"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm border border-white/30 text-white bg-white/08 transition-all duration-300 hover:bg-white/15">
-                  View All Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

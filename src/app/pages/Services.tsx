@@ -124,7 +124,7 @@ export function Services() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
                 <Sparkles className="w-3.5 h-3.5 text-cyan-200" />
-                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · Engineering Services</span>
+                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · AI Solutions</span>
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
@@ -133,7 +133,7 @@ export function Services() {
 
               <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Four interconnected practice areas delivered as problem-solving engagements. Every solution begins with your operational context — not a technology demo.
+                Four interconnected solution areas — each built around your operational context, not a technology demo.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -144,7 +144,7 @@ export function Services() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary" style={{ color: A2 }}>Book a Discovery Call</Link>
-                <Link to="#genai" className="hero-btn-secondary">Explore Services</Link>
+                <Link to="#genai" className="hero-btn-secondary">Explore Solutions</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -332,7 +332,7 @@ export function Services() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: "rgba(255,255,255,0.95)", color: A2 }}
               >
-                Explore AI Growth Services <ArrowRight className="w-4 h-4" />
+                Explore AI Growth <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
 
@@ -418,10 +418,10 @@ export function Services() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="section-eyebrow-light">Service Ecosystem</span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Service Integration Map</h2>
+            <span className="section-eyebrow-light">Solution Ecosystem</span>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Solution Integration Map</h2>
             <p className="text-sm text-white/55 mt-3 max-w-lg mx-auto">
-              Practice areas form an interconnected ecosystem — each engagement naturally leads to the next.
+              Solution areas form an interconnected ecosystem — each deployment naturally expands into the next.
             </p>
           </div>
 
@@ -481,7 +481,7 @@ export function Services() {
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  View All Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

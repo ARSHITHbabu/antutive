@@ -85,7 +85,7 @@ const maturityLevels = [
 
 export function Home() {
   const pillars = [
-    { n: "01", title: "Engineering Services", tag: "AI, Data & Growth Solutions", desc: "Generative AI, data analytics, growth automation, and custom AI platforms — delivered as projects or retainers.", href: "/services", color: "#64B5F6" },
+    { n: "01", title: "AI Solutions Suite", tag: "AI, Data & Growth Platforms", desc: "Generative AI, data analytics, growth automation, and custom AI platforms — engineered and deployed for your specific environment.", href: "/services", color: "#64B5F6" },
     { n: "02", title: "Strategic Consulting",  tag: "IT Consulting & Distributed Engineering", desc: "Senior advisory, architecture reviews, managed engineering teams, and end-to-end project delivery.", href: "/consulting", color: "#10b981" },
     { n: "03", title: "Products",              tag: "Enterprise SaaS Portfolio", desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.", href: "/products", color: "#8b5cf6" },
   ];
@@ -150,7 +150,7 @@ export function Home() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
                 <Link to="/contact" className="hero-btn-primary">Book a Strategy Call</Link>
-                <Link to="/services" className="hero-btn-secondary">Explore Services</Link>
+                <Link to="/services" className="hero-btn-secondary">Explore Solutions</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -191,7 +191,7 @@ export function Home() {
             <span className="section-eyebrow-light">What We Offer</span>
             <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Ways to Work With Us</h2>
             <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto">
-              Engineering services, strategic consulting, and scalable SaaS products — each available independently or combined.
+              AI-powered systems, strategic advisory, and scalable SaaS products — each available independently or combined.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -308,7 +308,7 @@ export function Home() {
               <span className="section-eyebrow-light">What We Build</span>
               <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Five Practice Areas</h2>
               <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
-                Each practice area can be engaged independently or bundled for comprehensive transformation.
+                Each solution area can be deployed independently or combined for comprehensive AI transformation.
               </p>
             </div>
           </Reveal>
@@ -465,7 +465,7 @@ export function Home() {
                   <Link to="/contact" className="cta-btn-primary">
                     Book a Strategy Call <ArrowRight className="w-4 h-4"/>
                   </Link>
-                  <Link to="/services" className="cta-btn-secondary">View All Services</Link>
+                  <Link to="/services" className="cta-btn-secondary">Explore Solutions</Link>
                 </div>
               </div>
             </div>

@@ -273,7 +273,7 @@ export function Contact() {
                           />
                         </div>
                         <div>
-                          <label htmlFor="service" className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">Service Interest *</label>
+                          <label htmlFor="service" className="block text-xs font-bold text-white/60 mb-1.5 uppercase tracking-wide">Area of Interest *</label>
                           <select
                             id="service" name="service"
                             value={formData.service} onChange={handleChange}
@@ -281,7 +281,7 @@ export function Contact() {
                             className="w-full px-4 py-3 rounded-xl border text-sm text-white outline-none transition-all focus:border-blue-300"
                             style={{ borderColor: `${A}25`, background: "rgba(15,20,40,0.85)" }}
                           >
-                            <option value="">Select a service area</option>
+                            <option value="">Select an area</option>
                             <option value="genai">Generative AI Solutions</option>
                             <option value="data">Data Engineering & Analytics</option>
                             <option value="geo">GEO & AI Growth Marketing</option>
@@ -361,7 +361,7 @@ export function Contact() {
                 </a>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  View Our Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

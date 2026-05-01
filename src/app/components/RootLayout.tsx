@@ -84,7 +84,7 @@ export function RootLayout() {
   }, []);
 
   const nav = [
-    { name: "Services",          href: "/services" },
+    { name: "Solutions",          href: "/services" },
     { name: "Growth & Marketing", href: "/growth-marketing" },
     { name: "AI Platform",        href: "/custom-platform" },
     { name: "Consulting",         href: "/consulting" },
@@ -235,7 +235,7 @@ export function RootLayout() {
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-white/90">Services</h4>
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-white/90">Solutions</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   ["AI & Data Solutions",  "/services"],

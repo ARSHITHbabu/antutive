@@ -127,7 +127,7 @@ export function Consulting() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>Discuss Your Engagement</Link>
-                <Link to="#models" className="hero-btn-secondary">View Service Models</Link>
+                <Link to="#models" className="hero-btn-secondary">View Engagement Models</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -162,7 +162,7 @@ export function Consulting() {
               style={{ borderColor: `${A}40`, background: `${A}18`, color: "#fcd34d" }}>
               Engagement Models
             </span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Service Models</h2>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Engagement Models</h2>
             <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto">
               Choose the engagement model that fits your situation. All work is contracted with ANTUTIVE AB — the Swedish entity that provides your EU compliance guarantee.
             </p>
@@ -304,7 +304,7 @@ export function Consulting() {
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  View All Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

@@ -67,7 +67,7 @@ const saasEvaluation = [
   { criterion: "True SaaS Model",               detail: "Cloud-native architecture; desktop or on-premise-first products are excluded" },
   { criterion: "B2B or Prosumer Target Market", detail: "Business-oriented products where EU regulatory compliance is a buying criterion" },
   { criterion: "EU Market Addressable",         detail: "Clear demand signal in Sweden, Germany, Netherlands, France or other EU markets" },
-  { criterion: "Non-Competitive",               detail: "Does not directly compete with ANTUTIVE Engineering or Consulting service lines" },
+  { criterion: "Non-Competitive",               detail: "Does not directly compete with ANTUTIVE Engineering or Consulting solution areas" },
 ];
 
 export function Products() {
@@ -102,7 +102,7 @@ export function Products() {
 
               <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                A voice-first AI home OS for families and a curated portfolio of EU-distributed SaaS products. Scalable recurring revenue alongside engineering services.
+                A voice-first AI home OS for families and a curated portfolio of EU-distributed SaaS products. Scalable recurring revenue alongside our core platform portfolio.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -306,7 +306,7 @@ export function Products() {
               </p>
               <p className="text-sm text-white/55 leading-relaxed mb-6">
                 Commercial structure: ANTUTIVE receives 20–40% revenue share on EU subscriptions — generating
-                recurring licence revenue alongside the engineering and consulting service lines. Partners
+                recurring licence revenue alongside the engineering and consulting solution areas. Partners
                 gain EU market access without entity setup cost.
               </p>
               <div className="p-4 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}25`, backdropFilter: "blur(10px)" }}>

@@ -52,7 +52,7 @@ const competitors = [
   { them: "Direct API Usage (DIY)",    weakness: "Requires in-house AI engineering team",              advantage: "ANTUTIVE provides the full stack: UI, integration, deployment, and ongoing support" },
   { them: "ChatGPT Enterprise / Teams",weakness: "Data goes to OpenAI servers, single model lock-in",  advantage: "Data stays on-premise, any model supported, fully customised interface" },
   { them: "Generic AI Platform SaaS",  weakness: "One-size-fits-all interface, limited customisation", advantage: "Purpose-built for each client's workflow, brand, and user roles" },
-  { them: "Open-Source Deployments",   weakness: "Complex to deploy and maintain, no support",         advantage: "Managed service with SLA, ongoing development, and team training included" },
+  { them: "Open-Source Deployments",   weakness: "Complex to deploy and maintain, no support",         advantage: "Managed platform with SLA, ongoing development, and team training included" },
 ];
 
 export function CustomPlatform() {
