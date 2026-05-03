@@ -7,8 +7,8 @@ import {
 import { Reveal } from "../lib/scroll";
 import { DeliveryMethod } from "../components/DeliveryMethod";
 
-const A  = "#0891b2";
-const A2 = "#0369a1";
+const A  = "#F5C84C";
+const A2 = "#F36D4F";
 
 const heroMetrics = [
   { value: "4",   label: "Practice Areas"  },
@@ -20,10 +20,10 @@ const heroMetrics = [
 /* ── practice area grid (hero right side) ── */
 function PracticeAreaGrid() {
   const areas = [
-    { Icon: Cpu,        label: "Generative AI",    sub: "Agents · RAG · Knowledge",  color: "#0891b2" },
-    { Icon: BarChart3,  label: "Data Engineering", sub: "ETL · Power BI · Predict",  color: "#0369a1" },
-    { Icon: TrendingUp, label: "AI Growth",         sub: "GEO · Video · Automation",  color: "#6366f1" },
-    { Icon: Lock,       label: "Custom Platform",   sub: "Sovereign · Private · EU",  color: "#8b5cf6" },
+    { Icon: Cpu,        label: "Generative AI",    sub: "Agents · RAG · Knowledge",  color: "#F5C84C" },
+    { Icon: BarChart3,  label: "Data Engineering", sub: "ETL · Power BI · Predict",  color: "#C2410C" },
+    { Icon: TrendingUp, label: "AI Growth",         sub: "GEO · Video · Automation",  color: "#6F3CC3" },
+    { Icon: Lock,       label: "Custom Platform",   sub: "Sovereign · Private · EU",  color: "#6F3CC3" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -116,15 +116,15 @@ export function Services() {
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(8,145,178,0.18),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.18),transparent 70%)", filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
-                <Sparkles className="w-3.5 h-3.5 text-cyan-200" />
-                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · Engineering Services</span>
+                <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]" />
+                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · AI Solutions</span>
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
@@ -133,7 +133,7 @@ export function Services() {
 
               <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Four interconnected practice areas delivered as problem-solving engagements. Every solution begins with your operational context — not a technology demo.
+                Four interconnected solution areas — each built around your operational context, not a technology demo.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -144,7 +144,7 @@ export function Services() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary" style={{ color: A2 }}>Book a Discovery Call</Link>
-                <Link to="#genai" className="hero-btn-secondary">Explore Services</Link>
+                <Link to="#genai" className="hero-btn-secondary">Explore Solutions</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -169,9 +169,9 @@ export function Services() {
         style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(8,145,178,0.14),transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.14),transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(3,105,161,0.1),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10),transparent 70%)", filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -189,11 +189,11 @@ export function Services() {
               <div className="flex flex-col gap-3">
                 {genAIItems.map((item, i) => (
                   <Reveal key={i} variant="left" delay={i * 80}>
-                    <div className="p-4 rounded-2xl border flex gap-3 items-start transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/30"
+                    <div className="p-4 rounded-2xl border flex gap-3 items-start transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1CB7B4]/30"
                       style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}28` }}>
                       <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{ background: `linear-gradient(135deg,${A}55,${A}22)`, border: `1px solid ${A}45` }}>
-                        <item.Icon className="w-4 h-4 text-cyan-300" />
+                        <item.Icon className="w-4 h-4 text-[#1CB7B4]" />
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-white mb-1.5">{item.title}</h4>
@@ -207,19 +207,19 @@ export function Services() {
 
             <Reveal variant="right" delay={120}>
               <div className="lg:sticky lg:top-28 p-6 rounded-3xl border"
-                style={{ background: `rgba(8,145,178,0.06)`, borderColor: `${A}28` }}>
+                style={{ background: `rgba(28,183,180,0.06)`, borderColor: `${A}28` }}>
                 <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#67e8f9" }}>
                   Target Use Cases
                 </h3>
                 {genAICases.map((uc, i) => (
-                  <div key={i} className="p-4 rounded-2xl border mb-3 last:mb-0 transition-all duration-300 hover:border-cyan-500/30"
+                  <div key={i} className="p-4 rounded-2xl border mb-3 last:mb-0 transition-all duration-300 hover:border-[#1CB7B4]/30"
                     style={{ background: "rgba(255,255,255,0.03)", borderColor: `${A}22` }}>
-                    <p className="text-xs font-bold mb-1 text-cyan-400">{uc.industry}</p>
+                    <p className="text-xs font-bold mb-1 text-[#1CB7B4]">{uc.industry}</p>
                     <p className="text-xs text-white/50 mb-2">
                       <span className="font-semibold text-white/70">Pain: </span>{uc.problem}
                     </p>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-cyan-400" />
+                      <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-[#1CB7B4]" />
                       <p className="text-xs text-white/60">{uc.solution}</p>
                     </div>
                   </div>
@@ -283,7 +283,7 @@ export function Services() {
                   }} />
                 {analyticsLevels.map((l, i) => (
                   <div key={i} className="relative p-5 rounded-2xl border text-center transition-all duration-300 hover:-translate-y-1"
-                    style={{ borderColor: `${A}30`, background: i === 3 ? "rgba(8,145,178,0.12)" : "rgba(255,255,255,0.04)" }}>
+                    style={{ borderColor: `${A}30`, background: i === 3 ? "rgba(28,183,180,0.12)" : "rgba(255,255,255,0.04)" }}>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xs font-bold relative z-10"
                       style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 4px 12px ${A}40` }}>
                       {i + 1}
@@ -332,7 +332,7 @@ export function Services() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: "rgba(255,255,255,0.95)", color: A2 }}
               >
-                Explore AI Growth Services <ArrowRight className="w-4 h-4" />
+                Explore AI Growth <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
 
@@ -361,7 +361,7 @@ export function Services() {
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(99,102,241,0.12),transparent 70%)", filter: "blur(80px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.12),transparent 70%)", filter: "blur(80px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -418,10 +418,10 @@ export function Services() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="section-eyebrow-light">Service Ecosystem</span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Service Integration Map</h2>
+            <span className="section-eyebrow-light">Solution Ecosystem</span>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Solution Integration Map</h2>
             <p className="text-sm text-white/55 mt-3 max-w-lg mx-auto">
-              Practice areas form an interconnected ecosystem — each engagement naturally leads to the next.
+              Solution areas form an interconnected ecosystem — each deployment naturally expands into the next.
             </p>
           </div>
 
@@ -436,9 +436,9 @@ export function Services() {
                   </div>
                   <p className="text-base font-bold text-white mb-3">{item.start}</p>
                   <div className="flex items-center gap-2 mb-3 p-2.5 rounded-xl"
-                    style={{ background: "rgba(8,145,178,0.2)", border: "1px solid rgba(103,232,249,0.2)" }}>
-                    <ArrowRight className="w-3.5 h-3.5 text-cyan-300 flex-shrink-0" />
-                    <p className="text-xs font-semibold text-cyan-300">{item.exp}</p>
+                    style={{ background: "rgba(28,183,180,0.16)", border: "1px solid rgba(28,183,180,0.24)" }}>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#1CB7B4] flex-shrink-0" />
+                    <p className="text-xs font-semibold text-[#1CB7B4]">{item.exp}</p>
                   </div>
                   <p className="text-xs text-white/50 leading-relaxed">{item.logic}</p>
                 </div>
@@ -481,7 +481,7 @@ export function Services() {
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  View All Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

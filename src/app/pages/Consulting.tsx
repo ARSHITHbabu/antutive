@@ -3,9 +3,9 @@ import { ArrowRight, CheckCircle2, Users, Briefcase, Code2, Server, Database, Cp
 import { Reveal } from "../lib/scroll";
 import { DeliveryMethod } from "../components/DeliveryMethod";
 
-const A  = "#f59e0b";
-const A2 = "#b45309";
-const D  = "#78350f";
+const A  = "#1CB7B4";
+const A2 = "#168AB0";
+const D  = "#134E4A";
 
 const heroMetrics = [
   { value: "3",   label: "Engagement Models" },
@@ -17,10 +17,10 @@ const heroMetrics = [
 /* ── hero right: service model grid ── */
 function ConsultingServiceGrid() {
   const items = [
-    { Icon: Briefcase, label: "Model A",  sub: "Strategic IT Consulting",   color: "#f59e0b" },
-    { Icon: Users,     label: "Model B",  sub: "Managed Engineering Teams", color: "#b45309" },
-    { Icon: Code2,     label: "Model C",  sub: "Project-Based Delivery",    color: "#d97706" },
-    { Icon: Globe,     label: "EU First", sub: "Swedish AB · SEK/EUR",      color: "#f59e0b" },
+    { Icon: Briefcase, label: "Model A",  sub: "Strategic IT Consulting",   color: "#1CB7B4" },
+    { Icon: Users,     label: "Model B",  sub: "Managed Engineering Teams", color: "#168AB0" },
+    { Icon: Code2,     label: "Model C",  sub: "Project-Based Delivery",    color: "#0D9488" },
+    { Icon: Globe,     label: "EU First", sub: "Swedish AB · SEK/EUR",      color: "#1CB7B4" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -95,9 +95,9 @@ export function Consulting() {
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(245,158,11,0.10),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.12),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(180,83,9,0.08),transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.10),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}20,transparent 70%)`, filter: "blur(60px)" }} />
 
@@ -127,7 +127,7 @@ export function Consulting() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>Discuss Your Engagement</Link>
-                <Link to="#models" className="hero-btn-secondary">View Service Models</Link>
+                <Link to="#models" className="hero-btn-secondary">View Engagement Models</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -162,7 +162,7 @@ export function Consulting() {
               style={{ borderColor: `${A}40`, background: `${A}18`, color: "#fcd34d" }}>
               Engagement Models
             </span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Service Models</h2>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Engagement Models</h2>
             <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto">
               Choose the engagement model that fits your situation. All work is contracted with ANTUTIVE AB — the Swedish entity that provides your EU compliance guarantee.
             </p>
@@ -304,7 +304,7 @@ export function Consulting() {
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  View All Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>

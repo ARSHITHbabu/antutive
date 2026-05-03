@@ -9,7 +9,7 @@ const steps = [
   { n: "06", title: "Support & Optimisation",  desc: "Post-launch maintenance, monitoring, and continuous improvement. Bug fixes, performance tuning, user training. SLA: 24h critical, 48h standard. Output: Ongoing Service Agreement." },
 ];
 
-export function DeliveryMethod({ accentColor = "#64B5F6" }: { accentColor?: string }) {
+export function DeliveryMethod({ accentColor = "#1CB7B4" }: { accentColor?: string }) {
   return (
     <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
       <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-50" />

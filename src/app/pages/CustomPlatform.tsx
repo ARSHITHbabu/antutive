@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Lock, Shield, Cpu, Server, Users, Settings, FileText, Database, Layers, Globe, Code2 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
-const A = "#8b5cf6";
+const A = "#6F3CC3";
 
 function PlatformGrid() {
   const items = [
@@ -14,12 +14,12 @@ function PlatformGrid() {
   return (
     <div className="grid grid-cols-2 gap-3">
       {items.map(({ icon: Icon, label, sub }, i) => (
-        <div key={i} className="p-4 rounded-2xl flex flex-col gap-2" style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)", backdropFilter: "blur(8px)" }}>
-          <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg,#8b5cf6,#6d28d9)" }}>
+        <div key={i} className="p-4 rounded-2xl flex flex-col gap-2" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.25)", backdropFilter: "blur(8px)" }}>
+          <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)" }}>
             <Icon className="w-4 h-4 text-white" />
           </div>
           <p className="text-sm font-bold text-white leading-tight">{label}</p>
-          <p className="text-xs text-violet-300 leading-snug">{sub}</p>
+          <p className="text-xs text-[#D7CCFF] leading-snug">{sub}</p>
         </div>
       ))}
     </div>
@@ -52,7 +52,7 @@ const competitors = [
   { them: "Direct API Usage (DIY)",    weakness: "Requires in-house AI engineering team",              advantage: "ANTUTIVE provides the full stack: UI, integration, deployment, and ongoing support" },
   { them: "ChatGPT Enterprise / Teams",weakness: "Data goes to OpenAI servers, single model lock-in",  advantage: "Data stays on-premise, any model supported, fully customised interface" },
   { them: "Generic AI Platform SaaS",  weakness: "One-size-fits-all interface, limited customisation", advantage: "Purpose-built for each client's workflow, brand, and user roles" },
-  { them: "Open-Source Deployments",   weakness: "Complex to deploy and maintain, no support",         advantage: "Managed service with SLA, ongoing development, and team training included" },
+  { them: "Open-Source Deployments",   weakness: "Complex to deploy and maintain, no support",         advantage: "Managed platform with SLA, ongoing development, and team training included" },
 ];
 
 export function CustomPlatform() {
@@ -62,19 +62,19 @@ export function CustomPlatform() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg,#0a0818 0%,#130a2a 50%,#1a0d35 100%)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.18) 0%,transparent 70%)", filter: "blur(40px)" }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.18) 0%,transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6" style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.30)", color: "#c4b5fd" }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6" style={{ background: "rgba(111,60,195,0.15)", border: "1px solid rgba(111,60,195,0.30)", color: "#D7CCFF" }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1CB7B4]" />
                 ANTUTIVE · Custom AI Platforms
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6" style={{ letterSpacing: "-0.02em" }}>
                 Your AI Workspace.<br />
-                <span style={{ background: "linear-gradient(90deg,#a78bfa,#8b5cf6,#c4b5fd)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                <span style={{ background: "linear-gradient(90deg,#D7CCFF,#6F3CC3,#1CB7B4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                   Your Data. Your Rules.
                 </span>
               </h1>
@@ -83,29 +83,29 @@ export function CustomPlatform() {
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
                 {["Data Sovereignty", "Any AI Model", "Custom Interface", "EU-Native"].map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)", color: "#c4b5fd" }}>{tag}</span>
+                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.25)", color: "#D7CCFF" }}>{tag}</span>
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#8b5cf6,#6d28d9)", boxShadow: "0 8px 30px rgba(139,92,246,0.35)" }}>
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)", boxShadow: "0 8px 30px rgba(111,60,195,0.35)" }}>
                   Discuss Your Platform <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(139,92,246,0.10)", border: "1px solid rgba(139,92,246,0.28)", color: "#c4b5fd" }}>
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(111,60,195,0.10)", border: "1px solid rgba(111,60,195,0.28)", color: "#D7CCFF" }}>
                   View Deployment Options
                 </Link>
               </div>
             </div>
             <div className="hidden lg:block">
               <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.10) 0%,transparent 70%)", filter: "blur(20px)" }} />
-                <div className="relative p-6 rounded-3xl" style={{ background: "rgba(139,92,246,0.08)", border: "1px solid rgba(139,92,246,0.20)", backdropFilter: "blur(12px)" }}>
-                  <p className="text-xs font-bold text-violet-400 uppercase tracking-widest mb-4">Deployment Options</p>
+                <div className="absolute -inset-4 rounded-3xl pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10) 0%,transparent 70%)", filter: "blur(20px)" }} />
+                <div className="relative p-6 rounded-3xl" style={{ background: "rgba(111,60,195,0.08)", border: "1px solid rgba(111,60,195,0.20)", backdropFilter: "blur(12px)" }}>
+                  <p className="text-xs font-bold text-[#D7CCFF] uppercase tracking-widest mb-4">Deployment Options</p>
                   <PlatformGrid />
-                  <div className="grid grid-cols-4 gap-3 mt-5 pt-5 border-t" style={{ borderColor: "rgba(139,92,246,0.20)" }}>
+                  <div className="grid grid-cols-4 gap-3 mt-5 pt-5 border-t" style={{ borderColor: "rgba(111,60,195,0.20)" }}>
                     {[["4", "Deploy Modes"], ["6+", "AI Providers"], ["100%", "Data Control"], ["EU", "Hosted"]].map(([val, label]) => (
                       <div key={label} className="text-center">
                         <p className="text-lg font-black text-white">{val}</p>
-                        <p className="text-xs text-violet-400 leading-tight">{label}</p>
+                        <p className="text-xs text-[#D7CCFF] leading-tight">{label}</p>
                       </div>
                     ))}
                   </div>
@@ -119,8 +119,8 @@ export function CustomPlatform() {
       {/* ARCHITECTURE PHILOSOPHY */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#0d0820,#180a38,#120720)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-15 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.10) 0%,transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10) 0%,transparent 70%)", filter: "blur(40px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -131,8 +131,8 @@ export function CustomPlatform() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {principles.map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant={["left", "up", "right"][i] as any} delay={i * 100}>
-                <div className="p-7 rounded-3xl h-full" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(139,92,246,0.22)", backdropFilter: "blur(12px)" }}>
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: "linear-gradient(135deg,#8b5cf6,#6d28d9)" }}>
+                <div className="p-7 rounded-3xl h-full" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(111,60,195,0.22)", backdropFilter: "blur(12px)" }}>
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)" }}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-3">{title}</h3>
@@ -147,8 +147,8 @@ export function CustomPlatform() {
       {/* PLATFORM CAPABILITIES */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.08) 0%,transparent 70%)", filter: "blur(60px)" }} />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.06) 0%,transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.08) 0%,transparent 70%)", filter: "blur(60px)" }} />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.08) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -160,7 +160,7 @@ export function CustomPlatform() {
             {capabilities.map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant="scale" delay={i * 70}>
                 <div className="p-6 rounded-2xl border h-full" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}25` }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg,${A},#6d28d9)` }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg,${A},#5A32A3)` }}>
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-sm font-bold text-white mb-2">{title}</h3>
@@ -175,7 +175,7 @@ export function CustomPlatform() {
       {/* DEPLOYMENT MODELS */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#06041a 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.25) 0%,transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute top-1/3 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.25) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -206,8 +206,8 @@ export function CustomPlatform() {
       {/* COMPETITIVE DIFFERENTIATION */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#080618 50%,#0a0820 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.05) 0%,transparent 70%)", filter: "blur(60px)" }} />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(109,40,217,0.04) 0%,transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.05) 0%,transparent 70%)", filter: "blur(60px)" }} />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.06) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -235,16 +235,16 @@ export function CustomPlatform() {
       {/* CTA */}
       <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#0d0820,#1e1b4b,#2d1a5e)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-15 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.15) 0%,transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.15) 0%,transparent 70%)", filter: "blur(40px)" }} />
         <Reveal variant="flip">
           <div className="max-w-2xl mx-auto px-4 text-center relative">
             <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Design Your Platform</h2>
             <p className="text-sm text-white/55 mb-8 leading-relaxed">Every deployment is purpose-built. Book a session to discuss your workflow, data residency requirements, and model preferences.</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#8b5cf6,#6d28d9)", boxShadow: "0 8px 30px rgba(139,92,246,0.35)" }}>
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)", boxShadow: "0 8px 30px rgba(111,60,195,0.35)" }}>
                 Book a Strategy Call <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.30)", color: "#c4b5fd" }}>
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.30)", color: "#D7CCFF" }}>
                 View Deployment Options
               </Link>
             </div>

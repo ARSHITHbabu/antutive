@@ -2,9 +2,9 @@ import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Shield, Zap, Users, Globe, Building2, Award, Sparkles } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
-const A = "#6366f1";
-const A2 = "#4338ca";
-const D  = "#1e1b4b";
+const A = "#6F3CC3";
+const A2 = "#5A32A3";
+const D  = "#160D2B";
 
 const heroMetrics = [
   { value: "GBG",  label: "Gothenburg HQ"   },
@@ -23,15 +23,15 @@ function CompanyHeroCard() {
     { label: "Invoicing",  value: "SEK / EUR (VAT-reg.)"     },
   ];
   return (
-    <div className="p-6 rounded-3xl" style={{ background: "rgba(99,102,241,0.08)", border: "1px solid rgba(99,102,241,0.22)", backdropFilter: "blur(12px)" }}>
+    <div className="p-6 rounded-3xl" style={{ background: "rgba(111,60,195,0.08)", border: "1px solid rgba(111,60,195,0.22)", backdropFilter: "blur(12px)" }}>
       <div className="flex items-center gap-2 mb-5">
-        <Building2 className="w-4 h-4 text-indigo-300" />
-        <p className="text-xs font-bold text-indigo-300 uppercase tracking-widest">Company Registration</p>
+        <Building2 className="w-4 h-4 text-[#D7CCFF]" />
+        <p className="text-xs font-bold text-[#D7CCFF] uppercase tracking-widest">Company Registration</p>
       </div>
       <div className="flex flex-col gap-0">
         {facts.map(({ label, value }, i) => (
           <div key={i} className="flex justify-between items-center py-3 border-b last:border-0"
-            style={{ borderColor: "rgba(99,102,241,0.15)", animation: `fadeUp 0.5s ease ${i * 80}ms both` }}>
+            style={{ borderColor: "rgba(28,183,180,0.16)", animation: `fadeUp 0.5s ease ${i * 80}ms both` }}>
             <span className="text-xs text-white/40 uppercase tracking-wide font-semibold">{label}</span>
             <span className="text-xs font-bold text-white">{value}</span>
           </div>
@@ -77,9 +77,9 @@ export function About() {
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(99,102,241,0.12),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.14),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(67,56,202,0.10),transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(60px)" }} />
 
@@ -88,7 +88,7 @@ export function About() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
-                <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
+                <Sparkles className="w-3.5 h-3.5 text-[#D7CCFF]" />
                 <span className="text-xs font-bold tracking-widest uppercase">About ANTUTIVE AB</span>
               </div>
 
@@ -167,7 +167,7 @@ export function About() {
               <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}22`, background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
                 <div className="flex items-center gap-2 mb-5">
                   <Building2 className="w-4 h-4" style={{ color: A }} />
-                  <h3 className="text-sm font-bold text-indigo-300 uppercase tracking-wide">Company Registration</h3>
+                  <h3 className="text-sm font-bold text-[#D7CCFF] uppercase tracking-wide">Company Registration</h3>
                 </div>
                 <div className="grid grid-cols-1 gap-0">
                   {companyFacts.map(({ label, value }, i) => (
@@ -240,7 +240,7 @@ export function About() {
                 <div className="p-6 rounded-2xl h-full transition-all duration-300 hover:-translate-y-1"
                   style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", backdropFilter: "blur(12px)" }}>
                   <div className="flex items-start gap-3 mb-3">
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-indigo-300" />
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#D7CCFF]" />
                     <h3 className="text-sm font-bold text-white">{d.title}</h3>
                   </div>
                   <p className="text-xs text-white/60 leading-relaxed pl-7">{d.detail}</p>
@@ -314,7 +314,7 @@ export function About() {
                   Get in Touch <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/services" className="cta-btn-secondary" style={{ borderColor: `${A}40`, color: A }}>
-                  View Our Services
+                  Explore Solutions
                 </Link>
               </div>
             </div>
