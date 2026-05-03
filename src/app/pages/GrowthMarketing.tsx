@@ -6,9 +6,9 @@ import {
 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
-const A  = "#10b981";
-const A2 = "#059669";
-const D  = "#064e3b";
+const A  = "#1CB7B4";
+const A2 = "#168AB0";
+const D  = "#134E4A";
 
 const heroMetrics = [
   { value: "80%", label: "Video Cost Reduction" },
@@ -20,10 +20,10 @@ const heroMetrics = [
 /* ── hero right: 4-service grid ── */
 function GrowthServiceGrid() {
   const items = [
-    { Icon: Search,    label: "GEO Strategy",    sub: "AI search visibility",  color: "#10b981" },
-    { Icon: Video,     label: "AI Video",         sub: "Script → screen fast",  color: "#059669" },
-    { Icon: Zap,       label: "Sales Automation", sub: "AI-powered pipeline",   color: "#047857" },
-    { Icon: BarChart3, label: "Growth Analytics", sub: "Revenue intelligence",  color: "#10b981" },
+    { Icon: Search,    label: "GEO Strategy",    sub: "AI search visibility",  color: "#1CB7B4" },
+    { Icon: Video,     label: "AI Video",         sub: "Script → screen fast",  color: "#168AB0" },
+    { Icon: Zap,       label: "Sales Automation", sub: "AI-powered pipeline",   color: "#0D9488" },
+    { Icon: BarChart3, label: "Growth Analytics", sub: "Revenue intelligence",  color: "#1CB7B4" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">

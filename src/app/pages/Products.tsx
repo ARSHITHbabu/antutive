@@ -2,8 +2,8 @@ import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Mic, Calendar, Zap, FileText, ShoppingCart, Shield, Globe, Package, Star, Sparkles } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
-const A = "#ec4899";
-const D = "#4a044e";
+const A = "#6F3CC3";
+const D = "#160D2B";
 
 const heroMetrics = [
   { value: "Q3",   label: "2026 MVP Launch" },
@@ -81,9 +81,9 @@ export function Products() {
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(236,72,153,0.12),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.14),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(107,33,168,0.10),transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(60px)" }} />
 
@@ -140,7 +140,7 @@ export function Products() {
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(107,33,168,0.12),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.12),transparent 70%)", filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -198,7 +198,7 @@ export function Products() {
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}15,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.10),transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-35" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,7 +215,7 @@ export function Products() {
                 <div className="p-7 rounded-3xl border h-full flex flex-col relative transition-all duration-300 hover:-translate-y-1"
                   style={{
                     borderColor: tier.featured ? A : `${A}22`,
-                    background: tier.featured ? `linear-gradient(135deg,#4a044e,#be185d)` : "rgba(255,255,255,0.04)",
+                    background: tier.featured ? `linear-gradient(135deg,#160D2B,#6F3CC3,#F36D4F)` : "rgba(255,255,255,0.04)",
                     backdropFilter: "blur(10px)",
                     boxShadow: tier.featured ? `0 24px 60px ${A}30` : `0 4px 20px rgba(0,0,0,0.3)`,
                   }}>
@@ -292,7 +292,7 @@ export function Products() {
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.10),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -347,7 +347,7 @@ export function Products() {
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(168,85,247,0.12),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.12),transparent 70%)", filter: "blur(50px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
 
         <div className="relative z-10">
@@ -361,7 +361,7 @@ export function Products() {
               <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Join the FAMANT Waitlist</h2>
               <p className="text-sm text-white/55 mb-8 leading-relaxed">MVP launching Q3 2026. Be among the first Swedish families to access FAMANT — voice-first, EU-hosted, GDPR compliant.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,${A},#be185d)` }}>
+                <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,#F5C84C,#1CB7B4,${A})` }}>
                   Request Early Access <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/contact" className="cta-btn-secondary" style={{ borderColor: `${A}40`, color: A }}>

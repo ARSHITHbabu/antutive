@@ -3,9 +3,9 @@ import { Link } from "react-router";
 import { Mail, MapPin, Clock, ArrowRight, Send, CheckCircle2, Sparkles, Building2 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
-const A  = "#64B5F6";
-const A2 = "#0369a1";
-const D  = "#0c4a6e";
+const A  = "#6F3CC3";
+const A2 = "#5A32A3";
+const D  = "#2E1065";
 
 const heroMetrics = [
   { value: "24h",  label: "Response Time"    },
@@ -22,8 +22,8 @@ function ContactHeroCard() {
     { Icon: Building2, label: "Company",        value: "ANTUTIVE AB · 559576-7228"    },
   ];
   return (
-    <div className="p-6 rounded-3xl" style={{ background: "rgba(100,181,246,0.08)", border: "1px solid rgba(100,181,246,0.20)", backdropFilter: "blur(12px)" }}>
-      <p className="text-xs font-bold text-blue-300 uppercase tracking-widest mb-5">Get in Touch</p>
+    <div className="p-6 rounded-3xl" style={{ background: "rgba(28,183,180,0.08)", border: "1px solid rgba(28,183,180,0.20)", backdropFilter: "blur(12px)" }}>
+      <p className="text-xs font-bold text-[#1CB7B4] uppercase tracking-widest mb-5">Get in Touch</p>
       <div className="flex flex-col gap-4">
         {details.map(({ Icon, label, value }, i) => (
           <div key={i} className="flex items-start gap-3"
@@ -39,7 +39,7 @@ function ContactHeroCard() {
           </div>
         ))}
       </div>
-      <div className="mt-6 pt-5 border-t" style={{ borderColor: "rgba(100,181,246,0.15)" }}>
+      <div className="mt-6 pt-5 border-t" style={{ borderColor: "rgba(28,183,180,0.15)" }}>
         <p className="text-xs text-white/50 leading-relaxed">Submit the form or email us directly. We respond within one business day — no sales pressure, just a fit conversation.</p>
       </div>
     </div>
@@ -75,9 +75,9 @@ export function Contact() {
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(100,181,246,0.12),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.12),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(3,105,161,0.10),transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
           style={{ background: `radial-gradient(circle,${A}20,transparent 70%)`, filter: "blur(60px)" }} />
 
@@ -86,7 +86,7 @@ export function Contact() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
-                <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+                <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]" />
                 <span className="text-xs font-bold tracking-widest uppercase">Contact ANTUTIVE AB</span>
               </div>
 
@@ -189,14 +189,14 @@ export function Contact() {
                       <Icon className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-blue-300 uppercase tracking-wide mb-1">{label}</p>
+                      <p className="text-xs font-bold text-[#1CB7B4] uppercase tracking-wide mb-1">{label}</p>
                       {lines.map((line, j) => <p key={j} className="text-xs text-white/55">{line}</p>)}
                     </div>
                   </div>
                 ))}
 
                 <div className="p-5 rounded-2xl border" style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}22`, backdropFilter: "blur(8px)" }}>
-                  <h3 className="text-xs font-bold text-blue-300 uppercase tracking-wide mb-3">What Happens After You Submit</h3>
+                  <h3 className="text-xs font-bold text-[#1CB7B4] uppercase tracking-wide mb-3">What Happens After You Submit</h3>
                   <div className="flex flex-col gap-2.5">
                     {[
                       "Response within one business day",
@@ -254,7 +254,7 @@ export function Contact() {
                               onChange={handleChange}
                               required={required}
                               placeholder={placeholder}
-                              className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-blue-300"
+                              className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-[#1CB7B4]"
                               style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                             />
                           </div>
@@ -268,7 +268,7 @@ export function Contact() {
                             type="email" id="email" name="email"
                             value={formData.email} onChange={handleChange}
                             required placeholder="jane@company.com"
-                            className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-blue-300"
+                            className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all focus:border-[#1CB7B4]"
                             style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                           />
                         </div>
@@ -278,7 +278,7 @@ export function Contact() {
                             id="service" name="service"
                             value={formData.service} onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 rounded-xl border text-sm text-white outline-none transition-all focus:border-blue-300"
+                            className="w-full px-4 py-3 rounded-xl border text-sm text-white outline-none transition-all focus:border-[#1CB7B4]"
                             style={{ borderColor: `${A}25`, background: "rgba(15,20,40,0.85)" }}
                           >
                             <option value="">Select an area</option>
@@ -303,7 +303,7 @@ export function Contact() {
                           value={formData.message} onChange={handleChange}
                           required rows={5}
                           placeholder="Describe your project, challenge, or question. The more context you share, the more useful our first call will be."
-                          className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all resize-none focus:border-blue-300"
+                          className="w-full px-4 py-3 rounded-xl border text-sm text-white placeholder:text-white/30 outline-none transition-all resize-none focus:border-[#1CB7B4]"
                           style={{ borderColor: `${A}25`, background: "rgba(255,255,255,0.06)" }}
                         />
                       </div>

@@ -38,8 +38,8 @@ function DataNetworkVisual() {
     <div className="relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
       <svg viewBox="0 0 420 420" className="w-full max-w-[400px]" aria-hidden="true" style={{ overflow: "visible" }}>
         <defs>
-          <radialGradient id="cG"><stop offset="0%" stopColor="#fff" stopOpacity=".95"/><stop offset="45%" stopColor="#90CAF9" stopOpacity=".6"/><stop offset="100%" stopColor="#CE93D8" stopOpacity="0"/></radialGradient>
-          <radialGradient id="gG"><stop offset="0%" stopColor="#64B5F6" stopOpacity=".35"/><stop offset="100%" stopColor="#CE93D8" stopOpacity="0"/></radialGradient>
+          <radialGradient id="cG"><stop offset="0%" stopColor="#fff" stopOpacity=".95"/><stop offset="45%" stopColor="#D7CCFF" stopOpacity=".6"/><stop offset="100%" stopColor="#5A32A3" stopOpacity="0"/></radialGradient>
+          <radialGradient id="gG"><stop offset="0%" stopColor="#1CB7B4" stopOpacity=".32"/><stop offset="100%" stopColor="#6F3CC3" stopOpacity="0"/></radialGradient>
           <filter id="f4"><feGaussianBlur stdDeviation="4"/></filter>
           <filter id="f2"><feGaussianBlur stdDeviation="2"/></filter>
         </defs>
@@ -50,8 +50,8 @@ function DataNetworkVisual() {
         <g opacity=".07">{[0,42,84,126,168,210,252,294,336,378,420].map(x=><line key={`v${x}`} x1={x} y1="0" x2={x} y2="420" stroke="white" strokeWidth=".5"/>)}{[0,42,84,126,168,210,252,294,336,378,420].map(y=><line key={`h${y}`} x1="0" y1={y} x2="420" y2={y} stroke="white" strokeWidth=".5"/>)}</g>
         {([[210,210,365,100],[210,210,55,115],[210,210,375,310],[210,210,50,305],[210,210,210,30],[210,210,210,395],[365,100,55,115],[365,100,375,310],[55,115,50,305],[375,310,50,305]] as number[][]).map(([x1,y1,x2,y2],i)=><line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,.13)" strokeWidth=".7" className={`dn-line dn-line-${(i%3)+1}`}/>)}
         {([{cx:365,cy:100,r:9,cls:"dn-node-o1"},{cx:55,cy:115,r:8,cls:"dn-node-o2"},{cx:375,cy:310,r:11,cls:"dn-node-o3"},{cx:50,cy:305,r:7,cls:"dn-node-o4"},{cx:210,cy:30,r:9,cls:"dn-node-o5"},{cx:210,cy:395,r:7,cls:"dn-node-o6"}]).map(({cx,cy,r,cls})=><g key={cls} className={cls}><circle cx={cx} cy={cy} r={r+9} fill="none" stroke="rgba(255,255,255,.15)" strokeWidth="1" className="dn-ping"/><circle cx={cx} cy={cy} r={r+4} fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.35)" strokeWidth="1"/><circle cx={cx} cy={cy} r={r/2} fill="rgba(255,255,255,.95)"/></g>)}
-        <g className="dn-mid-1"><circle cx="315" cy="210" r="6" fill="rgba(100,181,246,.25)" stroke="rgba(100,181,246,.8)" strokeWidth="1"/><circle cx="315" cy="210" r="3" fill="#90CAF9"/></g>
-        <g className="dn-mid-2"><circle cx="105" cy="210" r="6" fill="rgba(206,147,216,.25)" stroke="rgba(206,147,216,.8)" strokeWidth="1"/><circle cx="105" cy="210" r="3" fill="#CE93D8"/></g>
+        <g className="dn-mid-1"><circle cx="315" cy="210" r="6" fill="rgba(28,183,180,.25)" stroke="rgba(28,183,180,.8)" strokeWidth="1"/><circle cx="315" cy="210" r="3" fill="#1CB7B4"/></g>
+        <g className="dn-mid-2"><circle cx="105" cy="210" r="6" fill="rgba(111,60,195,.25)" stroke="rgba(111,60,195,.8)" strokeWidth="1"/><circle cx="105" cy="210" r="3" fill="#6F3CC3"/></g>
         <g className="dn-mid-3"><circle cx="210" cy="105" r="5" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.6)" strokeWidth="1"/><circle cx="210" cy="105" r="2.5" fill="white"/></g>
         <g className="dn-mid-4"><circle cx="210" cy="315" r="5" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.6)" strokeWidth="1"/><circle cx="210" cy="315" r="2.5" fill="white"/></g>
         {([[155,88],[275,145],[135,260],[295,320],[240,72],[115,180],[305,175],[170,345]] as number[][]).map(([cx,cy],i)=><circle key={i} cx={cx} cy={cy} r="1.5" fill="rgba(255,255,255,.45)" className={`dn-particle dn-particle-${(i%4)+1}`}/>)}
@@ -65,7 +65,7 @@ function DataNetworkVisual() {
 }
 
 const COLS = ["Data & Analytics", "Agentic AI", "Custom AI Platform", "AI Growth"];
-const COL_COLORS = ["#0891b2", "#8b5cf6", "#6366f1", "#10b981"];
+const COL_COLORS = ["#F5C84C", "#1CB7B4", "#6F3CC3", "#F36D4F"];
 
 const frictionRows = [
   { pain: "Manual Reporting",  context: "Finance teams spending 2+ days/week exporting spreadsheets and rebuilding the same reports. No single source of truth.", solutions: ["Auto-Dashboards",    "Drafting Agents",   "Query Interface",    "Content Engine"]   },
@@ -85,9 +85,9 @@ const maturityLevels = [
 
 export function Home() {
   const pillars = [
-    { n: "01", title: "AI Solutions Suite", tag: "AI, Data & Growth Platforms", desc: "Generative AI, data analytics, growth automation, and custom AI platforms — engineered and deployed for your specific environment.", href: "/services", color: "#64B5F6" },
-    { n: "02", title: "Strategic Consulting",  tag: "IT Consulting & Distributed Engineering", desc: "Senior advisory, architecture reviews, managed engineering teams, and end-to-end project delivery.", href: "/consulting", color: "#10b981" },
-    { n: "03", title: "Products",              tag: "Enterprise SaaS Portfolio", desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.", href: "/products", color: "#8b5cf6" },
+    { n: "01", title: "AI Solutions Suite", tag: "AI, Data & Growth Platforms", desc: "Generative AI, data analytics, growth automation, and custom AI platforms — engineered and deployed for your specific environment.", href: "/services", color: "#F5C84C" },
+    { n: "02", title: "Strategic Consulting",  tag: "IT Consulting & Distributed Engineering", desc: "Senior advisory, architecture reviews, managed engineering teams, and end-to-end project delivery.", href: "/consulting", color: "#1CB7B4" },
+    { n: "03", title: "Products",              tag: "Enterprise SaaS Portfolio", desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.", href: "/products", color: "#6F3CC3" },
   ];
 
   const practices = [
@@ -117,7 +117,7 @@ export function Home() {
     <div>
       {/* ── HERO ── */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "92vh" }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#030608] via-[#06091a] to-[#0a0618]"/>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#030608] via-[#06141A] to-[#0A0618]"/>
         <div className="absolute inset-0 hero-mesh-overlay"/>
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div className="blob blob-1"/><div className="blob blob-2"/><div className="blob blob-3"/>
@@ -182,9 +182,9 @@ export function Home() {
       </div>
 
       {/* ── THREE PILLARS ── */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg,#0f172a 0%,#1e2d50 100%)" }}>
+      <section className="py-24" style={{ background: "linear-gradient(135deg,#071018 0%,#10242B 48%,#160D2B 100%)" }}>
         <div className="absolute pointer-events-none" style={{ inset: 0, overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: -80, right: -80, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(100,181,246,.1),transparent 70%)", filter: "blur(40px)" }}/>
+          <div style={{ position: "absolute", top: -80, right: -80, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(28,183,180,.12),transparent 70%)", filter: "blur(40px)" }}/>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -215,8 +215,8 @@ export function Home() {
       {/* ── OPERATIONAL FRICTION MATRIX ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 55%,#080c1a 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-50"/>
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.16),transparent 70%)", filter: "blur(70px)" }}/>
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(206,147,216,0.13),transparent 70%)", filter: "blur(60px)" }}/>
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.16),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.15),transparent 70%)", filter: "blur(60px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
@@ -226,7 +226,7 @@ export function Home() {
             </div>
           </Reveal>
           <Reveal variant="scale">
-            <div className="overflow-x-auto rounded-2xl border shadow-sm" style={{ borderColor: "rgba(100,181,246,0.15)" }}>
+            <div className="overflow-x-auto rounded-2xl border shadow-sm" style={{ borderColor: "rgba(28,183,180,0.18)" }}>
               <table className="w-full min-w-[700px]">
                 <thead>
                   <tr style={{ background: "#030611" }}>
@@ -248,19 +248,19 @@ export function Home() {
                         onClick={() => setSelectedPain(selectedPain === ri ? null : ri)}
                         className="cursor-pointer transition-colors"
                         style={{
-                          background: selectedPain === ri ? "rgba(100,181,246,0.1)" : ri % 2 === 0 ? "#07091a" : "#060818",
-                          borderBottom: "1px solid rgba(100,181,246,0.1)",
+                          background: selectedPain === ri ? "rgba(28,183,180,0.1)" : ri % 2 === 0 ? "#07091a" : "#060818",
+                          borderBottom: "1px solid rgba(28,183,180,0.1)",
                         }}
                       >
                         <td className="px-6 py-4">
                           <span className="text-sm font-bold text-white flex items-center gap-2.5">
                             <span className="w-2 h-2 rounded-full flex-shrink-0 transition-transform"
-                              style={{ background: selectedPain === ri ? "#64B5F6" : "#cbd5e1", transform: selectedPain === ri ? "scale(1.5)" : "scale(1)" }}/>
+                              style={{ background: selectedPain === ri ? "#1CB7B4" : "#cbd5e1", transform: selectedPain === ri ? "scale(1.5)" : "scale(1)" }}/>
                             {row.pain}
                           </span>
                         </td>
                         {row.solutions.map((sol, ci) => (
-                          <td key={ci} className="px-4 py-4 text-center" style={{ borderLeft: "1px solid rgba(100,181,246,0.06)" }}>
+                          <td key={ci} className="px-4 py-4 text-center" style={{ borderLeft: "1px solid rgba(111,60,195,0.08)" }}>
                             <span className="text-xs font-semibold transition-colors"
                               style={{ color: selectedPain === ri ? COL_COLORS[ci] : "rgba(255,255,255,0.35)" }}>
                               {sol}
@@ -270,7 +270,7 @@ export function Home() {
                       </tr>
                       {selectedPain === ri && (
                         <tr key={`exp-${ri}`}>
-                          <td colSpan={5} style={{ background: "rgba(100,181,246,0.07)", borderBottom: "1px solid rgba(100,181,246,0.15)" }}>
+                          <td colSpan={5} style={{ background: "rgba(28,183,180,0.07)", borderBottom: "1px solid rgba(28,183,180,0.15)" }}>
                             <div className="px-6 py-4 flex flex-col sm:flex-row gap-4 items-start">
                               <div className="flex-1 min-w-0">
                                 <p className="text-xs font-bold text-white mb-1 uppercase tracking-wide">Typical Situation</p>
@@ -300,8 +300,8 @@ export function Home() {
       {/* ── FIVE PRACTICE AREAS ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#0a1628 0%,#162035 50%,#0f1a2e 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none"/>
-        <div className="absolute top-10 right-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.1),transparent 70%)", filter: "blur(70px)" }}/>
-        <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(206,147,216,0.1),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute top-10 right-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.1),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.1),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-14">
@@ -329,7 +329,7 @@ export function Home() {
 
       {/* ── AI MATURITY PATH ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#090618 100%)" }}>
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.22),transparent 70%)", filter: "blur(80px)" }}/>
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.2),transparent 70%)", filter: "blur(80px)" }}/>
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.18),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -361,7 +361,7 @@ export function Home() {
 
             {/* RIGHT — bar chart */}
             <Reveal variant="right" delay={120}>
-              <div className="p-8 rounded-3xl border" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)", borderColor: "rgba(100,181,246,0.18)" }}>
+              <div className="p-8 rounded-3xl border" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)", borderColor: "rgba(28,183,180,0.18)" }}>
                 <p className="text-xs font-bold text-white/45 uppercase tracking-widest mb-8">Typical Engagement Duration</p>
                 <div className="flex items-end gap-4" style={{ height: 160 }}>
                   {maturityLevels.map((m) => (
@@ -375,17 +375,17 @@ export function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-4 mt-4 border-t pt-4" style={{ borderColor: "rgba(100,181,246,0.1)" }}>
+                <div className="flex gap-4 mt-4 border-t pt-4" style={{ borderColor: "rgba(28,183,180,0.12)" }}>
                   {maturityLevels.map((m) => (
                     <div key={m.name} className="flex-1 text-center">
                       <span className="text-xs text-white/45">{m.name}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(100,181,246,0.06)", border: "1px solid rgba(100,181,246,0.15)" }}>
+                <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(111,60,195,0.08)", border: "1px solid rgba(111,60,195,0.18)" }}>
                   <p className="text-xs font-bold text-white mb-1">Not sure where you sit?</p>
                   <p className="text-xs text-white/55 leading-relaxed">The Business Understanding session maps your current data state in 90 minutes — at no cost for qualified prospects.</p>
-                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#64B5F6" }}>
+                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#1CB7B4" }}>
                     Book free session <ArrowRight className="w-3.5 h-3.5"/>
                   </Link>
                 </div>
@@ -398,8 +398,8 @@ export function Home() {
       {/* ── WHY ANTUTIVE ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#0f172a 0%,#1e1840 60%,#0f172a 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-50"/>
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(100,181,246,0.1),transparent 70%)", filter: "blur(80px)" }}/>
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(206,147,216,0.1),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.1),transparent 70%)", filter: "blur(80px)" }}/>
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.1),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
@@ -417,7 +417,7 @@ export function Home() {
                 We eliminate that gap: delivering custom AI solutions, analytics infrastructure, growth automation,
                 and ready-to-deploy SaaS products with Swedish-grade trust and full regulatory compliance.
               </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#90CAF9] group">
+              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D7CCFF] group">
                 About ANTUTIVE <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
               </Link>
             </Reveal>
@@ -430,11 +430,11 @@ export function Home() {
                     <div>
                       <div className="flex items-baseline gap-2">
                         <span className="text-2xl font-bold text-white">{stat}</span>
-                        <span className="text-sm font-semibold text-[#64B5F6]">{label}</span>
+                        <span className="text-sm font-semibold text-[#1CB7B4]">{label}</span>
                       </div>
                       <p className="text-xs text-white/50 mt-0.5">{desc}</p>
                     </div>
-                    <CheckCircle2 className="w-4 h-4 text-[#64B5F6] ml-auto flex-shrink-0"/>
+                    <CheckCircle2 className="w-4 h-4 text-[#1CB7B4] ml-auto flex-shrink-0"/>
                   </div>
                 </Reveal>
               ))}
@@ -450,9 +450,9 @@ export function Home() {
             <div className="cta-card">
               <div className="cta-orb cta-orb-1"/><div className="cta-orb cta-orb-2"/><div className="cta-orb cta-orb-3"/>
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#64B5F6]/30 bg-[#64B5F6]/08 mb-6">
-                  <Sparkles className="w-3.5 h-3.5 text-[#64B5F6]"/>
-                  <span className="text-xs font-bold tracking-widest text-[#64B5F6] uppercase">Start the Conversation</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1CB7B4]/30 bg-[#1CB7B4]/10 mb-6">
+                  <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]"/>
+                  <span className="text-xs font-bold tracking-widest text-[#1CB7B4] uppercase">Start the Conversation</span>
                 </div>
                 <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>
                   Ready to Build<br/>Your AI Advantage?
