@@ -1,8 +1,17 @@
 import { Link } from "react-router";
-import { ArrowRight, CheckCircle2, Lock, Shield, Cpu, Server, Users, Settings, FileText, Database, Layers, Globe, Code2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lock, Shield, Cpu, Server, Users, Settings, FileText, Database, Layers, Globe, Code2, Sparkles } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
 const A = "#6F3CC3";
+const A2 = "#1CB7B4";
+const D = "#2b1550";
+
+const heroMetrics = [
+  { value: "4", label: "Deploy Modes" },
+  { value: "6+", label: "AI Providers" },
+  { value: "100%", label: "Data Control" },
+  { value: "EU", label: "Hosted" },
+];
 
 function PlatformGrid() {
   const items = [
@@ -12,14 +21,22 @@ function PlatformGrid() {
     { icon: Code2,  label: "Hybrid",         sub: "Split by data sensitivity" },
   ];
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
       {items.map(({ icon: Icon, label, sub }, i) => (
-        <div key={i} className="p-4 rounded-2xl flex flex-col gap-2" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.25)", backdropFilter: "blur(8px)" }}>
-          <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)" }}>
-            <Icon className="w-4 h-4 text-white" />
+        <div
+          key={i}
+          className="p-5 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+          style={{
+            background: "rgba(255,255,255,0.07)",
+            border: "1px solid rgba(255,255,255,0.14)",
+            animation: `fadeUp 0.7s ease ${i * 120}ms both`,
+          }}
+        >
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: `linear-gradient(135deg,${A}80,${A2}30)`, border: `1px solid ${A2}50` }}>
+            <Icon className="w-5 h-5 text-white" />
           </div>
-          <p className="text-sm font-bold text-white leading-tight">{label}</p>
-          <p className="text-xs text-[#D7CCFF] leading-snug">{sub}</p>
+          <p className="text-sm font-bold text-white mb-1">{label}</p>
+          <p className="text-xs text-white/50">{sub}</p>
         </div>
       ))}
     </div>
@@ -27,9 +44,9 @@ function PlatformGrid() {
 }
 
 const principles = [
-  { icon: Shield,   title: "Data Sovereignty",  desc: "All data processing happens within your own infrastructure — on-premise servers, private cloud, or EU-hosted environments. No corporate data is transmitted to external AI provider servers. Conversation logs, uploaded documents, and generated outputs remain under your complete control." },
+  { icon: Shield,   title: "Data Sovereignty",  desc: "All data processing happens within your own infrastructure - on-premise servers, private cloud, or EU-hosted environments. No corporate data is transmitted to external AI provider servers. Conversation logs, uploaded documents, and generated outputs remain under your complete control." },
   { icon: Cpu,      title: "Model Agnosticism", desc: "Not locked to any single AI provider. Select from commercial APIs (Claude via Anthropic SDK, GPT via OpenAI SDK, Gemini via Google SDK) or deploy open-weight models (LLaMA, Mistral, Mixtral, Phi) locally. Switch providers based on cost, capability, or compliance requirements." },
-  { icon: Settings, title: "Custom Interface",  desc: "Every deployment gets a tailored UI built to your brand, workflow requirements, and user roles. This is not a white-label chatbot — it is a purpose-built AI workspace designed around how your specific organisation works." },
+  { icon: Settings, title: "Custom Interface",  desc: "Every deployment gets a tailored UI built to your brand, workflow requirements, and user roles. This is not a white-label chatbot - it is a purpose-built AI workspace designed around how your specific organisation works." },
 ];
 
 const capabilities = [
@@ -38,7 +55,7 @@ const capabilities = [
   { icon: Lock,     title: "Role-Based Access Control",    desc: "Different user groups see different AI capabilities and have access to different data sets. Executives see financial analysis; customer service agents see only product documentation." },
   { icon: Settings, title: "SDK Integration Layer",        desc: "Pre-built connectors for Anthropic, OpenAI, Google, Azure OpenAI, Hugging Face, and self-hosted model endpoints (vLLM, Ollama, LocalAI). New providers added through a standardised adapter pattern." },
   { icon: Shield,   title: "Audit & Compliance Logging",   desc: "Every AI interaction is logged with user identity, model used, tokens consumed, and response generated. Logs stored on your infrastructure and exportable for regulatory review." },
-  { icon: Database, title: "Custom Tool Integration",      desc: "Connect the AI interface to your internal systems — ERP, CRM, ticketing, HR — through function-calling capabilities. The AI does not just answer questions; it takes actions." },
+  { icon: Database, title: "Custom Tool Integration",      desc: "Connect the AI interface to your internal systems - ERP, CRM, ticketing, HR - through function-calling capabilities. The AI does not just answer questions; it takes actions." },
 ];
 
 const deploymentModels = [
@@ -60,69 +77,74 @@ export function CustomPlatform() {
     <div>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg,#0a0818 0%,#130a2a 50%,#1a0d35 100%)" }}>
-        <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.18) 0%,transparent 70%)", filter: "blur(40px)" }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
+      <section
+        className="relative overflow-hidden flex items-center"
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
+      >
+        <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%)", filter: "blur(30px)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
+          style={{ background: `radial-gradient(circle,${A}24,transparent 70%)`, filter: "blur(60px)" }} />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6" style={{ background: "rgba(111,60,195,0.15)", border: "1px solid rgba(111,60,195,0.30)", color: "#D7CCFF" }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1CB7B4]" />
-                ANTUTIVE · Custom AI Platforms
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
+                style={{ animation: "fadeUp 0.6s ease both" }}>
+                <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]" />
+                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · Custom AI Platforms</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6" style={{ letterSpacing: "-0.02em" }}>
-                Your AI Workspace.<br />
-                <span style={{ background: "linear-gradient(90deg,#D7CCFF,#6F3CC3,#1CB7B4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                  Your Data. Your Rules.
-                </span>
+
+              <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
+                Your AI Workspace.<br />Your Data. Your Rules.
               </h1>
-              <p className="text-base text-white/55 leading-relaxed mb-8 max-w-lg">
+
+              <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
+                style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
                 Private, model-agnostic AI workspaces where your data never leaves your environment. You own the data, the interface, the conversation history, and the deployment infrastructure.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
+
+              <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
                 {["Data Sovereignty", "Any AI Model", "Custom Interface", "EU-Native"].map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.25)", color: "#D7CCFF" }}>{tag}</span>
+                  <span key={tag} className="px-3 py-1 rounded-full border border-white/20 bg-white/08 text-white/75 text-xs font-medium backdrop-blur-sm">{tag}</span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)", boxShadow: "0 8px 30px rgba(111,60,195,0.35)" }}>
-                  Discuss Your Platform <ArrowRight className="w-4 h-4" />
+
+              <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
+                <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>
+                  Discuss Your Platform
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(111,60,195,0.10)", border: "1px solid rgba(111,60,195,0.28)", color: "#D7CCFF" }}>
+                <Link to="#deployment" className="hero-btn-secondary">
                   View Deployment Options
                 </Link>
               </div>
-            </div>
-            <div className="hidden lg:block">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10) 0%,transparent 70%)", filter: "blur(20px)" }} />
-                <div className="relative p-6 rounded-3xl" style={{ background: "rgba(111,60,195,0.08)", border: "1px solid rgba(111,60,195,0.20)", backdropFilter: "blur(12px)" }}>
-                  <p className="text-xs font-bold text-[#D7CCFF] uppercase tracking-widest mb-4">Deployment Options</p>
-                  <PlatformGrid />
-                  <div className="grid grid-cols-4 gap-3 mt-5 pt-5 border-t" style={{ borderColor: "rgba(111,60,195,0.20)" }}>
-                    {[["4", "Deploy Modes"], ["6+", "AI Providers"], ["100%", "Data Control"], ["EU", "Hosted"]].map(([val, label]) => (
-                      <div key={label} className="text-center">
-                        <p className="text-lg font-black text-white">{val}</p>
-                        <p className="text-xs text-[#D7CCFF] leading-tight">{label}</p>
-                      </div>
-                    ))}
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {heroMetrics.map((m, i) => (
+                  <div key={m.label} className="metric-chip" style={{ animation: `fadeUp 0.6s ease ${0.55 + i * 0.1}s both` }}>
+                    <span className="block text-xl font-bold">{m.value}</span>
+                    <span className="block text-xs text-white/65 mt-0.5 leading-tight">{m.label}</span>
                   </div>
-                </div>
+                ))}
               </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <PlatformGrid />
             </div>
           </div>
         </div>
       </section>
-
       {/* ARCHITECTURE PHILOSOPHY */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#0d0820,#180a38,#120720)" }}>
-        <div className="absolute inset-0 services-grid-bg opacity-15 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.14) 0%,transparent 70%)", filter: "blur(50px)" }} />
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10) 0%,transparent 70%)", filter: "blur(40px)" }} />
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
+        <div className="absolute inset-0 services-grid-bg pointer-events-none" />
+        <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(70px)" }} />
+        <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle,${A2}12,transparent 70%)`, filter: "blur(60px)" }} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">Core Design Principles</span>
             <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Built on Three Principles</h2>
@@ -131,9 +153,9 @@ export function CustomPlatform() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {principles.map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant={["left", "up", "right"][i] as any} delay={i * 100}>
-                <div className="p-7 rounded-3xl h-full" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(111,60,195,0.22)", backdropFilter: "blur(12px)" }}>
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)" }}>
-                    <Icon className="w-6 h-6 text-white" />
+                <div className="p-6 rounded-2xl border h-full transition-all duration-300 hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}30`, boxShadow: "0 4px 20px rgba(0,0,0,0.2)" }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 6px 18px ${A}35` }}>
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-3">{title}</h3>
                   <p className="text-xs text-white/55 leading-relaxed">{desc}</p>
@@ -154,7 +176,7 @@ export function CustomPlatform() {
           <div className="text-center mb-12">
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Platform Capabilities</span>
             <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>What Your Platform Can Do</h2>
-            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Six core capabilities that transform how your organisation works with AI — all running on your own infrastructure.</p>
+            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">Six core capabilities that transform how your organisation works with AI - all running on your own infrastructure.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {capabilities.map(({ icon: Icon, title, desc }, i) => (
@@ -173,7 +195,7 @@ export function CustomPlatform() {
       </section>
 
       {/* DEPLOYMENT MODELS */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#06041a 0%,#080618 50%,#0a0820 100%)" }}>
+      <section id="deployment" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 60%,#080c1a 100%)" }}>
         <div className="absolute inset-0 services-grid-bg opacity-20 pointer-events-none" />
         <div className="absolute top-1/3 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.25) 0%,transparent 70%)", filter: "blur(50px)" }} />
 
@@ -241,10 +263,10 @@ export function CustomPlatform() {
             <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>Design Your Platform</h2>
             <p className="text-sm text-white/55 mb-8 leading-relaxed">Every deployment is purpose-built. Book a session to discuss your workflow, data residency requirements, and model preferences.</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-white transition-all hover:scale-105" style={{ background: "linear-gradient(135deg,#6F3CC3,#5A32A3)", boxShadow: "0 8px 30px rgba(111,60,195,0.35)" }}>
+              <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                 Book a Strategy Call <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105" style={{ background: "rgba(111,60,195,0.12)", border: "1px solid rgba(111,60,195,0.30)", color: "#D7CCFF" }}>
+              <Link to="#deployment" className="cta-btn-secondary" style={{ borderColor: `${A}40`, color: A }}>
                 View Deployment Options
               </Link>
             </div>
