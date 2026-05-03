@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { Database, TrendingUp, Lock, Users, Cpu, Shield, Globe, Code2, BarChart3, Zap, Server, Layers, Cloud, ArrowRight, Sparkles, CheckCircle2, GitBranch } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "../lib/scroll";
+import symbolImg from "../../assets/symbol-removebg-preview.png";
 
 function useVisible(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,12 +84,153 @@ const maturityLevels = [
   { name: "Intelligent", color: "#10b981", weeks: 10, desc: "AI-driven automation, agentic workflows, continuous optimisation." },
 ];
 
+const PILLARS = [
+  { n: "01", title: "AI Solutions Suite",   tag: "AI, Data & Growth Platforms",            desc: "Generative AI, data analytics, growth automation, and custom AI platforms — engineered and deployed for your specific environment.", href: "/services",   color: "#F5C84C" },
+  { n: "02", title: "Strategic Consulting", tag: "IT Consulting & Distributed Engineering", desc: "Senior advisory, architecture reviews, managed engineering teams, and end-to-end project delivery.",                                  href: "/consulting", color: "#1CB7B4" },
+  { n: "03", title: "Products",             tag: "Enterprise SaaS Portfolio",               desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.",                                                href: "/products",   color: "#6F3CC3" },
+];
+
+function PillarScrollSection() {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const [prog, setProg] = useState(0);
+
+  const idx = Math.min(2, Math.floor(prog * 3));
+  const rot = prog * 360;
+  const col = PILLARS[idx].color;
+
+  useEffect(() => {
+    const tick = () => {
+      const el = outerRef.current;
+      if (!el) return;
+      const { top } = el.getBoundingClientRect();
+      const scrollable = el.offsetHeight - window.innerHeight;
+      setProg(Math.min(1, Math.max(0, -top / scrollable)));
+    };
+    window.addEventListener("scroll", tick, { passive: true });
+    tick();
+    return () => window.removeEventListener("scroll", tick);
+  }, []);
+
+  return (
+    <div ref={outerRef} style={{ position: "relative", height: "360vh" }}>
+      <div
+        className="sticky top-0 overflow-hidden flex flex-col"
+        style={{ height: "100vh", background: "linear-gradient(135deg,#071018 0%,#10242B 48%,#160D2B 100%)" }}
+      >
+        {/* Ambient colour glow that shifts with active pillar */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: `radial-gradient(ellipse 80% 70% at 28% 60%, ${col}1c, transparent 68%)`, transition: "background 0.9s" }}
+        />
+        <div
+          className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: `radial-gradient(circle,${col}14,transparent 70%)`, filter: "blur(60px)", transition: "background 0.9s" }}
+        />
+
+        {/* Header */}
+        <div className="relative z-10 text-center px-4 pt-10 pb-5 flex-shrink-0">
+          <span className="section-eyebrow-light">What We Offer</span>
+          <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Ways to Work With Us</h2>
+          <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto leading-relaxed">
+            AI-powered systems, strategic advisory, and scalable SaaS products — each available independently or combined.
+          </p>
+        </div>
+
+        {/* Logo + content */}
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-24 max-w-5xl mx-auto w-full px-6 lg:px-8">
+          {/* Rotating logo */}
+          <div className="relative flex items-center justify-center flex-shrink-0">
+            <div
+              className="absolute rounded-full"
+              style={{ width: 236, height: 236, border: `1.5px solid ${col}44`, boxShadow: `0 0 44px ${col}22`, transition: "border-color 0.9s, box-shadow 0.9s" }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{ width: 192, height: 192, border: `1px solid ${col}22`, transition: "border-color 0.9s" }}
+            />
+            <img
+              src={symbolImg}
+              alt="ANTUTIVE symbol"
+              style={{
+                width: 148,
+                height: 148,
+                objectFit: "contain",
+                transform: `rotate(${rot}deg)`,
+                filter: `drop-shadow(0 0 18px ${col}cc) drop-shadow(0 0 36px ${col}66)`,
+                transition: "filter 0.9s",
+                willChange: "transform",
+              }}
+            />
+          </div>
+
+          {/* Active pillar content */}
+          <div className="flex-1" style={{ position: "relative", minHeight: 260 }}>
+            {PILLARS.map((p, i) => (
+              <div
+                key={p.n}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  opacity: i === idx ? 1 : 0,
+                  transform: i === idx ? "translateY(0)" : i < idx ? "translateY(-24px)" : "translateY(24px)",
+                  transition: "opacity 0.5s ease, transform 0.5s ease",
+                  pointerEvents: i === idx ? "auto" : "none",
+                }}
+              >
+                <span style={{ fontFamily: "Orbitron, sans-serif", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.25em", color: "rgba(255,255,255,0.3)", marginBottom: "1.1rem", display: "block" }}>
+                  {p.n}
+                </span>
+                <h3 style={{ fontFamily: "Orbitron, sans-serif", fontSize: "clamp(1.3rem, 2.8vw, 2.1rem)", fontWeight: 700, color: "white", marginBottom: "0.5rem", lineHeight: 1.2 }}>
+                  {p.title}
+                </h3>
+                <p style={{ fontSize: "0.78rem", fontWeight: 600, color: p.color, marginBottom: "1rem", letterSpacing: "0.03em" }}>
+                  {p.tag}
+                </p>
+                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "1.5rem", maxWidth: 420 }}>
+                  {p.desc}
+                </p>
+                <Link
+                  to={p.href}
+                  style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: 12, border: `1.5px solid ${p.color}55`, color: p.color, background: `${p.color}11`, textDecoration: "none" }}
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Progress dots + scroll hint */}
+        <div className="relative z-10 flex flex-col items-center gap-3 pb-7 flex-shrink-0">
+          <div className="flex gap-2.5">
+            {PILLARS.map((p, i) => (
+              <div
+                key={i}
+                style={{
+                  width: i === idx ? 28 : 8,
+                  height: 8,
+                  borderRadius: 4,
+                  background: i === idx ? p.color : "rgba(255,255,255,0.22)",
+                  transition: "all 0.4s ease",
+                }}
+              />
+            ))}
+          </div>
+          {prog < 0.03 && (
+            <span style={{ fontSize: "0.62rem", letterSpacing: "0.2em", color: "rgba(255,255,255,0.28)", textTransform: "uppercase", animation: "fadeUp 0.8s ease both" }}>
+              Scroll to explore
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Home() {
-  const pillars = [
-    { n: "01", title: "AI Solutions Suite", tag: "AI, Data & Growth Platforms", desc: "Generative AI, data analytics, growth automation, and custom AI platforms — engineered and deployed for your specific environment.", href: "/services", color: "#F5C84C" },
-    { n: "02", title: "Strategic Consulting",  tag: "IT Consulting & Distributed Engineering", desc: "Senior advisory, architecture reviews, managed engineering teams, and end-to-end project delivery.", href: "/consulting", color: "#1CB7B4" },
-    { n: "03", title: "Products",              tag: "Enterprise SaaS Portfolio", desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.", href: "/products", color: "#6F3CC3" },
-  ];
 
   const practices = [
     { icon: Cpu,        title: "Generative AI",        href: "/services#genai",   desc: "Agentic systems, Sovereign RAG, knowledge graphs, conversational AI." },
@@ -181,36 +323,8 @@ export function Home() {
         </div>
       </div>
 
-      {/* ── THREE PILLARS ── */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg,#071018 0%,#10242B 48%,#160D2B 100%)" }}>
-        <div className="absolute pointer-events-none" style={{ inset: 0, overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: -80, right: -80, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(28,183,180,.12),transparent 70%)", filter: "blur(40px)" }}/>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="section-eyebrow-light">What We Offer</span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Ways to Work With Us</h2>
-            <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto">
-              AI-powered systems, strategic advisory, and scalable SaaS products — each available independently or combined.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {pillars.map((p, i) => (
-              <Reveal key={p.n} variant={i === 1 ? "up" : i === 0 ? "left" : "right"} delay={i * 100}>
-                <Link to={p.href} className="block pillar-card group">
-                  <span className="pillar-num">{p.n}</span>
-                  <h3 className="pillar-title">{p.title}</h3>
-                  <p className="pillar-tag" style={{ color: p.color }}>{p.tag}</p>
-                  <p className="pillar-desc">{p.desc}</p>
-                  <div className="pillar-arrow" style={{ color: p.color, borderColor: `${p.color}33` }}>
-                    <ArrowRight className="w-4 h-4"/>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── THREE PILLARS (scroll-driven) ── */}
+      <PillarScrollSection />
 
       {/* ── OPERATIONAL FRICTION MATRIX ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 55%,#080c1a 100%)" }}>
