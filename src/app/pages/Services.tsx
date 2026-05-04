@@ -30,10 +30,11 @@ function PracticeAreaGrid() {
       {areas.map((area, i) => (
         <div
           key={i}
-          className="p-5 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+          className="p-5 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-1"
           style={{
-            background: "rgba(255,255,255,0.07)",
-            border: "1px solid rgba(255,255,255,0.14)",
+            background: "#ffffff",
+            border: "1px solid rgba(111,60,195,0.14)",
+            boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
             animation: `fadeUp 0.7s ease ${i * 120}ms both`,
           }}
         >
@@ -43,8 +44,8 @@ function PracticeAreaGrid() {
           >
             <area.Icon className="w-5 h-5 text-white" />
           </div>
-          <p className="text-sm font-bold text-white mb-1">{area.label}</p>
-          <p className="text-xs text-white/50">{area.sub}</p>
+          <p className="text-sm font-bold text-[#0f172a] mb-1">{area.label}</p>
+          <p className="text-xs text-[#64748b]">{area.sub}</p>
         </div>
       ))}
     </div>
@@ -98,7 +99,6 @@ const integrations = [
   { start: "Power BI Dashboards", exp: "ETL Pipelines → Sovereign RAG",              logic: "Clean data enables AI; AI makes dashboards intelligent." },
   { start: "GEO Audit",           exp: "AI Content Engine → AI Video → Web Engine",   logic: "Visibility requires content; content requires automation." },
   { start: "Custom AI Platform",  exp: "Sovereign RAG → Agentic AI",                  logic: "Private AI workspace becomes the foundation for automation." },
-  { start: "IT Consulting",       exp: "Managed Dev Team → Project Delivery",          logic: "Strategy engagements convert to execution contracts." },
 ];
 
 export function Services() {
@@ -108,42 +108,43 @@ export function Services() {
       {/* ── HERO ── */}
       <section
         className="relative overflow-hidden flex items-center"
-        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#030608 0%,#06091a 50%,#0a0618 100%)" }}
+        style={{ minHeight: "56vh", background: "linear-gradient(135deg,#f8fafc 0%,#fffbeb 50%,#fff7ed 100%)" }}
       >
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.12),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(243,109,79,0.08),transparent 70%)", filter: "blur(30px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.18),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
+            <div className="text-[#0f172a]">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1CB7B4]/25 bg-[#1CB7B4]/06 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
                 <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]" />
-                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · AI Solutions</span>
+                <span className="text-xs font-bold tracking-widest uppercase text-[#1CB7B4]">ANTUTIVE · AI Solutions</span>
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
                 AI, Data &<br />Growth Solutions
               </h1>
 
-              <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
+              <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
                 Four interconnected solution areas — each built around your operational context, not a technology demo.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
                 {["Generative AI", "Data Engineering", "AI Growth & Marketing", "Custom AI Platforms"].map(c => (
-                  <span key={c} className="px-3 py-1 rounded-full border border-white/20 bg-white/08 text-white/75 text-xs font-medium backdrop-blur-sm">{c}</span>
+                  <span key={c} className="px-3 py-1 rounded-full border text-xs font-medium"
+                    style={{ borderColor: "rgba(245,200,76,0.35)", background: "rgba(245,200,76,0.08)", color: "#475569" }}>{c}</span>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                <Link to="/contact" className="hero-btn-primary" style={{ color: A2 }}>Book a Discovery Call</Link>
+                <Link to="/contact" className="hero-btn-primary">Book a Discovery Call</Link>
                 <Link to="#genai" className="hero-btn-secondary">Explore Solutions</Link>
               </div>
 
@@ -151,7 +152,7 @@ export function Services() {
                 {heroMetrics.map((m, i) => (
                   <div key={m.label} className="metric-chip" style={{ animation: `fadeUp 0.6s ease ${0.55 + i * 0.1}s both` }}>
                     <span className="block text-xl font-bold">{m.value}</span>
-                    <span className="block text-xs text-white/65 mt-0.5 leading-tight">{m.label}</span>
+                    <span className="block text-xs text-[#64748b] mt-0.5 leading-tight">{m.label}</span>
                   </div>
                 ))}
               </div>
@@ -166,22 +167,22 @@ export function Services() {
 
       {/* ── PRACTICE 01: GENERATIVE AI ── */}
       <section id="genai" className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 50%,#060c18 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#f1f5f9 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none" />
         <div className="absolute top-20 right-10 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.14),transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.08),transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.07),transparent 70%)", filter: "blur(60px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
-              <span className="section-eyebrow-light"
-                style={{ borderColor: `${A}40`, background: `${A}18`, color: "#67e8f9" }}>
+              <span className="section-eyebrow"
+                style={{ borderColor: `${A}40`, background: `${A}10`, color: "#0369a1" }}>
                 Generative AI
               </span>
-              <h2 className="section-h2 text-white mt-3 mb-5" style={{ fontWeight: 700 }}>Generative AI Solutions</h2>
-              <p className="text-sm text-white/60 leading-relaxed mb-6">
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Generative AI Solutions</h2>
+              <p className="text-sm text-[#64748b] leading-relaxed mb-6">
                 Custom AI product development that begins with deep business problem understanding. ANTUTIVE does not sell
                 "AI tools" — it engineers intelligent systems that solve specific operational bottlenecks. Every solution
                 is built with your data sovereignty as a non-negotiable requirement.
@@ -190,14 +191,14 @@ export function Services() {
                 {genAIItems.map((item, i) => (
                   <Reveal key={i} variant="left" delay={i * 80}>
                     <div className="p-4 rounded-2xl border flex gap-3 items-start transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1CB7B4]/30"
-                      style={{ background: "rgba(255,255,255,0.04)", borderColor: `${A}28` }}>
+                      style={{ background: "#ffffff", borderColor: `${A}22`, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
                       <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{ background: `linear-gradient(135deg,${A}55,${A}22)`, border: `1px solid ${A}45` }}>
                         <item.Icon className="w-4 h-4 text-[#1CB7B4]" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-white mb-1.5">{item.title}</h4>
-                        <p className="text-xs text-white/55 leading-relaxed">{item.desc}</p>
+                        <h4 className="text-sm font-bold text-[#0f172a] mb-1.5">{item.title}</h4>
+                        <p className="text-xs text-[#64748b] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   </Reveal>
@@ -207,20 +208,20 @@ export function Services() {
 
             <Reveal variant="right" delay={120}>
               <div className="lg:sticky lg:top-28 p-6 rounded-3xl border"
-                style={{ background: `rgba(28,183,180,0.06)`, borderColor: `${A}28` }}>
-                <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#67e8f9" }}>
+                style={{ background: "rgba(28,183,180,0.04)", borderColor: `${A}22`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-widest mb-5 text-[#0369a1]">
                   Target Use Cases
                 </h3>
                 {genAICases.map((uc, i) => (
                   <div key={i} className="p-4 rounded-2xl border mb-3 last:mb-0 transition-all duration-300 hover:border-[#1CB7B4]/30"
-                    style={{ background: "rgba(255,255,255,0.03)", borderColor: `${A}22` }}>
+                    style={{ background: "#ffffff", borderColor: `${A}18`, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
                     <p className="text-xs font-bold mb-1 text-[#1CB7B4]">{uc.industry}</p>
-                    <p className="text-xs text-white/50 mb-2">
-                      <span className="font-semibold text-white/70">Pain: </span>{uc.problem}
+                    <p className="text-xs text-[#64748b] mb-2">
+                      <span className="font-semibold text-[#475569]">Pain: </span>{uc.problem}
                     </p>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-[#1CB7B4]" />
-                      <p className="text-xs text-white/60">{uc.solution}</p>
+                      <p className="text-xs text-[#64748b]">{uc.solution}</p>
                     </div>
                   </div>
                 ))}
@@ -232,20 +233,20 @@ export function Services() {
 
       {/* ── PRACTICE 02: DATA ENGINEERING ── */}
       <section id="data" className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 60%,#080c1a 100%)" }}>
+        style={{ background: "linear-gradient(160deg,#fffbeb 0%,#fff7ed 60%,#fef3c7 100%)" }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}28,transparent 70%)`, filter: "blur(80px)" }} />
+          style={{ background: `radial-gradient(circle,${A}18,transparent 70%)`, filter: "blur(80px)" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}20,transparent 70%)`, filter: "blur(70px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}12,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
+            <span className="section-eyebrow" style={{ color: "#92400e", borderColor: `${A}33`, background: `${A}10` }}>
               Data & Analytics
             </span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Data Engineering & Analytics</h2>
-            <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
+            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Data Engineering & Analytics</h2>
+            <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
               The foundation every AI initiative requires. Most companies approaching ANTUTIVE for AI discover
               their data infrastructure is the real bottleneck.
             </p>
@@ -255,13 +256,13 @@ export function Services() {
             {analyticsSvcs.map((s, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 90}>
                 <div className="p-6 rounded-2xl border h-full transition-all duration-300 hover:-translate-y-1"
-                  style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}30`, boxShadow: "0 4px 20px rgba(0,0,0,0.2)" }}>
+                  style={{ background: "#ffffff", backdropFilter: "blur(10px)", borderColor: `${A}28`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
                     style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 6px 18px ${A}35` }}>
                     <s.Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2">{s.title}</h3>
-                  <p className="text-xs text-white/55 leading-relaxed">{s.desc}</p>
+                  <h3 className="text-sm font-bold text-[#0f172a] mb-2">{s.title}</h3>
+                  <p className="text-xs text-[#64748b] leading-relaxed">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -269,8 +270,8 @@ export function Services() {
 
           {/* Maturity Path — visual step cards */}
           <Reveal variant="scale">
-            <div className="rounded-3xl p-8 border" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}25` }}>
-              <h3 className="text-sm font-bold text-white mb-8 text-center uppercase tracking-wide">
+            <div className="rounded-3xl p-8 border" style={{ background: "#ffffff", backdropFilter: "blur(10px)", borderColor: `${A}22`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+              <h3 className="text-sm font-bold text-[#0f172a] mb-8 text-center uppercase tracking-wide">
                 Analytics Maturity Path — Where Do You Sit?
               </h3>
               <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -279,11 +280,11 @@ export function Services() {
                   style={{
                     top: "2.5rem", left: "calc(12.5% + 1rem)", right: "calc(12.5% + 1rem)",
                     height: 2,
-                    background: `linear-gradient(90deg,${A}20,${A}70,${A}20)`,
+                    background: `linear-gradient(90deg,${A}20,${A}60,${A}20)`,
                   }} />
                 {analyticsLevels.map((l, i) => (
                   <div key={i} className="relative p-5 rounded-2xl border text-center transition-all duration-300 hover:-translate-y-1"
-                    style={{ borderColor: `${A}30`, background: i === 3 ? "rgba(28,183,180,0.12)" : "rgba(255,255,255,0.04)" }}>
+                    style={{ borderColor: `${A}28`, background: i === 3 ? "rgba(28,183,180,0.06)" : "#f8fafc", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xs font-bold relative z-10"
                       style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 4px 12px ${A}40` }}>
                       {i + 1}
@@ -292,10 +293,10 @@ export function Services() {
                       style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                       {l.level}
                     </span>
-                    <p className="text-xs text-white/50 leading-relaxed mb-3">{l.state}</p>
-                    <div className="border-t pt-3" style={{ borderColor: `${A}25` }}>
-                      <p className="text-xs font-semibold mb-1" style={{ color: "#67e8f9" }}>{l.eng}</p>
-                      <p className="text-xs text-white/45 font-medium">{l.dur}</p>
+                    <p className="text-xs text-[#64748b] leading-relaxed mb-3">{l.state}</p>
+                    <div className="border-t pt-3" style={{ borderColor: `${A}22` }}>
+                      <p className="text-xs font-semibold mb-1 text-[#0369a1]">{l.eng}</p>
+                      <p className="text-xs text-[#94a3b8] font-medium">{l.dur}</p>
                     </div>
                   </div>
                 ))}
@@ -307,30 +308,30 @@ export function Services() {
 
       {/* ── PRACTICE 03: AI GROWTH & MARKETING ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 55%,#0a0618 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#f0fdfa 0%,#f8fafc 55%,#faf5ff 100%)" }}>
         <div className="absolute inset-0 hero-mesh-overlay opacity-25" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.08),transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.07),transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <Reveal variant="left">
               <span className="section-eyebrow-light">AI Growth & Marketing</span>
-              <h2 className="section-h2 text-white mt-3 mb-5" style={{ fontWeight: 700 }}>AI Growth & Marketing</h2>
-              <p className="text-sm text-white/70 leading-relaxed mb-5">
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>AI Growth & Marketing</h2>
+              <p className="text-sm text-[#475569] leading-relaxed mb-5">
                 AI-powered systems that replace manual growth activities with automated, intelligent pipelines — from GEO strategy
                 and AI video production to precision lead scoring and outreach automation.
               </p>
-              <p className="text-sm text-white/60 leading-relaxed mb-8">
+              <p className="text-sm text-[#64748b] leading-relaxed mb-8">
                 Reach buyers searching AI platforms (ChatGPT, Perplexity, Gemini) rather than traditional search engines.
                 ANTUTIVE builds the infrastructure to make your brand discoverable in the AI-native web.
               </p>
               <Link
                 to="/growth-marketing"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-                style={{ background: "rgba(255,255,255,0.95)", color: A2 }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg,#1CB7B4,#6F3CC3)" }}
               >
                 Explore AI Growth <ArrowRight className="w-4 h-4" />
               </Link>
@@ -340,13 +341,13 @@ export function Services() {
               {growthHighlights.map((item, i) => (
                 <Reveal key={i} variant={i % 2 === 0 ? "up" : "scale"} delay={i * 90}>
                   <div className="p-5 rounded-2xl border backdrop-blur-sm h-full transition-all duration-300 hover:-translate-y-1"
-                    style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)" }}>
+                    style={{ background: "#ffffff", border: "1px solid rgba(28,183,180,0.18)", boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
-                      style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.22)" }}>
-                      <item.Icon className="w-4 h-4 text-white" />
+                      style={{ background: "rgba(28,183,180,0.10)", border: "1px solid rgba(28,183,180,0.22)" }}>
+                      <item.Icon className="w-4 h-4 text-[#1CB7B4]" />
                     </div>
-                    <p className="text-sm font-bold text-white mb-1.5">{item.label}</p>
-                    <p className="text-xs text-white/60 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm font-bold text-[#0f172a] mb-1.5">{item.label}</p>
+                    <p className="text-xs text-[#64748b] leading-relaxed">{item.desc}</p>
                   </div>
                 </Reveal>
               ))}
@@ -357,11 +358,11 @@ export function Services() {
 
       {/* ── PRACTICE 04: CUSTOM AI PLATFORM ── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#050810 0%,#07091a 55%,#090618 100%)" }}>
+        style={{ background: "linear-gradient(160deg,#faf5ff 0%,#f5f3ff 55%,#eff6ff 100%)" }}>
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(70px)" }} />
+          style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(70px)" }} />
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.12),transparent 70%)", filter: "blur(80px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.08),transparent 70%)", filter: "blur(80px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -370,28 +371,28 @@ export function Services() {
               {platformFeatures.map((item, i) => (
                 <Reveal key={i} variant={i % 2 === 0 ? "left" : "up"} delay={i * 80}>
                   <div className="p-5 rounded-2xl border h-full transition-all duration-300 hover:-translate-y-1"
-                    style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)", borderColor: `${A}30`, boxShadow: "0 2px 12px rgba(0,0,0,0.2)" }}>
+                    style={{ background: "#ffffff", backdropFilter: "blur(10px)", borderColor: `${A}22`, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
                       style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 4px 14px ${A}30` }}>
                       <item.Icon className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-sm font-bold text-white mb-1.5">{item.label}</p>
-                    <p className="text-xs text-white/55 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm font-bold text-[#0f172a] mb-1.5">{item.label}</p>
+                    <p className="text-xs text-[#64748b] leading-relaxed">{item.desc}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
             <Reveal variant="right" delay={100}>
-              <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
+              <span className="section-eyebrow" style={{ color: "#92400e", borderColor: `${A}33`, background: `${A}10` }}>
                 Custom AI Platform
               </span>
-              <h2 className="section-h2 text-white mt-3 mb-5" style={{ fontWeight: 700 }}>Custom AI Platform</h2>
-              <p className="text-sm text-white/55 leading-relaxed mb-5">
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Custom AI Platform</h2>
+              <p className="text-sm text-[#64748b] leading-relaxed mb-5">
                 A private, model-agnostic AI workspace where your team collaborates with AI on your data — without that
                 data ever leaving your control. Built for European SMEs who cannot afford public-cloud data risk.
               </p>
-              <p className="text-sm text-white/55 leading-relaxed mb-8">
+              <p className="text-sm text-[#64748b] leading-relaxed mb-8">
                 Supports multiple AI models simultaneously, integrates with your existing tools, and scales from a single
                 team to your entire organisation — all within EU data residency boundaries.
               </p>
@@ -409,18 +410,18 @@ export function Services() {
 
       {/* ── SERVICE INTEGRATION MAP ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#050810 0%,#07091a 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#f8fafc 0%,#ffffff 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-30" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1),transparent 70%)", filter: "blur(40px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.07),transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%)", filter: "blur(50px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(28,183,180,0.07),transparent 70%)", filter: "blur(50px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">Solution Ecosystem</span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Solution Integration Map</h2>
-            <p className="text-sm text-white/55 mt-3 max-w-lg mx-auto">
+            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Solution Integration Map</h2>
+            <p className="text-sm text-[#64748b] mt-3 max-w-lg mx-auto">
               Solution areas form an interconnected ecosystem — each deployment naturally expands into the next.
             </p>
           </div>
@@ -429,18 +430,18 @@ export function Services() {
             {integrations.map((item, i) => (
               <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
                 <div className="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 group"
-                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", backdropFilter: "blur(12px)" }}>
+                  style={{ background: "#ffffff", border: "1px solid rgba(111,60,195,0.14)", backdropFilter: "blur(12px)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                   <div className="flex items-center gap-2 mb-2">
-                    <GitMerge className="w-4 h-4 text-white/45" />
-                    <span className="text-xs font-bold text-white/40 uppercase tracking-wide">Starting point</span>
+                    <GitMerge className="w-4 h-4 text-[#94a3b8]" />
+                    <span className="text-xs font-bold text-[#94a3b8] uppercase tracking-wide">Starting point</span>
                   </div>
-                  <p className="text-base font-bold text-white mb-3">{item.start}</p>
+                  <p className="text-base font-bold text-[#0f172a] mb-3">{item.start}</p>
                   <div className="flex items-center gap-2 mb-3 p-2.5 rounded-xl"
-                    style={{ background: "rgba(28,183,180,0.16)", border: "1px solid rgba(28,183,180,0.24)" }}>
+                    style={{ background: "rgba(28,183,180,0.08)", border: "1px solid rgba(28,183,180,0.20)" }}>
                     <ArrowRight className="w-3.5 h-3.5 text-[#1CB7B4] flex-shrink-0" />
                     <p className="text-xs font-semibold text-[#1CB7B4]">{item.exp}</p>
                   </div>
-                  <p className="text-xs text-white/50 leading-relaxed">{item.logic}</p>
+                  <p className="text-xs text-[#64748b] leading-relaxed">{item.logic}</p>
                 </div>
               </Reveal>
             ))}
@@ -452,11 +453,11 @@ export function Services() {
 
       {/* ── CTA ── */}
       <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#050810 0%,#080c18 100%)" }}>
+        style={{ background: "linear-gradient(135deg,#fffbeb 0%,#f5f3ff 100%)" }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A}22,transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: `radial-gradient(circle,${A}14,transparent 70%)`, filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${A2}18,transparent 70%)`, filter: "blur(50px)" }} />
+          style={{ background: `radial-gradient(circle,${A2}10,transparent 70%)`, filter: "blur(50px)" }} />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
 
         <div className="relative z-10">
@@ -464,13 +465,13 @@ export function Services() {
             <div className="max-w-2xl mx-auto px-4 text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6"
                 style={{ borderColor: `${A}30`, background: `${A}10` }}>
-                <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start the Conversation</span>
+                <Sparkles className="w-3.5 h-3.5" style={{ color: "#92400e" }} />
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#92400e" }}>Start the Conversation</span>
               </div>
-              <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>
+              <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>
                 Start with a Free Diagnostic
               </h2>
-              <p className="text-sm text-white/55 mb-8 leading-relaxed">
+              <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
                 The Business Understanding session is the first step of the ANTUTIVE Delivery Method —
                 offered free for qualified prospects. We diagnose before we prescribe.
               </p>
@@ -480,7 +481,7 @@ export function Services() {
                   Book a Strategy Call <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
-                  style={{ borderColor: `${A}40`, color: A }}>
+                  style={{ borderColor: `${A}40`, color: "#92400e" }}>
                   Explore Solutions
                 </Link>
               </div>

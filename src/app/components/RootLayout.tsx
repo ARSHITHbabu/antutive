@@ -30,10 +30,8 @@ export function RootLayout() {
   }, []);
 
   const nav = [
-    { name: "Solutions",          href: "/services" },
     { name: "Growth & Marketing", href: "/growth-marketing" },
     { name: "AI Platform",        href: "/custom-platform" },
-    { name: "Consulting",         href: "/consulting" },
     { name: "Products",           href: "/products" },
     { name: "About",              href: "/about" },
   ];
@@ -43,26 +41,26 @@ export function RootLayout() {
 
   const headerCard: React.CSSProperties = glassed
     ? {
-        background:        "rgba(5,8,18,0.88)",
+        background:        "rgba(248,250,252,0.92)",
         backdropFilter:    "blur(22px)",
         WebkitBackdropFilter: "blur(22px)",
-        border:            "1px solid rgba(28,183,180,0.18)",
-        boxShadow:         "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
+        border:            "1px solid rgba(28,183,180,0.22)",
+        boxShadow:         "0 8px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)",
       }
     : {
-        background:        "rgba(5,8,18,0.65)",
+        background:        "rgba(248,250,252,0.75)",
         backdropFilter:    "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
-        border:            "1px solid rgba(111,60,195,0.18)",
+        border:            "1px solid rgba(111,60,195,0.15)",
       };
 
   return (
-    <div className="min-h-screen" style={{ background: "#030608" }}>
+    <div className="min-h-screen" style={{ background: "#f8fafc" }}>
 
       {/* ── FLOATING HEADER ── */}
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        style={{ padding: scrolled ? "8px 20px" : "14px 20px", background: "#030608" }}
+        style={{ padding: scrolled ? "8px 20px" : "14px 20px", background: "#f8fafc" }}
       >
         <div className="max-w-7xl mx-auto">
 
@@ -116,11 +114,11 @@ export function RootLayout() {
             <div
               className="lg:hidden mt-2 rounded-2xl p-4"
               style={{
-                background: "rgba(5,8,18,0.96)",
+                background: "rgba(248,250,252,0.98)",
                 backdropFilter: "blur(22px)",
                 WebkitBackdropFilter: "blur(22px)",
-                border: "1px solid rgba(28,183,180,0.18)",
-                boxShadow: "0 16px 40px rgba(0,0,0,0.5)",
+                border: "1px solid rgba(28,183,180,0.20)",
+                boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
               }}
             >
               {[...nav, { name: "Contact", href: "/contact" }].map((item) => {
@@ -133,8 +131,8 @@ export function RootLayout() {
                     className="block px-4 py-2.5 rounded-xl mb-1 text-sm transition-all"
                     style={{
                       fontWeight: active ? 600 : 500,
-                      color: active ? "#F5C84C" : "rgba(215,204,255,0.76)",
-                      background: active ? "rgba(111,60,195,0.16)" : "transparent",
+                      color: active ? "#6F3CC3" : "rgba(30,41,59,0.80)",
+                      background: active ? "rgba(111,60,195,0.10)" : "transparent",
                     }}
                   >
                     {item.name}
@@ -152,8 +150,8 @@ export function RootLayout() {
 
       {/* ── FOOTER ── */}
       <footer
-        className="text-white"
-        style={{ background: "linear-gradient(135deg,#030608 0%,#07141a 48%,#0a0618 100%)", borderTop: "1px solid rgba(28,183,180,0.14)" }}
+        className="text-[#334155]"
+        style={{ background: "linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 48%,#f5f3ff 100%)", borderTop: "1px solid rgba(111,60,195,0.15)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -164,29 +162,27 @@ export function RootLayout() {
                   <AntuitiveLogo size={44} />
                 </Link>
               </div>
-              <p className="text-white/75 text-sm leading-relaxed">
+              <p className="text-[#64748b] text-sm leading-relaxed">
                 Strategic AI engineering partner for European businesses.
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-white/90">Solutions</h4>
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Solutions</h4>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["AI & Data Solutions",  "/services"],
                   ["Growth & Marketing AI","/growth-marketing"],
                   ["Custom AI Platform",   "/custom-platform"],
-                  ["Consulting",           "/consulting"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-white/70 hover:text-white transition-colors">{label}</Link>
+                    <Link to={href} className="text-[#64748b] hover:text-[#6F3CC3] transition-colors">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-white/90">Company</h4>
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Company</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   ["About Us", "/about"],
@@ -194,15 +190,15 @@ export function RootLayout() {
                   ["Contact",  "/contact"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-white/70 hover:text-white transition-colors">{label}</Link>
+                    <Link to={href} className="text-[#64748b] hover:text-[#6F3CC3] transition-colors">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-white/90">Legal</h4>
-              <ul className="space-y-3 text-sm text-white/70">
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Legal</h4>
+              <ul className="space-y-3 text-sm text-[#64748b]">
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
                 <li>GDPR Compliance</li>
@@ -210,7 +206,7 @@ export function RootLayout() {
             </div>
           </div>
 
-          <div className="border-t border-white/20 mt-12 pt-8 text-center text-xs text-white/70 tracking-wide">
+          <div className="border-t border-slate-300 mt-12 pt-8 text-center text-xs text-[#64748b] tracking-wide">
             © 2026 ANTUTIVE AB · Gothenburg, Sweden · EU-compliant AI Engineering
           </div>
         </div>
