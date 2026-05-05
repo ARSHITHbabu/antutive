@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, CheckCircle2, Mic, Calendar, Zap, FileText, ShoppingCart, Shield, Globe, Package, Star, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mic, Calendar, Zap, FileText, ShoppingCart, Shield, Globe, Package, Star, Sparkles, UtensilsCrossed, FolderLock } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 
 const A = "#6F3CC3";
@@ -42,6 +42,22 @@ function FAMANTGrid() {
     </div>
   );
 }
+
+const famantFeatures = [
+  { Icon: Calendar,        title: "Unified Family Calendar",  desc: "Aggregates Google, Outlook, and Apple calendars into one shared family view — with conflict detection, scheduling suggestions, and voice-based event creation." },
+  { Icon: Zap,             title: "Agentic Task Management",  desc: "Assign, track, and complete tasks through voice commands. Proactive reminders, escalation alerts, and smart adaptation based on your family's patterns." },
+  { Icon: UtensilsCrossed, title: "Meal Planning Engine",     desc: "Weekly meal planning with recipe management, dietary preference tracking, automatic grocery list generation, and delivery service integration." },
+  { Icon: FolderLock,      title: "Document Vault",           desc: "Secure storage and intelligent retrieval of family documents — school forms, medical records, insurance, travel docs — with OCR and natural language search." },
+];
+
+const famantHighlights = [
+  "Works with Google, Outlook, and Apple calendars — no migration needed",
+  "Voice commands in Swedish and English",
+  "Automatically generates grocery lists from your meal plan",
+  "Finds any family document instantly using natural language search",
+  "Family plans support 2–6 members across all devices",
+  "GDPR compliant and hosted entirely on EU infrastructure",
+];
 
 const capabilities = [
   { icon: Calendar,     title: "Web Applications",      desc: "Full-stack web products — customer portals, SaaS platforms, B2B tools, e-commerce systems, and internal management dashboards." },
@@ -135,6 +151,123 @@ export function Products() {
               <FAMANTGrid />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── FAMANT PRODUCT ── */}
+      <section className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#fffbeb 0%,#faf5ff 50%,#fffbeb 100%)" }}>
+        <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-40" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.12),transparent 70%)", filter: "blur(80px)" }} />
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: `radial-gradient(circle,rgba(111,60,195,0.08),transparent 70%)`, filter: "blur(60px)" }} />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <Reveal variant="up">
+            <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5"
+                style={{ borderColor: "rgba(180,83,9,0.25)", background: "rgba(245,200,76,0.12)" }}>
+                <Sparkles className="w-3.5 h-3.5" style={{ color: "#b45309" }} />
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#b45309" }}>ANTUTIVE Original Product</span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight" style={{ color: "#0f172a" }}>FAMANT</h2>
+              <p className="text-lg font-semibold mb-4" style={{ color: "#b45309" }}>Voice-First Home Operating System</p>
+              <p className="text-sm max-w-2xl mx-auto leading-relaxed" style={{ color: "#64748b" }}>
+                FAMANT brings your entire household into one intelligent platform. Calendar, tasks, meals, and documents — all managed through natural conversation. No switching between apps. Just talk.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+            {famantFeatures.map(({ Icon, title, desc }, i) => (
+              <Reveal key={i} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
+                <div className="p-6 rounded-2xl h-full transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: "#ffffff", border: "1px solid rgba(245,200,76,0.30)", boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: "linear-gradient(135deg,rgba(245,200,76,0.30),rgba(245,200,76,0.10))", border: "1px solid rgba(245,200,76,0.40)" }}>
+                      <Icon className="w-5 h-5" style={{ color: "#b45309" }} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold mb-2" style={{ color: "#0f172a" }}>{title}</h3>
+                      <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Roadmap + Pricing row */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+
+            {/* Platform Highlights */}
+            <Reveal variant="left" delay={100}>
+              <div className="p-6 rounded-3xl h-full"
+                style={{ background: "#ffffff", border: "1px solid rgba(245,200,76,0.28)", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#b45309" }}>Platform Highlights</p>
+                <p className="text-sm font-bold mb-5" style={{ color: "#0f172a" }}>Everything your family needs, in one place</p>
+                <div className="flex flex-col gap-3">
+                  {famantHighlights.map((point, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#b45309" }} />
+                      <p className="text-xs leading-relaxed" style={{ color: "#475569" }}>{point}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Pricing */}
+            <Reveal variant="right" delay={100}>
+              <div className="p-6 rounded-3xl h-full"
+                style={{ background: "#ffffff", border: "1px solid rgba(245,200,76,0.28)", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#b45309" }}>Pricing</p>
+                <div className="flex flex-col gap-3 mb-5">
+                  <div className="p-4 rounded-2xl" style={{ background: "#f8fafc", border: "1px solid rgba(0,0,0,0.07)" }}>
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-sm font-bold" style={{ color: "#0f172a" }}>Free</p>
+                      <span className="text-xs font-bold" style={{ color: "#b45309" }}>0 SEK / month</span>
+                    </div>
+                    <p className="text-xs" style={{ color: "#94a3b8" }}>Basic calendar and task management — free forever.</p>
+                  </div>
+                  <div className="p-4 rounded-2xl" style={{ background: "rgba(245,200,76,0.10)", border: "1px solid rgba(245,200,76,0.35)" }}>
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-sm font-bold" style={{ color: "#0f172a" }}>Premium</p>
+                      <span className="text-xs font-bold" style={{ color: "#b45309" }}>79–129 SEK / month</span>
+                    </div>
+                    <p className="text-xs" style={{ color: "#64748b" }}>Full AI capabilities, Document Vault, Meal Planning, multi-device. Family plans for 2–6 members.</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  {["Voice-first conversational interface", "Swedish & English language support", "GDPR compliant · EU hosted", "Family plans up to 6 members"].map((f, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#b45309" }} />
+                      <span className="text-xs" style={{ color: "#64748b" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Early Access CTA */}
+          <Reveal variant="up">
+            <div className="text-center p-10 rounded-3xl"
+              style={{ background: "linear-gradient(135deg,rgba(245,200,76,0.15),rgba(111,60,195,0.08))", border: "1px solid rgba(245,200,76,0.30)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
+              <h3 className="text-xl font-bold mb-2" style={{ color: "#0f172a" }}>Get Early Access to FAMANT</h3>
+              <p className="text-sm mb-6 max-w-lg mx-auto" style={{ color: "#64748b" }}>FAMANT MVP launches Q3 2026. If you want early access — reach out and we will add you to the list.</p>
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all hover:scale-105"
+                style={{ background: "linear-gradient(135deg,#F5C84C,#e8b830)", color: "#0f172a" }}>
+                Request Early Access <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </Reveal>
+
         </div>
       </section>
 
