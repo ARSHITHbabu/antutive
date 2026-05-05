@@ -1,12 +1,12 @@
 import { Reveal } from "../lib/scroll";
 
 const steps = [
-  { n: "01", title: "Business Understanding",  desc: "Deep-dive into operational context, pain points, strategic goals, and KPIs. A business diagnosis, not a requirements meeting. Output: Problem Statement Document." },
-  { n: "02", title: "Requirement Gathering",   desc: "Technical discovery mapping all data sources, stakeholder needs, integration requirements, security constraints, and compliance obligations. Output: Technical Requirements Specification." },
-  { n: "03", title: "Concept & Confirmation",  desc: "Presentation of proposed solution architecture, technology choices, and visualisation mockups. Client reviews and confirms direction. Output: Confirmed Solution Design." },
-  { n: "04", title: "Quotation & Scope",       desc: "Formal commercial proposal with transparent scope, deliverables, timeline, and pricing. Fixed-scope or retainer. Milestone-based payments. Output: Commercial Agreement." },
-  { n: "05", title: "Development & Testing",   desc: "Rapid iterative build using agile sprints (1–2 week cycles). 100% QA coverage, data integrity validation, stakeholder reviews, and weekly demos. Output: Production-Ready Deliverable." },
-  { n: "06", title: "Support & Optimisation",  desc: "Post-launch maintenance, monitoring, and continuous improvement. Bug fixes, performance tuning, user training. SLA: 24h critical, 48h standard. Output: Ongoing Service Agreement." },
+  { n: "01", title: "Business Understanding",  desc: "Deep-dive into your product requirements, business goals, target users, and success metrics. A product discovery session, not a generic requirements meeting. Output: Problem Statement Document." },
+  { n: "02", title: "Requirement Gathering",   desc: "Technical discovery covering all features, integrations, data models, non-functional requirements, and compliance obligations. Output: Product Requirements Specification." },
+  { n: "03", title: "Concept & Confirmation",  desc: "UX wireframes, technical architecture, and product approach presented for review. Client approves direction before engineering begins. Output: Confirmed Product Design." },
+  { n: "04", title: "Quotation & Scope",       desc: "Fixed-scope commercial proposal with transparent deliverables, timeline, and pricing. Milestone-based payments. Output: Commercial Agreement." },
+  { n: "05", title: "Development & Testing",   desc: "Agile sprint-based build (1–2 week cycles). 100% QA coverage, stakeholder demos every sprint, acceptance testing against requirements. Output: Production-Ready Product." },
+  { n: "06", title: "Support & Handover",      desc: "Full IP transfer, production deployment, technical documentation, and post-launch support. Bug fixes, performance monitoring, client team training. SLA: 24h critical, 48h standard. Output: Delivered Product + Support Agreement." },
 ];
 
 export function DeliveryMethod({ accentColor = "#1CB7B4" }: { accentColor?: string }) {
@@ -23,7 +23,7 @@ export function DeliveryMethod({ accentColor = "#1CB7B4" }: { accentColor?: stri
               The ANTUTIVE Delivery Method
             </h2>
             <p className="text-sm text-white/45 mt-3 max-w-lg mx-auto">
-              A 6-step method that replaces generic pricing pages with a trust-building delivery flow.
+              A 6-step process that turns your requirements into a production-ready product — with full transparency and no surprises.
             </p>
           </div>
         </Reveal>

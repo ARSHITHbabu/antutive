@@ -11,18 +11,18 @@ const A2 = "#168AB0";
 const D  = "#134E4A";
 
 const heroMetrics = [
-  { value: "80%", label: "Video Cost Reduction" },
-  { value: "3×",  label: "Pipeline Velocity"    },
-  { value: "GEO", label: "AI Search Visibility" },
-  { value: "EU",  label: "Compliant"            },
+  { value: "EU",   label: "Based"        },
+  { value: "B2B",  label: "Focus"        },
+  { value: "3×",   label: "Faster Delivery" },
+  { value: "100%", label: "IP Ownership" },
 ];
 
 function GrowthServiceGrid() {
   const items = [
-    { Icon: Search,    label: "GEO Strategy",    sub: "AI search visibility",  color: "#1CB7B4" },
-    { Icon: Video,     label: "AI Video",         sub: "Script → screen fast",  color: "#168AB0" },
-    { Icon: Zap,       label: "Sales Automation", sub: "AI-powered pipeline",   color: "#0D9488" },
-    { Icon: BarChart3, label: "Growth Analytics", sub: "Revenue intelligence",  color: "#1CB7B4" },
+    { Icon: Search,    label: "Discovery",   sub: "Requirements analysis", color: "#1CB7B4" },
+    { Icon: Video,     label: "Design",      sub: "UX & UI prototyping",   color: "#168AB0" },
+    { Icon: Zap,       label: "Engineering", sub: "Full-stack build",      color: "#0D9488" },
+    { Icon: BarChart3, label: "Delivery",    sub: "Launch & support",      color: "#1CB7B4" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -50,33 +50,33 @@ function GrowthServiceGrid() {
 }
 
 const geoDeliverables = [
-  { Icon: Search,    title: "GEO Audit",                       desc: "Comprehensive analysis of how your brand currently appears in AI model responses, benchmarked against competitors for the same query categories." },
-  { Icon: Code2,     title: "Structured Data Implementation",  desc: "Schema.org Organisation, Service, Product, and FAQ markup deployed across your website to make content machine-readable for AI knowledge graphs." },
-  { Icon: FileText,  title: "AI-Optimised Content Strategy",  desc: "Creation of authoritative long-form content designed to be cited by AI models. Factual density, entity-rich writing, and citation-worthy formatting." },
-  { Icon: Globe,     title: "Entity Consistency Management",  desc: "Ensuring your brand appears with identical name, description, and attributes across Google Business Profile, LinkedIn, industry directories, and relevant databases." },
-  { Icon: BarChart3, title: "Ongoing Monitoring",             desc: "Monthly tracking of your visibility in AI model responses, with strategy adjustments based on algorithm changes and competitive movements." },
+  { Icon: Search,    title: "Business Requirements Workshop", desc: "A structured session to capture your business goals, user journeys, competitive context, and success metrics. Output: a clear problem statement and product brief." },
+  { Icon: Code2,     title: "Technical Feasibility Assessment",desc: "Evaluation of technical approach options, integration requirements, infrastructure needs, and technology choices appropriate to your context." },
+  { Icon: FileText,  title: "Product Requirements Document",  desc: "A complete written specification covering features, user flows, data models, non-functional requirements, and acceptance criteria." },
+  { Icon: Globe,     title: "Scope & Timeline Estimate",      desc: "Detailed breakdown of engineering effort, sprint plan, milestones, and delivery timeline based on the requirements document." },
+  { Icon: BarChart3, title: "Commercial Proposal",            desc: "Fixed-scope pricing with milestone payment schedule, or retainer structure for ongoing development. Delivered within one week of Discovery." },
 ];
 
 const videoDeliverables = [
-  { Icon: FileText,      title: "AI Script Generation",      desc: "From a brief or product description, generate compelling video scripts optimised for LinkedIn, YouTube, Instagram, and website landing pages." },
-  { Icon: Video,         title: "AI Video Production",       desc: "Using tools like Synthesia, HeyGen, RunwayML, and Pika, produce professional-quality videos with AI presenters, motion graphics, and product demonstrations." },
-  { Icon: MessageSquare, title: "Multilingual Localisation", desc: "Automatic translation and voice dubbing for Nordic and EU markets — Swedish, English, German, French — from a single source video." },
-  { Icon: BarChart3,     title: "Brand Video Libraries",     desc: "A reusable library of AI-generated brand assets (intro sequences, explainers, testimonial formats) that can be rapidly customised for new campaigns." },
+  { Icon: FileText,      title: "Wireframe Design",         desc: "Low-fidelity wireframes mapping user flows and screen structures — reviewed and approved before detailed design begins." },
+  { Icon: Video,         title: "UI Design",                desc: "High-fidelity visual design in Figma — complete interface design including components, states, responsive layouts, and brand integration." },
+  { Icon: MessageSquare, title: "Interactive Prototypes",   desc: "Clickable prototypes for stakeholder review and user testing before the engineering phase begins — reducing costly scope changes during build." },
+  { Icon: BarChart3,     title: "Design System",            desc: "Reusable component library and style guide delivered with the product — enabling consistent, efficient ongoing development." },
 ];
 
 const automationServices = [
-  { Icon: Zap,           title: "AI Lead Scoring",                  desc: "Machine learning models that analyse prospect behaviour, engagement patterns, and firmographic data to prioritise sales efforts on the highest-probability leads." },
-  { Icon: MessageSquare, title: "Automated Outreach Systems",        desc: "AI-powered email and LinkedIn outreach sequences that personalise messaging at scale while maintaining authentic, non-spammy communication." },
-  { Icon: Search,        title: "Conversational Lead Qualification", desc: "AI chat interfaces embedded on your website that qualify visitors, answer product questions, and route qualified leads to the sales team in real-time." },
-  { Icon: BarChart3,     title: "Sales Intelligence Dashboards",     desc: "Power BI integrations giving sales teams real-time visibility into pipeline health, conversion rates, and revenue forecasting." },
-  { Icon: FileText,      title: "AI Content Engines",               desc: "Automated generation of blog posts, social media content, case studies, and thought leadership pieces calibrated to your brand voice and target audience." },
+  { Icon: Zap,           title: "Agile Sprint Delivery",    desc: "1–2 week development sprints with weekly demos to the client. Clear visibility into progress, early feedback, and no surprises at delivery." },
+  { Icon: MessageSquare, title: "Continuous Integration",   desc: "Automated build and test pipelines ensuring every code change is validated before merging. No broken builds reach staging or production." },
+  { Icon: Search,        title: "QA & Testing",             desc: "Manual and automated testing across unit, integration, and end-to-end layers. Every feature tested against acceptance criteria before delivery." },
+  { Icon: BarChart3,     title: "Performance Monitoring",   desc: "Production monitoring, error tracking, and performance dashboards set up before launch — giving clients full visibility from day one." },
+  { Icon: FileText,      title: "Technical Documentation",  desc: "Complete developer documentation, API references, deployment guides, and runbooks delivered with every product — enabling client teams to maintain and extend independently." },
 ];
 
 const targetClients = [
-  { type: "SME (10–50 employees)",       pain: "No marketing team, founder doing everything",       entry: "GEO audit + 3 AI videos",          expansion: "Full growth stack with lead automation" },
-  { type: "Scale-up (50–250 employees)", pain: "Marketing team exists but no AI capabilities",      entry: "AI content engine + GEO",          expansion: "Sales intelligence + automated outreach" },
-  { type: "E-commerce",                  pain: "High ad costs, low organic visibility",              entry: "GEO + product video library",      expansion: "AI lead scoring + conversion optimisation" },
-  { type: "Professional Services",       pain: "Reputation-dependent, no content strategy",         entry: "Thought leadership content engine", expansion: "GEO + AI video for recruitment" },
+  { type: "SME (10–50 employees)",       pain: "Need a digital product but have no in-house engineering team",         entry: "Discovery + MVP build",            expansion: "Full product + ongoing development" },
+  { type: "Scale-up (50–250 employees)", pain: "Existing product needs rebuilding or significant new features",         entry: "Architecture review + build",      expansion: "Dedicated engineering retainer" },
+  { type: "Enterprise (250+ employees)", pain: "Custom internal tool or enterprise platform required",                  entry: "Discovery workshop + specification",expansion: "Full enterprise product build" },
+  { type: "Product Founder",             pain: "Has a validated idea but needs engineers to build the product",         entry: "MVP build + launch support",        expansion: "Ongoing product development" },
 ];
 
 export function GrowthMarketing() {
@@ -106,25 +106,25 @@ export function GrowthMarketing() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both", color: "#0f172a" }}>
-                Visibility, Leads &<br />Revenue — AI-Native
+                From Idea to<br />Live Product — Fast
               </h1>
 
               <p className="text-base max-w-lg leading-relaxed mb-8"
                 style={{ color: "#64748b", animation: "fadeUp 0.8s ease 0.25s both" }}>
-                GEO strategy, AI video production, and sales automation that keeps you visible in a market
-                increasingly mediated by AI search engines and generative content.
+                Requirements gathering, product design, engineering, and delivery. ANTUTIVE takes your idea
+                from brief to production — fast, European, and entirely yours.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
-                {["GEO Strategy", "AI Video Production", "Lead Scoring", "Sales Automation", "Content Engines"].map(c => (
+                {["Product Discovery", "UX Design", "Engineering", "EU-Based", "IP Ownership"].map(c => (
                   <span key={c} className="px-3 py-1 rounded-full text-xs font-medium"
                     style={{ border: `1px solid rgba(28,183,180,0.25)`, background: "rgba(28,183,180,0.08)", color: A }}>{c}</span>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                <Link to="/contact" className="hero-btn-primary">Get a GEO Audit</Link>
-                <Link to="#geo" className="hero-btn-secondary">Explore Solutions</Link>
+                <Link to="/contact" className="hero-btn-primary">Book a Discovery Session</Link>
+                <Link to="#geo" className="hero-btn-secondary">Explore Process</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -158,28 +158,29 @@ export function GrowthMarketing() {
             <Reveal variant="left">
               <span className="section-eyebrow-light"
                 style={{ borderColor: `${A}40`, background: `${A}12`, color: A }}>
-                GEO Strategy
+                Product Discovery
               </span>
               <h2 className="section-h2 mt-3 mb-5" style={{ fontWeight: 700, color: "#0f172a" }}>
-                Generative Engine Optimisation
+                Product Discovery & Scoping
               </h2>
               <p className="text-sm leading-relaxed mb-4" style={{ color: "#475569" }}>
-                GEO is the 2026 evolution of SEO. Instead of optimising for Google's link-based algorithm alone,
-                GEO ensures that AI models — ChatGPT, Gemini, Perplexity, Claude, Copilot — recommend your brand
-                when users ask for services in your niche.
+                Great products start with clear requirements. Before we write a single line of code, ANTUTIVE
+                runs a structured Discovery session to understand your business goals, user needs, technical
+                constraints, and market context.
               </p>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#64748b" }}>
-                As AI search becomes the primary discovery channel for B2B buyers, companies without GEO become
-                invisible to the fastest-growing segment of qualified traffic. Available as a monthly subscription.
+                The Discovery session produces a Product Requirements Document — the foundation for accurate
+                scoping, realistic timelines, and commercial proposals that reflect the real project, not
+                a generic estimate.
               </p>
               <div className="p-4 rounded-2xl border"
                 style={{ background: `rgba(28,183,180,0.06)`, borderColor: `${A}28` }}>
                 <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>
-                  ANTUTIVE uses GEO for its own brand
+                  ANTUTIVE uses Discovery for all projects
                 </p>
                 <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>
-                  We demonstrate the capability by using it — creating a live portfolio of AI-native growth work
-                  alongside our own marketing content.
+                  No project starts without a proper Discovery phase. This protects both parties — ensuring
+                  we build the right product at the right scope and price.
                 </p>
               </div>
             </Reveal>
@@ -222,11 +223,11 @@ export function GrowthMarketing() {
               AI Video Production
             </span>
             <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>
-              AI Marketing Video Production
+              Product Design & Prototyping
             </h2>
             <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: "#64748b" }}>
-              Video is the highest-converting marketing format. Traditional production is expensive and slow.
-              ANTUTIVE delivers professional-quality video at a fraction of the time and cost.
+              Visual design and user experience work that bridges requirements and engineering.
+              Every ANTUTIVE product is designed before it is built.
             </p>
           </div>
 
@@ -249,10 +250,10 @@ export function GrowthMarketing() {
           <Reveal variant="up" delay={200}>
             <div className="mt-10 max-w-lg mx-auto p-5 rounded-2xl border text-center"
               style={{ background: `rgba(28,183,180,0.06)`, borderColor: `${A}22` }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: A }}>Cost Advantage</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: A }}>Why Design First?</p>
               <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>
-                Traditional video production: <span className="font-bold" style={{ color: "#334155" }}>€3,000–15,000 per video.</span><br />
-                ANTUTIVE AI video production: <span className="font-bold" style={{ color: A }}>€300–800 per video.</span>
+                Products designed before engineering begins are delivered faster, with fewer changes, and at lower total cost.
+                <span className="font-bold" style={{ color: A }}> Every ANTUTIVE project includes full design before build.</span>
               </p>
             </div>
           </Reveal>
@@ -272,11 +273,11 @@ export function GrowthMarketing() {
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">Sales Automation</span>
             <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>
-              AI Sales & Growth Automation
+              How We Engineer Products
             </h2>
             <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: "#64748b" }}>
-              Beyond marketing content, ANTUTIVE builds AI systems that directly accelerate your
-              sales pipeline and customer acquisition process.
+              Agile, sprint-based engineering with weekly demos and regular client reviews.
+              Every product follows the ANTUTIVE Delivery Method.
             </p>
           </div>
 
@@ -310,11 +311,11 @@ export function GrowthMarketing() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
-              Who We Serve
+              Who We Build For
             </span>
-            <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>Target Clients</h2>
+            <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>Types of Clients We Work With</h2>
             <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: "#64748b" }}>
-              Each client type has a distinct entry point and natural expansion path through the growth stack.
+              Different businesses have different product needs. ANTUTIVE works across industries and company sizes.
             </p>
           </div>
 
@@ -328,7 +329,7 @@ export function GrowthMarketing() {
                     <h3 className="text-sm font-bold" style={{ color: "#0f172a" }}>{client.type}</h3>
                   </div>
                   <p className="text-xs mb-4 pl-6" style={{ color: "#94a3b8" }}>
-                    <span className="font-semibold" style={{ color: "#64748b" }}>Typical pain: </span>{client.pain}
+                    <span className="font-semibold" style={{ color: "#64748b" }}>Typical need:</span>{client.pain}
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 rounded-xl"
@@ -366,22 +367,22 @@ export function GrowthMarketing() {
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Free Diagnostic</span>
               </div>
               <h2 className="section-h2 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>
-                Get a Free GEO Audit
+                Start with a Free Discovery Session
               </h2>
               <p className="text-sm mb-8 leading-relaxed" style={{ color: "#64748b" }}>
-                Discover how your brand currently appears in AI model responses and how to improve it.
-                Free diagnostic for qualified prospects — no commitment required.
+                Tell us what you want to build. We'll scope it, design it, and deliver it — starting
+                with a free Discovery session to understand your requirements.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                   style={{ background: `linear-gradient(135deg,${A},${A2})`, color: "#ffffff" }}>
-                  Book a Strategy Call <ArrowRight className="w-4 h-4" />
+                  Book a Discovery Session <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/products"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5"
                   style={{ border: `1.5px solid ${A}40`, color: A, background: `${A}08` }}>
-                  Explore Products
+                  Explore Our Work
                 </Link>
               </div>
             </div>

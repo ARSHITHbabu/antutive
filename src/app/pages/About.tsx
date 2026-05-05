@@ -41,17 +41,17 @@ function CompanyHeroCard() {
 }
 
 const values = [
-  { icon: Shield,   title: "Data Sovereignty First",      desc: "Every solution is architected so client data stays within the EU and under client control — non-negotiable, not a feature." },
-  { icon: Award,    title: "Engineering Excellence",       desc: "Senior-level expertise on every engagement. No juniors learning on client projects. Quality standards that reflect Swedish professional norms." },
-  { icon: Zap,      title: "Speed as a Value Proposition", desc: "3× faster delivery than traditional Nordic consultancies through distributed engineering — without sacrificing compliance or quality." },
-  { icon: Users,    title: "SME Partnership Mindset",     desc: "Sized for SMEs. Long-term partnerships, not one-off projects. Client success is the only metric that creates repeat business." },
+  { icon: Shield,   title: "Client Ownership First",      desc: "Every product we build belongs entirely to the client. Full IP transfer on delivery — no lock-in, no ongoing dependency on ANTUTIVE unless the client chooses it." },
+  { icon: Award,    title: "Engineering Quality",          desc: "Senior engineers on every project. Thorough testing, clean code, and documented handover. Products built to last, not just to ship." },
+  { icon: Zap,      title: "Speed as a Commitment",        desc: "3× faster delivery than traditional European development firms through distributed engineering — without compromising quality or compliance." },
+  { icon: Users,    title: "Long-Term Partnership",        desc: "We build products and support them for years if clients want. Relationships matter more than single-project revenue." },
 ];
 
 const differentiators = [
-  { title: "Swedish Legal Entity",     detail: "Registered as ANTUTIVE AB (Org.nr 559576-7228) in Gothenburg, Västra Götalands län. Full Swedish Aktiebolag — local invoicing in SEK/EUR, VAT-registered, EU-compliant contracting for Swedish and EU clients." },
-  { title: "Dual Architecture Model",  detail: "Client-facing operations from Gothenburg. Engineering execution through distributed specialist teams. The result: senior-quality output at accelerated delivery timelines — 3× faster than traditional Swedish consultancies." },
-  { title: "EU AI Act Readiness",      detail: "All solutions designed for compliance ahead of EU AI Act enforcement (August 2026). Clients who engage now build systems compliant by design rather than requiring expensive retrofits." },
-  { title: "Full-Stack AI Capability", detail: "From generative AI and data engineering to growth automation and sovereign AI workspaces — ANTUTIVE covers the complete AI value chain. Clients engage once and expand as needs grow." },
+  { title: "Swedish Legal Entity",        detail: "Registered as ANTUTIVE AB (Org.nr 559576-7228) in Gothenburg, Västra Götalands län. Full Swedish Aktiebolag — local invoicing in SEK/EUR, VAT-registered, EU-compliant contracting for Swedish and EU clients." },
+  { title: "End-to-End Product Delivery", detail: "From initial discovery and requirements gathering, through design and engineering, to deployment and support — ANTUTIVE handles the complete product lifecycle. Clients engage once and receive a production-ready product." },
+  { title: "EU-Native Architecture",      detail: "All products designed and built for the EU regulatory environment. GDPR compliance, EU data residency, and regulatory requirements are addressed by design rather than as afterthoughts." },
+  { title: "Full Ownership on Delivery",  detail: "Every product built by ANTUTIVE is delivered with full intellectual property transfer to the client. No vendor lock-in, no licence dependencies — the client owns the code, the infrastructure, and the product completely." },
 ];
 
 const companyFacts = [
@@ -92,12 +92,12 @@ export function About() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
-                Swedish AI Engineering<br />for European Business
+                European Product<br />Engineering Company
               </h1>
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Founded in Gothenburg in 2026. A Swedish Aktiebolag delivering AI engineering and sovereign SaaS products to European SMEs at 3× the speed of traditional consultancies.
+                Founded in Gothenburg in 2026. A Swedish Aktiebolag building software products for European businesses — end-to-end, from requirement to delivery, with full IP ownership to the client.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -143,23 +143,22 @@ export function About() {
             <Reveal variant="left">
               <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}08` }}>Our Mission</span>
               <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>
-                Making Advanced AI<br />Accessible to European SMEs
+                Building Products<br />for European Businesses
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
-                European SMEs face compounding pressure: they need AI and data capabilities to remain competitive,
-                but lack the engineering depth to build them securely — especially with EU AI Act enforcement
-                beginning August 2026. Simultaneously, they need AI-native marketing to stay visible in a
-                market increasingly mediated by AI search engines.
+                European businesses need software products — whether that's a customer-facing application,
+                an internal tool, or a complete digital platform. Many organisations have the requirements
+                but lack the engineering capability to build what they need.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
-                ANTUTIVE AB is the engineering partner that eliminates both gaps. We deliver custom AI solutions,
-                analytics infrastructure, growth automation, and ready-to-deploy SaaS products with Swedish-grade
-                trust and full EU regulatory compliance.
+                ANTUTIVE AB exists to bridge that gap. We take business requirements and deliver
+                production-ready software products — fully scoped, engineered, tested, and deployed.
+                The client owns everything we build.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
-                Our model is straightforward: a Swedish client-facing operation in Gothenburg backed by a
-                distributed specialist engineering capability — producing senior-quality output at the speed
-                and economics that European SMEs need to compete.
+                Our model is simple: a Swedish client-facing operation in Gothenburg backed by a
+                distributed engineering team — delivering senior-quality products at the speed and
+                economics European businesses need.
               </p>
             </Reveal>
 
@@ -198,7 +197,7 @@ export function About() {
             <div className="text-center mb-12">
               <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}08` }}>Values</span>
               <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>What We Stand For</h2>
-              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Four principles that define how we work with clients and build our products.</p>
+              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Four principles that define how we build products and work with our clients.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -232,7 +231,7 @@ export function About() {
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">What Sets Us Apart</span>
             <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Structural Advantages</h2>
-            <p className="text-sm text-[#64748b] mt-3 max-w-lg mx-auto">The combination of Swedish entity, distributed engineering, and full-stack AI capability creates advantages that generic consultancies cannot replicate.</p>
+            <p className="text-sm text-[#64748b] mt-3 max-w-lg mx-auto">The combination of Swedish entity, distributed engineering, and end-to-end product delivery creates advantages that generic development agencies cannot replicate.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {differentiators.map((d, i) => (
@@ -264,15 +263,15 @@ export function About() {
           <Reveal variant="up">
             <div className="text-center mb-12">
               <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}08` }}>Regulatory Position</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>EU Compliance Built In</h2>
-              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Every engagement is designed for the regulatory environment European businesses operate in — not retrofitted to it.</p>
+              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Why European Businesses Choose Us</h2>
+              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Every product we build is designed for the EU regulatory environment and delivered with complete client ownership.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: Shield, title: "GDPR Native",        desc: "Privacy and data protection by design and by default. Data processing agreements available for all client engagements. EU data residency guaranteed." },
-              { icon: Globe,  title: "EU AI Act Ready",    desc: "All AI solutions designed for compliance before the August 2026 enforcement deadline. Risk classification, documentation, and transparency requirements addressed from day one." },
-              { icon: Award,  title: "Swedish Trust Mark", desc: "ANTUTIVE AB is a registered Swedish Aktiebolag. Swedish professional norms, local invoicing, and legal accountability — the trust foundation EU clients expect." },
+              { icon: Shield, title: "EU-Compliant Products",  desc: "Every product we build meets EU regulatory requirements — GDPR compliance, data residency, and relevant sector regulations addressed by design." },
+              { icon: Globe,  title: "Local EU Presence",     desc: "A registered Swedish Aktiebolag in Gothenburg. Local invoicing, EU-based contracting, and Swedish professional standards — the trust foundation European clients need." },
+              { icon: Award,  title: "Full IP Ownership",     desc: "All intellectual property created during development transfers fully to the client on delivery. You own the product, the code, and the infrastructure — completely." },
             ].map(({ icon: Icon, title, desc }, i) => (
               <Reveal key={i} variant={["left", "up", "right"][i] as any} delay={i * 100}>
                 <div className="p-7 rounded-3xl border h-full transition-all duration-300 hover:-translate-y-1"
@@ -307,8 +306,8 @@ export function About() {
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start the Conversation</span>
               </div>
-              <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Let's Work Together</h2>
-              <p className="text-sm text-[#64748b] mb-8 leading-relaxed">Ready to start your AI transformation? Book a Business Understanding session — our first step in the ANTUTIVE Delivery Method, offered free for qualified prospects.</p>
+              <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Let's Build Together</h2>
+              <p className="text-sm text-[#64748b] mb-8 leading-relaxed">Have a product requirement? Book a free Discovery session — our first step in the ANTUTIVE Delivery Method, offered free for qualified projects.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                   Get in Touch <ArrowRight className="w-4 h-4" />

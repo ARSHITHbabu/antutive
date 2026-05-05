@@ -5,18 +5,18 @@ import { Reveal } from "../lib/scroll";
 const A = "#6F3CC3";
 
 const heroMetrics = [
-  { value: "Q3",   label: "2026 MVP Launch" },
-  { value: "3",    label: "Pricing Tiers"   },
-  { value: "EU",   label: "Data Residency"  },
-  { value: "Free", label: "Start Forever"   },
+  { value: "B2B",    label: "Focus"         },
+  { value: "EU",     label: "Infrastructure"},
+  { value: "100%",   label: "IP Ownership"  },
+  { value: "Custom", label: "By Design"     },
 ];
 
 function FAMANTGrid() {
   const items = [
-    { Icon: Calendar, label: "Family Calendar", sub: "Unified scheduling"      },
-    { Icon: Mic,      label: "Voice-First",     sub: "Swedish & English"       },
-    { Icon: Shield,   label: "GDPR Native",     sub: "EU infrastructure"       },
-    { Icon: Zap,      label: "Agentic Tasks",   sub: "AI-powered coordination" },
+    { Icon: Calendar, label: "Web Products",   sub: "Scalable platforms"    },
+    { Icon: Mic,      label: "Mobile Apps",    sub: "iOS & Android"         },
+    { Icon: Shield,   label: "EU Compliant",   sub: "GDPR by design"        },
+    { Icon: Zap,      label: "Fast Delivery",  sub: "End-to-end built"      },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -44,34 +44,34 @@ function FAMANTGrid() {
 }
 
 const capabilities = [
-  { icon: Calendar,     title: "Unified Family Calendar",    desc: "Aggregates Google, Outlook, and Apple calendars into a shared family view with intelligent conflict detection and voice-based event creation." },
-  { icon: Zap,          title: "Agentic Task Management",    desc: "Tasks assigned, tracked, and completed through voice commands — with proactive reminders and adaptation based on completion patterns." },
-  { icon: ShoppingCart, title: "Meal Planning Engine",       desc: "Weekly meal planning with recipe management, dietary tracking, automatic grocery list generation, and delivery service integration." },
-  { icon: FileText,     title: "Document Vault",             desc: "Secure storage and intelligent retrieval of family documents — school forms, medical records, insurance — with OCR and natural language search." },
-  { icon: Mic,          title: "Voice-First Interface",      desc: "Every function accessible through conversational voice in Swedish and English, reducing screen dependency for the whole family." },
-  { icon: Shield,       title: "Privacy-First Architecture", desc: "All AI processing on EU infrastructure. Family data never leaves your control. Fully GDPR compliant by design." },
+  { icon: Calendar,     title: "Web Applications",      desc: "Full-stack web products — customer portals, SaaS platforms, B2B tools, e-commerce systems, and internal management dashboards." },
+  { icon: Zap,          title: "Mobile Applications",   desc: "Native iOS and Android apps, cross-platform React Native and Flutter builds — from MVP to full-featured mobile products." },
+  { icon: ShoppingCart, title: "Enterprise Platforms",  desc: "Internal business tools, ERP integrations, workflow automation systems, and complex B2B platforms engineered to exact specifications." },
+  { icon: FileText,     title: "API & Integration",     desc: "Backend services, REST APIs, data pipelines, and integration layers connecting existing business systems." },
+  { icon: Mic,          title: "Consumer Products",     desc: "B2C applications, marketplaces, content platforms, and consumer-facing tools — designed for scale from day one." },
+  { icon: Shield,       title: "Regulated Products",    desc: "Products for regulated industries (finance, health, logistics) built with EU compliance, audit trails, and sector-specific requirements by design." },
 ];
 
 const roadmap = [
-  { version: "MVP",  quarter: "Q3 2026", milestone: "Core calendar, basic task management, Swedish voice interface",                   status: "upcoming" },
-  { version: "V1.0", quarter: "Q4 2026", milestone: "Full feature set, 6-member seats, grocery delivery integration",                  status: "upcoming" },
-  { version: "V1.5", quarter: "Q1 2027", milestone: "Smart home connectors, German/English expansion, family analytics",               status: "future"   },
-  { version: "V2.0", quarter: "Q2 2027", milestone: "AI-driven predictions, enterprise family plans, API ecosystem",                   status: "future"   },
+  { version: "Week 1–2",  quarter: "Discovery",   milestone: "Requirements workshop, scoping, technical architecture, commercial proposal",       status: "upcoming" },
+  { version: "Week 2–4",  quarter: "Design",      milestone: "UX wireframes, UI design, interactive prototype, design review and sign-off",       status: "upcoming" },
+  { version: "Week 4–12", quarter: "Build",       milestone: "Agile engineering sprints, weekly demos, QA and acceptance testing",                status: "future"   },
+  { version: "Week 12+",  quarter: "Launch",      milestone: "Production deployment, IP handover, documentation, support SLA begins",             status: "future"   },
 ];
 
 const pricingTiers = [
-  { name: "Freemium",      price: "0 SEK",  period: "/month",                items: ["Unified family calendar", "Basic task management", "Swedish & English voice", "Up to 2 family members"],                                                featured: false },
-  { name: "Premium",       price: "99 SEK", period: "/month",                items: ["Everything in Freemium", "Meal planning + grocery lists", "Document Vault with OCR", "Up to 6 family members", "Priority support"],                    featured: true  },
-  { name: "Family Annual", price: "79 SEK", period: "/month, billed annually", items: ["Everything in Premium", "Smart home connectors", "Family analytics dashboard", "Early access to new features"],                                     featured: false },
+  { name: "MVP Build",      price: "Fixed",   period: "project pricing",    items: ["Requirements workshop", "UX/UI design", "Core feature development", "QA and testing", "Deployment to production", "30-day post-launch support"],           featured: false },
+  { name: "Full Product",   price: "Scoped",  period: "milestone payments", items: ["Everything in MVP Build", "Full feature set", "Multiple integrations", "Performance optimisation", "Documentation", "90-day support package"],            featured: true  },
+  { name: "Ongoing Build",  price: "Retainer",period: "/month",             items: ["Dedicated engineering capacity", "Monthly sprints", "Continuous delivery", "Priority support SLA", "Quarterly roadmap reviews"],                         featured: false },
 ];
 
 const saasEvaluation = [
-  { criterion: "Proven Product-Market Fit",     detail: "Active customer base with demonstrated retention — not pre-revenue concepts" },
-  { criterion: "GDPR-Compatible Architecture",  detail: "Data model allowing EU-hosted deployment without fundamental re-engineering" },
-  { criterion: "True SaaS Model",               detail: "Cloud-native architecture; desktop or on-premise-first products are excluded" },
-  { criterion: "B2B or Prosumer Target Market", detail: "Business-oriented products where EU regulatory compliance is a buying criterion" },
-  { criterion: "EU Market Addressable",         detail: "Clear demand signal in Sweden, Germany, Netherlands, France or other EU markets" },
-  { criterion: "Non-Competitive",               detail: "Does not directly compete with ANTUTIVE Engineering solution areas" },
+  { criterion: "Clear Business Requirement",   detail: "A defined need — a product to build, a system to replace, or a market gap to fill" },
+  { criterion: "Validated Market Demand",      detail: "The product addresses a real business need with identifiable users or customers" },
+  { criterion: "Reasonable Timeline",          detail: "Projects with realistic scope and timeline expectations for the desired outcome" },
+  { criterion: "EU Market Focus",              detail: "Products intended for European markets where we have the strongest regulatory and market expertise" },
+  { criterion: "Long-Term Vision",             detail: "Clients who want to build and grow a product over time, not just a one-off deliverable" },
+  { criterion: "Non-Conflicting Product",      detail: "Does not directly conflict with products ANTUTIVE is already building for other clients" },
 ];
 
 export function Products() {
@@ -101,24 +101,24 @@ export function Products() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both", color: "#0f172a" }}>
-                FAMANT &<br />EU SaaS Portfolio
+                Products Built<br />for Businesses
               </h1>
 
               <p className="text-base max-w-lg leading-relaxed mb-8"
                 style={{ color: "#64748b", animation: "fadeUp 0.8s ease 0.25s both" }}>
-                A voice-first AI home OS for families and a curated portfolio of EU-distributed SaaS products. Scalable recurring revenue alongside our core platform portfolio.
+                From enterprise platforms to consumer applications — ANTUTIVE designs and builds software products for European businesses. Every product delivered with full IP ownership.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
-                {["FAMANT Home OS", "Voice-First", "EU Data Residency", "SaaS Distribution", "Freemium Model"].map(c => (
+                {["Web Products", "Mobile Apps", "Enterprise Software", "B2B Platforms", "EU Compliant"].map(c => (
                   <span key={c} className="px-3 py-1 rounded-full text-xs font-medium"
                     style={{ border: `1px solid rgba(111,60,195,0.22)`, background: "rgba(111,60,195,0.07)", color: "#6F3CC3" }}>{c}</span>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                <Link to="/contact" className="hero-btn-primary">Request Early Access</Link>
-                <Link to="#saas" className="hero-btn-secondary">EU SaaS Partnership</Link>
+                <Link to="/contact" className="hero-btn-primary">Discuss Your Product</Link>
+                <Link to="#saas" className="hero-btn-secondary">Product Partnership</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -152,25 +152,24 @@ export function Products() {
             <Reveal variant="left">
               <span className="section-eyebrow-light"
                 style={{ borderColor: `${A}40`, background: `${A}12`, color: A }}>
-                FAMANT Home OS
+                What We Build
               </span>
-              <h2 className="section-h2 mt-3 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>FAMANT</h2>
-              <p className="text-sm font-semibold mb-4" style={{ color: A }}>Voice-First Agentic Home OS for Families</p>
+              <h2 className="section-h2 mt-3 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>Product Categories</h2>
+              <p className="text-sm font-semibold mb-4" style={{ color: A }}>End-to-End Software Product Engineering</p>
               <p className="text-sm leading-relaxed mb-4" style={{ color: "#475569" }}>
-                FAMANT unifies calendar management, task coordination, meal planning, and document management
-                into a single AI-powered platform. Conversational voice is the primary interaction mode —
-                reducing screen dependency for the whole family.
+                ANTUTIVE builds software products across multiple categories — web applications, mobile apps,
+                enterprise platforms, internal tools, and API-driven services. If your business needs a
+                product built, we build it.
               </p>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#64748b" }}>
-                Unlike fragmented apps, FAMANT connects every aspect of family logistics in one place.
-                It proactively manages schedules, coordinates tasks across family members, plans meals with
-                automatic grocery ordering, and makes your important documents instantly searchable by voice.
-                Launching MVP in Q3 2026 — Swedish and English, EU-hosted.
+                Every product begins with a Discovery session to scope requirements, validate the concept,
+                and agree the technical approach. Then we engineer, test, and deliver — handing over full
+                ownership to the client on delivery.
               </p>
               <div className="p-4 rounded-2xl border"
                 style={{ background: `rgba(111,60,195,0.05)`, borderColor: `${A}25` }}>
-                <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>EU Privacy Guarantee</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>All AI processing on EU infrastructure. Swedish legal entity. Your family data never leaves European borders — fully GDPR compliant by design.</p>
+                <p className="text-xs font-bold mb-1 uppercase tracking-wide" style={{ color: A }}>EU Product Guarantee</p>
+                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>All products built by ANTUTIVE are EU-hosted, GDPR compliant by design, and delivered with full intellectual property ownership transfer to the client.</p>
               </div>
             </Reveal>
 
@@ -210,8 +209,8 @@ export function Products() {
           <Reveal variant="up">
             <div className="text-center mb-12">
               <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Pricing</span>
-              <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>Simple, Transparent Pricing</h2>
-              <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: "#64748b" }}>Start free. Upgrade when your family is ready. All tiers include GDPR-compliant EU-hosted infrastructure.</p>
+              <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>Product Engagement Models</h2>
+              <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: "#64748b" }}>Choose the engagement model that fits your product requirement and timeline. All builds include GDPR-compliant EU infrastructure.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -269,8 +268,8 @@ export function Products() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">Development Roadmap</span>
-            <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>FAMANT Launch Timeline</h2>
-            <p className="text-sm mt-3 max-w-lg mx-auto" style={{ color: "#64748b" }}>MVP launching Q3 2026. Built with EU-native infrastructure, GDPR compliance by design.</p>
+            <h2 className="section-h2 mt-3" style={{ fontWeight: 700, color: "#0f172a" }}>Typical Product Delivery</h2>
+            <p className="text-sm mt-3 max-w-lg mx-auto" style={{ color: "#64748b" }}>From requirements to live product. Timeline varies by scope — every project follows the ANTUTIVE Delivery Method.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {roadmap.map((item, i) => (
@@ -301,24 +300,24 @@ export function Products() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
-              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>EU SaaS Distribution</span>
-              <h2 className="section-h2 mt-3 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>EU SaaS Distribution</h2>
+              <span className="section-eyebrow-light" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>Product Partnership</span>
+              <h2 className="section-h2 mt-3 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>Build Together</h2>
               <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b" }}>
-                ANTUTIVE identifies proven SaaS products built by development partners that serve validated
-                business needs but lack EU market presence. We acquire exclusive EU distribution rights,
-                ensure GDPR and EU AI Act compliance, provide localisation, and handle all EU sales and billing.
+                If you have a product idea or requirement but need an engineering partner to build it —
+                ANTUTIVE is that partner. We take your requirements, design the product, and deliver it
+                to production with full IP ownership transferring to you.
               </p>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#64748b" }}>
-                Commercial structure: ANTUTIVE receives 20–40% revenue share on EU subscriptions — generating
-                recurring licence revenue alongside the engineering solution areas. Partners
-                gain EU market access without entity setup cost.
+                We work with businesses across Europe on product development partnerships — fixed-scope
+                builds, ongoing development retainers, and co-development arrangements. Every engagement
+                structured for clarity, transparency, and client ownership.
               </p>
               <div className="p-4 rounded-2xl border" style={{ background: "#ffffff", borderColor: `${A}22`, boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
                 <div className="flex items-center gap-2 mb-2">
                   <Package className="w-4 h-4" style={{ color: A }} />
                   <p className="text-xs font-bold uppercase tracking-wide" style={{ color: A }}>Commercial Model</p>
                 </div>
-                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>Exclusive EU distribution rights. Localisation (EN + SV) within 4 weeks. All EU billing in SEK/EUR through ANTUTIVE AB. GDPR compliance guaranteed.</p>
+                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>Fixed-scope project pricing or monthly retainer. Milestone-based payments. Full IP transfer on delivery. GDPR-compliant EU-based development.</p>
               </div>
             </Reveal>
 
@@ -326,7 +325,7 @@ export function Products() {
               <div className="p-6 rounded-3xl border" style={{ borderColor: `${A}22`, background: "#ffffff", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
                 <div className="flex items-center gap-2 mb-5">
                   <Globe className="w-4 h-4" style={{ color: A }} />
-                  <h3 className="text-sm font-bold uppercase tracking-wide" style={{ color: A }}>Partner Evaluation Criteria</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wide" style={{ color: A }}>What Makes a Good Partnership</h3>
                 </div>
                 <div className="flex flex-col gap-3">
                   {saasEvaluation.map((item, i) => (
@@ -362,14 +361,14 @@ export function Products() {
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Join the Waitlist</span>
               </div>
-              <h2 className="section-h2 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>Join the FAMANT Waitlist</h2>
-              <p className="text-sm mb-8 leading-relaxed" style={{ color: "#64748b" }}>MVP launching Q3 2026. Be among the first Swedish families to access FAMANT — voice-first, EU-hosted, GDPR compliant.</p>
+              <h2 className="section-h2 mb-4" style={{ fontWeight: 700, color: "#0f172a" }}>Ready to Build Your Product?</h2>
+              <p className="text-sm mb-8 leading-relaxed" style={{ color: "#64748b" }}>Tell us your requirements. We'll scope the project, propose a timeline, and deliver the product you need — on EU infrastructure with full IP ownership.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary" style={{ background: `linear-gradient(135deg,#F5C84C,#1CB7B4,${A})` }}>
-                  Request Early Access <ArrowRight className="w-4 h-4" />
+                  Discuss Your Product <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/contact" className="cta-btn-secondary" style={{ borderColor: `${A}40`, color: A }}>
-                  Explore SaaS Partnership
+                  View Our Process
                 </Link>
               </div>
             </div>
