@@ -17,10 +17,10 @@ const heroMetrics = [
 /* ── hero right: service model grid ── */
 function ConsultingServiceGrid() {
   const items = [
-    { Icon: Briefcase, label: "Model A",  sub: "Strategic IT Consulting",   color: "#1CB7B4" },
-    { Icon: Users,     label: "Model B",  sub: "Managed Engineering Teams", color: "#168AB0" },
-    { Icon: Code2,     label: "Model C",  sub: "Project-Based Delivery",    color: "#0D9488" },
-    { Icon: Globe,     label: "EU First", sub: "Swedish AB · SEK/EUR",      color: "#1CB7B4" },
+    { Icon: Briefcase, label: "Model A",  sub: "Product Strategy & Discovery", color: "#1CB7B4" },
+    { Icon: Users,     label: "Model B",  sub: "Managed Build Teams",          color: "#168AB0" },
+    { Icon: Code2,     label: "Model C",  sub: "Fixed-Scope Delivery",         color: "#0D9488" },
+    { Icon: Globe,     label: "EU First", sub: "Swedish AB · SEK/EUR",         color: "#1CB7B4" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -46,42 +46,42 @@ function ConsultingServiceGrid() {
 const serviceModels = [
   {
     model: "Model A",
-    title: "Strategic IT Consulting",
+    title: "Product Strategy & Discovery",
     billing: "Time & Materials — billed in SEK or EUR through ANTUTIVE AB",
-    desc: "Senior-level consulting directly in Sweden and across the EU. Technology strategy, architecture reviews, AI readiness assessments, data governance planning, and digital transformation advisory.",
-    items: ["Technology strategy and roadmapping", "Architecture reviews and design", "AI readiness assessments", "Data governance planning", "Digital transformation advisory"],
+    desc: "Senior-level product strategy for businesses that have a requirement but are unsure where to start. We run discovery workshops, define requirements, produce a PRD, and deliver a scoped commercial proposal before any engineering begins.",
+    items: ["Requirements workshops and stakeholder interviews", "Product scope and technical feasibility", "Product Requirements Document (PRD)", "Architecture planning and technology selection", "Commercial proposal with timeline and cost"],
   },
   {
     model: "Model B",
-    title: "Managed Engineering Teams",
+    title: "Managed Build Teams",
     billing: "Monthly retainer per team member or fixed-scope project pricing",
-    desc: "Dedicated development teams for specific projects or ongoing product development. The client contracts exclusively with ANTUTIVE AB. Team composition, management, and QA are handled by ANTUTIVE. Single point of contact, regular sprint reviews, full IP ownership.",
-    items: ["Dedicated team composition by ANTUTIVE", "Single point of contact", "Regular sprint reviews and demos", "Full IP ownership by client", "QA and delivery managed internally"],
+    desc: "Dedicated product teams for businesses that need ongoing engineering capacity. The client contracts exclusively with ANTUTIVE AB. Team composition, sprint management, QA, and delivery cadence are all handled by ANTUTIVE.",
+    items: ["Dedicated team assembled by ANTUTIVE", "Single point of contact for the client", "Regular sprint reviews and live demos", "Full IP ownership transferred to client", "QA and deployment managed internally"],
   },
   {
     model: "Model C",
-    title: "Project-Based Delivery",
+    title: "Fixed-Scope Build",
     billing: "Fixed-scope quotation with milestone-based payments",
-    desc: "End-to-end software development: web applications, mobile apps, enterprise integrations, API development, cloud migrations, legacy modernisation. Each project follows the ANTUTIVE Delivery Method.",
-    items: ["Web and mobile application development", "Enterprise system integrations", "API development and management", "Cloud migrations and modernisation", "Legacy system replacement"],
+    desc: "End-to-end product builds with defined scope, timeline, and cost. Web applications, mobile apps, enterprise platforms, API development, and system integrations. Every project follows the ANTUTIVE Delivery Method from discovery to handover.",
+    items: ["Web and mobile product development", "Enterprise platform and system builds", "API development and third-party integrations", "Cloud infrastructure and deployment", "Full handover with documentation and IP transfer"],
   },
 ];
 
 const techStack = [
-  { domain: "Frontend",       tech: "React, Next.js, Vue.js, React Native, Flutter",                                   icon: Code2   },
-  { domain: "Backend",        tech: "Python, Node.js, Java, .NET, Go",                                                 icon: Server  },
-  { domain: "Cloud & DevOps", tech: "AWS, Azure, GCP, Kubernetes, Terraform, CI/CD",                                  icon: Globe   },
-  { domain: "Data",           tech: "PostgreSQL, MongoDB, Snowflake, Spark, Airflow, dbt",                             icon: Database },
-  { domain: "AI / ML",        tech: "PyTorch, TensorFlow, LangChain, LlamaIndex, HuggingFace, OpenAI/Anthropic SDKs", icon: Cpu     },
-  { domain: "Enterprise",     tech: "SAP Integration, Salesforce, Microsoft 365, Fortnox, Visma",                      icon: Layers  },
+  { domain: "Frontend",        tech: "React, Next.js, Vue.js, React Native, Flutter",              icon: Code2   },
+  { domain: "Backend",         tech: "Python, Node.js, Java, .NET, Go",                            icon: Server  },
+  { domain: "Cloud & DevOps",  tech: "AWS, Azure, GCP, Kubernetes, Terraform, CI/CD",             icon: Globe   },
+  { domain: "Data & Storage",  tech: "PostgreSQL, MongoDB, Snowflake, Redis, Elasticsearch, dbt",  icon: Database },
+  { domain: "Quality & Test",  tech: "Jest, Cypress, Playwright, Selenium, k6, SonarQube",         icon: Cpu     },
+  { domain: "Enterprise",      tech: "SAP Integration, Salesforce, Microsoft 365, Fortnox, Visma", icon: Layers  },
 ];
 
 const positioning = [
-  { never: "Offshore / Offshoring",             always: "Distributed engineering / Global delivery model" },
-  { never: "India team / Indian developers",    always: "Specialised engineering teams"                   },
-  { never: "Cheap / Low-cost / Cost-effective", always: "Accelerated delivery / Speed advantage"          },
-  { never: "Body shopping / Staff leasing",     always: "Managed engineering teams / Dedicated capacity"  },
-  { never: "Nearshore",                         always: "EU-governed engineering operations"               },
+  { never: "We build what you spec without input",      always: "We partner from discovery to delivery"           },
+  { never: "Template-based or no-code solutions",       always: "Custom-engineered for your exact requirements"   },
+  { never: "You retain partial ownership of the code",  always: "Full IP transferred to you on final delivery"    },
+  { never: "Black-box offshore delivery",               always: "Transparent EU-governed product engineering"     },
+  { never: "Vendor lock-in to our infrastructure",      always: "Open architecture you own and can host anywhere" },
 ];
 
 export function Consulting() {
@@ -107,26 +107,26 @@ export function Consulting() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp 0.6s ease both" }}>
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · Strategic Consulting</span>
+                <span className="text-xs font-bold tracking-widest uppercase">ANTUTIVE · Product Engineering</span>
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
-                IT Consulting &<br />Engineering Teams
+                Product Engineering<br />for European Businesses
               </h1>
 
               <p className="text-base text-white/80 max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Senior advisory, architecture leadership, managed engineering teams, and end-to-end project delivery — contracted through ANTUTIVE AB with full EU regulatory compliance and local invoicing in SEK/EUR.
+                We build software products for businesses. From discovery and scoping through to design, engineering, and full handover — contracted through ANTUTIVE AB with EU compliance and local invoicing in SEK/EUR.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
-                {["Strategic Consulting", "Managed Teams", "Project Delivery", "Architecture Reviews", "AI Readiness"].map(c => (
+                {["Product Strategy", "Managed Build Teams", "Fixed-Scope Delivery", "Architecture Design", "Full IP Transfer"].map(c => (
                   <span key={c} className="px-3 py-1 rounded-full border border-white/20 bg-white/08 text-white/75 text-xs font-medium backdrop-blur-sm">{c}</span>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>Discuss Your Engagement</Link>
+                <Link to="/contact" className="hero-btn-primary" style={{ color: D }}>Start a Discovery</Link>
                 <Link to="#models" className="hero-btn-secondary">View Engagement Models</Link>
               </div>
 
@@ -162,9 +162,9 @@ export function Consulting() {
               style={{ borderColor: `${A}40`, background: `${A}18`, color: "#fcd34d" }}>
               Engagement Models
             </span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Engagement Models</h2>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Three Ways to Work With Us</h2>
             <p className="text-sm text-white/50 mt-3 max-w-xl mx-auto">
-              Choose the engagement model that fits your situation. All work is contracted with ANTUTIVE AB — the Swedish entity that provides your EU compliance guarantee.
+              Choose the model that fits your requirement. All work is contracted with ANTUTIVE AB — giving you EU compliance, full IP ownership, and a single accountable partner.
             </p>
           </div>
 
@@ -210,9 +210,9 @@ export function Consulting() {
             <span className="section-eyebrow" style={{ color: A, borderColor: `${A}33`, background: `${A}10` }}>
               Technology Coverage
             </span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Full Stack Engineering</h2>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>Full-Stack Product Engineering</h2>
             <p className="text-sm text-white/45 mt-3 max-w-xl mx-auto">
-              ANTUTIVE covers the full modern technology stack — from frontend applications to AI infrastructure and enterprise integrations.
+              ANTUTIVE covers the complete technology stack — from user-facing applications to backend infrastructure, data systems, and enterprise integrations.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -246,10 +246,10 @@ export function Consulting() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="text-center mb-12">
-            <span className="section-eyebrow-light">Delivery Model</span>
-            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>How We Deliver</h2>
+            <span className="section-eyebrow-light">Our Principles</span>
+            <h2 className="section-h2 text-white mt-3" style={{ fontWeight: 700 }}>What Sets Us Apart</h2>
             <p className="text-sm text-white/55 mt-3 max-w-xl mx-auto">
-              ANTUTIVE operates with a distributed global engineering model — accurate, transparent, and professionally structured for European clients.
+              We are not a generic agency. ANTUTIVE is a product engineering company — purpose-built to deliver software products for businesses from requirement to ownership transfer.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -258,11 +258,11 @@ export function Consulting() {
                 <div className="grid grid-cols-2 gap-3 p-5 rounded-2xl"
                   style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", backdropFilter: "blur(12px)" }}>
                   <div className="p-3 rounded-xl bg-red-500/10 border border-red-400/20">
-                    <p className="text-xs font-bold text-red-300 mb-1 uppercase tracking-wide">Never say</p>
+                    <p className="text-xs font-bold text-red-300 mb-1 uppercase tracking-wide">Not this</p>
                     <p className="text-xs text-white/70">{p.never}</p>
                   </div>
                   <div className="p-3 rounded-xl bg-green-500/10 border border-green-400/20">
-                    <p className="text-xs font-bold text-green-300 mb-1 uppercase tracking-wide">Always say</p>
+                    <p className="text-xs font-bold text-green-300 mb-1 uppercase tracking-wide">But this</p>
                     <p className="text-xs text-white/80">{p.always}</p>
                   </div>
                 </div>
@@ -289,22 +289,22 @@ export function Consulting() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6"
                 style={{ borderColor: `${A}30`, background: `${A}10` }}>
                 <Sparkles className="w-3.5 h-3.5" style={{ color: A }} />
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start the Conversation</span>
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Start Building</span>
               </div>
               <h2 className="section-h2 text-white mb-4" style={{ fontWeight: 700 }}>
-                Discuss Your Engagement
+                Ready to Build Your Product?
               </h2>
               <p className="text-sm text-white/55 mb-8 leading-relaxed">
-                Whether you need a strategy review, a managed team, or end-to-end project delivery — start with a call to assess fit and scope. No commitment required.
+                Whether you have a clear requirement or just an idea — start with a free Discovery session. We will scope it, design it, and build it. Full IP ownership guaranteed.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary"
                   style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
-                  Book a Strategy Call <ArrowRight className="w-4 h-4" />
+                  Start a Free Discovery <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  Explore Solutions
+                  View Our Services
                 </Link>
               </div>
             </div>

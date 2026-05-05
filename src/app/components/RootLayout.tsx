@@ -30,10 +30,10 @@ export function RootLayout() {
   }, []);
 
   const nav = [
-    { name: "Growth & Marketing", href: "/growth-marketing" },
-    { name: "AI Platform",        href: "/custom-platform" },
-    { name: "Products",           href: "/products" },
-    { name: "About",              href: "/about" },
+    { name: "Our Work",      href: "/growth-marketing" },
+    { name: "Custom Build",  href: "/custom-platform" },
+    { name: "Products",      href: "/products" },
+    { name: "About",         href: "/about" },
   ];
 
   const isHome  = location.pathname === "/";
@@ -163,7 +163,7 @@ export function RootLayout() {
                 </Link>
               </div>
               <p className="text-[#64748b] text-sm leading-relaxed">
-                Strategic AI engineering partner for European businesses.
+                European product engineering company building software for businesses.
               </p>
             </div>
 
@@ -171,8 +171,8 @@ export function RootLayout() {
               <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Solutions</h4>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["Growth & Marketing AI","/growth-marketing"],
-                  ["Custom AI Platform",   "/custom-platform"],
+                  ["Our Work",      "/growth-marketing"],
+                  ["Custom Build",  "/custom-platform"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link to={href} className="text-[#64748b] hover:text-[#6F3CC3] transition-colors">{label}</Link>
@@ -207,7 +207,7 @@ export function RootLayout() {
           </div>
 
           <div className="border-t border-slate-300 mt-12 pt-8 text-center text-xs text-[#64748b] tracking-wide">
-            © 2026 ANTUTIVE AB · Gothenburg, Sweden · EU-compliant AI Engineering
+            © 2026 ANTUTIVE AB · Gothenburg, Sweden · EU-based Product Engineering
           </div>
         </div>
       </footer>

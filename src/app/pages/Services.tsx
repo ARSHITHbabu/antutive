@@ -20,10 +20,10 @@ const heroMetrics = [
 /* ── practice area grid (hero right side) ── */
 function PracticeAreaGrid() {
   const areas = [
-    { Icon: Cpu,        label: "Generative AI",    sub: "Agents · RAG · Knowledge",  color: "#F5C84C" },
-    { Icon: BarChart3,  label: "Data Engineering", sub: "ETL · Power BI · Predict",  color: "#C2410C" },
-    { Icon: TrendingUp, label: "AI Growth",         sub: "GEO · Video · Automation",  color: "#6F3CC3" },
-    { Icon: Lock,       label: "Custom Platform",   sub: "Sovereign · Private · EU",  color: "#6F3CC3" },
+    { Icon: Cpu,        label: "Product Strategy", sub: "Discovery · Design · Scope", color: "#F5C84C" },
+    { Icon: BarChart3,  label: "Engineering",      sub: "Build · Test · Deploy",      color: "#C2410C" },
+    { Icon: TrendingUp, label: "Product Launch",    sub: "Go-to-Market · Growth",      color: "#6F3CC3" },
+    { Icon: Lock,       label: "Enterprise Build",  sub: "Custom · Scoped · EU",       color: "#6F3CC3" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-md">
@@ -54,51 +54,51 @@ function PracticeAreaGrid() {
 
 /* ── data ── */
 const genAIItems = [
-  { Icon: Cpu,      title: "Agentic AI Systems",           desc: "Autonomous agents that execute multi-step business processes — invoice matching, support ticket resolution, document classification, approval workflows — without human intervention." },
-  { Icon: Database, title: "Sovereign RAG",                desc: "Private knowledge systems deployed on your infrastructure or EU-hosted cloud. Corporate documents, policies, manuals, and historical data become queryable through natural language, including Swedish." },
-  { Icon: Layers,   title: "Knowledge Graphs & Second Brain", desc: "Structured representation of organisational knowledge connecting entities, relationships, and context. Built using Neo4j or Apache Jena depending on scale." },
-  { Icon: Code2,    title: "Conversational AI Interfaces", desc: "Voice-first and chat-based interfaces for internal tools and customer-facing applications, powered by open-weight models (LLaMA, Mistral) or commercial APIs (Claude, GPT) based on compliance needs." },
+  { Icon: Cpu,      title: "Product Discovery",         desc: "Structured requirements workshops that map your business goals, user needs, technical constraints, and market context into a clear product specification." },
+  { Icon: Database, title: "UX & UI Design",            desc: "User experience design and interface development — wireframes, prototypes, design systems, and visual design aligned to your brand and user expectations." },
+  { Icon: Layers,   title: "Technical Architecture",    desc: "System design and technology selection appropriate to your product's scale, performance requirements, and future growth. Stack decisions driven by your context, not trend." },
+  { Icon: Code2,    title: "MVP Planning",              desc: "Scope definition for minimum viable products — identifying the core features needed to validate the concept before building the full product." },
 ];
 
 const genAICases = [
-  { industry: "Logistics / 3PL",      problem: "Manual shipment tracking and exception handling",  solution: "Agentic system that monitors, detects delays, and autonomously notifies stakeholders" },
-  { industry: "Professional Services", problem: "Knowledge locked in individual consultants",       solution: "Sovereign RAG making firm-wide expertise searchable" },
-  { industry: "Manufacturing",         problem: "Quality documentation scattered across systems",    solution: "Knowledge graph connecting specs, defect reports, and supplier data" },
-  { industry: "E-commerce",           problem: "Customer support cannot scale with orders",         solution: "Conversational AI with full order system integration for autonomous resolution" },
+  { industry: "Retail & E-commerce",   problem: "No customer portal or order management system",                      solution: "Custom web platform with inventory, orders, and customer accounts" },
+  { industry: "Professional Services", problem: "Manual client onboarding and document management",                   solution: "Client portal with automated onboarding, document vault, and reporting" },
+  { industry: "Logistics",             problem: "Tracking and fleet management done in spreadsheets",                  solution: "Operations platform with real-time tracking, route planning, and driver app" },
+  { industry: "Healthcare / MedTech",  problem: "Patient communication and appointment management is fragmented",      solution: "GDPR-compliant patient platform with booking, messaging, and records" },
 ];
 
 const analyticsSvcs = [
-  { Icon: Database,   title: "ETL Pipeline Design",              desc: "Extracting data from ERP systems (Fortnox, Visma, SAP Business One), CRM platforms (HubSpot, Salesforce, Lime), banking feeds, and operational databases into unified, analysis-ready data warehouses." },
-  { Icon: BarChart3,  title: "Power BI Dashboard Engineering",   desc: "Custom-engineered analytical environments with automated refresh, role-based access, and embedded business logic. Designed for board presentations, operational management, and regulatory reporting." },
-  { Icon: TrendingUp, title: "Predictive Analytics & Modelling", desc: "Financial forecasting compliant with K3/K4 Swedish accounting standards, demand prediction, churn analysis, and resource planning models." },
-  { Icon: Shield,     title: "Data Quality & Governance",        desc: "Automated data validation frameworks, lineage tracking for audit compliance, and master data management across fragmented source systems." },
+  { Icon: Database,   title: "Frontend Development",   desc: "Web application development using React, Next.js, and Vue.js. Mobile development with React Native and Flutter. Responsive, accessible, performant interfaces across all devices." },
+  { Icon: BarChart3,  title: "Backend Engineering",    desc: "Server-side development in Python, Node.js, Java, and .NET. RESTful APIs, GraphQL services, microservices, and monolithic architectures — fit to your product's scale." },
+  { Icon: TrendingUp, title: "Cloud & DevOps",         desc: "Deployment on EU cloud infrastructure (AWS, Azure, GCP). CI/CD pipelines, containerisation with Docker and Kubernetes, infrastructure-as-code." },
+  { Icon: Shield,     title: "Quality Assurance",      desc: "Automated testing, manual QA, performance testing, and security reviews. Every product delivered with test coverage and documented handover." },
 ];
 
 const analyticsLevels = [
-  { level: "Fragmented", state: "Data in Excel, manual reporting, no single source of truth",  eng: "ETL pipeline + unified warehouse",  dur: "4–6 wks" },
-  { level: "Structured",  state: "Central database exists but reporting is static or manual",   eng: "Power BI with automated refresh",   dur: "3–4 wks" },
-  { level: "Analytical",  state: "Dashboards exist but no predictive capability",               eng: "Predictive models & analytics",    dur: "6–8 wks" },
-  { level: "Intelligent", state: "Analytics mature, ready for AI-driven automation",            eng: "Agentic AI and knowledge systems",  dur: "8–12 wks" },
+  { level: "Discovery", state: "Requirements gathered, scope defined, commercial agreement",      eng: "Discovery session + proposal",    dur: "1–2 wks" },
+  { level: "Design",    state: "UX designed, architecture planned, development environment ready", eng: "UX/UI + architecture",            dur: "1–3 wks" },
+  { level: "Build",     state: "Product engineered, tested, staged for client review",            eng: "Agile sprints + QA",              dur: "4–10 wks" },
+  { level: "Launch",    state: "Product live, clients onboarded, support SLA active",             eng: "Deploy + handover",               dur: "1–2 wks" },
 ];
 
 const growthHighlights = [
-  { Icon: Search,      label: "GEO Strategy",       desc: "Brand visibility in AI-generated search results — ChatGPT, Perplexity, Gemini — through structured content optimisation." },
-  { Icon: Zap,         label: "AI Video Ads",        desc: "Script-to-screen AI video production for social campaigns at 80% cost reduction vs traditional video production." },
-  { Icon: Users,       label: "Lead Scoring",        desc: "ML models scoring and prioritising leads from CRM data, predicting conversion probability and optimal outreach timing." },
-  { Icon: GitBranch,   label: "Outreach Automation", desc: "Personalised multi-channel sequences — email, LinkedIn, ad retargeting — triggered by AI-detected behavioural signals." },
+  { Icon: Search,      label: "Launch Strategy",         desc: "Go-to-market planning for new products — target audience, launch channels, messaging, and early adopter acquisition." },
+  { Icon: Zap,         label: "Performance Optimisation",desc: "Post-launch performance analysis, load testing, caching strategies, and infrastructure scaling for growing products." },
+  { Icon: Users,       label: "Analytics Integration",   desc: "User analytics, conversion tracking, and product metrics setup — giving product owners visibility into how users interact with their product." },
+  { Icon: GitBranch,   label: "Iterative Development",   desc: "Post-launch feature development based on user feedback — monthly sprints, continuous delivery, and product evolution." },
 ];
 
 const platformFeatures = [
-  { Icon: Lock,    label: "100% Private",        desc: "Your data never leaves your environment or EU-hosted infrastructure." },
-  { Icon: Layers,  label: "Model-Agnostic",      desc: "Switch between Claude, GPT, LLaMA, Mistral without re-engineering your stack." },
-  { Icon: Server,  label: "EU Data Residency",   desc: "Full sovereignty compliance with GDPR and EU AI Act requirements." },
-  { Icon: Code2,   label: "Custom Integrations", desc: "Native connectors to your ERP, CRM, and operational systems." },
+  { Icon: Lock,    label: "100% IP Ownership",   desc: "All code and product assets belong entirely to the client on delivery." },
+  { Icon: Layers,  label: "Custom Architecture", desc: "Purpose-built for your specific needs — not adapted from a template." },
+  { Icon: Server,  label: "EU Data Residency",   desc: "All products deployed on EU infrastructure, GDPR compliant by design." },
+  { Icon: Code2,   label: "System Integration",  desc: "Native connectors to your ERP, CRM, and operational systems." },
 ];
 
 const integrations = [
-  { start: "Power BI Dashboards", exp: "ETL Pipelines → Sovereign RAG",              logic: "Clean data enables AI; AI makes dashboards intelligent." },
-  { start: "GEO Audit",           exp: "AI Content Engine → AI Video → Web Engine",   logic: "Visibility requires content; content requires automation." },
-  { start: "Custom AI Platform",  exp: "Sovereign RAG → Agentic AI",                  logic: "Private AI workspace becomes the foundation for automation." },
+  { start: "Discovery Session",   exp: "Technical Architecture → UX Design → Engineering",   logic: "Good products start with clear requirements; clear requirements enable better design and faster engineering." },
+  { start: "MVP Launch",          exp: "User Analytics → Feature Development → Scale",        logic: "A live product generates real feedback; real feedback drives better product decisions." },
+  { start: "Enterprise Build",    exp: "Integration Layer → Custom API → Operational Tools",  logic: "Enterprise products expand — each system integration opens new automation and efficiency opportunities." },
 ];
 
 export function Services() {
@@ -128,16 +128,16 @@ export function Services() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
-                AI, Data &<br />Growth Solutions
+                Product Engineering<br />Services
               </h1>
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Four interconnected solution areas — each built around your operational context, not a technology demo.
+                Four interconnected service areas — each built around your product requirement, not a technology demo.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
-                {["Generative AI", "Data Engineering", "AI Growth & Marketing", "Custom AI Platforms"].map(c => (
+                {["Product Strategy", "Web Engineering", "Mobile Development", "Enterprise Build"].map(c => (
                   <span key={c} className="px-3 py-1 rounded-full border text-xs font-medium"
                     style={{ borderColor: "rgba(245,200,76,0.35)", background: "rgba(245,200,76,0.08)", color: "#475569" }}>{c}</span>
                 ))}
@@ -145,7 +145,7 @@ export function Services() {
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
                 <Link to="/contact" className="hero-btn-primary">Book a Discovery Call</Link>
-                <Link to="#genai" className="hero-btn-secondary">Explore Solutions</Link>
+                <Link to="#genai" className="hero-btn-secondary">Explore Services</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -179,13 +179,13 @@ export function Services() {
             <Reveal variant="left">
               <span className="section-eyebrow"
                 style={{ borderColor: `${A}40`, background: `${A}10`, color: "#0369a1" }}>
-                Generative AI
+                Product Strategy
               </span>
-              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Generative AI Solutions</h2>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Product Strategy & Design</h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-6">
-                Custom AI product development that begins with deep business problem understanding. ANTUTIVE does not sell
-                "AI tools" — it engineers intelligent systems that solve specific operational bottlenecks. Every solution
-                is built with your data sovereignty as a non-negotiable requirement.
+                Custom product development begins with deep business problem understanding. ANTUTIVE does not
+                sell pre-built templates — we engineer products that solve specific business needs. Every
+                product is scoped and designed around your exact requirements.
               </p>
               <div className="flex flex-col gap-3">
                 {genAIItems.map((item, i) => (
@@ -210,14 +210,14 @@ export function Services() {
               <div className="lg:sticky lg:top-28 p-6 rounded-3xl border"
                 style={{ background: "rgba(28,183,180,0.04)", borderColor: `${A}22`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 <h3 className="text-xs font-bold uppercase tracking-widest mb-5 text-[#0369a1]">
-                  Target Use Cases
+                  Example Products We Build
                 </h3>
                 {genAICases.map((uc, i) => (
                   <div key={i} className="p-4 rounded-2xl border mb-3 last:mb-0 transition-all duration-300 hover:border-[#1CB7B4]/30"
                     style={{ background: "#ffffff", borderColor: `${A}18`, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
                     <p className="text-xs font-bold mb-1 text-[#1CB7B4]">{uc.industry}</p>
                     <p className="text-xs text-[#64748b] mb-2">
-                      <span className="font-semibold text-[#475569]">Pain: </span>{uc.problem}
+                      <span className="font-semibold text-[#475569]">Need: </span>{uc.problem}
                     </p>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-[#1CB7B4]" />
@@ -243,12 +243,12 @@ export function Services() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow" style={{ color: "#92400e", borderColor: `${A}33`, background: `${A}10` }}>
-              Data & Analytics
+              Engineering
             </span>
-            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Data Engineering & Analytics</h2>
+            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Product Engineering</h2>
             <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
-              The foundation every AI initiative requires. Most companies approaching ANTUTIVE for AI discover
-              their data infrastructure is the real bottleneck.
+              The foundation every product requires. Full-stack engineering from frontend to backend,
+              deployed to production on EU infrastructure.
             </p>
           </div>
 
@@ -272,7 +272,7 @@ export function Services() {
           <Reveal variant="scale">
             <div className="rounded-3xl p-8 border" style={{ background: "#ffffff", backdropFilter: "blur(10px)", borderColor: `${A}22`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
               <h3 className="text-sm font-bold text-[#0f172a] mb-8 text-center uppercase tracking-wide">
-                Analytics Maturity Path — Where Do You Sit?
+                Product Delivery Stages — Where Are You?
               </h3>
               <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
                 {/* horizontal connector */}
@@ -318,22 +318,22 @@ export function Services() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <Reveal variant="left">
-              <span className="section-eyebrow-light">AI Growth & Marketing</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>AI Growth & Marketing</h2>
+              <span className="section-eyebrow-light">Product Launch</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Product Launch & Growth</h2>
               <p className="text-sm text-[#475569] leading-relaxed mb-5">
-                AI-powered systems that replace manual growth activities with automated, intelligent pipelines — from GEO strategy
-                and AI video production to precision lead scoring and outreach automation.
+                Delivering the product to production is the beginning. ANTUTIVE supports product launch,
+                market entry, and early growth — from deployment to user acquisition strategies.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-8">
-                Reach buyers searching AI platforms (ChatGPT, Perplexity, Gemini) rather than traditional search engines.
-                ANTUTIVE builds the infrastructure to make your brand discoverable in the AI-native web.
+                From SEO-ready architecture and performance optimisation to analytics setup and iterative
+                feature development, we support products beyond the initial build phase.
               </p>
               <Link
                 to="/growth-marketing"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg,#1CB7B4,#6F3CC3)" }}
               >
-                Explore AI Growth <ArrowRight className="w-4 h-4" />
+                Explore Our Work <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
 
@@ -385,23 +385,24 @@ export function Services() {
 
             <Reveal variant="right" delay={100}>
               <span className="section-eyebrow" style={{ color: "#92400e", borderColor: `${A}33`, background: `${A}10` }}>
-                Custom AI Platform
+                Enterprise Products
               </span>
-              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Custom AI Platform</h2>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>Enterprise Products</h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-5">
-                A private, model-agnostic AI workspace where your team collaborates with AI on your data — without that
-                data ever leaving your control. Built for European SMEs who cannot afford public-cloud data risk.
+                Complex enterprise software demands more than standard development. ANTUTIVE builds custom
+                enterprise products — internal platforms, B2B tools, and mission-critical systems —
+                engineered to exact specifications.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-8">
-                Supports multiple AI models simultaneously, integrates with your existing tools, and scales from a single
-                team to your entire organisation — all within EU data residency boundaries.
+                Enterprise builds include full documentation, role-based access control, audit logging,
+                performance SLAs, and dedicated deployment infrastructure — everything an enterprise product requires.
               </p>
               <Link
                 to="/custom-platform"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: `linear-gradient(135deg,${A},${A2})`, boxShadow: `0 8px 24px ${A}35` }}
               >
-                Explore Custom Platform <ArrowRight className="w-4 h-4" />
+                Explore Custom Build <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
           </div>
@@ -420,9 +421,9 @@ export function Services() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-eyebrow-light">Solution Ecosystem</span>
-            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Solution Integration Map</h2>
+            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>How Our Services Work Together</h2>
             <p className="text-sm text-[#64748b] mt-3 max-w-lg mx-auto">
-              Solution areas form an interconnected ecosystem — each deployment naturally expands into the next.
+              Product development is not linear — each phase naturally leads into the next, building on what came before.
             </p>
           </div>
 
@@ -469,11 +470,11 @@ export function Services() {
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#92400e" }}>Start the Conversation</span>
               </div>
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>
-                Start with a Free Diagnostic
+                Start with a Free Discovery
               </h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
-                The Business Understanding session is the first step of the ANTUTIVE Delivery Method —
-                offered free for qualified prospects. We diagnose before we prescribe.
+                The Discovery session is the first step of the ANTUTIVE Delivery Method —
+                offered free for qualified projects. We scope before we build.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="cta-btn-primary"

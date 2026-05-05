@@ -46,10 +46,10 @@ function ContactHeroCard() {
 }
 
 const processSteps = [
-  { step: "01", title: "Initial Contact",        desc: "Submit the form or email us directly. We respond within one business day." },
-  { step: "02", title: "Qualification Call",     desc: "A brief 20-minute call to understand your situation, timeline, and whether ANTUTIVE is the right fit." },
-  { step: "03", title: "Business Understanding", desc: "A free structured session — first step of the ANTUTIVE Delivery Method — to diagnose before we prescribe." },
-  { step: "04", title: "Proposal",               desc: "A tailored engagement proposal with clear scope, timeline, and commercial terms. Delivered within one week." },
+  { step: "01", title: "Initial Contact",    desc: "Submit the form or email us directly. We respond within one business day." },
+  { step: "02", title: "Qualification Call", desc: "A brief 20-minute call to understand your requirement, timeline, and whether ANTUTIVE is the right fit." },
+  { step: "03", title: "Discovery Session",  desc: "A free structured session to define your product requirements, assess feasibility, and agree scope before any build begins." },
+  { step: "04", title: "Proposal & Build",   desc: "A fixed-scope proposal with clear timeline, cost, and delivery plan. Once agreed, engineering begins immediately." },
 ];
 
 export function Contact() {
@@ -95,7 +95,7 @@ export function Contact() {
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Book a free Business Understanding session. We diagnose before we prescribe — no sales pitch, just a structured conversation about your goals and how we can help.
+                Tell us your product requirement. We run a free Discovery session to understand what you need, scope the build, and propose a clear plan — no commitment required.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -142,8 +142,8 @@ export function Contact() {
               style={{ borderColor: `${A}40`, background: `${A}08`, color: A }}>
               How It Works
             </span>
-            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>From Contact to Kickoff</h2>
-            <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">A clear, fast process — from first contact to signed engagement in under two weeks for most projects.</p>
+            <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>From Requirement to Build</h2>
+            <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">A clear, fast process — from first contact to signed proposal in under two weeks for most product builds.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {processSteps.map((s, i) => (
@@ -200,9 +200,9 @@ export function Contact() {
                   <div className="flex flex-col gap-2.5">
                     {[
                       "Response within one business day",
-                      "No sales pressure — fit assessment only",
-                      "Free Business Understanding session",
-                      "Proposal delivered within one week",
+                      "No commitment — fit assessment first",
+                      "Free Discovery session included",
+                      "Proposal with fixed scope delivered within one week",
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: A }} />
@@ -230,7 +230,7 @@ export function Contact() {
                       <CheckCircle2 className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-base font-bold text-[#0f172a] mb-3">Message Received</h3>
-                    <p className="text-sm text-[#64748b] mb-6">Thank you for reaching out. We'll respond within one business day to schedule a qualification call.</p>
+                    <p className="text-sm text-[#64748b] mb-6">Thank you for reaching out. We will respond within one business day to schedule a brief qualification call and then a free Discovery session.</p>
                     <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: A }}>
                       Back to Home <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -282,12 +282,12 @@ export function Contact() {
                             style={{ borderColor: `${A}22`, background: "#f8fafc" }}
                           >
                             <option value="">Select an area</option>
-                            <option value="genai">Generative AI Solutions</option>
-                            <option value="data">Data Engineering & Analytics</option>
-                            <option value="geo">GEO & AI Growth Marketing</option>
-                            <option value="platform">Custom AI Platform</option>
-                            <option value="famant">FAMANT — Early Access</option>
-                            <option value="saas-distribution">EU SaaS Distribution Partnership</option>
+                            <option value="web-app">Web Application Build</option>
+                            <option value="mobile-app">Mobile App Build</option>
+                            <option value="enterprise">Enterprise Platform / Integration</option>
+                            <option value="mvp">MVP Programme</option>
+                            <option value="product-strategy">Product Strategy & Discovery</option>
+                            <option value="managed-team">Managed Build Team</option>
                             <option value="other">Other / General Inquiry</option>
                           </select>
                         </div>
@@ -299,7 +299,7 @@ export function Contact() {
                           id="message" name="message"
                           value={formData.message} onChange={handleChange}
                           required rows={5}
-                          placeholder="Describe your project, challenge, or question. The more context you share, the more useful our first call will be."
+                          placeholder="Describe your product requirement or idea. The more context you share, the more useful our Discovery session will be."
                           className="w-full px-4 py-3 rounded-xl border text-sm text-[#0f172a] placeholder:text-[#94a3b8] outline-none transition-all resize-none focus:border-[#1CB7B4]"
                           style={{ borderColor: `${A}22`, background: "#f8fafc" }}
                         />
@@ -350,15 +350,15 @@ export function Contact() {
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: A }}>Direct Email</span>
               </div>
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Prefer a Direct Email?</h2>
-              <p className="text-sm text-[#64748b] mb-8 leading-relaxed">Email us directly at contact@antutive.com with a brief description of your project. We respond within one business day.</p>
+              <p className="text-sm text-[#64748b] mb-8 leading-relaxed">Email us directly at contact@antutive.com with a brief description of your product requirement. We respond within one business day.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a href="mailto:contact@antutive.com" className="cta-btn-primary"
                   style={{ background: `linear-gradient(135deg,${A},${A2})` }}>
                   contact@antutive.com <ArrowRight className="w-4 h-4" />
                 </a>
-                <Link to="/products" className="cta-btn-secondary"
+                <Link to="/services" className="cta-btn-secondary"
                   style={{ borderColor: `${A}40`, color: A }}>
-                  Explore Products
+                  View Our Services
                 </Link>
               </div>
             </div>

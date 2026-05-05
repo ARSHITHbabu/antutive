@@ -17,20 +17,20 @@ function useVisible(threshold = 0.12) {
 
 /* ── floating chips ── */
 const chips = [
-  { Icon: Shield,    label: "GDPR Ready",        top: "13%", left: "3.5%",  cls: "fi-a", d: 0 },
+  { Icon: Shield,    label: "EU Based",          top: "13%", left: "3.5%",  cls: "fi-a", d: 0 },
   { Icon: Globe,     label: "EU Compliant",       top: "66%", left: "1.5%",  cls: "fi-b", d: 1.4 },
   { Icon: Code2,     label: "Custom Build",       top: "84%", left: "5%",    cls: "fi-c", d: 0.7 },
   { Icon: Zap,       label: "3× Speed",           top: "7%",  left: "28%",   cls: "fi-b", d: 1.9 },
-  { Icon: BarChart3, label: "Analytics",          top: "5%",  right: "28%",  cls: "fi-a", d: 0.4 },
-  { Icon: Server,    label: "Sovereign Data",     top: "10%", right: "5%",   cls: "fi-c", d: 1.1 },
-  { Icon: Layers,    label: "Model-Agnostic",     top: "72%", right: "3%",   cls: "fi-a", d: 1.7 },
-  { Icon: Cloud,     label: "EU Data Residency",  top: "88%", right: "22%",  cls: "fi-b", d: 0.5 },
+  { Icon: BarChart3, label: "Product Design",     top: "5%",  right: "28%",  cls: "fi-a", d: 0.4 },
+  { Icon: Server,    label: "Full Ownership",     top: "10%", right: "5%",   cls: "fi-c", d: 1.1 },
+  { Icon: Layers,    label: "B2B Focused",        top: "72%", right: "3%",   cls: "fi-a", d: 1.7 },
+  { Icon: Cloud,     label: "EU Infrastructure",  top: "88%", right: "22%",  cls: "fi-b", d: 0.5 },
 ];
 
 const marqueeItems = [
-  "GDPR Compliant", "EU AI Act Ready", "Swedish Aktiebolag", "3× Faster Delivery",
-  "Sovereign Data", "24h Critical SLA", "Model-Agnostic AI", "Org.nr 559576-7228",
-  "Agentic Workflows", "Power BI Analytics", "GEO Strategy", "Custom AI Platforms",
+  "GDPR Compliant", "Custom Products", "Swedish Aktiebolag", "3× Faster Delivery",
+  "EU Infrastructure", "24h Critical SLA", "Full IP Ownership", "Org.nr 559576-7228",
+  "B2B Focused", "Product Engineering", "End-to-End Build", "EU-Based Company",
 ];
 
 /* ── data network svg ── */
@@ -65,27 +65,27 @@ function DataNetworkVisual() {
   );
 }
 
-const COLS = ["Data & Analytics", "Agentic AI", "Custom AI Platform", "AI Growth"];
+const COLS = ["Product Design", "Engineering", "Deployment", "Support"];
 const COL_COLORS = ["#F5C84C", "#1CB7B4", "#6F3CC3", "#F36D4F"];
 
 const frictionRows = [
-  { pain: "Manual Reporting",  context: "Finance teams spending 2+ days/week exporting spreadsheets and rebuilding the same reports. No single source of truth.", solutions: ["Auto-Dashboards",    "Drafting Agents",   "Query Interface",    "Content Engine"]   },
-  { pain: "Customer Scaling",  context: "Support volume growing faster than headcount — tickets pile up, response times worsen, team burns out.", solutions: ["Ticket Analytics",   "Action Agents",     "Support Platform",   "Lead Scoring"]     },
-  { pain: "Financial Recon",   context: "Invoice matching and bank reconciliation done manually, causing month-end delays and costly reconciliation errors.", solutions: ["ETL Sync",           "Auto-Matching",     "Audit Vault",        "Fin-Analyst"]      },
-  { pain: "Low Visibility",    context: "Competitors appearing in AI search results and social feeds. Your brand is invisible to the fastest-growing segment of qualified buyers.", solutions: ["GEO Analytics",      "AI Video Ads",      "Brand Platform",     "GEO Optimisation"] },
-  { pain: "Knowledge Silos",   context: "Expertise locked in individual employees — when they leave or are unavailable, institutional knowledge disappears.", solutions: ["Data Warehouse",     "Sovereign RAG",     "Knowledge Graph",    "AI Content Engine"] },
-  { pain: "Compliance Risk",   context: "EU AI Act and GDPR creating audit obligations most SMEs lack the tooling to satisfy before enforcement deadlines.", solutions: ["Data Governance",    "Audit Logging",     "Privacy Controls",   "GDPR Automation"]  },
+  { pain: "No Digital Product", context: "Company needs a web or mobile product but has no in-house engineering team to build it. Competitors already have digital products gaining market share.", solutions: ["UX Research",        "Full-Stack Dev",    "Cloud Deploy",       "Post-Launch"]      },
+  { pain: "Legacy System",      context: "Outdated software slowing operations — needs rebuilding or modernising with current technology, better performance, and a maintainable codebase.", solutions: ["Architecture",       "Re-engineering",    "Migration",          "Maintenance"]      },
+  { pain: "Custom Requirements",context: "Off-the-shelf software doesn't meet specific business logic or workflow requirements. Generic tools force workarounds that slow the team.", solutions: ["Discovery",          "Custom Build",      "Integration",        "Optimisation"]     },
+  { pain: "Low Market Reach",   context: "Business needs a consumer-facing or B2B product to expand market presence and acquire customers — but has no engineering capability to build it.", solutions: ["Product Strategy",   "MVP Build",         "Go-to-Market",       "Analytics"]        },
+  { pain: "Siloed Processes",   context: "Multiple disconnected tools causing inefficiency — needs a unified product to connect workflows, eliminate manual handoffs, and reduce errors.", solutions: ["Data Mapping",       "Platform Build",    "API Design",         "Training"]         },
+  { pain: "Compliance Gaps",    context: "EU regulations requiring specific product features or data handling capabilities not present in current tools — audit risk increasing.", solutions: ["Audit & Spec",       "Compliant Build",   "Privacy Design",     "Certification"]    },
 ];
 
 const maturityLevels = [
-  { name: "Fragmented", color: "#ef4444", weeks: 5,  desc: "Data in Excel, manual reporting, no single source of truth." },
-  { name: "Structured",  color: "#f59e0b", weeks: 4,  desc: "Central database exists but reporting is static or manual." },
-  { name: "Analytical",  color: "#3b82f6", weeks: 7,  desc: "Dashboards exist but no predictive or AI capability." },
-  { name: "Intelligent", color: "#10b981", weeks: 10, desc: "AI-driven automation, agentic workflows, continuous optimisation." },
+  { name: "Idea",      color: "#ef4444", weeks: 3,  desc: "Business requirement exists but no defined product concept or technical scope." },
+  { name: "Discovery", color: "#f59e0b", weeks: 4,  desc: "Requirement scoped, design validated, technical approach and pricing agreed." },
+  { name: "Build",     color: "#3b82f6", weeks: 8,  desc: "Product engineered in agile sprints, tested, and delivered to production." },
+  { name: "Scale",     color: "#10b981", weeks: 6,  desc: "Product live, iterating based on user feedback, expanding features and users." },
 ];
 
 const PILLARS = [
-  { n: "01", title: "Products",             tag: "Enterprise SaaS Portfolio",               desc: "FAMANT home OS and EU-rebranded SaaS products generating recurring licence revenue.",                                                href: "/products",   color: "#6F3CC3" },
+  { n: "01", title: "Products",             tag: "Custom Software Portfolio",                desc: "Tailored software products built for European businesses — from web platforms to mobile apps and enterprise systems. Every product delivered with full IP ownership.",   href: "/products",   color: "#6F3CC3" },
 ];
 
 function PillarScrollSection() {
@@ -130,7 +130,7 @@ function PillarScrollSection() {
           <span className="section-eyebrow-light">What We Offer</span>
           <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Our Products</h2>
           <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto leading-relaxed">
-            Scalable SaaS products engineered for European businesses.
+            Software products engineered for European businesses — end-to-end, from requirement to delivery.
           </p>
         </div>
 
@@ -231,21 +231,21 @@ function PillarScrollSection() {
 export function Home() {
 
   const practices = [
-    { icon: TrendingUp, title: "AI Growth & Marketing",href: "/growth-marketing", desc: "GEO strategy, AI video production, lead scoring, outreach automation." },
-    { icon: Lock,       title: "Custom AI Platforms",  href: "/custom-platform",  desc: "Private, model-agnostic AI workspaces — your data never leaves your environment." },
+    { icon: TrendingUp, title: "Web & Mobile Products", href: "/growth-marketing", desc: "Consumer and B2B applications, from MVPs to full-scale platforms, built for European markets." },
+    { icon: Lock,       title: "Enterprise Products",   href: "/custom-platform",  desc: "Custom enterprise software and internal tools tailored to your exact business requirements." },
   ];
 
   const features = [
-    { icon: Shield,    stat: "100%", label: "EU Data Sovereignty",  desc: "Data never leaves European jurisdiction. GDPR and EU AI Act compliant." },
-    { icon: Zap,       stat: "3×",   label: "Faster Delivery",       desc: "Vs traditional Nordic consultancies — parallel time-zone engineering." },
-    { icon: GitBranch, stat: "24h",  label: "Critical SLA Response", desc: "Guaranteed response for production incidents. 48h for standard issues." },
+    { icon: Shield,    stat: "100%", label: "Client IP Ownership",   desc: "All intellectual property from every product we build belongs fully to the client on delivery." },
+    { icon: Zap,       stat: "3×",   label: "Faster Delivery",       desc: "Vs traditional European development companies — parallel engineering approach." },
+    { icon: GitBranch, stat: "24h",  label: "Support Response",      desc: "Post-launch maintenance SLA. 24h for critical issues, 48h for standard requests." },
   ];
 
   const metrics = [
-    { value: "5",    label: "Practice Areas" },
+    { value: "EU",   label: "Based & Compliant" },
     { value: "3×",   label: "Faster Delivery" },
-    { value: "24h",  label: "Critical SLA" },
-    { value: "EU",   label: "Compliance-Ready" },
+    { value: "24h",  label: "Support SLA" },
+    { value: "100%", label: "IP Ownership" },
   ];
 
   const [selectedPain, setSelectedPain] = useState<number | null>(null);
@@ -275,19 +275,19 @@ export function Home() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp .8s ease .1s both" }}>
-                AI Engineering<br/>for European<br/>Business
+                We Build Products<br/>for European<br/>Businesses
               </h1>
 
               <p className="text-base md:text-lg mb-8 text-[#334155] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .25s both" }}>
-                ANTUTIVE AB is a Swedish AI engineering partner helping European SMEs build secure AI systems,
-                modern analytics, AI-powered growth engines, and sovereign AI workspaces — at 3× the speed
-                of traditional Nordic consultancies.
+                ANTUTIVE AB is a Swedish product engineering company. We design and build software products
+                for businesses — from web and mobile applications to enterprise platforms. If you have a
+                requirement, we build the product. Full IP ownership on delivery.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
-                <Link to="/contact" className="hero-btn-primary">Book a Strategy Call</Link>
-                <Link to="/products" className="hero-btn-secondary">Explore Products</Link>
+                <Link to="/contact" className="hero-btn-primary">Discuss Your Product</Link>
+                <Link to="/products" className="hero-btn-secondary">Explore Our Work</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -329,9 +329,9 @@ export function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow-light">Problem — Solution</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Operational Friction Matrix</h2>
-              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Click a business pain to see exactly how each ANTUTIVE practice area solves it.</p>
+              <span className="section-eyebrow-light">Need — Solution</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Business Need Matrix</h2>
+              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Click a business need to see how ANTUTIVE builds the right product to address it.</p>
             </div>
           </Reveal>
           <Reveal variant="scale">
@@ -415,9 +415,9 @@ export function Home() {
           <Reveal variant="up">
             <div className="text-center mb-14">
               <span className="section-eyebrow-light">What We Build</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Five Practice Areas</h2>
+              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Product Categories</h2>
               <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
-                Each solution area can be deployed independently or combined for comprehensive AI transformation.
+                Each product category can stand alone or be combined into a comprehensive digital platform for your business.
               </p>
             </div>
           </Reveal>
@@ -444,11 +444,11 @@ export function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* LEFT */}
             <Reveal variant="left">
-              <span className="section-eyebrow-light">Data Analytics</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>Where Are You on<br/>the Maturity Path?</h2>
+              <span className="section-eyebrow-light">Build Process</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>Where Are You on<br/>the Product Journey?</h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-8">
-                Most companies need clean, connected data before AI can work. We meet you where you are
-                and build a path to full intelligence — without skipping the foundations.
+                Every product starts somewhere. We meet you at whatever stage your requirement is at
+                and take it all the way to production — without skipping the foundations.
               </p>
               <div className="flex flex-col gap-5">
                 {maturityLevels.map((m, i) => (
@@ -471,7 +471,7 @@ export function Home() {
             {/* RIGHT — bar chart */}
             <Reveal variant="right" delay={120}>
               <div className="p-8 rounded-3xl border" style={{ background: "#ffffff", backdropFilter: "blur(12px)", borderColor: "rgba(28,183,180,0.22)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-                <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mb-8">Typical Engagement Duration</p>
+                <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mb-8">Typical Product Timeline</p>
                 <div className="flex items-end gap-4" style={{ height: 160 }}>
                   {maturityLevels.map((m) => (
                     <div key={m.name} className="flex-1 flex flex-col items-center gap-3">
@@ -492,10 +492,10 @@ export function Home() {
                   ))}
                 </div>
                 <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(111,60,195,0.06)", border: "1px solid rgba(111,60,195,0.15)" }}>
-                  <p className="text-xs font-bold text-[#0f172a] mb-1">Not sure where you sit?</p>
-                  <p className="text-xs text-[#64748b] leading-relaxed">The Business Understanding session maps your current data state in 90 minutes — at no cost for qualified prospects.</p>
+                  <p className="text-xs font-bold text-[#0f172a] mb-1">Not sure where to start?</p>
+                  <p className="text-xs text-[#64748b] leading-relaxed">The Discovery session maps your product requirements in 90 minutes — at no cost for qualified projects.</p>
                   <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#1CB7B4" }}>
-                    Book free session <ArrowRight className="w-3.5 h-3.5"/>
+                    Book free Discovery <ArrowRight className="w-3.5 h-3.5"/>
                   </Link>
                 </div>
               </div>
@@ -514,17 +514,16 @@ export function Home() {
             <Reveal variant="left">
               <span className="section-eyebrow-light">Why ANTUTIVE</span>
               <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>
-                Engineering Speed.<br/>Digital Sovereignty.<br/>EU Compliance.
+                Product Speed.<br/>European Quality.<br/>Full Ownership.
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 ANTUTIVE AB (Org.nr 559576-7228) is a Swedish Aktiebolag registered in Gothenburg, Västra Götaland.
-                Our core thesis: European SMEs need AI and data capabilities to remain competitive but lack the
-                engineering depth to build them securely — especially with the EU AI Act enforcement beginning
-                August 2026.
+                We are a product engineering company — we build software products for businesses. Whether you
+                have a detailed specification or just an idea, we scope, design, engineer, and deliver it.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-6">
-                We eliminate that gap: delivering custom AI solutions, analytics infrastructure, growth automation,
-                and ready-to-deploy SaaS products with Swedish-grade trust and full regulatory compliance.
+                Full IP ownership passes to the client on delivery. No lock-in, no licence dependency — you own
+                the product completely. Swedish-grade quality and full EU regulatory compliance by design.
               </p>
               <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6F3CC3] group">
                 About ANTUTIVE <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
@@ -564,17 +563,17 @@ export function Home() {
                   <span className="text-xs font-bold tracking-widest text-[#1CB7B4] uppercase">Start the Conversation</span>
                 </div>
                 <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>
-                  Ready to Build<br/>Your AI Advantage?
+                  Ready to Build<br/>Your Product?
                 </h2>
                 <p className="text-sm text-[#64748b] mb-10 max-w-md mx-auto leading-relaxed">
-                  Book a free Business Understanding session. We begin with your goals and pain points —
+                  Book a free Discovery session. We start with your requirements and business goals —
                   not a sales pitch.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link to="/contact" className="cta-btn-primary">
-                    Book a Strategy Call <ArrowRight className="w-4 h-4"/>
+                    Book a Discovery Call <ArrowRight className="w-4 h-4"/>
                   </Link>
-                  <Link to="/products" className="cta-btn-secondary">Explore Products</Link>
+                  <Link to="/products" className="cta-btn-secondary">Explore Our Work</Link>
                 </div>
               </div>
             </div>
