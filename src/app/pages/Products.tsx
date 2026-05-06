@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Mic, Calendar, Zap, FileText, ShoppingCart, Shield, Globe, Package, Star, Sparkles, UtensilsCrossed, FolderLock } from "lucide-react";
 import { Reveal } from "../lib/scroll";
+import famantVideo from "../../assets/video_cutted-Picsart-BackgroundRemover.webm";
 
 const A = "#6F3CC3";
 
@@ -157,29 +158,51 @@ export function Products() {
       {/* ── FAMANT PRODUCT ── */}
       <section className="py-24 relative overflow-hidden"
         style={{ background: "linear-gradient(135deg,#fffbeb 0%,#faf5ff 50%,#fffbeb 100%)" }}>
+
+        {/* Background decorations */}
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-40" />
+        <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-20" />
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.12),transparent 70%)", filter: "blur(80px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.18),transparent 70%)", filter: "blur(80px)" }} />
         <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,rgba(111,60,195,0.08),transparent 70%)`, filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle,rgba(111,60,195,0.10),transparent 70%)", filter: "blur(60px)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle,rgba(245,200,76,0.06),transparent 70%)", filter: "blur(100px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
-          <Reveal variant="up">
-            <div className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-5"
-                style={{ borderColor: "rgba(180,83,9,0.25)", background: "rgba(245,200,76,0.12)" }}>
-                <Sparkles className="w-3.5 h-3.5" style={{ color: "#b45309" }} />
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#b45309" }}>ANTUTIVE Original Product</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
+            <Reveal variant="left">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6"
+                  style={{ borderColor: "rgba(180,83,9,0.25)", background: "rgba(245,200,76,0.12)" }}>
+                  <Sparkles className="w-3.5 h-3.5" style={{ color: "#b45309" }} />
+                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#b45309" }}>ANTUTIVE Original Product</span>
+                </div>
+                <h2 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tight" style={{ color: "#0f172a" }}>FAMANT</h2>
+                <p className="text-xl font-semibold mb-5" style={{ color: "#b45309" }}>Voice-First Home Operating System</p>
+                <p className="text-sm leading-relaxed mb-8" style={{ color: "#64748b" }}>
+                  FAMANT brings your entire household into one intelligent platform. Calendar, tasks, meals, and documents — all managed through natural conversation. No switching between apps. Just talk.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Calendar", "Task Management", "Meal Planning", "Document Vault"].map((tag) => (
+                    <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold"
+                      style={{ background: "rgba(245,200,76,0.15)", border: "1px solid rgba(245,200,76,0.35)", color: "#92400e" }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight" style={{ color: "#0f172a" }}>FAMANT</h2>
-              <p className="text-lg font-semibold mb-4" style={{ color: "#b45309" }}>Voice-First Home Operating System</p>
-              <p className="text-sm max-w-2xl mx-auto leading-relaxed" style={{ color: "#64748b" }}>
-                FAMANT brings your entire household into one intelligent platform. Calendar, tasks, meals, and documents — all managed through natural conversation. No switching between apps. Just talk.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal variant="right">
+              <div className="flex justify-center lg:justify-end relative">
+                <div className="absolute inset-0 rounded-full pointer-events-none"
+                  style={{ background: "radial-gradient(circle,rgba(245,200,76,0.15),transparent 65%)", filter: "blur(30px)" }} />
+                <video src={famantVideo} autoPlay loop muted playsInline style={{ width: "100%", maxWidth: 320, height: 320, objectFit: "contain", position: "relative", zIndex: 1 }} />
+              </div>
+            </Reveal>
+          </div>
 
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
