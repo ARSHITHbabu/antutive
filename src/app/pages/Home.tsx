@@ -1,24 +1,32 @@
 import { Link } from "react-router";
-import { TrendingUp, Lock, Shield, Globe, Code2, BarChart3, Zap, Server, Layers, Cloud, ArrowRight, Sparkles, CheckCircle2, GitBranch } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { Reveal } from "../lib/scroll";
-import symbolImg from "../../assets/symbol-removebg-preview.png";
+import { TrendingUp, Lock, Shield, Globe, Code2, BarChart3, Zap, Server, Layers, Cloud, ArrowRight, ArrowUpRight, Sparkles, GitBranch, Database, Rocket, Smartphone, MapPin } from "lucide-react";
+import { Fragment, useEffect, useState } from "react";
+import { Reveal, useVisible } from "../lib/scroll";
+import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent, WaveDivider } from "../components/Decor";
+import logoMark from "../../assets/antutive-logo-mark.png";
 
-function useVisible(threshold = 0.12) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [on, setOn] = useState(false);
+/* ── count-up hook ── */
+function useCountUp(target: number, on: boolean, duration = 1300) {
+  const [val, setVal] = useState(0);
   useEffect(() => {
-    const el = ref.current; if (!el) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } }, { threshold });
-    io.observe(el); return () => io.disconnect();
-  }, [threshold]);
-  return { ref, on };
+    if (!on) return;
+    let raf = 0;
+    const t0 = performance.now();
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - t0) / duration);
+      setVal(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [on, target, duration]);
+  return val;
 }
 
 /* ── floating chips ── */
 const chips = [
   { Icon: Shield,    label: "EU Based",          top: "13%", left: "3.5%",  cls: "fi-a", d: 0 },
-  { Icon: Globe,     label: "EU Compliant",       top: "66%", left: "1.5%",  cls: "fi-b", d: 1.4 },
+  { Icon: Globe,     label: "GDPR Compliant",     top: "66%", left: "1.5%",  cls: "fi-b", d: 1.4 },
   { Icon: Code2,     label: "Custom Build",       top: "84%", left: "5%",    cls: "fi-c", d: 0.7 },
   { Icon: Zap,       label: "3× Speed",           top: "7%",  left: "28%",   cls: "fi-b", d: 1.9 },
   { Icon: BarChart3, label: "Product Design",     top: "5%",  right: "28%",  cls: "fi-a", d: 0.4 },
@@ -33,212 +41,354 @@ const marqueeItems = [
   "B2B Focused", "Product Engineering", "End-to-End Build", "EU-Based Company",
 ];
 
-/* ── data network svg ── */
+/* star positions for the dark ecosystem sky */
+const stars = [
+  { top: "8%",  left: "12%", s: 3, d: 0   }, { top: "16%", left: "78%", s: 2, d: 1.2 },
+  { top: "22%", left: "35%", s: 2, d: 2.1 }, { top: "12%", left: "55%", s: 3, d: 0.6 },
+  { top: "30%", left: "90%", s: 2, d: 1.8 }, { top: "42%", left: "6%",  s: 2, d: 2.6 },
+  { top: "55%", left: "16%", s: 3, d: 0.9 }, { top: "62%", left: "88%", s: 3, d: 1.5 },
+  { top: "74%", left: "40%", s: 2, d: 2.2 }, { top: "80%", left: "70%", s: 2, d: 0.3 },
+  { top: "88%", left: "22%", s: 3, d: 1.1 }, { top: "68%", left: "58%", s: 2, d: 2.9 },
+  { top: "36%", left: "68%", s: 2, d: 0.2 }, { top: "50%", left: "45%", s: 2, d: 1.9 },
+  { top: "84%", left: "92%", s: 2, d: 2.4 }, { top: "26%", left: "20%", s: 2, d: 3.3 },
+];
+
+/* ── data network svg (hero) ── */
 function DataNetworkVisual() {
   return (
     <div className="relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
       <svg viewBox="0 0 420 420" className="w-full max-w-[400px]" aria-hidden="true" style={{ overflow: "visible" }}>
         <defs>
-          <radialGradient id="cG"><stop offset="0%" stopColor="#6F3CC3" stopOpacity=".45"/><stop offset="45%" stopColor="#1CB7B4" stopOpacity=".18"/><stop offset="100%" stopColor="#5A32A3" stopOpacity="0"/></radialGradient>
-          <radialGradient id="gG"><stop offset="0%" stopColor="#1CB7B4" stopOpacity=".22"/><stop offset="100%" stopColor="#6F3CC3" stopOpacity="0"/></radialGradient>
+          <radialGradient id="cG"><stop offset="0%" stopColor="#46589F" stopOpacity=".45"/><stop offset="45%" stopColor="#7C92C7" stopOpacity=".18"/><stop offset="100%" stopColor="#2E3B72" stopOpacity="0"/></radialGradient>
+          <radialGradient id="gG"><stop offset="0%" stopColor="#7C92C7" stopOpacity=".22"/><stop offset="100%" stopColor="#46589F" stopOpacity="0"/></radialGradient>
           <filter id="f4"><feGaussianBlur stdDeviation="4"/></filter>
           <filter id="f2"><feGaussianBlur stdDeviation="2"/></filter>
         </defs>
         <circle cx="210" cy="210" r="170" fill="url(#gG)" filter="url(#f4)" className="dn-pulse"/>
-        <circle cx="210" cy="210" r="155" fill="none" stroke="rgba(111,60,195,.14)"  strokeWidth="1" strokeDasharray="6 10" className="dn-ring-1"/>
-        <circle cx="210" cy="210" r="105" fill="none" stroke="rgba(111,60,195,.18)" strokeWidth="1" strokeDasharray="5 7"  className="dn-ring-2"/>
-        <circle cx="210" cy="210" r="58"  fill="none" stroke="rgba(111,60,195,.24)"  strokeWidth="1" className="dn-ring-3"/>
+        <circle cx="210" cy="210" r="155" fill="none" stroke="rgba(70,88,159,.14)"  strokeWidth="1" strokeDasharray="6 10" className="dn-ring-1"/>
+        <circle cx="210" cy="210" r="105" fill="none" stroke="rgba(70,88,159,.18)" strokeWidth="1" strokeDasharray="5 7"  className="dn-ring-2"/>
+        <circle cx="210" cy="210" r="58"  fill="none" stroke="rgba(70,88,159,.24)"  strokeWidth="1" className="dn-ring-3"/>
         <g opacity=".06">{[0,42,84,126,168,210,252,294,336,378,420].map(x=><line key={`v${x}`} x1={x} y1="0" x2={x} y2="420" stroke="rgba(100,116,139,0.8)" strokeWidth=".5"/>)}{[0,42,84,126,168,210,252,294,336,378,420].map(y=><line key={`h${y}`} x1="0" y1={y} x2="420" y2={y} stroke="rgba(100,116,139,0.8)" strokeWidth=".5"/>)}</g>
         {([[210,210,365,100],[210,210,55,115],[210,210,375,310],[210,210,50,305],[210,210,210,30],[210,210,210,395],[365,100,55,115],[365,100,375,310],[55,115,50,305],[375,310,50,305]] as number[][]).map(([x1,y1,x2,y2],i)=><line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(100,116,139,.18)" strokeWidth=".7" className={`dn-line dn-line-${(i%3)+1}`}/>)}
-        {([{cx:365,cy:100,r:9,cls:"dn-node-o1"},{cx:55,cy:115,r:8,cls:"dn-node-o2"},{cx:375,cy:310,r:11,cls:"dn-node-o3"},{cx:50,cy:305,r:7,cls:"dn-node-o4"},{cx:210,cy:30,r:9,cls:"dn-node-o5"},{cx:210,cy:395,r:7,cls:"dn-node-o6"}]).map(({cx,cy,r,cls})=><g key={cls} className={cls}><circle cx={cx} cy={cy} r={r+9} fill="none" stroke="rgba(111,60,195,.15)" strokeWidth="1" className="dn-ping"/><circle cx={cx} cy={cy} r={r+4} fill="rgba(111,60,195,.06)" stroke="rgba(111,60,195,.45)" strokeWidth="1"/><circle cx={cx} cy={cy} r={r/2} fill="#6F3CC3"/></g>)}
-        <g className="dn-mid-1"><circle cx="315" cy="210" r="6" fill="rgba(28,183,180,.25)" stroke="rgba(28,183,180,.8)" strokeWidth="1"/><circle cx="315" cy="210" r="3" fill="#1CB7B4"/></g>
-        <g className="dn-mid-2"><circle cx="105" cy="210" r="6" fill="rgba(111,60,195,.25)" stroke="rgba(111,60,195,.8)" strokeWidth="1"/><circle cx="105" cy="210" r="3" fill="#6F3CC3"/></g>
-        <g className="dn-mid-3"><circle cx="210" cy="105" r="5" fill="rgba(111,60,195,.15)" stroke="rgba(111,60,195,.6)" strokeWidth="1"/><circle cx="210" cy="105" r="2.5" fill="#6F3CC3"/></g>
-        <g className="dn-mid-4"><circle cx="210" cy="315" r="5" fill="rgba(28,183,180,.15)" stroke="rgba(28,183,180,.6)" strokeWidth="1"/><circle cx="210" cy="315" r="2.5" fill="#1CB7B4"/></g>
-        {([[155,88],[275,145],[135,260],[295,320],[240,72],[115,180],[305,175],[170,345]] as number[][]).map(([cx,cy],i)=><circle key={i} cx={cx} cy={cy} r="1.5" fill="rgba(111,60,195,.40)" className={`dn-particle dn-particle-${(i%4)+1}`}/>)}
+        {([{cx:365,cy:100,r:9,cls:"dn-node-o1"},{cx:55,cy:115,r:8,cls:"dn-node-o2"},{cx:375,cy:310,r:11,cls:"dn-node-o3"},{cx:50,cy:305,r:7,cls:"dn-node-o4"},{cx:210,cy:30,r:9,cls:"dn-node-o5"},{cx:210,cy:395,r:7,cls:"dn-node-o6"}]).map(({cx,cy,r,cls})=><g key={cls} className={cls}><circle cx={cx} cy={cy} r={r+9} fill="none" stroke="rgba(70,88,159,.15)" strokeWidth="1" className="dn-ping"/><circle cx={cx} cy={cy} r={r+4} fill="rgba(70,88,159,.06)" stroke="rgba(70,88,159,.45)" strokeWidth="1"/><circle cx={cx} cy={cy} r={r/2} fill="#46589F"/></g>)}
+        <g className="dn-mid-1"><circle cx="315" cy="210" r="6" fill="rgba(124,146,199,.25)" stroke="rgba(124,146,199,.8)" strokeWidth="1"/><circle cx="315" cy="210" r="3" fill="#7C92C7"/></g>
+        <g className="dn-mid-2"><circle cx="105" cy="210" r="6" fill="rgba(70,88,159,.25)" stroke="rgba(70,88,159,.8)" strokeWidth="1"/><circle cx="105" cy="210" r="3" fill="#46589F"/></g>
+        <g className="dn-mid-3"><circle cx="210" cy="105" r="5" fill="rgba(70,88,159,.15)" stroke="rgba(70,88,159,.6)" strokeWidth="1"/><circle cx="210" cy="105" r="2.5" fill="#46589F"/></g>
+        <g className="dn-mid-4"><circle cx="210" cy="315" r="5" fill="rgba(124,146,199,.15)" stroke="rgba(124,146,199,.6)" strokeWidth="1"/><circle cx="210" cy="315" r="2.5" fill="#7C92C7"/></g>
+        {([[155,88],[275,145],[135,260],[295,320],[240,72],[115,180],[305,175],[170,345]] as number[][]).map(([cx,cy],i)=><circle key={i} cx={cx} cy={cy} r="1.5" fill="rgba(70,88,159,.40)" className={`dn-particle dn-particle-${(i%4)+1}`}/>)}
         <circle cx="210" cy="210" r="42" fill="url(#cG)" filter="url(#f2)" className="dn-pulse"/>
-        <circle cx="210" cy="210" r="26" fill="rgba(111,60,195,.08)" stroke="rgba(111,60,195,.35)" strokeWidth="1.5"/>
-        <circle cx="210" cy="210" r="17" fill="rgba(111,60,195,.14)" stroke="rgba(111,60,195,.55)" strokeWidth="1"/>
-        <circle cx="210" cy="210" r="9" fill="#6F3CC3"/>
+        <circle cx="210" cy="210" r="26" fill="rgba(70,88,159,.08)" stroke="rgba(70,88,159,.35)" strokeWidth="1.5"/>
+        <circle cx="210" cy="210" r="17" fill="rgba(70,88,159,.14)" stroke="rgba(70,88,159,.55)" strokeWidth="1"/>
+        <circle cx="210" cy="210" r="9" fill="#46589F"/>
       </svg>
     </div>
   );
 }
 
 const COLS = ["Product Design", "Engineering", "Deployment", "Support"];
-const COL_COLORS = ["#F5C84C", "#1CB7B4", "#6F3CC3", "#F36D4F"];
+const COL_COLORS = ["#7C92C7", "#5F74B4", "#46589F", "#2E3B72"];
 
 const frictionRows = [
-  { pain: "No Digital Product", context: "Company needs a web or mobile product but has no in-house engineering team to build it. Competitors already have digital products gaining market share.", solutions: ["UX Research",        "Full-Stack Dev",    "Cloud Deploy",       "Post-Launch"]      },
-  { pain: "Legacy System",      context: "Outdated software slowing operations — needs rebuilding or modernising with current technology, better performance, and a maintainable codebase.", solutions: ["Architecture",       "Re-engineering",    "Migration",          "Maintenance"]      },
-  { pain: "Custom Requirements",context: "Off-the-shelf software doesn't meet specific business logic or workflow requirements. Generic tools force workarounds that slow the team.", solutions: ["Discovery",          "Custom Build",      "Integration",        "Optimisation"]     },
-  { pain: "Low Market Reach",   context: "Business needs a consumer-facing or B2B product to expand market presence and acquire customers — but has no engineering capability to build it.", solutions: ["Product Strategy",   "MVP Build",         "Go-to-Market",       "Analytics"]        },
-  { pain: "Siloed Processes",   context: "Multiple disconnected tools causing inefficiency — needs a unified product to connect workflows, eliminate manual handoffs, and reduce errors.", solutions: ["Data Mapping",       "Platform Build",    "API Design",         "Training"]         },
-  { pain: "Compliance Gaps",    context: "EU regulations requiring specific product features or data handling capabilities not present in current tools — audit risk increasing.", solutions: ["Audit & Spec",       "Compliant Build",   "Privacy Design",     "Certification"]    },
+  { pain: "No Digital Product", context: "Your company needs a web or mobile product but has no in-house engineering team to build it. Meanwhile, competitors with digital products are gaining ground.", solutions: ["UX Research",        "Full-Stack Dev",    "Cloud Deploy",       "Post-Launch"]      },
+  { pain: "Legacy System",      context: "Outdated software is slowing your operations. It needs rebuilding or modernising with current technology, better performance, and a codebase your team can actually maintain.", solutions: ["Architecture",       "Re-engineering",    "Migration",          "Maintenance"]      },
+  { pain: "Custom Requirements",context: "Off-the-shelf software doesn't fit your business logic or workflows. Generic tools force workarounds, and workarounds slow your team down every single day.", solutions: ["Discovery",          "Custom Build",      "Integration",        "Optimisation"]     },
+  { pain: "Low Market Reach",   context: "You need a consumer-facing or B2B product to expand your market and win customers, but there's no engineering capability in-house to build it.", solutions: ["Product Strategy",   "MVP Build",         "Go-to-Market",       "Analytics"]        },
+  { pain: "Siloed Processes",   context: "Multiple disconnected tools are creating inefficiency. You need one unified product that connects workflows, removes manual handoffs, and reduces errors.", solutions: ["Data Mapping",       "Platform Build",    "API Design",         "Training"]         },
+  { pain: "Compliance Gaps",    context: "EU regulations require product features or data handling your current tools simply don't have, and the audit risk grows with every quarter.", solutions: ["Audit & Spec",       "Compliant Build",   "Privacy Design",     "Certification"]    },
 ];
 
 const maturityLevels = [
-  { name: "Idea",      color: "#ef4444", weeks: 3,  desc: "Business requirement exists but no defined product concept or technical scope." },
-  { name: "Discovery", color: "#f59e0b", weeks: 4,  desc: "Requirement scoped, design validated, technical approach and pricing agreed." },
-  { name: "Build",     color: "#3b82f6", weeks: 8,  desc: "Product engineered in agile sprints, tested, and delivered to production." },
-  { name: "Scale",     color: "#10b981", weeks: 6,  desc: "Product live, iterating based on user feedback, expanding features and users." },
+  { name: "Idea",      color: "#A9B8DC", weeks: 3,  desc: "You can describe the problem, but there's no spec yet. That's fine. Most good products start exactly here." },
+  { name: "Discovery", color: "#7C92C7", weeks: 4,  desc: "We turn the problem into a scoped requirement: validated design, an agreed technical approach, and an honest price." },
+  { name: "Build",     color: "#46589F", weeks: 8,  desc: "Sprints, weekly demos, and working software growing in front of you. No black box, no surprises at the end." },
+  { name: "Scale",     color: "#2E3B72", weeks: 6,  desc: "Live, learning, and growing. New features land guided by what real users actually do, not what a roadmap guessed." },
 ];
 
-const PILLARS = [
-  { n: "01", title: "Products",             tag: "Custom Software Portfolio",                desc: "Tailored software products built for European businesses — from web platforms to mobile apps and enterprise systems. Every product delivered with full IP ownership.",   href: "/products",   color: "#6F3CC3" },
-];
-
-function PillarScrollSection() {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const [prog, setProg] = useState(0);
-
-  const idx = Math.min(PILLARS.length - 1, Math.floor(prog * PILLARS.length));
-  const rot = prog * 360;
-  const col = PILLARS[idx].color;
-
-  useEffect(() => {
-    const tick = () => {
-      const el = outerRef.current;
-      if (!el) return;
-      const { top } = el.getBoundingClientRect();
-      const scrollable = el.offsetHeight - window.innerHeight;
-      setProg(Math.min(1, Math.max(0, -top / scrollable)));
-    };
-    window.addEventListener("scroll", tick, { passive: true });
-    tick();
-    return () => window.removeEventListener("scroll", tick);
-  }, []);
-
+/* ── animated journey path visual ── */
+function JourneyPath() {
+  const { ref, on } = useVisible(0.3);
+  const nodes = [
+    { x: 40,  y: 252, r: 7,  color: "#A9B8DC", name: "Idea",      wks: "~3 wks" },
+    { x: 178, y: 196, r: 8,  color: "#7C92C7", name: "Discovery", wks: "~4 wks" },
+    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Build",     wks: "~8 wks" },
+    { x: 446, y: 48,  r: 10, color: "#2E3B72", name: "Scale",     wks: "ongoing" },
+  ];
+  const curve = "M40,252 C 96,244 130,214 178,196 C 236,174 262,142 310,122 C 366,99 398,65 446,48";
   return (
-    <div ref={outerRef} style={{ position: "relative", height: "120vh" }}>
-      <div
-        className="sticky top-0 overflow-hidden flex flex-col"
-        style={{ height: "100vh", background: "linear-gradient(135deg,#f8fafc 0%,#eff6ff 48%,#faf5ff 100%)" }}
-      >
-        {/* Ambient colour glow that shifts with active pillar */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: `radial-gradient(ellipse 80% 70% at 28% 60%, ${col}12, transparent 68%)`, transition: "background 0.9s" }}
-        />
-        <div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle,${col}0e,transparent 70%)`, filter: "blur(60px)", transition: "background 0.9s" }}
-        />
+    <div ref={ref} className="w-full select-none">
+      <svg viewBox="0 0 490 310" className="w-full" aria-hidden="true" style={{ overflow: "visible" }}>
+        <defs>
+          <linearGradient id="jArea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7C92C7" stopOpacity="0.22"/>
+            <stop offset="100%" stopColor="#7C92C7" stopOpacity="0"/>
+          </linearGradient>
+          <linearGradient id="jLine" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stopColor="#A9B8DC"/>
+            <stop offset="100%" stopColor="#2E3B72"/>
+          </linearGradient>
+        </defs>
 
-        {/* Header */}
-        <div className="relative z-10 text-center px-4 pt-10 pb-5 flex-shrink-0">
-          <span className="section-eyebrow-light">What We Offer</span>
-          <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Our Products</h2>
-          <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto leading-relaxed">
-            Software products engineered for European businesses — end-to-end, from requirement to delivery.
-          </p>
-        </div>
+        {/* faint grid */}
+        <g opacity=".5">{[70, 140, 210, 280].map(y => <line key={y} x1="20" y1={y} x2="470" y2={y} stroke="rgba(70,88,159,0.08)" strokeWidth="1" strokeDasharray="3 7"/>)}</g>
 
-        {/* Logo + content */}
-        <div className="relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-24 max-w-5xl mx-auto w-full px-6 lg:px-8">
-          {/* Rotating logo */}
-          <div className="relative flex items-center justify-center flex-shrink-0">
-            <div
-              className="absolute rounded-full"
-              style={{ width: 236, height: 236, border: `1.5px solid ${col}44`, boxShadow: `0 0 44px ${col}18`, transition: "border-color 0.9s, box-shadow 0.9s" }}
-            />
-            <div
-              className="absolute rounded-full"
-              style={{ width: 192, height: 192, border: `1px solid ${col}22`, transition: "border-color 0.9s" }}
-            />
-            <img
-              src={symbolImg}
-              alt="ANTUTIVE symbol"
-              style={{
-                width: 148,
-                height: 148,
-                objectFit: "contain",
-                transform: `rotate(${rot}deg)`,
-                filter: `drop-shadow(0 0 18px ${col}88) drop-shadow(0 0 36px ${col}44)`,
-                transition: "filter 0.9s",
-                willChange: "transform",
-              }}
-            />
-          </div>
+        {/* area under curve */}
+        <path d={`${curve} L446,296 L40,296 Z`} fill="url(#jArea)" opacity={on ? 1 : 0} style={{ transition: "opacity 1.2s ease 0.9s" }}/>
 
-          {/* Active pillar content */}
-          <div className="flex-1" style={{ position: "relative", minHeight: 260 }}>
-            {PILLARS.map((p, i) => (
+        {/* the path itself */}
+        <path d={curve} fill="none" stroke="url(#jLine)" strokeWidth="2.5" strokeLinecap="round" pathLength={1} className={`journey-line ${on ? "drawn" : ""}`}/>
+
+        {/* milestone nodes */}
+        {nodes.map((n, i) => (
+          <g key={n.name} className={`journey-node ${on ? "drawn" : ""}`} style={{ transitionDelay: `${0.5 + i * 0.35}s` }}>
+            {i === nodes.length - 1 && (
+              <circle cx={n.x} cy={n.y} r={n.r + 10} fill="none" stroke={n.color} strokeWidth="1.5" opacity="0.5" className="journey-halo"/>
+            )}
+            <circle cx={n.x} cy={n.y} r={n.r + 5} fill={`${n.color}22`} stroke={`${n.color}66`} strokeWidth="1"/>
+            <circle cx={n.x} cy={n.y} r={n.r - 2} fill={n.color}/>
+            <text x={n.x} y={n.y - n.r - 12} textAnchor={i === nodes.length - 1 ? "end" : "middle"} fontSize="12" fontWeight="700" fill="#0f172a" fontFamily="Sora, sans-serif">{n.name}</text>
+            <text x={n.x} y={n.y + n.r + 22} textAnchor={i === 0 ? "start" : "middle"} fontSize="10.5" fontWeight="600" fill="#94a3b8" fontFamily="Inter, sans-serif">{n.wks}</text>
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+/* ── flagship products section ── */
+function FlagshipSection() {
+  return (
+    <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 48%,#f8fafc 100%)" }}>
+      <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-60"/>
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.14),transparent 70%)", filter: "blur(70px)" }}/>
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.10),transparent 70%)", filter: "blur(60px)" }}/>
+
+      <DotMatrix style={{ top: 60, right: 30 }} />
+      <HatchAccent style={{ bottom: 50, left: 30 }} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Logo mark with orbiting rings */}
+          <Reveal variant="left">
+            <div className="relative flex items-center justify-center py-10">
+              <svg viewBox="0 0 320 320" className="absolute w-[300px] h-[300px]" aria-hidden="true" style={{ overflow: "visible" }}>
+                <circle cx="160" cy="160" r="150" fill="none" stroke="rgba(124,146,199,0.30)" strokeWidth="1.4" strokeDasharray="6 10" className="logo-ring-spin"/>
+                <circle cx="160" cy="160" r="118" fill="none" stroke="rgba(70,88,159,0.20)" strokeWidth="1"/>
+                <circle cx="160" cy="10" r="5" fill="#7C92C7" className="eco-pulse-dot"/>
+                <circle cx="278" cy="160" r="4" fill="#46589F" className="eco-pulse-dot" style={{ animationDelay: "0.8s" }}/>
+                <circle cx="160" cy="278" r="4" fill="#A9B8DC" className="eco-pulse-dot" style={{ animationDelay: "1.6s" }}/>
+              </svg>
               <div
-                key={p.n}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  opacity: i === idx ? 1 : 0,
-                  transform: i === idx ? "translateY(0)" : i < idx ? "translateY(-24px)" : "translateY(24px)",
-                  transition: "opacity 0.5s ease, transform 0.5s ease",
-                  pointerEvents: i === idx ? "auto" : "none",
-                }}
+                className="logo-mark-float flex items-center justify-center rounded-[36px]"
+                style={{ width: 180, height: 180, background: "#ffffff", border: "1px solid rgba(124,146,199,0.35)", boxShadow: "0 24px 64px rgba(70,88,159,0.20)" }}
               >
-                <span style={{ fontFamily: "Orbitron, sans-serif", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.25em", color: "rgba(15,23,42,0.30)", marginBottom: "1.1rem", display: "block" }}>
-                  {p.n}
-                </span>
-                <h3 style={{ fontFamily: "Orbitron, sans-serif", fontSize: "clamp(1.3rem, 2.8vw, 2.1rem)", fontWeight: 700, color: "#0f172a", marginBottom: "0.5rem", lineHeight: 1.2 }}>
-                  {p.title}
-                </h3>
-                <p style={{ fontSize: "0.78rem", fontWeight: 600, color: p.color, marginBottom: "1rem", letterSpacing: "0.03em" }}>
-                  {p.tag}
-                </p>
-                <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.7, marginBottom: "1.5rem", maxWidth: 420 }}>
-                  {p.desc}
-                </p>
-                <Link
-                  to={p.href}
-                  style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: 12, border: `1.5px solid ${p.color}55`, color: p.color, background: `${p.color}0e`, textDecoration: "none" }}
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <img src={logoMark} alt="Antutive mark" style={{ width: 96, objectFit: "contain" }}/>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </Reveal>
 
-        {/* Progress dots + scroll hint */}
-        <div className="relative z-10 flex flex-col items-center gap-3 pb-7 flex-shrink-0">
-          <div className="flex gap-2.5">
-            {PILLARS.map((p, i) => (
-              <div
-                key={i}
-                style={{
-                  width: i === idx ? 28 : 8,
-                  height: 8,
-                  borderRadius: 4,
-                  background: i === idx ? p.color : "rgba(111,60,195,0.20)",
-                  transition: "all 0.4s ease",
-                }}
-              />
-            ))}
-          </div>
-          {prog < 0.03 && (
-            <span style={{ fontSize: "0.62rem", letterSpacing: "0.2em", color: "rgba(15,23,42,0.35)", textTransform: "uppercase", animation: "fadeUp 0.8s ease both" }}>
-              Scroll to explore
-            </span>
-          )}
+          {/* Copy */}
+          <Reveal variant="right" delay={120}>
+            <span className="section-eyebrow-light">What We Do</span>
+            <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>
+              We ship software.<br/><span className="grad-text-animated">You keep everything.</span>
+            </h2>
+            <p className="text-sm text-[#64748b] leading-relaxed mb-8 max-w-lg">
+              A lot of agencies rent you their work. Licence fees, platform lock-ins,
+              retainers you can't leave. We do the opposite. When an Antutive product
+              ships, the code, the design files, and the IP land in your hands. If you
+              never call us again, everything keeps working. Most people call us again.
+            </p>
+
+            <div className="flex flex-col gap-4 mb-8">
+              {[
+                { Icon: Code2,      title: "Built for you",  desc: "Client products engineered end-to-end, from the first workshop to production and beyond.", href: "/custom-platform" },
+                { Icon: Smartphone, title: "Built by us",    desc: "FAMANT, our voice-first home operating system. Proof that we use our own methods.", href: "/products" },
+              ].map(({ Icon, title, desc, href }, i) => (
+                <Reveal key={title} variant="right" delay={i * 100}>
+                  <Link to={href} className="feature-card group" style={{ textDecoration: "none" }}>
+                    <div className="feature-icon-wrap"><Icon className="w-5 h-5 text-white"/></div>
+                    <div>
+                      <p className="text-sm font-bold text-[#0f172a]">{title}</p>
+                      <p className="text-xs text-[#64748b] mt-0.5">{desc}</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-[#7C92C7] ml-auto flex-shrink-0 transition-transform group-hover:translate-x-1"/>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+
+            <Link to="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-[#46589F] group">
+              Explore our products <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
+            </Link>
+          </Reveal>
         </div>
       </div>
-    </div>
+    </section>
+  );
+}
+
+/* ── dark ecosystem section: Data Delimited × Antutive ── */
+function EcosystemSection() {
+  return (
+    <section className="eco-dark relative overflow-hidden">
+      {/* smooth curves into and out of the dark band */}
+      <div className="absolute top-0 left-0 right-0" aria-hidden="true">
+        <WaveDivider fill="#eef2fa" />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true" style={{ transform: "scale(-1)" }}>
+        <WaveDivider fill="#eef2fa" />
+      </div>
+      <div className="py-32">
+      {/* constellation */}
+      {stars.map((s, i) => (
+        <span key={i} className="star-dot" aria-hidden="true"
+          style={{ top: s.top, left: s.left, width: s.s, height: s.s, animationDelay: `${s.d}s` }}/>
+      ))}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+        style={{ backgroundImage: "radial-gradient(rgba(169,184,220,0.05) 1px, transparent 1px)", backgroundSize: "36px 36px" }}/>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal variant="up">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <span className="section-eyebrow" style={{ color: "#A9B8DC", borderColor: "rgba(169,184,220,0.35)", background: "rgba(124,146,199,0.12)" }}>The Bigger Picture</span>
+            <h2 className="section-h2 mt-4 mb-5" style={{ fontWeight: 700, color: "#F3F6FC" }}>
+              Antutive is one half<br/><span className="grad-text-light">of a bigger idea.</span>
+            </h2>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(199,210,236,0.75)" }}>
+              Getting real value out of data and AI takes two different kinds of company.
+              One that builds the foundations, and one that turns those foundations into
+              products and growth. We're the second one. Our partner, Data Delimited,
+              is the first.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* connected cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-0 items-stretch max-w-5xl mx-auto mb-14">
+
+          {/* Data Delimited card → external */}
+          <Reveal variant="left" delay={80}>
+            <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer" className="eco-dark-card group" aria-label="Visit the Data Delimited website">
+              <span className="eco-tag mb-6" style={{ color: "#C7D2EC", background: "rgba(199,210,236,0.10)", border: "1px solid rgba(199,210,236,0.25)" }}>
+                Data Delimited
+              </span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
+                style={{ background: "linear-gradient(135deg,#3B4863,#64748b)", boxShadow: "0 8px 24px rgba(0,0,0,0.4)" }}>
+                <Database className="w-5 h-5 text-white"/>
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>Builds the intelligence</h3>
+              <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(199,210,236,0.72)" }}>
+                Data platforms, analytics, AI, and cloud modernisation. Data Delimited
+                gives organisations foundations they can trust: pipelines that flow,
+                models that work, and infrastructure that scales with them.
+              </p>
+              <p className="text-xs font-bold mt-6 uppercase tracking-widest" style={{ color: "rgba(199,210,236,0.55)" }}>Engineering & Intelligence</p>
+              <span className="eco-visit-pill">
+                Visit datadelimited.com <ArrowUpRight className="w-3.5 h-3.5"/>
+              </span>
+            </a>
+          </Reveal>
+
+          {/* animated connector */}
+          <div className="eco-connector lg:px-3" aria-hidden="true">
+            <svg viewBox="0 0 120 60" className="w-28 h-14 rotate-90 lg:rotate-0" style={{ overflow: "visible" }}>
+              <line x1="0" y1="30" x2="120" y2="30" className="eco-connector-line" style={{ stroke: "#A9B8DC" }}/>
+              <circle cx="30" cy="30" r="4" fill="#A9B8DC" className="eco-pulse-dot"/>
+              <circle cx="60" cy="30" r="5" fill="#7C92C7" className="eco-pulse-dot" style={{ animationDelay: "0.8s" }}/>
+              <circle cx="90" cy="30" r="4" fill="#A9B8DC" className="eco-pulse-dot" style={{ animationDelay: "1.6s" }}/>
+            </svg>
+          </div>
+
+          {/* Antutive card */}
+          <Reveal variant="right" delay={160}>
+            <div className="eco-dark-card" style={{ borderColor: "rgba(124,146,199,0.40)" }}>
+              <span className="eco-tag mb-6" style={{ color: "#A9B8DC", background: "rgba(124,146,199,0.16)", border: "1px solid rgba(124,146,199,0.40)" }}>
+                Antutive
+              </span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
+                style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 8px 24px rgba(70,88,159,0.5)" }}>
+                <Rocket className="w-5 h-5 text-white"/>
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>Turns intelligence into growth</h3>
+              <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(199,210,236,0.72)" }}>
+                We pick up where foundations end. AI innovation, growth automation,
+                digital transformation, strategic consulting, and product development
+                that turn technical capability into results you can put in a board deck.
+              </p>
+              <p className="text-xs font-bold mt-6 uppercase tracking-widest" style={{ color: "#A9B8DC" }}>Innovation & Growth</p>
+              <span className="eco-visit-pill" style={{ background: "rgba(124,146,199,0.22)" }}>
+                <MapPin className="w-3.5 h-3.5"/> You are here
+              </span>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* bottom highlight */}
+        <Reveal variant="scale" delay={120}>
+          <div className="eco-dark-highlight max-w-3xl mx-auto text-center">
+            <p className="text-base sm:text-xl font-bold leading-snug" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>
+              Data Delimited builds the intelligence.<br className="sm:hidden"/>
+              <span className="grad-text-light"> Antutive turns it into growth.</span>
+            </p>
+            <p className="text-sm mt-3" style={{ color: "rgba(199,210,236,0.65)" }}>
+              From data foundations to business outcomes. One journey, with no gap in the middle.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center mt-7">
+              <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer" className="eco-cta-btn">
+                Explore Data Delimited <ArrowUpRight className="w-4 h-4"/>
+              </a>
+              <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5"
+                style={{ border: "1.5px solid rgba(169,184,220,0.35)", color: "#C7D2EC", textDecoration: "none" }}>
+                More about Antutive <ArrowRight className="w-4 h-4"/>
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── why antutive stat card with count-up ── */
+function StatCard({ icon: Icon, end, suffix, label, desc, delay }: { icon: any; end: number; suffix: string; label: string; desc: string; delay: number }) {
+  const { ref, on } = useVisible(0.4);
+  const val = useCountUp(end, on);
+  return (
+    <Reveal variant="right" delay={delay}>
+      <div ref={ref} className="feature-card">
+        <div className="feature-icon-wrap"><Icon className="w-5 h-5 text-white"/></div>
+        <div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-3xl font-bold text-[#0f172a]" style={{ fontFamily: "Sora, sans-serif", fontVariantNumeric: "tabular-nums" }}>{val}{suffix}</span>
+            <span className="text-sm font-semibold text-[#46589F]">{label}</span>
+          </div>
+          <p className="text-xs text-[#64748b] mt-1">{desc}</p>
+        </div>
+      </div>
+    </Reveal>
   );
 }
 
 export function Home() {
 
-  const practices = [
-    { icon: TrendingUp, title: "Web & Mobile Products", href: "/growth-marketing", desc: "Consumer and B2B applications, from MVPs to full-scale platforms, built for European markets." },
-    { icon: Lock,       title: "Enterprise Products",   href: "/custom-platform",  desc: "Custom enterprise software and internal tools tailored to your exact business requirements." },
+  const buildKinds = [
+    {
+      icon: TrendingUp, title: "Web & Mobile Products", href: "/growth-marketing",
+      desc: "The products your customers touch. Consumer apps, B2B platforms, and MVPs that need to feel right from the very first tap.",
+      tags: ["Customer portals", "SaaS platforms", "Mobile apps", "MVPs"],
+    },
+    {
+      icon: Lock, title: "Enterprise & Internal", href: "/custom-platform",
+      desc: "The products your business runs on. Internal tools, integrations, and platforms shaped around how your team actually works.",
+      tags: ["Internal tools", "ERP integrations", "B2B platforms", "Automation"],
+    },
   ];
 
-  const features = [
-    { icon: Shield,    stat: "100%", label: "Client IP Ownership",   desc: "All intellectual property from every product we build belongs fully to the client on delivery." },
-    { icon: Zap,       stat: "3×",   label: "Faster Delivery",       desc: "Vs traditional European development companies — parallel engineering approach." },
-    { icon: GitBranch, stat: "24h",  label: "Support Response",      desc: "Post-launch maintenance SLA. 24h for critical issues, 48h for standard requests." },
+  const statCards = [
+    { icon: Shield,    end: 100, suffix: "%", label: "Client IP ownership",  desc: "Everything we make for you is yours on delivery. The code, the designs, the lot." },
+    { icon: Zap,       end: 3,   suffix: "×", label: "Faster delivery",      desc: "Parallel engineering, not bigger promises. Measured against traditional European firms." },
+    { icon: GitBranch, end: 24,  suffix: "h", label: "Critical response",    desc: "Post-launch SLA. Critical issues within 24 hours, standard requests within 48." },
   ];
 
   const metrics = [
@@ -253,9 +403,10 @@ export function Home() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative flex items-center overflow-hidden" style={{ minHeight: "92vh" }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f8fafc] via-[#eff6ff] to-[#faf5ff]"/>
+      <section className="relative flex items-center overflow-hidden" style={{ minHeight: "min(92vh, 860px)" }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f8fafc] via-[#eef2fa] to-[#f8fafc]"/>
         <div className="absolute inset-0 hero-mesh-overlay"/>
+        <Noise />
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div className="blob blob-1"/><div className="blob blob-2"/><div className="blob blob-3"/>
         </div>
@@ -268,26 +419,28 @@ export function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-[#0f172a]">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#6F3CC3]/20 bg-[#6F3CC3]/06 backdrop-blur-sm mb-6"
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#46589F]/25 bg-[#7C92C7]/10 backdrop-blur-sm mb-6"
                 style={{ animation: "fadeUp .6s ease both" }}>
-                <Sparkles className="w-3.5 h-3.5 text-[#6F3CC3]"/>
-                <span className="text-xs font-bold tracking-widest uppercase text-[#6F3CC3]">Gothenburg, Sweden · Est. 2026</span>
+                <Sparkles className="w-3.5 h-3.5 text-[#46589F]"/>
+                <span className="text-xs font-bold tracking-widest uppercase text-[#46589F]">Product Engineering · Gothenburg</span>
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp .8s ease .1s both" }}>
-                We Build Products<br/>for European<br/>Businesses
+                The product you need doesn't exist yet.<br/>
+                <span className="grad-text-animated">So we build it.</span>
               </h1>
 
               <p className="text-base md:text-lg mb-8 text-[#334155] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .25s both" }}>
-                ANTUTIVE AB is a Swedish product engineering company. We design and build software products
-                for businesses — from web and mobile applications to enterprise platforms. If you have a
-                requirement, we build the product. Full IP ownership on delivery.
+                We're Antutive, a Swedish product engineering company. Companies come to
+                us with a requirement, a rough idea, or a problem that won't go away.
+                They leave with working software they own outright. Code, design, IP.
+                All of it, yours.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
-                <Link to="/contact" className="hero-btn-primary">Discuss Your Product</Link>
-                <Link to="/products" className="hero-btn-secondary">Explore Our Work</Link>
+                <Link to="/contact" className="hero-btn-primary">Tell Us What You Need</Link>
+                <Link to="/growth-marketing" className="hero-btn-secondary">See How We Work</Link>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -318,24 +471,24 @@ export function Home() {
         </div>
       </div>
 
-      {/* ── THREE PILLARS (scroll-driven) ── */}
-      <PillarScrollSection />
+      {/* ── FLAGSHIP / WHAT WE DO ── */}
+      <FlagshipSection />
 
-      {/* ── OPERATIONAL FRICTION MATRIX ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#ffffff 0%,#f8fafc 55%,#f5f3ff 100%)" }}>
+      {/* ── BUSINESS NEED MATRIX ── */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#ffffff 0%,#f8fafc 55%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-50"/>
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(70px)" }}/>
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.08),transparent 70%)", filter: "blur(60px)" }}/>
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.12),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.08),transparent 70%)", filter: "blur(60px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
-              <span className="section-eyebrow-light">Need — Solution</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Business Need Matrix</h2>
-              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Click a business need to see how ANTUTIVE builds the right product to address it.</p>
+              <span className="section-eyebrow-light">Where It Hurts</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Which of These Sounds Familiar?</h2>
+              <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">Every product we've built started as one of these six headaches. Tap one and we'll show you how we take it apart, from first sketch to long after launch.</p>
             </div>
           </Reveal>
           <Reveal variant="scale">
-            <div className="overflow-x-auto rounded-2xl border shadow-sm" style={{ borderColor: "rgba(28,183,180,0.22)" }}>
+            <div className="overflow-x-auto rounded-2xl border shadow-sm" style={{ borderColor: "rgba(124,146,199,0.28)" }}>
               <table className="w-full min-w-[700px]">
                 <thead>
                   <tr style={{ background: "#f8fafc" }}>
@@ -351,25 +504,24 @@ export function Home() {
                 </thead>
                 <tbody>
                   {frictionRows.map((row, ri) => (
-                    <>
+                    <Fragment key={ri}>
                       <tr
-                        key={ri}
                         onClick={() => setSelectedPain(selectedPain === ri ? null : ri)}
                         className="cursor-pointer transition-colors"
                         style={{
-                          background: selectedPain === ri ? "rgba(28,183,180,0.07)" : ri % 2 === 0 ? "#ffffff" : "#f8fafc",
-                          borderBottom: "1px solid rgba(28,183,180,0.12)",
+                          background: selectedPain === ri ? "rgba(124,146,199,0.10)" : ri % 2 === 0 ? "#ffffff" : "#f8fafc",
+                          borderBottom: "1px solid rgba(124,146,199,0.16)",
                         }}
                       >
                         <td className="px-6 py-4">
                           <span className="text-sm font-bold text-[#0f172a] flex items-center gap-2.5">
                             <span className="w-2 h-2 rounded-full flex-shrink-0 transition-transform"
-                              style={{ background: selectedPain === ri ? "#1CB7B4" : "#94a3b8", transform: selectedPain === ri ? "scale(1.5)" : "scale(1)" }}/>
+                              style={{ background: selectedPain === ri ? "#46589F" : "#94a3b8", transform: selectedPain === ri ? "scale(1.5)" : "scale(1)" }}/>
                             {row.pain}
                           </span>
                         </td>
                         {row.solutions.map((sol, ci) => (
-                          <td key={ci} className="px-4 py-4 text-center" style={{ borderLeft: "1px solid rgba(111,60,195,0.06)" }}>
+                          <td key={ci} className="px-4 py-4 text-center" style={{ borderLeft: "1px solid rgba(70,88,159,0.06)" }}>
                             <span className="text-xs font-semibold transition-colors"
                               style={{ color: selectedPain === ri ? COL_COLORS[ci] : "#94a3b8" }}>
                               {sol}
@@ -378,8 +530,8 @@ export function Home() {
                         ))}
                       </tr>
                       {selectedPain === ri && (
-                        <tr key={`exp-${ri}`}>
-                          <td colSpan={5} style={{ background: "rgba(28,183,180,0.05)", borderBottom: "1px solid rgba(28,183,180,0.15)" }}>
+                        <tr>
+                          <td colSpan={5} style={{ background: "rgba(124,146,199,0.06)", borderBottom: "1px solid rgba(124,146,199,0.18)" }}>
                             <div className="px-6 py-4 flex flex-col sm:flex-row gap-4 items-start">
                               <div className="flex-1 min-w-0">
                                 <p className="text-xs font-bold text-[#0f172a] mb-1 uppercase tracking-wide">Typical Situation</p>
@@ -397,7 +549,7 @@ export function Home() {
                           </td>
                         </tr>
                       )}
-                    </>
+                    </Fragment>
                   ))}
                 </tbody>
               </table>
@@ -406,28 +558,35 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── FIVE PRACTICE AREAS ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#f0f9ff 0%,#eff6ff 50%,#f8fafc 100%)" }}>
+      {/* ── WHAT WE BUILD ── */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 50%,#f8fafc 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none"/>
-        <div className="absolute top-10 right-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.08),transparent 70%)", filter: "blur(70px)" }}/>
-        <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.07),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute top-10 right-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.10),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.08),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-14">
               <span className="section-eyebrow-light">What We Build</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Product Categories</h2>
+              <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Two Kinds of Builds.<br/>One Standard of Care.</h2>
               <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
-                Each product category can stand alone or be combined into a comprehensive digital platform for your business.
+                Whether it faces your customers or runs your operations, it gets the same
+                discovery, the same design attention, and the same handover.
               </p>
             </div>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {practices.map((p, i) => (
-              <Reveal key={p.title} variant={["up","left","scale","right","flip"][i % 5] as any} delay={i * 80}>
-                <Link to={p.href} className="block practice-card group">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {buildKinds.map((p, i) => (
+              <Reveal key={p.title} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
+                <Link to={p.href} className="block practice-card group h-full" style={{ padding: 32 }}>
                   <div className="practice-icon"><p.icon className="w-5 h-5 text-white"/></div>
-                  <h3 className="practice-title">{p.title}</h3>
-                  <p className="practice-desc">{p.desc}</p>
+                  <h3 className="practice-title" style={{ fontSize: "1.05rem" }}>{p.title}</h3>
+                  <p className="practice-desc" style={{ fontSize: "0.85rem" }}>{p.desc}</p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {p.tags.map(t => (
+                      <span key={t} className="px-2.5 py-1 rounded-full text-xs font-medium"
+                        style={{ background: "rgba(124,146,199,0.10)", border: "1px solid rgba(124,146,199,0.28)", color: "#46589F" }}>{t}</span>
+                    ))}
+                  </div>
                   <span className="practice-link">Learn more <ArrowRight className="w-3.5 h-3.5"/></span>
                 </Link>
               </Reveal>
@@ -436,19 +595,19 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── AI MATURITY PATH ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#faf5ff 100%)" }}>
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.10),transparent 70%)", filter: "blur(80px)" }}/>
-        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(139,92,246,0.09),transparent 70%)", filter: "blur(70px)" }}/>
+      {/* ── PRODUCT JOURNEY ── */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#eef2fa 100%)" }}>
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.12),transparent 70%)", filter: "blur(80px)" }}/>
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.09),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* LEFT */}
             <Reveal variant="left">
-              <span className="section-eyebrow-light">Build Process</span>
-              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>Where Are You on<br/>the Product Journey?</h2>
+              <span className="section-eyebrow-light">The Road to Live</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>From "We Need Something"<br/>to "It's Live"</h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-8">
-                Every product starts somewhere. We meet you at whatever stage your requirement is at
-                and take it all the way to production — without skipping the foundations.
+                Every build follows the same arc, even when the products couldn't be more
+                different. Here's the road, and roughly how long each stretch takes.
               </p>
               <div className="flex flex-col gap-5">
                 {maturityLevels.map((m, i) => (
@@ -468,33 +627,15 @@ export function Home() {
               </div>
             </Reveal>
 
-            {/* RIGHT — bar chart */}
+            {/* RIGHT — animated journey path */}
             <Reveal variant="right" delay={120}>
-              <div className="p-8 rounded-3xl border" style={{ background: "#ffffff", backdropFilter: "blur(12px)", borderColor: "rgba(28,183,180,0.22)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-                <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mb-8">Typical Product Timeline</p>
-                <div className="flex items-end gap-4" style={{ height: 160 }}>
-                  {maturityLevels.map((m) => (
-                    <div key={m.name} className="flex-1 flex flex-col items-center gap-3">
-                      <span className="text-xs font-bold" style={{ color: m.color }}>{m.weeks}w</span>
-                      <div className="w-full rounded-t-xl" style={{
-                        height: `${(m.weeks / 12) * 100}%`,
-                        background: `linear-gradient(to top, ${m.color}cc, ${m.color}55)`,
-                        minHeight: 16,
-                      }}/>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex gap-4 mt-4 border-t pt-4" style={{ borderColor: "rgba(28,183,180,0.15)" }}>
-                  {maturityLevels.map((m) => (
-                    <div key={m.name} className="flex-1 text-center">
-                      <span className="text-xs text-[#94a3b8]">{m.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(111,60,195,0.06)", border: "1px solid rgba(111,60,195,0.15)" }}>
-                  <p className="text-xs font-bold text-[#0f172a] mb-1">Not sure where to start?</p>
-                  <p className="text-xs text-[#64748b] leading-relaxed">The Discovery session maps your product requirements in 90 minutes — at no cost for qualified projects.</p>
-                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#1CB7B4" }}>
+              <div className="p-8 rounded-3xl border" style={{ background: "#ffffff", backdropFilter: "blur(12px)", borderColor: "rgba(124,146,199,0.28)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+                <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mb-6">The Typical Arc</p>
+                <JourneyPath/>
+                <div className="mt-6 p-4 rounded-2xl" style={{ background: "rgba(124,146,199,0.08)", border: "1px solid rgba(124,146,199,0.24)" }}>
+                  <p className="text-xs font-bold text-[#0f172a] mb-1">Not sure where you are on this curve?</p>
+                  <p className="text-xs text-[#64748b] leading-relaxed">A 90-minute Discovery session will tell you. Free for qualified projects, and useful either way.</p>
+                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold mt-2" style={{ color: "#46589F" }}>
                     Book free Discovery <ArrowRight className="w-3.5 h-3.5"/>
                   </Link>
                 </div>
@@ -505,75 +646,68 @@ export function Home() {
       </section>
 
       {/* ── WHY ANTUTIVE ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#faf5ff 0%,#f5f3ff 60%,#faf5ff 100%)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f4f6fb 60%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-50"/>
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(28,183,180,0.08),transparent 70%)", filter: "blur(80px)" }}/>
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(111,60,195,0.07),transparent 70%)", filter: "blur(70px)" }}/>
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.10),transparent 70%)", filter: "blur(80px)" }}/>
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.08),transparent 70%)", filter: "blur(70px)" }}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <Reveal variant="left">
-              <span className="section-eyebrow-light">Why ANTUTIVE</span>
+              <span className="section-eyebrow-light">Straight Answers</span>
               <h2 className="section-h2 text-[#0f172a] mt-3 mb-5" style={{ fontWeight: 700 }}>
-                Product Speed.<br/>European Quality.<br/>Full Ownership.
+                Why companies pick us,<br/><span className="grad-text-animated">in plain terms.</span>
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
-                ANTUTIVE AB (Org.nr 559576-7228) is a Swedish Aktiebolag registered in Gothenburg, Västra Götaland.
-                We are a product engineering company — we build software products for businesses. Whether you
-                have a detailed specification or just an idea, we scope, design, engineer, and deliver it.
+                ANTUTIVE AB is a Swedish Aktiebolag in Gothenburg, org. number 559576-7228.
+                That's more than trivia. It means EU contracts, EU invoicing, and someone
+                accountable in your time zone.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-6">
-                Full IP ownership passes to the client on delivery. No lock-in, no licence dependency — you own
-                the product completely. Swedish-grade quality and full EU regulatory compliance by design.
+                It also means we build the Swedish way: carefully, transparently, and to
+                last. Bring a full specification or a single sentence. We'll meet you
+                wherever your idea currently is.
               </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6F3CC3] group">
-                About ANTUTIVE <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
+              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#46589F] group">
+                About Antutive <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
               </Link>
             </Reveal>
 
             <div className="flex flex-col gap-4">
-              {features.map(({ icon: Icon, stat, label, desc }, i) => (
-                <Reveal key={label} variant="right" delay={i * 110}>
-                  <div className="feature-card">
-                    <div className="feature-icon-wrap"><Icon className="w-5 h-5 text-white"/></div>
-                    <div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-bold text-[#0f172a]">{stat}</span>
-                        <span className="text-sm font-semibold text-[#1CB7B4]">{label}</span>
-                      </div>
-                      <p className="text-xs text-[#64748b] mt-0.5">{desc}</p>
-                    </div>
-                    <CheckCircle2 className="w-4 h-4 text-[#1CB7B4] ml-auto flex-shrink-0"/>
-                  </div>
-                </Reveal>
+              {statCards.map((s, i) => (
+                <StatCard key={s.label} icon={s.icon} end={s.end} suffix={s.suffix} label={s.label} desc={s.desc} delay={i * 110}/>
               ))}
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── ECOSYSTEM (dark) ── */}
+      <EcosystemSection />
+
       {/* ── CTA ── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#f5f3ff 0%,#f0fdfa 100%)" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 100%)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="flip">
             <div className="cta-card">
               <div className="cta-orb cta-orb-1"/><div className="cta-orb cta-orb-2"/><div className="cta-orb cta-orb-3"/>
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1CB7B4]/30 bg-[#1CB7B4]/10 mb-6">
-                  <Sparkles className="w-3.5 h-3.5 text-[#1CB7B4]"/>
-                  <span className="text-xs font-bold tracking-widest text-[#1CB7B4] uppercase">Start the Conversation</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7C92C7]/40 bg-[#7C92C7]/12 mb-6">
+                  <Sparkles className="w-3.5 h-3.5 text-[#46589F]"/>
+                  <span className="text-xs font-bold tracking-widest text-[#46589F] uppercase">No Pitch, Promise</span>
                 </div>
                 <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>
-                  Ready to Build<br/>Your Product?
+                  Tell us what's missing.
                 </h2>
                 <p className="text-sm text-[#64748b] mb-10 max-w-md mx-auto leading-relaxed">
-                  Book a free Discovery session. We start with your requirements and business goals —
-                  not a sales pitch.
+                  The first conversation is free and commits you to nothing. Bring a spec,
+                  a sketch, or one honest sentence about what's broken. We'll tell you what
+                  it would take to build, and whether we're the right people to build it.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link to="/contact" className="cta-btn-primary">
                     Book a Discovery Call <ArrowRight className="w-4 h-4"/>
                   </Link>
-                  <Link to="/products" className="cta-btn-secondary">Explore Our Work</Link>
+                  <Link to="/products" className="cta-btn-secondary">Explore Our Products</Link>
                 </div>
               </div>
             </div>

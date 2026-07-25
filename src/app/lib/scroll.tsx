@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
+/* "?reveal=all" forces every reveal on immediately — used for full-page captures and print */
+const forceReveal = typeof window !== "undefined" && window.location.search.includes("reveal=all");
+
 export function useVisible(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
-  const [on, setOn] = useState(false);
+  const [on, setOn] = useState(forceReveal);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
