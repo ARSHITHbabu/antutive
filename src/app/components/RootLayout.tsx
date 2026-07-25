@@ -1,13 +1,25 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../../assets/Screenshot_2026-05-03_141703-removebg-preview.png";
+import logoFull from "../../assets/antutive-logo-full.png";
+import logoMark from "../../assets/antutive-logo-mark.png";
 
-function AntuitiveLogo({ size = 36 }: { size?: number }) {
+function AntutiveLogo({ size = 36 }: { size?: number }) {
   return (
     <img
-      src={logo}
-      alt="Antuitive"
+      src={logoFull}
+      alt="Antutive. AI Solutions, Human Impact."
+      className="block w-auto object-contain"
+      style={{ height: size }}
+    />
+  );
+}
+
+function AntutiveMark({ size = 28 }: { size?: number }) {
+  return (
+    <img
+      src={logoMark}
+      alt="Antutive"
       className="block w-auto object-contain"
       style={{ height: size }}
     />
@@ -30,10 +42,10 @@ export function RootLayout() {
   }, []);
 
   const nav = [
-    { name: "Our Work",      href: "/growth-marketing" },
-    { name: "Custom Build",  href: "/custom-platform" },
-    { name: "Products",      href: "/products" },
-    { name: "About",         href: "/about" },
+    { name: "How We Work",  href: "/growth-marketing" },
+    { name: "Custom Build", href: "/custom-platform" },
+    { name: "Products",     href: "/products" },
+    { name: "About",        href: "/about" },
   ];
 
   const isHome  = location.pathname === "/";
@@ -44,14 +56,14 @@ export function RootLayout() {
         background:        "rgba(248,250,252,0.92)",
         backdropFilter:    "blur(22px)",
         WebkitBackdropFilter: "blur(22px)",
-        border:            "1px solid rgba(28,183,180,0.22)",
-        boxShadow:         "0 8px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)",
+        border:            "1px solid rgba(124,146,199,0.30)",
+        boxShadow:         "0 8px 32px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,0.8)",
       }
     : {
         background:        "rgba(248,250,252,0.75)",
         backdropFilter:    "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
-        border:            "1px solid rgba(111,60,195,0.15)",
+        border:            "1px solid rgba(124,146,199,0.20)",
       };
 
   return (
@@ -70,9 +82,14 @@ export function RootLayout() {
             style={{ ...headerCard, height: scrolled ? 56 : 64 }}
           >
 
-            {/* logo */}
-            <Link to="/" className="flex items-center">
-              <AntuitiveLogo size={32} />
+            {/* logo — full wordmark on desktop, compact mark once scrolled on small screens */}
+            <Link to="/" className="flex items-center" aria-label="Antutive home">
+              <span className="hidden sm:block">
+                <AntutiveLogo size={scrolled ? 34 : 40} />
+              </span>
+              <span className="sm:hidden">
+                <AntutiveLogo size={32} />
+              </span>
             </Link>
 
             {/* desktop nav */}
@@ -94,14 +111,14 @@ export function RootLayout() {
                 to="/contact"
                 className="header-cta ml-3"
               >
-                Contact Us
+                Let's Talk
               </Link>
             </nav>
 
             {/* mobile toggle */}
             <button
               className="lg:hidden p-2 rounded-xl transition-colors"
-              style={{ color: "#1CB7B4" }}
+              style={{ color: "#46589F" }}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -117,10 +134,14 @@ export function RootLayout() {
                 background: "rgba(248,250,252,0.98)",
                 backdropFilter: "blur(22px)",
                 WebkitBackdropFilter: "blur(22px)",
-                border: "1px solid rgba(28,183,180,0.20)",
-                boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                border: "1px solid rgba(124,146,199,0.28)",
+                boxShadow: "0 16px 40px rgba(15,23,42,0.12)",
               }}
             >
+              <div className="flex items-center gap-2 px-4 pb-3 mb-2 border-b" style={{ borderColor: "rgba(124,146,199,0.20)" }}>
+                <AntutiveMark size={22} />
+                <span className="text-xs font-semibold" style={{ color: "#64748b" }}>AI Solutions, Human Impact</span>
+              </div>
               {[...nav, { name: "Contact", href: "/contact" }].map((item) => {
                 const active = location.pathname === item.href;
                 return (
@@ -131,8 +152,8 @@ export function RootLayout() {
                     className="block px-4 py-2.5 rounded-xl mb-1 text-sm transition-all"
                     style={{
                       fontWeight: active ? 600 : 500,
-                      color: active ? "#6F3CC3" : "rgba(30,41,59,0.80)",
-                      background: active ? "rgba(111,60,195,0.10)" : "transparent",
+                      color: active ? "#46589F" : "rgba(30,41,59,0.80)",
+                      background: active ? "rgba(124,146,199,0.14)" : "transparent",
                     }}
                   >
                     {item.name}
@@ -151,31 +172,32 @@ export function RootLayout() {
       {/* ── FOOTER ── */}
       <footer
         className="text-[#334155]"
-        style={{ background: "linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 48%,#f5f3ff 100%)", borderTop: "1px solid rgba(111,60,195,0.15)" }}
+        style={{ background: "linear-gradient(135deg,#f1f5f9 0%,#e9edf6 48%,#eef2fa 100%)", borderTop: "1px solid rgba(124,146,199,0.28)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
             <div className="md:col-span-1">
-              <div className="mb-3">
-                <Link to="/">
-                  <AntuitiveLogo size={44} />
+              <div className="mb-4">
+                <Link to="/" aria-label="Antutive home">
+                  <AntutiveLogo size={46} />
                 </Link>
               </div>
               <p className="text-[#64748b] text-sm leading-relaxed">
-                European product engineering company building software for businesses.
+                A Swedish product engineering company. We turn business requirements
+                into software products you fully own.
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Solutions</h4>
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">What We Do</h4>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["Our Work",      "/growth-marketing"],
-                  ["Custom Build",  "/custom-platform"],
+                  ["How We Work",  "/growth-marketing"],
+                  ["Custom Build", "/custom-platform"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-[#64748b] hover:text-[#6F3CC3] transition-colors">{label}</Link>
+                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
                   </li>
                 ))}
               </ul>
@@ -190,7 +212,7 @@ export function RootLayout() {
                   ["Contact",  "/contact"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-[#64748b] hover:text-[#6F3CC3] transition-colors">{label}</Link>
+                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
                   </li>
                 ))}
               </ul>
@@ -206,8 +228,13 @@ export function RootLayout() {
             </div>
           </div>
 
-          <div className="border-t border-slate-300 mt-12 pt-8 text-center text-xs text-[#64748b] tracking-wide">
-            © 2026 ANTUTIVE AB · Gothenburg, Sweden · EU-based Product Engineering
+          <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b] tracking-wide"
+            style={{ borderColor: "rgba(124,146,199,0.28)" }}>
+            <span>© 2026 ANTUTIVE AB · Gothenburg, Sweden · Org.nr 559576-7228</span>
+            <span className="inline-flex items-center gap-2">
+              <AntutiveMark size={16} />
+              AI Solutions, Human Impact
+            </span>
           </div>
         </div>
       </footer>
