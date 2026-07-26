@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Mic, Calendar, Zap, FileText, ShoppingCart, Shield, Globe, Package, Star, Sparkles, UtensilsCrossed, FolderLock } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb } from "../components/Decor";
-import famantVideo from "../../assets/video_cutted-Picsart-BackgroundRemover.webm";
+const famantVideo = "/media/famant.webm";
 
 const A  = "#46589F";
 const A2 = "#7C92C7";

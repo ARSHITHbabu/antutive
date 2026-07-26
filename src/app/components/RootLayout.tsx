@@ -1,8 +1,10 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logoFull from "../../assets/antutive-logo-full.png";
-import logoMark from "../../assets/antutive-logo-mark.png";
+// Brand assets are served from public/ so they have stable same-domain URLs
+// (https://<domain>/brand/…) usable outside the bundle as well.
+const logoFull = "/brand/antutive-logo-full.png";
+const logoMark = "/brand/antutive-logo-mark.png";
 
 function AntutiveLogo({ size = 36 }: { size?: number }) {
   return (

@@ -3,7 +3,7 @@ import { TrendingUp, Lock, Shield, Globe, Code2, BarChart3, Zap, Server, Layers,
 import { Fragment, useEffect, useState } from "react";
 import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent, WaveDivider } from "../components/Decor";
-import logoMark from "../../assets/antutive-logo-mark.png";
+const logoMark = "/brand/antutive-logo-mark.png";
 
 /* ── count-up hook ── */
 function useCountUp(target: number, on: boolean, duration = 1300) {
