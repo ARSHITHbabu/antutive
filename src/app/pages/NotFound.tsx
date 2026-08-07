@@ -31,9 +31,15 @@ export function NotFound() {
       <DotMatrix style={{ bottom: 30, right: 24 }} />
 
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center w-full">
-        <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
-          style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 12px 32px rgba(70,88,159,0.30)" }}>
-          <Compass className="w-6 h-6 text-white" />
+        <div className="relative inline-flex mb-8">
+          <span className="absolute -inset-4 rounded-full" aria-hidden="true"
+            style={{ border: "1.5px dashed rgba(124,146,199,0.55)", animation: "spinSlow 24s linear infinite" }} />
+          <span className="absolute -inset-8 rounded-full" aria-hidden="true"
+            style={{ border: "1px dashed rgba(124,146,199,0.30)", animation: "spinSlow 40s linear infinite reverse" }} />
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center slow-float"
+            style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 12px 32px rgba(70,88,159,0.30)" }}>
+            <Compass className="w-6 h-6 text-white" />
+          </div>
         </div>
         <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#46589F" }}>404 — Page not found</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-4" style={{ fontFamily: "Sora, sans-serif" }}>

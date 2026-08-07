@@ -1378,3 +1378,54 @@
   filter: blur(50px);
   animation: auroraDrift 14s ease-in-out infinite;
 }
+
+/* ================================================================
+   Visual-enhancement pass utilities (2026-08)
+   ================================================================ */
+
+/* marching dashes along SVG connector lines */
+.flow-dash {
+  stroke-dasharray: 4 8;
+  animation: flowDash 1.4s linear infinite;
+}
+@keyframes flowDash { to { stroke-dashoffset: -12; } }
+
+/* slow vertical drift for floating visual elements */
+.slow-float { animation: slowFloat 7s ease-in-out infinite; }
+@keyframes slowFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* very slow rotation for orbit rings */
+.spin-slow { animation: spinSlow 30s linear infinite; transform-origin: center; }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+/* soft breathing glow for diagram nodes */
+.glow-breathe { animation: glowBreathe 3.2s ease-in-out infinite; }
+@keyframes glowBreathe {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+/* legal reading typography */
+.legal-body code {
+  background: rgba(124, 146, 199, 0.14);
+  border: 1px solid rgba(124, 146, 199, 0.30);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.8em;
+  color: #46589F;
+}
+
+/* Reduced motion: collapse all decorative animation/transition time.
+   Content is fully readable without motion — reveals jump to their
+   final state, marquee/pulse/float effects freeze. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

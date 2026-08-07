@@ -1,12 +1,54 @@
 import { Link } from "react-router";
-import { ArrowRight, ArrowUpRight, Sparkles, Building2, Cpu, Hammer, Users, Database, Rocket } from "lucide-react";
-import { Reveal } from "../lib/scroll";
+import { ArrowRight, ArrowUpRight, Sparkles, Building2, Cpu, Hammer, Users, Database, Rocket, Boxes } from "lucide-react";
+import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb } from "../components/Decor";
 import { usePageMeta, COMPANY_DESCRIPTION } from "../lib/seo";
 import { OWNERSHIP_LINE } from "../content/famant";
 
 const A = "#46589F";
 const P = "#7C92C7";
+
+/* ── company journey — factual milestones only, no dates that are hopes ── */
+function CompanyJourney() {
+  const { ref, on } = useVisible(0.3);
+  const nodes = [
+    { x: 40,  y: 252, r: 7,  color: "#A9B8DC", name: "Founded",     sub: "ANTUTIVE AB · Gothenburg · 2026" },
+    { x: 178, y: 196, r: 8,  color: "#7C92C7", name: "Famant",      sub: "development begins" },
+    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Waitlist",    sub: "open on famant.com" },
+    { x: 446, y: 48,  r: 10, color: "#2E3B72", name: "Launch",      sub: "when it's ready" },
+  ];
+  const curve = "M40,252 C 96,244 130,214 178,196 C 236,174 262,142 310,122 C 366,99 398,65 446,48";
+  return (
+    <div ref={ref} className="w-full select-none">
+      <svg viewBox="0 0 490 310" className="w-full" aria-hidden="true" style={{ overflow: "visible" }}>
+        <defs>
+          <linearGradient id="jArea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7C92C7" stopOpacity="0.22"/>
+            <stop offset="100%" stopColor="#7C92C7" stopOpacity="0"/>
+          </linearGradient>
+          <linearGradient id="jLine" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stopColor="#A9B8DC"/>
+            <stop offset="100%" stopColor="#2E3B72"/>
+          </linearGradient>
+        </defs>
+        <g opacity=".5">{[70, 140, 210, 280].map(y => <line key={y} x1="20" y1={y} x2="470" y2={y} stroke="rgba(70,88,159,0.08)" strokeWidth="1" strokeDasharray="3 7"/>)}</g>
+        <path d={`${curve} L446,296 L40,296 Z`} fill="url(#jArea)" opacity={on ? 1 : 0} style={{ transition: "opacity 1.2s ease 0.9s" }}/>
+        <path d={curve} fill="none" stroke="url(#jLine)" strokeWidth="2.5" strokeLinecap="round" pathLength={1} className={`journey-line ${on ? "drawn" : ""}`}/>
+        {nodes.map((n, i) => (
+          <g key={n.name} className={`journey-node ${on ? "drawn" : ""}`} style={{ transitionDelay: `${0.5 + i * 0.35}s` }}>
+            {i === nodes.length - 1 && (
+              <circle cx={n.x} cy={n.y} r={n.r + 10} fill="none" stroke={n.color} strokeWidth="1.5" opacity="0.5" className="journey-halo"/>
+            )}
+            <circle cx={n.x} cy={n.y} r={n.r + 5} fill={`${n.color}22`} stroke={`${n.color}66`} strokeWidth="1"/>
+            <circle cx={n.x} cy={n.y} r={n.r - 2} fill={n.color}/>
+            <text x={n.x} y={n.y - n.r - 12} textAnchor={i === nodes.length - 1 ? "end" : "middle"} fontSize="12" fontWeight="700" fill="#0f172a" fontFamily="Sora, sans-serif">{n.name}</text>
+            <text x={n.x} y={n.y + n.r + 22} textAnchor={i === 0 ? "start" : "middle"} fontSize="10" fontWeight="600" fill="#94a3b8" fontFamily="Inter, sans-serif">{n.sub}</text>
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
 
 /* Single canonical registration card — registry-checkable facts only. */
 const companyFacts = [
@@ -51,7 +93,7 @@ export function About() {
               </div>
 
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
-                The company<br /><span className="grad-text">building Famant</span>
+                A company built<br /><span className="grad-text">to build products</span>
               </h1>
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-4"
@@ -78,11 +120,19 @@ export function About() {
             </div>
 
             {/* Registration card — the site's most verifiable content */}
-            <div className="hidden lg:block" style={{ animation: "fadeUp 0.8s ease 0.3s both" }}>
-              <div className="p-6 rounded-3xl" style={{ background: "rgba(124,146,199,0.08)", border: "1px solid rgba(124,146,199,0.30)", backdropFilter: "blur(12px)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-                <div className="flex items-center gap-2 mb-5">
-                  <Building2 className="w-4 h-4" style={{ color: A }} />
-                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: A }}>Company Registration</p>
+            <div className="hidden lg:block relative" style={{ animation: "fadeUp 0.8s ease 0.3s both" }}>
+              <div className="absolute -inset-6 rounded-[36px] pointer-events-none" aria-hidden="true"
+                style={{ background: "radial-gradient(circle at 50% 40%, rgba(124,146,199,0.20), transparent 70%)", filter: "blur(28px)" }} />
+              <div className="relative p-7 rounded-3xl border" style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.35)", boxShadow: "0 20px 50px rgba(70,88,159,0.16)" }}>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 8px 20px rgba(70,88,159,0.30)" }}>
+                    <Building2 className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: A }}>Company Registration</p>
+                    <p className="text-xs text-[#94a3b8]">registry-verifiable facts</p>
+                  </div>
                 </div>
                 <div className="flex flex-col gap-0">
                   {companyFacts.map(({ label, value }, i) => (
@@ -162,23 +212,86 @@ export function About() {
         </div>
       </section>
 
+      {/* ── VISION — dark statement band ── */}
+      <section className="dark-band py-24 relative overflow-hidden">
+        <Noise />
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+          style={{ backgroundImage: "radial-gradient(rgba(169,184,220,0.05) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
+        <RingDecor spin size={380} style={{ top: -140, right: -120, borderColor: "rgba(169,184,220,0.14)", opacity: 0.8 }} />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal variant="up">
+            <span className="section-eyebrow" style={{ color: "#A9B8DC", borderColor: "rgba(169,184,220,0.35)", background: "rgba(124,146,199,0.12)" }}>
+              The Long Term
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold leading-snug mt-5 mb-6" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>
+              Products imagined, built and operated in-house —<br className="hidden sm:block" />
+              <span className="grad-text-light">as durable intellectual property.</span>
+            </h2>
+            <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: "rgba(199,210,236,0.7)" }}>
+              Not a portfolio of promises. A company structured so each real product — starting
+              with Famant — is designed, shipped and run for the long term, with honesty about
+              stage as visible brand behaviour.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── JOURNEY — the road so far, drawn ── */}
+      <section className="py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#eef2fa 100%)" }}>
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(124,146,199,0.12),transparent 70%)", filter: "blur(80px)" }}/>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <Reveal variant="left">
+              <span className="section-eyebrow">The Journey</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>
+                Young company.<br />Deliberate path.
+              </h2>
+              <p className="text-sm text-[#64748b] leading-relaxed mb-4">
+                Antutive was incorporated in Gothenburg in 2026 and went straight to work on
+                its first product. The path is short so far — and every step on it is real:
+                the company is registry-verifiable, Famant is in development, and its waitlist
+                is open today.
+              </p>
+              <p className="text-sm text-[#64748b] leading-relaxed">
+                The next milestone is launch. It gets a date when it has one — we don't plot
+                hopes on this curve.
+              </p>
+            </Reveal>
+            <Reveal variant="right" delay={120}>
+              <div className="p-8 rounded-3xl border" style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.28)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+                <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mb-6">The road so far</p>
+                <CompanyJourney />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── TEAM — structure present, profiles pending publication consent ── */}
       <section className="py-20 relative overflow-hidden"
         style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 60%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-30" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
-            <div className="p-8 rounded-3xl border text-center" style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                style={{ background: `linear-gradient(135deg,${A},${P})` }}>
-                <Users className="w-5 h-5 text-white" />
+            <div className="relative p-10 rounded-3xl border text-center overflow-hidden" style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+              <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
+              <div className="relative">
+                <div className="relative inline-flex mb-6">
+                  <span className="absolute -inset-3 rounded-full" aria-hidden="true"
+                    style={{ border: `1.5px dashed ${P}60`, animation: "spinSlow 30s linear infinite" }} />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                    style={{ background: `linear-gradient(135deg,${A},${P})`, boxShadow: "0 10px 26px rgba(70,88,159,0.30)" }}>
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <h2 className="text-lg font-bold text-[#0f172a] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>The people behind Antutive</h2>
+                <p className="text-sm text-[#64748b] leading-relaxed max-w-xl mx-auto">
+                  Antutive is a small founding team in Gothenburg, building Famant out of its
+                  own households' coordination pain. Founder and team profiles are being
+                  prepared for this page.
+                </p>
               </div>
-              <h2 className="text-lg font-bold text-[#0f172a] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>The people behind Antutive</h2>
-              <p className="text-sm text-[#64748b] leading-relaxed max-w-xl mx-auto">
-                Antutive is a small founding team in Gothenburg, building Famant out of its
-                own households' coordination pain. Founder and team profiles are being
-                prepared for this page.
-              </p>
             </div>
           </Reveal>
         </div>
@@ -220,6 +333,22 @@ export function About() {
                     Visit datadelimited.com <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
+              </div>
+
+              {/* intelligence → products tail */}
+              <div className="mt-7 pt-6 border-t flex flex-wrap items-center gap-3" style={{ borderColor: `${P}30` }}>
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#94a3b8" }}>Where it lands</span>
+                <svg width="34" height="2" aria-hidden="true" style={{ overflow: "visible" }}>
+                  <line x1="0" y1="1" x2="34" y2="1" stroke={P} strokeWidth="2" className="flow-dash" />
+                </svg>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold text-white"
+                  style={{ background: "linear-gradient(135deg,#6B62F1,#8B7CF8)" }}>
+                  <Sparkles className="w-3 h-3" /> Famant
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                  style={{ border: `1.5px dashed ${P}60`, color: "#94a3b8" }}>
+                  <Boxes className="w-3 h-3" /> future products — announced when real
+                </span>
               </div>
             </div>
           </Reveal>

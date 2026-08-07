@@ -211,8 +211,14 @@ export function Famant() {
             </div>
           </Reveal>
           <Reveal variant="scale" delay={80}>
-            <div className="p-8 rounded-3xl border" style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.30)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-3xl border relative" style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.30)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+              {/* connector spine across the four steps (desktop) */}
+              <div className="hidden lg:block absolute pointer-events-none" aria-hidden="true" style={{ top: 45, left: "14%", right: "14%" }}>
+                <svg width="100%" height="2" style={{ overflow: "visible" }}>
+                  <line x1="0" y1="1" x2="100%" y2="1" stroke="#6B62F1" strokeWidth="2" className="flow-dash" opacity="0.5" />
+                </svg>
+              </div>
+              <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   { Icon: Camera,      step: "Input",        desc: "Photograph a birthday invitation." },
                   { Icon: Eye,         step: "Understanding",desc: "The assistant is designed to read it: date, time, venue, child." },
@@ -220,10 +226,11 @@ export function Famant() {
                   { Icon: ShieldCheck, step: "Confirmation", desc: "Nothing is added until a family member confirms. If it misread, you correct or dismiss — nothing has happened yet." },
                 ].map(({ Icon, step, desc }, i) => (
                   <div key={step} className="flex flex-col gap-3">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 rounded-full self-start px-1 py-1 pr-3"
+                      style={{ background: "#ffffff", border: "1px solid rgba(107,98,241,0.30)" }}>
                       <span className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                        style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)" }}>{i + 1}</span>
-                      <Icon className="w-4 h-4" style={{ color: "#46589F" }} />
+                        style={{ background: "linear-gradient(135deg,#6B62F1,#8B7CF8)" }}>{i + 1}</span>
+                      <Icon className="w-4 h-4" style={{ color: "#6B62F1" }} />
                     </div>
                     <p className="text-sm font-bold text-[#0f172a]">{step}</p>
                     <p className="text-xs text-[#64748b] leading-relaxed">{desc}</p>
