@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/custom-platform", "destination": "/famant", "permanent": true },
+    { "source": "/growth-marketing", "destination": "/about", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

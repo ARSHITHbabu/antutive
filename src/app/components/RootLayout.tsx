@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { COMPANY_DESCRIPTION } from "../lib/seo";
 // Brand assets are served from public/ so they have stable same-domain URLs
 // (https://<domain>/brand/…) usable outside the bundle as well.
 const logoFull = "/brand/antutive-logo-full.png";
@@ -10,7 +11,7 @@ function AntutiveLogo({ size = 36 }: { size?: number }) {
   return (
     <img
       src={logoFull}
-      alt="Antutive. AI Solutions, Human Impact."
+      alt="Antutive"
       className="block w-auto object-contain"
       style={{ height: size }}
     />
@@ -34,8 +35,16 @@ export function RootLayout() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Support #anchor targets (e.g. /famant#waitlist); otherwise reset to top.
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
@@ -44,10 +53,10 @@ export function RootLayout() {
   }, []);
 
   const nav = [
-    { name: "How We Work",  href: "/growth-marketing" },
-    { name: "Custom Build", href: "/custom-platform" },
-    { name: "Products",     href: "/products" },
-    { name: "About",        href: "/about" },
+    { name: "Products",   href: "/products" },
+    { name: "Technology", href: "/technology" },
+    { name: "About",      href: "/about" },
+    { name: "Contact",    href: "/contact" },
   ];
 
   const isHome  = location.pathname === "/";
@@ -110,10 +119,10 @@ export function RootLayout() {
               })}
 
               <Link
-                to="/contact"
+                to="/famant"
                 className="header-cta ml-3"
               >
-                Let's Talk
+                Meet Famant
               </Link>
             </nav>
 
@@ -142,9 +151,9 @@ export function RootLayout() {
             >
               <div className="flex items-center gap-2 px-4 pb-3 mb-2 border-b" style={{ borderColor: "rgba(124,146,199,0.20)" }}>
                 <AntutiveMark size={22} />
-                <span className="text-xs font-semibold" style={{ color: "#64748b" }}>AI Solutions, Human Impact</span>
+                <span className="text-xs font-semibold" style={{ color: "#64748b" }}>AI-first product company</span>
               </div>
-              {[...nav, { name: "Contact", href: "/contact" }].map((item) => {
+              {nav.map((item) => {
                 const active = location.pathname === item.href;
                 return (
                   <Link
@@ -162,6 +171,15 @@ export function RootLayout() {
                   </Link>
                 );
               })}
+              {/* primary CTA has mobile parity with the desktop header */}
+              <Link
+                to="/famant"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-2.5 rounded-xl mt-2 text-sm font-semibold text-center text-white"
+                style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)" }}
+              >
+                Meet Famant
+              </Link>
             </div>
           )}
         </div>
@@ -186,17 +204,17 @@ export function RootLayout() {
                 </Link>
               </div>
               <p className="text-[#64748b] text-sm leading-relaxed">
-                A Swedish product engineering company. We turn business requirements
-                into software products you fully own.
+                {COMPANY_DESCRIPTION}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">What We Do</h4>
+              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Products</h4>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["How We Work",  "/growth-marketing"],
-                  ["Custom Build", "/custom-platform"],
+                  ["All products",     "/products"],
+                  ["Famant",           "/famant"],
+                  ["Join the waitlist","/famant#waitlist"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
@@ -209,23 +227,35 @@ export function RootLayout() {
               <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Company</h4>
               <ul className="space-y-3 text-sm">
                 {[
-                  ["About Us", "/about"],
-                  ["Products", "/products"],
-                  ["Contact",  "/contact"],
+                  ["About",      "/about"],
+                  ["Technology", "/technology"],
+                  ["Contact",    "/contact"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
                   </li>
                 ))}
+                <li>
+                  <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer"
+                    className="text-[#64748b] hover:text-[#46589F] transition-colors">
+                    Data Delimited ↗
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Legal</h4>
-              <ul className="space-y-3 text-sm text-[#64748b]">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>GDPR Compliance</li>
+              <ul className="space-y-3 text-sm">
+                {[
+                  ["Privacy Policy",   "/privacy"],
+                  ["Terms of Service", "/terms"],
+                  ["Cookies",          "/cookies"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -235,7 +265,7 @@ export function RootLayout() {
             <span>© 2026 ANTUTIVE AB · Gothenburg, Sweden · Org.nr 559576-7228</span>
             <span className="inline-flex items-center gap-2">
               <AntutiveMark size={16} />
-              AI Solutions, Human Impact
+              AI-first product company
             </span>
           </div>
         </div>
