@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { Mail, MapPin, Clock, ArrowRight, ArrowUpRight, Send, Sparkles, Building2 } from "lucide-react";
+import { Mail, MapPin, Clock, ArrowRight, ArrowUpRight, Send, Sparkles, Building2, PenLine, Eye, Reply } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
@@ -88,6 +88,15 @@ export function Contact() {
         <AuroraOrb size={320} color="rgba(70,88,159,0.13)" delay={5} style={{ bottom: -100, left: -80 }} />
         <RingDecor spin size={330} style={{ bottom: -110, right: "10%", opacity: 0.7 }} />
         <DotMatrix style={{ top: 90, left: 16 }} />
+        {[
+          { Icon: Mail,      label: "contact@antutive.com",  top: "12%", left: "36%",  cls: "fi-a", d: 0 },
+          { Icon: MapPin,    label: "Gothenburg, Sweden",    top: "78%", left: "3%",   cls: "fi-b", d: 1.2 },
+          { Icon: Clock,     label: "Mon–Fri · CET",         top: "8%",  right: "6%",  cls: "fi-c", d: 0.6 },
+        ].map(({ Icon, label, cls, d, ...pos }, i) => (
+          <div key={i} className={`float-chip ${cls}`} aria-hidden="true" style={{ position: "absolute", animationDelay: `${d}s`, ...pos }}>
+            <Icon className="w-3.5 h-3.5 flex-shrink-0" /><span>{label}</span>
+          </div>
+        ))}
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -158,6 +167,34 @@ export function Contact() {
                     </div>
                   </div>
                 ))}
+
+                {/* what happens to your message — honest, no SLA claims */}
+                <div className="p-5 rounded-2xl border" style={{ background: "#ffffff", borderColor: `${P}30`, boxShadow: "0 2px 12px rgba(15,23,42,0.05)" }}>
+                  <p className="text-xs font-bold uppercase tracking-wide mb-4" style={{ color: A }}>What happens to your message</p>
+                  {[
+                    { Icon: PenLine, label: "You write", sub: "form or direct email" },
+                    { Icon: Eye,     label: "We read it", sub: "a person, at contact@antutive.com" },
+                    { Icon: Reply,   label: "We reply",  sub: "as quickly as we can" },
+                  ].map(({ Icon, label, sub }, i, arr) => (
+                    <div key={label}>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ background: `linear-gradient(135deg,${A},${P})` }}>
+                          <Icon className="w-3.5 h-3.5 text-white" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-[#0f172a]">{label}</p>
+                          <p className="text-xs text-[#94a3b8]">{sub}</p>
+                        </div>
+                      </div>
+                      {i < arr.length - 1 && (
+                        <div className="flex" aria-hidden="true" style={{ height: 16, marginLeft: 15 }}>
+                          <svg width="2" height="16"><line x1="1" y1="0" x2="1" y2="16" stroke={P} strokeWidth="2" className="flow-dash" /></svg>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
 
                 <div className="p-5 rounded-2xl border" style={{ background: "#ffffff", borderColor: `${P}25`, boxShadow: "0 2px 12px rgba(15,23,42,0.05)" }}>
                   <p className="text-xs font-bold text-[#94a3b8] uppercase tracking-wide mb-1">Company Registration</p>

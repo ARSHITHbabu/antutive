@@ -16,19 +16,43 @@ import { usePageMeta } from "../lib/seo";
 const LAST_UPDATED = "7 August 2026";
 
 function LegalShell({ title, children }: { title: string; children: React.ReactNode }) {
+  const pages = [
+    ["Privacy", "/privacy"],
+    ["Terms",   "/terms"],
+    ["Cookies", "/cookies"],
+  ];
   return (
-    <div style={{ background: "#f8fafc" }}>
-      <section className="py-20" style={{ background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 60%,#f8fafc 100%)" }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6"
-            style={{ borderColor: "rgba(124,146,199,0.45)", background: "rgba(124,146,199,0.10)" }}>
-            <Scale className="w-3.5 h-3.5" style={{ color: "#46589F" }} />
-            <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#46589F" }}>Legal</span>
+    <div style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 40%,#eef2fa 100%)" }}>
+      <section className="pt-16 pb-10 relative overflow-hidden">
+        <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
+        <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true"
+          style={{ background: "radial-gradient(circle,rgba(124,146,199,0.14),transparent 70%)", filter: "blur(60px)" }} />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 10px 26px rgba(70,88,159,0.30)" }}>
+              <Scale className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#46589F" }}>Legal · ANTUTIVE AB</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-[#0f172a]" style={{ fontFamily: "Sora, sans-serif" }}>{title}</h1>
+            </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>{title}</h1>
-          <p className="text-xs text-[#94a3b8]">Last updated: {LAST_UPDATED}</p>
-          <div className="mt-6 p-4 rounded-2xl border text-xs leading-relaxed"
-            style={{ borderColor: "rgba(124,146,199,0.35)", background: "#ffffff", color: "#64748b" }}>
+          {/* sibling-page pills */}
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            {pages.map(([label, href]) => (
+              <Link key={href} to={href}
+                className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+                style={title.toLowerCase().startsWith(label.toLowerCase().slice(0, 4))
+                  ? { background: "#46589F", color: "#ffffff" }
+                  : { border: "1px solid rgba(124,146,199,0.40)", color: "#64748b", background: "#ffffff" }}>
+                {label}
+              </Link>
+            ))}
+            <span className="text-xs text-[#94a3b8] ml-2">Last updated: {LAST_UPDATED}</span>
+          </div>
+          <div className="p-4 rounded-2xl border text-xs leading-relaxed"
+            style={{ borderColor: "rgba(124,146,199,0.35)", background: "rgba(255,255,255,0.85)", color: "#64748b" }}>
             This is an interim version, published for transparency while a full document is
             prepared with legal counsel. It describes what this website actually does today.
             The reviewed version will replace it here, with its effective date, before any
@@ -37,8 +61,11 @@ function LegalShell({ title, children }: { title: string; children: React.ReactN
         </div>
       </section>
       <section className="pb-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 legal-body">
-          {children}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="legal-body p-8 sm:p-10 rounded-3xl border"
+            style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.28)", boxShadow: "0 4px 20px rgba(15,23,42,0.05)" }}>
+            {children}
+          </div>
         </div>
       </section>
     </div>
