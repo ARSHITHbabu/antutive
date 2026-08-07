@@ -9,6 +9,11 @@ export function useVisible(threshold = 0.12) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Fallback: never leave content invisible when IntersectionObserver is absent
+    if (typeof IntersectionObserver === "undefined") {
+      setOn(true);
+      return;
+    }
     const io = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } },
       { threshold }
