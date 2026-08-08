@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { ArrowRight, Compass } from "lucide-react";
 import { Noise, AuroraOrb, DotMatrix } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
+import { LineArtScene } from "../components/LineArt";
 
 export function NotFound() {
   usePageMeta({
@@ -31,6 +32,7 @@ export function NotFound() {
       <DotMatrix style={{ bottom: 30, right: 24 }} />
 
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center w-full">
+        <LineArtScene scene="lost" className="line-art--lost" />
         <div className="relative inline-flex mb-8">
           <span className="absolute -inset-4 rounded-full" aria-hidden="true"
             style={{ border: "1.5px dashed rgba(124,146,199,0.55)", animation: "spinSlow 24s linear infinite" }} />

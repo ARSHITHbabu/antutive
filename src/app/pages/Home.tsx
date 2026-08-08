@@ -6,6 +6,7 @@ import {
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, HatchAccent, WaveDivider } from "../components/Decor";
 import { usePageMeta, COMPANY_DESCRIPTION, PRODUCT_DESCRIPTION } from "../lib/seo";
+import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 import { capabilities, WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
 
 /* ── floating chips — company facts and product-craft signals ── */
@@ -21,13 +22,16 @@ const chips = [
 /* ── data network svg (hero) ── */
 function DataNetworkVisual() {
   return (
-    <div className="relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
+    <div className="company-visual-stage relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
       <svg viewBox="0 0 420 420" className="w-full max-w-[400px]" aria-hidden="true" style={{ overflow: "visible" }}>
         <defs>
           <radialGradient id="cG"><stop offset="0%" stopColor="#46589F" stopOpacity=".45"/><stop offset="45%" stopColor="#7C92C7" stopOpacity=".18"/><stop offset="100%" stopColor="#2E3B72" stopOpacity="0"/></radialGradient>
           <radialGradient id="gG"><stop offset="0%" stopColor="#7C92C7" stopOpacity=".22"/><stop offset="100%" stopColor="#46589F" stopOpacity="0"/></radialGradient>
           <filter id="f4"><feGaussianBlur stdDeviation="4"/></filter>
           <filter id="f2"><feGaussianBlur stdDeviation="2"/></filter>
+          <linearGradient id="cubeTop" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#dce5ff" stopOpacity=".78"/><stop offset="1" stopColor="#8d83f4" stopOpacity=".28"/></linearGradient>
+          <linearGradient id="cubeLeft" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#46589F" stopOpacity=".38"/><stop offset="1" stopColor="#202d68" stopOpacity=".16"/></linearGradient>
+          <linearGradient id="cubeRight" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#7C92C7" stopOpacity=".48"/><stop offset="1" stopColor="#6B62F1" stopOpacity=".2"/></linearGradient>
         </defs>
         <circle cx="210" cy="210" r="170" fill="url(#gG)" filter="url(#f4)" className="dn-pulse"/>
         <circle cx="210" cy="210" r="155" fill="none" stroke="rgba(70,88,159,.14)"  strokeWidth="1" strokeDasharray="6 10" className="dn-ring-1"/>
@@ -44,7 +48,12 @@ function DataNetworkVisual() {
         <circle cx="210" cy="210" r="42" fill="url(#cG)" filter="url(#f2)" className="dn-pulse"/>
         <circle cx="210" cy="210" r="26" fill="rgba(70,88,159,.08)" stroke="rgba(70,88,159,.35)" strokeWidth="1.5"/>
         <circle cx="210" cy="210" r="17" fill="rgba(70,88,159,.14)" stroke="rgba(70,88,159,.55)" strokeWidth="1"/>
-        <circle cx="210" cy="210" r="9" fill="#46589F"/>
+        <g className="dn-core" filter="url(#f2)">
+          <path d="M210 179 238 195 210 211 182 195Z" fill="url(#cubeTop)" stroke="rgba(255,255,255,.8)" strokeWidth="1"/>
+          <path d="M182 195 210 211 210 242 182 226Z" fill="url(#cubeLeft)" stroke="rgba(70,88,159,.55)" strokeWidth="1"/>
+          <path d="M210 211 238 195 238 226 210 242Z" fill="url(#cubeRight)" stroke="rgba(70,88,159,.55)" strokeWidth="1"/>
+          <circle cx="210" cy="210" r="6" fill="#ffffff" opacity=".95"/>
+        </g>
       </svg>
     </div>
   );
@@ -96,6 +105,7 @@ const stars = [
 function EcosystemSection() {
   return (
     <section className="eco-dark relative overflow-hidden">
+      <LineArtScene scene="ecosystem" tone="light" className="line-art--ecosystem-bg" meaningful />
       <div className="absolute top-0 left-0 right-0" aria-hidden="true">
         <WaveDivider fill="#eef2fa" />
       </div>
@@ -231,6 +241,7 @@ export function Home() {
     <div>
       {/* ── 1 · HERO — Antutive, the company ── */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "min(92vh, 860px)" }}>
+        <LineArtScene scene="company" className="line-art--hero-edge" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#f8fafc] via-[#eef2fa] to-[#f8fafc]"/>
         <div className="absolute inset-0 hero-mesh-overlay"/>
         <Noise />
@@ -256,6 +267,7 @@ export function Home() {
                 We build products<br/>
                 <span className="grad-text-animated">where AI does the heavy lifting.</span>
               </h1>
+              <LineArtFlourish />
 
               <p className="text-base md:text-lg mb-4 text-[#334155] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .25s both" }}>

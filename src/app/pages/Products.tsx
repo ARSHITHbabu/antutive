@@ -4,6 +4,7 @@ import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
+import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
  * Antutive product portfolio. One product exists today (Famant); the page is
@@ -131,6 +132,7 @@ export function Products() {
         className="relative overflow-hidden flex items-center"
         style={{ minHeight: "min(48vh, 560px)", background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 50%,#f8fafc 100%)" }}
       >
+        <LineArtScene scene="portfolio" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
         <AuroraOrb size={420} color="rgba(124,146,199,0.18)" style={{ top: -140, right: -120 }} />
@@ -149,6 +151,7 @@ export function Products() {
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both", color: "#0f172a" }}>
                 Our own products.<br /><span className="grad-text">Built here, run here.</span>
               </h1>
+              <LineArtFlourish />
 
               <p className="text-base max-w-xl leading-relaxed mb-4"
                 style={{ color: "#64748b", animation: "fadeUp 0.8s ease 0.25s both" }}>
@@ -173,6 +176,7 @@ export function Products() {
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#ffffff 0%,#f8fafc 55%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LineArtScene scene="portfolio" className="line-art--section" />
           <Reveal variant="up">
             <div className="flex items-baseline justify-between mb-8">
               <h2 className="text-lg font-bold text-[#0f172a]" style={{ fontFamily: "Sora, sans-serif" }}>Current</h2>
