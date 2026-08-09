@@ -5,6 +5,7 @@ import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
 import { WAITLIST_URL } from "../content/famant";
+import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
 const A = "#46589F";
 const P = "#7C92C7";
@@ -82,6 +83,7 @@ export function Contact() {
         className="relative overflow-hidden flex items-center"
         style={{ minHeight: "min(52vh, 600px)", background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 50%,#f8fafc 100%)" }}
       >
+        <LineArtScene scene="contact" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
         <AuroraOrb size={420} color="rgba(124,146,199,0.16)" style={{ top: -140, right: -110 }} />
@@ -110,6 +112,7 @@ export function Contact() {
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
                 Talk to<br /><span className="grad-text">Antutive</span>
               </h1>
+              <LineArtFlourish />
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
@@ -207,7 +210,8 @@ export function Contact() {
             {/* FORM */}
             <div className="lg:col-span-2">
               <Reveal variant="right" delay={100}>
-                <div className="p-8 rounded-3xl border" style={{ borderColor: `${P}30`, background: "#ffffff", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+                <div className="p-8 rounded-3xl border relative overflow-hidden" style={{ borderColor: `${P}30`, background: "#ffffff", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+                  <LineArtCorner />
                   <h2 className="text-base font-bold text-[#0f172a] mb-2">Send Us a Message</h2>
                   <p className="text-xs text-[#64748b] mb-6 leading-relaxed">
                     Sending opens your own email app with the message addressed to

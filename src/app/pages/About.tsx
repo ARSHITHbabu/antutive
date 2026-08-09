@@ -4,6 +4,7 @@ import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb } from "../components/Decor";
 import { usePageMeta, COMPANY_DESCRIPTION } from "../lib/seo";
 import { OWNERSHIP_LINE } from "../content/famant";
+import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 const A = "#46589F";
 const P = "#7C92C7";
@@ -76,6 +77,7 @@ export function About() {
         className="relative overflow-hidden flex items-center"
         style={{ minHeight: "min(56vh, 640px)", background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 50%,#f8fafc 100%)" }}
       >
+        <LineArtScene scene="journey" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
         <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: -140, right: -110 }} />
@@ -95,6 +97,7 @@ export function About() {
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
                 A company built<br /><span className="grad-text">to build products</span>
               </h1>
+              <LineArtFlourish />
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-4"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
@@ -273,6 +276,7 @@ export function About() {
         style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 60%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-30" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LineArtScene scene="ecosystem" className="line-art--section" meaningful />
           <Reveal variant="up">
             <div className="relative p-10 rounded-3xl border text-center overflow-hidden" style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
               <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />

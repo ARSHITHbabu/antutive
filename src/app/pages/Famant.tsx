@@ -5,6 +5,7 @@ import { Noise, DotMatrix, AuroraOrb } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { capabilities, WAITLIST_URL, OWNERSHIP_LINE, STAGE_LINE } from "../content/famant";
 import { StatusBadge } from "./Home";
+import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
 const famantVideo = "/media/famant.webm";
 
@@ -35,6 +36,7 @@ export function Famant() {
           <Reveal variant="scale">
             <div className="famant-hero-panel p-8 sm:p-12 lg:p-14">
               <Noise />
+              <LineArtScene scene="family" tone="famant" className="line-art--panel-bg" />
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
@@ -43,6 +45,7 @@ export function Famant() {
                     <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#C9C5FF" }}>Antutive's First Flagship Product</span>
                   </div>
                   <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tight text-white" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h1>
+                  <LineArtFlourish tone="famant" />
                   <p className="text-xl font-semibold mb-5" style={{ color: "#A9A3FF" }}>
                     The AI-powered family management and household coordination platform
                   </p>
@@ -136,6 +139,7 @@ export function Famant() {
               <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>Built for the people who hold it together</h2>
             </div>
           </Reveal>
+          <LineArtScene scene="family" className="line-art--section" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {targetUsers.map(({ Icon, title, desc }, i) => (
               <Reveal key={title} variant={["left","up","right"][i] as any} delay={i * 90}>
@@ -304,6 +308,7 @@ export function Famant() {
           <Reveal variant="up">
             <div className="famant-hero-panel text-center p-10 sm:p-12">
               <Noise />
+              <LineArtCorner tone="light" />
               <div className="relative z-10">
                 <h2 className="text-2xl font-bold mb-3 text-white" style={{ fontFamily: "Sora, sans-serif" }}>
                   Famant is pre-launch. The waitlist is open.

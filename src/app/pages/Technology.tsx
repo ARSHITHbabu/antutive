@@ -8,6 +8,7 @@ import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../componen
 import { usePageMeta } from "../lib/seo";
 import { capabilities, WAITLIST_URL } from "../content/famant";
 import { StatusBadge } from "./Home";
+import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
  * EDITORIAL RULE for this page (from the approved positioning strategy):
@@ -159,6 +160,7 @@ export function Technology() {
         className="relative overflow-hidden flex items-center"
         style={{ minHeight: "min(72vh, 780px)", background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 50%,#f8fafc 100%)" }}
       >
+        <LineArtScene scene="intelligence" className="line-art--hero-edge" meaningful />
         <div className="absolute inset-0 hero-mesh-overlay opacity-50" />
         <Noise />
         <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: -140, right: -110 }} />
@@ -178,6 +180,7 @@ export function Technology() {
               <h1 className="hero-h1 mb-5" style={{ fontWeight: 700, animation: "fadeUp 0.8s ease 0.1s both" }}>
                 How Antutive builds<br /><span className="grad-text-animated">AI-first products</span>
               </h1>
+              <LineArtFlourish />
 
               <p className="text-base text-[#334155] max-w-xl leading-relaxed mb-4"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
@@ -242,6 +245,7 @@ export function Technology() {
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
         <AuroraOrb size={340} color="rgba(124,146,199,0.12)" style={{ top: -60, right: -70 }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LineArtScene scene="intelligence" className="line-art--section" meaningful />
           <Reveal variant="up">
             <div className="text-center mb-12">
               <span className="section-eyebrow-light">Worked Example · Famant</span>

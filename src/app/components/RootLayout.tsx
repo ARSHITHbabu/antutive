@@ -2,6 +2,7 @@ import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { COMPANY_DESCRIPTION } from "../lib/seo";
+import { LineArtScene } from "./LineArt";
 // Brand assets are served from public/ so they have stable same-domain URLs
 // (https://<domain>/brand/…) usable outside the bundle as well.
 const logoFull = "/brand/antutive-logo-full.png";
@@ -47,6 +48,19 @@ export function RootLayout() {
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
+
+  useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
@@ -80,10 +94,17 @@ export function RootLayout() {
   return (
     <div className="min-h-screen" style={{ background: "#f8fafc" }}>
 
+      <a href="#main-content" className="skip-link">Skip to content</a>
+
       {/* ── FLOATING HEADER ── */}
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        style={{ padding: scrolled ? "8px 20px" : "14px 20px", background: "#f8fafc" }}
+        style={{
+          padding: scrolled ? "8px 20px" : "14px 20px",
+          background: scrolled ? "rgba(248,250,252,0.72)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : undefined,
+          WebkitBackdropFilter: scrolled ? "blur(12px)" : undefined,
+        }}
       >
         <div className="max-w-7xl mx-auto">
 
@@ -132,6 +153,8 @@ export function RootLayout() {
               style={{ color: "#46589F" }}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -139,7 +162,9 @@ export function RootLayout() {
 
           {/* mobile dropdown */}
           {mobileOpen && (
-            <div
+            <nav
+              id="mobile-navigation"
+              aria-label="Mobile navigation"
               className="lg:hidden mt-2 rounded-2xl p-4"
               style={{
                 background: "rgba(248,250,252,0.98)",
@@ -180,21 +205,26 @@ export function RootLayout() {
               >
                 Meet Famant
               </Link>
-            </div>
+            </nav>
           )}
         </div>
       </header>
 
-      <main className="pt-20">
+      <main id="main-content" className="pt-20">
         <Outlet />
       </main>
 
       {/* ── FOOTER ── */}
-      <footer
-        className="text-[#334155]"
-        style={{ background: "linear-gradient(135deg,#f1f5f9 0%,#e9edf6 48%,#eef2fa 100%)", borderTop: "1px solid rgba(124,146,199,0.28)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <footer className="site-footer">
+        <LineArtScene scene="ecosystem" tone="light" className="line-art--footer" />
+        <div className="footer-grid" aria-hidden="true" />
+        <div className="footer-orb footer-orb--one" aria-hidden="true" />
+        <div className="footer-orb footer-orb--two" aria-hidden="true" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="footer-signal mb-14">
+            <span className="footer-signal__dot" aria-hidden="true" />
+            <span>One company. A growing portfolio of AI-first products.</span>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
             <div className="md:col-span-1">
@@ -203,13 +233,13 @@ export function RootLayout() {
                   <AntutiveLogo size={46} />
                 </Link>
               </div>
-              <p className="text-[#64748b] text-sm leading-relaxed">
+              <p className="footer-copy text-sm leading-relaxed">
                 {COMPANY_DESCRIPTION}
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Products</h4>
+              <h4 className="footer-heading">Products</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   ["All products",     "/products"],
@@ -217,14 +247,14 @@ export function RootLayout() {
                   ["Join the waitlist","/famant#waitlist"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
+                    <Link to={href} className="footer-link">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Company</h4>
+              <h4 className="footer-heading">Company</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   ["About",      "/about"],
@@ -232,12 +262,12 @@ export function RootLayout() {
                   ["Contact",    "/contact"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
+                    <Link to={href} className="footer-link">{label}</Link>
                   </li>
                 ))}
                 <li>
                   <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer"
-                    className="text-[#64748b] hover:text-[#46589F] transition-colors">
+                    className="footer-link">
                     Data Delimited ↗
                   </a>
                 </li>
@@ -245,7 +275,7 @@ export function RootLayout() {
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-widest mb-4 font-semibold text-[#334155]">Legal</h4>
+              <h4 className="footer-heading">Legal</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   ["Privacy Policy",   "/privacy"],
@@ -253,15 +283,14 @@ export function RootLayout() {
                   ["Cookies",          "/cookies"],
                 ].map(([label, href]) => (
                   <li key={href}>
-                    <Link to={href} className="text-[#64748b] hover:text-[#46589F] transition-colors">{label}</Link>
+                    <Link to={href} className="footer-link">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b] tracking-wide"
-            style={{ borderColor: "rgba(124,146,199,0.28)" }}>
+          <div className="footer-meta border-t mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-wide">
             <span>© 2026 ANTUTIVE AB · Gothenburg, Sweden · Org.nr 559576-7228</span>
             <span className="inline-flex items-center gap-2">
               <AntutiveMark size={16} />

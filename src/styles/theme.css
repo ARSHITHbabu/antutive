@@ -52,7 +52,46 @@
   --brand-soft: #A9B8DC;
   --brand-tint: #EEF2FA;
   --brand-warm: #F5C84C;
+  --surface-deep: #111831;
+  --surface-deeper: #090e20;
+  --focus-ring: #8ea6e2;
+  /* Connecting hues for the illustration layer: violet bridges brand blue and
+     Famant purple; apricot is the single warm accent (heart, sun, sparks). */
+  --brand-violet: #6B62F1;
+  --brand-apricot: #E8945A;
 }
+
+html { scroll-behavior: smooth; }
+body { overflow-x: clip; }
+
+::selection {
+  color: #ffffff;
+  background: #46589F;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--focus-ring) 80%, white);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #2E3B72;
+  box-shadow: 0 12px 30px rgba(15,23,42,.25);
+  transform: translate(-50%, -160%);
+  transition: transform .2s ease;
+}
+.skip-link:focus { transform: translate(-50%, 0); }
+
+#main-content { outline: none; }
+[id] { scroll-margin-top: 96px; }
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -225,6 +264,81 @@
   box-shadow: 0 4px 16px rgba(70,88,159,0.28);
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
+}
+
+/* Strong closing environment shared by every route. */
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #d8e0f3;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(124,146,199,.22), transparent 32%),
+    radial-gradient(circle at 88% 88%, rgba(70,88,159,.25), transparent 30%),
+    linear-gradient(145deg, var(--surface-deep), var(--surface-deeper));
+  border-top: 1px solid rgba(169,184,220,.18);
+}
+.footer-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .32;
+  background-image:
+    linear-gradient(rgba(169,184,220,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(169,184,220,.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+.footer-orb {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .28;
+  pointer-events: none;
+}
+.footer-orb--one { top: -220px; left: 12%; background: #7C92C7; }
+.footer-orb--two { right: -180px; bottom: -240px; background: #46589F; }
+.site-footer img { filter: brightness(0) invert(1); opacity: .94; }
+.footer-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid rgba(169,184,220,.22);
+  border-radius: 999px;
+  color: rgba(216,224,243,.76);
+  background: rgba(169,184,220,.06);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.footer-signal__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #A9B8DC;
+  box-shadow: 0 0 0 5px rgba(169,184,220,.10), 0 0 18px #A9B8DC;
+}
+.footer-copy { color: rgba(199,210,236,.64); }
+.footer-heading {
+  margin-bottom: 1rem;
+  color: #f3f6fc;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.footer-link {
+  color: rgba(199,210,236,.66);
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+.footer-link:hover { color: #ffffff; }
+.footer-meta {
+  color: rgba(199,210,236,.52);
+  border-color: rgba(169,184,220,.16);
 }
 .header-cta:hover {
   transform: translateY(-2px);
@@ -1418,6 +1532,223 @@
   color: #46589F;
 }
 
+/* Antutive continuous-line illustration system. Every scene shares one
+   editorial stroke grammar and reveals only once when it enters the viewport. */
+.line-art {
+  --line-art-ink: #46589f;
+  --line-art-soft: rgba(124, 146, 199, 0.18);
+  --line-art-wash-blue: rgba(124, 146, 199, 0.26);
+  --line-art-wash-violet: rgba(107, 98, 241, 0.18);
+  --line-art-wash-warm: rgba(232, 148, 90, 0.24);
+  --line-art-accent: var(--brand-apricot);
+  --line-art-halo: rgba(70, 88, 159, 0.14);
+  color: var(--line-art-ink);
+  pointer-events: none;
+}
+.line-art--light {
+  --line-art-ink: rgba(238, 242, 255, 0.72);
+  --line-art-soft: rgba(169, 184, 220, 0.13);
+  --line-art-wash-blue: rgba(124, 146, 199, 0.16);
+  --line-art-wash-violet: rgba(107, 98, 241, 0.20);
+  --line-art-wash-warm: rgba(232, 148, 90, 0.14);
+  --line-art-accent: #F0A05A;
+  --line-art-halo: rgba(169, 184, 220, 0.16);
+}
+.line-art--famant {
+  --line-art-ink: rgba(224, 222, 255, 0.78);
+  --line-art-soft: rgba(107, 98, 241, 0.18);
+  --line-art-wash-blue: rgba(124, 146, 199, 0.18);
+  --line-art-wash-violet: rgba(107, 98, 241, 0.32);
+  --line-art-wash-warm: rgba(232, 148, 90, 0.26);
+  --line-art-accent: #F0A05A;
+  --line-art-halo: rgba(169, 184, 220, 0.18);
+}
+.line-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+/* Strokes stay in viewBox units: dash-drawing via pathLength is only exact
+   without non-scaling-stroke (Chrome computes screen-space dashes with it,
+   which truncates the tail of the line). */
+.line-art path, .line-art circle {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Depth layers behind the line: soft blurred color fields and focal glow. */
+.line-art__wash {
+  fill: var(--line-art-wash-blue);
+  stroke: none !important;
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 1.4s ease .2s;
+}
+.line-art__wash--violet { fill: var(--line-art-wash-violet); }
+.line-art__wash--warm { fill: var(--line-art-wash-warm); }
+.line-art.is-visible .line-art__wash { opacity: 1; }
+.line-art__halo {
+  fill: var(--line-art-halo);
+  stroke: none !important;
+  filter: blur(4px);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 1.2s ease .8s;
+}
+.line-art.is-visible .line-art__halo { opacity: 1; animation: lineArtBreathe 6s ease-in-out 2s infinite; }
+@keyframes lineArtBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+.line-art__ghost { stroke: var(--line-art-soft); stroke-width: 1; }
+.line-art__extra {
+  stroke: var(--line-art-soft);
+  stroke-width: 1.3;
+  stroke-dasharray: 0.1 7;
+  opacity: 0;
+  transition: opacity 1s ease 1.4s;
+}
+.line-art.is-visible .line-art__extra { opacity: 1; }
+.line-art__path {
+  stroke: var(--line-art-ink);
+  stroke-width: 1.5;
+  /* Dash slightly longer than the normalized path so float drift can never
+     leave the final segment undrawn. */
+  stroke-dasharray: 1.02 1.02;
+  stroke-dashoffset: 1.02;
+  transition: stroke-dashoffset 1.9s cubic-bezier(.22,.72,.18,1);
+}
+.line-art.is-visible .line-art__path { stroke-dashoffset: 0; }
+/* The one warm flourish — heart, sun — drawn after the main line lands. */
+.line-art__accent {
+  stroke: var(--line-art-accent);
+  stroke-width: 1.7;
+  stroke-dasharray: 1.02 1.02;
+  stroke-dashoffset: 1.02;
+  transition: stroke-dashoffset .9s ease 1.55s;
+}
+.line-art.is-visible .line-art__accent { stroke-dashoffset: 0; }
+.line-art__spark {
+  fill: var(--line-art-ink) !important;
+  stroke: none !important;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity .7s ease;
+}
+.line-art.is-visible .line-art__spark { opacity: .5; animation: lineArtDrift 5s ease-in-out infinite; }
+.line-art.is-visible .line-art__spark--1 { transition-delay: 1.2s; }
+.line-art.is-visible .line-art__spark--2 { transition-delay: 1.5s; animation-delay: 1.2s; }
+.line-art.is-visible .line-art__spark--3 { transition-delay: 1.8s; animation-delay: 2.4s; }
+.line-art.is-visible .line-art__spark--4 { transition-delay: 2.1s; animation-delay: 3.4s; }
+@keyframes lineArtDrift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.line-art__node {
+  fill: var(--line-art-ink) !important;
+  stroke: rgba(255,255,255,.72);
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(.4);
+  transition: opacity .35s ease, transform .45s ease;
+}
+.line-art.is-visible .line-art__node { opacity: .72; transform: scale(1); }
+.line-art.is-visible .line-art__node--1 { transition-delay: .32s; }
+.line-art.is-visible .line-art__node--2 { transition-delay: .72s; }
+.line-art.is-visible .line-art__node--3 { transition-delay: 1.12s; }
+.line-art.is-visible .line-art__node--4 { transition-delay: 1.48s; }
+.line-art.is-visible .line-art__node--5 { transition-delay: 1.8s; }
+.line-art__tracer { fill: var(--line-art-ink) !important; stroke: none !important; opacity: .72; }
+.line-art text { fill: currentColor; font: 600 9px Sora, sans-serif; letter-spacing: .14em; opacity: 0; transition: opacity .8s ease 1.2s; }
+.line-art.is-visible text { opacity: .62; }
+
+/* Small corner flourish for cards and panels — same illustrator's line. */
+.line-art-corner {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: clamp(80px, 12vw, 140px);
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+.line-art-corner path {
+  fill: none;
+  stroke: rgba(70, 88, 159, 0.35);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.line-art-corner--light path { stroke: rgba(201, 197, 255, 0.4); }
+
+/* Hand-drawn swash under hero headings — the line meets the typography. */
+.line-art-flourish {
+  display: block;
+  width: clamp(150px, 24vw, 230px);
+  height: auto;
+  overflow: visible;
+  margin: 4px 0 0 2px;
+  pointer-events: none;
+}
+.line-art-flourish path {
+  fill: none;
+  stroke: #46589F;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1.02 1.02;
+  stroke-dashoffset: 1.02;
+  animation: flourishDraw 1.3s cubic-bezier(.3,.7,.2,1) .7s forwards;
+}
+.line-art-flourish circle {
+  fill: #46589F;
+  opacity: 0;
+  animation: flourishDot .5s ease 1.8s forwards;
+}
+.line-art-flourish--light path { stroke: rgba(238,242,255,.75); }
+.line-art-flourish--light circle { fill: rgba(238,242,255,.9); }
+.line-art-flourish--famant path { stroke: #A9A3FF; }
+.line-art-flourish--famant circle { fill: #A9A3FF; }
+@keyframes flourishDraw { to { stroke-dashoffset: 0; } }
+@keyframes flourishDot { to { opacity: .85; } }
+
+/* Scene living inside a dark hero panel (Famant). */
+.line-art--panel-bg {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  width: min(48%, 500px);
+  opacity: .6;
+  z-index: 0;
+}
+.line-art--hero-edge {
+  position: absolute;
+  z-index: 1;
+  width: min(46vw, 620px);
+  right: 2%;
+  bottom: 3%;
+  opacity: .62;
+}
+.line-art--legal { position: absolute; width: 340px; right: 2%; top: 12px; opacity: .34; }
+.line-art--lost { width: min(100%, 560px); margin: -1rem auto 1.5rem; opacity: .72; }
+.line-art--footer { position: absolute; width: min(52vw, 720px); right: -2%; top: 20px; opacity: .2; }
+.line-art--footer text { display: none; }
+.line-art--footer .line-art__tracer { display: none; }
+.line-art--section { width: min(100%, 700px); margin: 0 auto 2rem; opacity: .7; }
+.line-art--ecosystem-bg { position: absolute; width: min(58vw, 780px); right: -3%; top: 18%; opacity: .2; }
+
+@media (max-width: 1023px) {
+  .line-art--hero-edge { width: 64vw; right: 3%; bottom: 2%; opacity: .34; }
+  .line-art--legal { width: 260px; right: -80px; opacity: .22; }
+}
+@media (max-width: 639px) {
+  .line-art--hero-edge { width: 88vw; right: 4%; bottom: 1.5%; opacity: .3; }
+  .line-art--panel-bg { width: 78%; right: -12%; bottom: -8px; opacity: .4; }
+  .line-art text { display: none; }
+  .line-art--footer { width: 120vw; right: -55%; top: 50px; opacity: .2; }
+  .line-art--ecosystem-bg { width: 130vw; right: -62%; top: 28%; opacity: .15; }
+  .line-art--lost { width: 108%; margin-left: -4%; }
+}
+
 /* Reduced motion: collapse all decorative animation/transition time.
    Content is fully readable without motion — reveals jump to their
    final state, marquee/pulse/float effects freeze. */
@@ -1428,4 +1759,100 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .line-art__path, .line-art__accent, .line-art-flourish path { stroke-dashoffset: 0; }
+  .line-art-flourish circle { opacity: .85; }
+  .line-art__tracer { display: none; }
+  .line-art__halo, .line-art__spark { animation: none !important; }
+}
+
+/* 2026 visual direction — an editorial, dimensional layer shared by every
+   route. It deliberately changes presentation only; page copy and hierarchy
+   remain owned by the page components above. */
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(124,146,199,.12), transparent 24rem),
+    #f8fafc;
+}
+
+#main-content > div > section {
+  isolation: isolate;
+}
+
+#main-content > div > section:not(.eco-dark):not(.dark-band):not(.famant-section)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(107,98,241,.08), transparent 22rem),
+    radial-gradient(circle at 12% 82%, rgba(232,148,90,.07), transparent 18rem);
+}
+
+.company-visual-stage {
+  perspective: 900px;
+  border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
+  background:
+    radial-gradient(circle at 58% 48%, rgba(255,255,255,.92) 0 7%, transparent 26%),
+    radial-gradient(circle at 52% 50%, rgba(124,146,199,.18), transparent 58%);
+  filter: drop-shadow(0 28px 46px rgba(46,59,114,.12));
+}
+.company-visual-stage::before,
+.company-visual-stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  border: 1px solid rgba(70,88,159,.16);
+  transform: rotate(-14deg);
+}
+.company-visual-stage::before { inset: 12% 4%; }
+.company-visual-stage::after { inset: 25% 15%; border-style: dashed; transform: rotate(18deg); }
+.company-visual-stage svg { position: relative; z-index: 1; filter: drop-shadow(0 18px 20px rgba(70,88,159,.14)); }
+.dn-core { transform-origin: 210px 210px; animation: coreHover 5.5s ease-in-out infinite; }
+@keyframes coreHover {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+}
+
+.metric-chip,
+.feature-card,
+.famant-card,
+.dark-band-card,
+.eco-dark-card {
+  box-shadow:
+    0 18px 48px rgba(46,59,114,.09),
+    inset 0 1px 0 rgba(255,255,255,.82);
+}
+.metric-chip { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+.line-art {
+  filter: drop-shadow(0 18px 28px rgba(70,88,159,.12));
+}
+.line-art__path,
+.line-art__accent {
+  filter: drop-shadow(0 0 5px rgba(124,146,199,.28));
+}
+.line-art--hero-edge {
+  width: min(50vw, 690px);
+  opacity: .78;
+  mix-blend-mode: multiply;
+}
+.line-art--section {
+  padding: 1rem;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,.68), rgba(238,242,250,.28));
+  border: 1px solid rgba(124,146,199,.14);
+  box-shadow: 0 28px 70px rgba(46,59,114,.08);
+}
+
+@media (max-width: 1023px) {
+  .company-visual-stage { height: 330px !important; max-width: 560px; margin-inline: auto; }
+  .line-art--hero-edge { width: 72vw; opacity: .42; }
+}
+@media (max-width: 639px) {
+  .company-visual-stage { height: 280px !important; }
+  .float-chip { display: none; }
+  .line-art--hero-edge { width: 112vw; right: -28%; opacity: .28; }
+  .line-art--section { padding: .4rem; border-radius: 20px; }
 }

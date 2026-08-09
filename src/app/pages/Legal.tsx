@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Scale } from "lucide-react";
 import { usePageMeta } from "../lib/seo";
+import { LineArtScene } from "../components/LineArt";
 
 /* ------------------------------------------------------------------ *
  * Legal pages.
@@ -24,6 +25,7 @@ function LegalShell({ title, children }: { title: string; children: React.ReactN
   return (
     <div style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 40%,#eef2fa 100%)" }}>
       <section className="pt-16 pb-10 relative overflow-hidden">
+        <LineArtScene scene="legal" className="line-art--legal" />
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true"
           style={{ background: "radial-gradient(circle,rgba(124,146,199,0.14),transparent 70%)", filter: "blur(60px)" }} />
