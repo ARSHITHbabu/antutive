@@ -69,6 +69,11 @@ export function IntroAnimation({ onComplete }: Props) {
     const prevOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
 
+    // The inline gate script in index.html hid the prerendered page so it
+    // could not flash before the intro; the opaque overlay now covers the
+    // viewport, so reveal the page beneath it.
+    document.documentElement.removeAttribute("data-intro-pending");
+
     // Fit the 387 × 123 design grid to the viewport with a single transform.
     const fit = () => {
       const target = Math.min(372, window.innerWidth * 0.78);

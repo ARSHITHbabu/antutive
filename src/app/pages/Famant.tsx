@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Sparkles, Users, ShieldCheck, Eye, Camera } f
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { capabilities, WAITLIST_URL, OWNERSHIP_LINE, STAGE_LINE } from "../content/famant";
 import { StatusBadge } from "./Home";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
@@ -16,11 +17,7 @@ const targetUsers = [
 ];
 
 export function Famant() {
-  usePageMeta({
-    title: "Famant — AI-powered family management platform | Antutive",
-    description: PRODUCT_DESCRIPTION,
-    path: "/famant",
-  });
+  usePageMeta(metaFor("/famant"));
 
   return (
     <div style={{ background: "#f8fafc" }}>

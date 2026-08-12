@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import { Navigate, type RouteObject } from "react-router";
 import { RootLayout } from "./components/RootLayout";
 import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
@@ -9,7 +9,10 @@ import { Contact } from "./pages/Contact";
 import { Privacy, Terms, Cookies } from "./pages/Legal";
 import { NotFound } from "./pages/NotFound";
 
-export const router = createBrowserRouter([
+/* Route table only — shared by the browser router (App.tsx) and the
+   build-time prerenderer (entry-server.tsx), so it must not create a
+   browser router at module scope. */
+export const routes: RouteObject[] = [
   {
     path: "/",
     Component: RootLayout,
@@ -33,4 +36,4 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+];

@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Sparkles, Building2, Cpu, Hammer, Users, Data
 import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb } from "../components/Decor";
 import { usePageMeta, COMPANY_DESCRIPTION } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { OWNERSHIP_LINE } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
@@ -55,19 +56,11 @@ function CompanyJourney() {
 const companyFacts = [
   { label: "Company Name",     value: "ANTUTIVE AB"                      },
   { label: "Organisation No.", value: "559576-7228"                      },
-  { label: "Legal Form",       value: "Swedish Aktiebolag (AB)"          },
-  { label: "Share Capital",    value: "25,000 SEK"                       },
   { label: "Registered",       value: "Gothenburg, Västra Götalands län" },
-  { label: "Founded",          value: "2026"                             },
-  { label: "Invoicing",        value: "SEK / EUR (VAT-registered)"       },
 ];
 
 export function About() {
-  usePageMeta({
-    title: "About Antutive — an AI-first product company",
-    description: COMPANY_DESCRIPTION,
-    path: "/about",
-  });
+  usePageMeta(metaFor("/about"));
 
   return (
     <div>
@@ -110,7 +103,7 @@ export function About() {
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
-                {["Org.nr 559576-7228", "Gothenburg", "Swedish AB", "Founded 2026"].map(c => (
+                {["Org.nr 559576-7228", "Gothenburg, Sweden"].map(c => (
                   <span key={c} className="px-3 py-1 rounded-full border text-xs font-medium"
                     style={{ borderColor: "rgba(124,146,199,0.32)", background: "rgba(124,146,199,0.08)", color: "#475569" }}>{c}</span>
                 ))}

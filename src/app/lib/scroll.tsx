@@ -5,8 +5,15 @@ const forceReveal = typeof window !== "undefined" && window.location.search.incl
 
 export function useVisible(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
-  const [on, setOn] = useState(forceReveal);
+  const [on, setOn] = useState(false);
   useEffect(() => {
+    /* forceReveal is applied here rather than as the initial state: pages
+       are prerendered with the hidden state, and hydration keeps existing
+       DOM attributes — only a state *transition* re-applies the styles. */
+    if (forceReveal) {
+      setOn(true);
+      return;
+    }
     const el = ref.current;
     if (!el) return;
     // Fallback: never leave content invisible when IntersectionObserver is absent
