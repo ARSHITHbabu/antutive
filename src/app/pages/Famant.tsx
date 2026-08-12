@@ -11,9 +11,9 @@ import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/Line
 const famantVideo = "/media/famant.webm";
 
 const targetUsers = [
-  { Icon: Users, title: "Parents and partners", desc: "The people who currently carry the family's coordination load — usually one or two per household." },
+  { Icon: Users, title: "Parents and partners", desc: "The people who currently carry the family's coordination load, usually one or two per household." },
   { Icon: Users, title: "Busy households", desc: "Families juggling school, work, activities and everything in between, across too many separate tools." },
-  { Icon: Users, title: "Multi-generation households", desc: "Homes where coordination spans grandparents, parents and children — and context matters even more." },
+  { Icon: Users, title: "Multi-generation households", desc: "Homes where coordination spans grandparents, parents and children, and context matters even more." },
 ];
 
 export function Famant() {
@@ -62,7 +62,7 @@ export function Famant() {
                       Join the Famant waitlist <ArrowUpRight className="w-4 h-4" />
                     </a>
                     <span className="text-xs" style={{ color: "rgba(226,229,255,0.55)" }}>
-                      Continues to famant.com — Famant's product site
+                      Continues to famant.com, Famant's product site
                     </span>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export function Famant() {
                   <video src={famantVideo} autoPlay loop muted playsInline aria-hidden="true"
                     style={{ width: "100%", maxWidth: 320, height: 320, objectFit: "contain", position: "relative", zIndex: 1 }} />
                   <p className="text-xs relative z-10 lg:pr-10" style={{ color: "rgba(226,229,255,0.45)" }}>
-                    Brand illustration — not product interface. Real screenshots will be
+                    Brand illustration, not product interface. Real screenshots will be
                     published as capabilities reach testing.
                   </p>
                 </div>
@@ -94,13 +94,13 @@ export function Famant() {
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 Family life is fragmented across calendars, chat threads, paper documents,
-                shared lists and separate planning — and the load of holding it together
+                shared lists and separate planning, and the load of holding it together
                 falls on one or two people. The hard part was never having somewhere to put
                 things. It's knowing what a school form means, which commitments clash, who
                 should do what, and what has to happen next.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
-                That is work of interpretation, prioritisation and follow-through — exactly
+                That is work of interpretation, prioritisation and follow-through: exactly
                 the class of work modern AI is suited to carry, with a person staying in
                 charge of every decision.
               </p>
@@ -168,7 +168,7 @@ export function Famant() {
               <p className="text-sm text-[#64748b] mt-3">
                 Each capability is a model-driven behaviour: input → what the assistant does →
                 what the family sees → confirmation. Voice is an interface to the assistant,
-                not the category — you can type or speak.
+                not the category; you can type or speak.
               </p>
             </div>
           </Reveal>
@@ -206,7 +206,7 @@ export function Famant() {
               <span className="section-eyebrow-light">How It Works</span>
               <h2 className="section-h2 text-[#0f172a] mt-3" style={{ fontWeight: 700 }}>One concrete flow, end to end</h2>
               <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
-                This is the pattern every capability follows — and the flow we'll record as a
+                This is the pattern every capability follows, and the flow we'll record as a
                 demo once it reaches testing.
               </p>
             </div>
@@ -224,7 +224,7 @@ export function Famant() {
                   { Icon: Camera,      step: "Input",        desc: "Photograph a birthday invitation." },
                   { Icon: Eye,         step: "Understanding",desc: "The assistant is designed to read it: date, time, venue, child." },
                   { Icon: Sparkles,    step: "Proposal",     desc: "It proposes the calendar event, a gift reminder and an RSVP task." },
-                  { Icon: ShieldCheck, step: "Confirmation", desc: "Nothing is added until a family member confirms. If it misread, you correct or dismiss — nothing has happened yet." },
+                  { Icon: ShieldCheck, step: "Confirmation", desc: "Nothing is added until a family member confirms. If it misread, you correct or dismiss; nothing has happened yet." },
                 ].map(({ Icon, step, desc }, i) => (
                   <div key={step} className="flex flex-col gap-3">
                     <div className="flex items-center gap-2 rounded-full self-start px-1 py-1 pr-3"
@@ -267,7 +267,7 @@ export function Famant() {
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 We will publish specific security and privacy practices as they are
-                implemented and reviewed — implemented controls only, no compliance badges.
+                implemented and reviewed: implemented controls only, no compliance badges.
               </p>
             </Reveal>
             <Reveal variant="right" delay={100}>
@@ -312,7 +312,7 @@ export function Famant() {
                 </h2>
                 <p className="text-sm mb-3 max-w-lg mx-auto" style={{ color: "rgba(226,229,255,0.75)" }}>
                   Famant is in development and not yet generally available. Joining the
-                  waitlist gets you early access when it opens — and honest updates on what
+                  waitlist gets you early access when it opens, and honest updates on what
                   works and what's still coming.
                 </p>
                 <p className="text-xs mb-8 max-w-lg mx-auto" style={{ color: "rgba(226,229,255,0.55)" }}>
@@ -328,7 +328,7 @@ export function Famant() {
                   </Link>
                 </div>
                 <p className="text-xs mt-5" style={{ color: "rgba(226,229,255,0.5)" }}>
-                  The waitlist continues to famant.com — Famant's product site, by Antutive.
+                  The waitlist continues to famant.com, Famant's product site by Antutive.
                 </p>
               </div>
             </div>

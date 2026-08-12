@@ -25,31 +25,31 @@ const principles = [
     Icon: Cpu,
     n: "01",
     title: "The intelligence is the product",
-    desc: "An Antutive product is model-driven behaviour, not a rule engine with an AI sticker. Take the AI out of Famant, for example, and there is no product left — only another shared calendar and list app. That dependency is the test every product must pass.",
+    desc: "An Antutive product is model-driven behaviour, not a rule engine with an AI sticker. Take the AI out of Famant, for example, and there is no product left, only another shared calendar and list app. That dependency is the test every product must pass.",
   },
   {
     Icon: ShieldCheck,
     n: "02",
     title: "Confirmation before action",
-    desc: "Our products read, reason and propose — a person confirms before anything changes. A wrong proposal costs one tap to correct or dismiss; because nothing happens before confirmation, a misreading never becomes a real-world mistake.",
+    desc: "Our products read, reason and propose, and a person confirms before anything changes. A wrong proposal costs one tap to correct or dismiss; because nothing happens before confirmation, a misreading never becomes a real-world mistake.",
   },
   {
     Icon: Layers,
     n: "03",
     title: "Grounded in the user's own context",
-    desc: "A proposal is only useful if it understands this user's world. Our products work from the user's own data — and only theirs. In Famant that means the household's calendars, people, documents and history, kept strictly to that household.",
+    desc: "A proposal is only useful if it understands this user's world. Our products work from the user's own data, and only theirs. In Famant that means the household's calendars, people, documents and history, kept strictly to that household.",
   },
   {
     Icon: FlaskConical,
     n: "04",
     title: "Evaluation over adjectives",
-    desc: "Capabilities are judged against fixed test scenarios before they move from development to testing to release. We publish accuracy or quality figures only when we have measured them — never before.",
+    desc: "Capabilities are judged against fixed test scenarios before they move from development to testing to release. We publish accuracy or quality figures only when we have measured them, never before.",
   },
 ];
 
 /* ── hero visual: the intelligence loop, node by node ── */
 const flowSteps = [
-  { Icon: User,              label: "Your context",  desc: "Calendars, documents, requests — the user's own world" },
+  { Icon: User,              label: "Your context",  desc: "Calendars, documents and requests: the user's own world" },
   { Icon: Eye,               label: "Understanding", desc: "The model reads what things mean" },
   { Icon: BrainCircuit,      label: "Reasoning",     desc: "What clashes, what matters, what's next" },
   { Icon: MessageSquareText, label: "Proposal",      desc: "A concrete suggested action" },
@@ -102,10 +102,10 @@ function IntelligenceFlowVisual() {
 
 /* ── architecture diagram: layers the approved copy already describes ── */
 const archLayers = [
-  { Icon: MonitorSmartphone, title: "Product experience",       sub: "What the user sees — proposals, confirmations, one shared view" },
+  { Icon: MonitorSmartphone, title: "Product experience",       sub: "What the user sees: proposals, confirmations, one shared view" },
   { Icon: Boxes,             title: "Assistant orchestration",  sub: "Turning understanding into proposed actions, tool by tool" },
   { Icon: BrainCircuit,      title: "Foundation models",        sub: "The reasoning and understanding layer, on a managed cloud platform" },
-  { Icon: Database,          title: "The user's own data",      sub: "Grounding — each household's context, kept strictly to that household" },
+  { Icon: Database,          title: "The user's own data",      sub: "Grounding: each household's context, kept strictly to that household" },
 ];
 
 function ArchitectureDiagram() {
@@ -140,7 +140,7 @@ function ArchitectureDiagram() {
         </Reveal>
       ))}
       <p className="text-xs mt-4 text-center lg:text-left" style={{ color: "rgba(199,210,236,0.5)" }}>
-        Design intent — published concretely, with names, once the plan is confirmed.
+        Design intent: published concretely, with names, once the plan is confirmed.
       </p>
     </div>
   );
@@ -182,13 +182,13 @@ export function Technology() {
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
                 AI-first is a way of designing products, not a feature list: the intelligence is
                 the interface and the mechanism, with a person confirming every action. This
-                page describes how Antutive builds — the principles apply to every product we
+                page describes how Antutive builds. The principles apply to every product we
                 make, and Famant, our first flagship product, is the working example throughout.
               </p>
               <p className="text-sm text-[#64748b] max-w-xl leading-relaxed"
                 style={{ animation: "fadeUp 0.8s ease 0.32s both" }}>
                 Famant is in development. Everything here describes design and intent, labelled
-                honestly — we update this page as the architecture is confirmed and capabilities
+                honestly, and we update this page as the architecture is confirmed and capabilities
                 become real.
               </p>
             </div>
@@ -212,7 +212,7 @@ export function Technology() {
               </h2>
               <p className="text-sm text-[#64748b] mt-3">
                 Four principles govern every capability every Antutive product ships. They
-                are commitments about how we build — not claims about what is already live.
+                are commitments about how we build, not claims about what is already live.
               </p>
             </div>
           </Reveal>
@@ -250,8 +250,8 @@ export function Technology() {
               </h2>
               <p className="text-sm text-[#64748b] mt-3 max-w-xl mx-auto">
                 Every AI sentence on this site has to describe a mechanism a technical
-                reviewer could interrogate. Here is Famant — the first product built this
-                way — capability by capability, in those terms.
+                reviewer could interrogate. Here is Famant, the first product built this
+                way, capability by capability, in those terms.
               </p>
             </div>
           </Reveal>
@@ -311,7 +311,7 @@ export function Technology() {
                 data, how quality is evaluated, and where data lives.
               </p>
               <p className="text-sm leading-relaxed mb-7" style={{ color: "rgba(199,210,236,0.75)" }}>
-                We publish infrastructure and model choices here once the plan is confirmed —
+                We publish infrastructure and model choices here once the plan is confirmed:
                 concretely, honestly labelled as planned until built. No name-dropping before
                 it's real.
               </p>
@@ -348,7 +348,7 @@ export function Technology() {
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 Products that touch people's real lives have to earn trust the slow way. Our
                 rule is simple: this website describes mechanisms and statuses, not
-                adjectives — and a claim appears only when the evidence behind it exists.
+                adjectives, and a claim appears only when the evidence behind it exists.
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl"
                 style={{ background: "rgba(124,146,199,0.10)", border: "1px solid rgba(124,146,199,0.30)" }}>
@@ -407,7 +407,7 @@ export function Technology() {
                 <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>See what all of this is for</h2>
                 <p className="text-sm text-[#64748b] mb-8 max-w-md mx-auto leading-relaxed">
                   The approach only matters in the products it produces. Explore the portfolio,
-                  or go straight to Famant — the first product built this way.
+                  or go straight to Famant, the first product built this way.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link to="/products" className="cta-btn-primary">

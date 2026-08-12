@@ -22,7 +22,7 @@ function ContactHeroCard() {
   const details = [
     { Icon: Mail,      label: "Email",          value: "contact@antutive.com"        },
     { Icon: MapPin,    label: "Headquarters",   value: "Gothenburg, Sweden"          },
-    { Icon: Clock,     label: "Business Hours", value: "Mon–Fri · 09:00–18:00 CET"  },
+    { Icon: Clock,     label: "Business Hours", value: "Mon-Fri · 09:00-18:00 CET"  },
     { Icon: Building2, label: "Company",        value: "ANTUTIVE AB · 559576-7228"   },
   ];
   return (
@@ -67,7 +67,7 @@ export function Contact() {
     e.preventDefault();
     const topicLabel = topics.find(t => t.value === formData.topic)?.label ?? "General enquiry";
     const subject = encodeURIComponent(`[${topicLabel}] Message from ${formData.name}`);
-    const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name}\n${formData.email}`);
+    const body = encodeURIComponent(`${formData.message}\n\n${formData.name}\n${formData.email}`);
     window.location.href = `mailto:contact@antutive.com?subject=${subject}&body=${body}`;
   };
 
@@ -89,7 +89,7 @@ export function Contact() {
         {[
           { Icon: Mail,      label: "contact@antutive.com",  top: "12%", left: "36%",  cls: "fi-a", d: 0 },
           { Icon: MapPin,    label: "Gothenburg, Sweden",    top: "78%", left: "3%",   cls: "fi-b", d: 1.2 },
-          { Icon: Clock,     label: "Mon–Fri · CET",         top: "8%",  right: "6%",  cls: "fi-c", d: 0.6 },
+          { Icon: Clock,     label: "Mon-Fri · CET",         top: "8%",  right: "6%",  cls: "fi-c", d: 0.6 },
         ].map(({ Icon, label, cls, d, ...pos }, i) => (
           <div key={i} className={`float-chip ${cls}`} aria-hidden="true" style={{ position: "absolute", animationDelay: `${d}s`, ...pos }}>
             <Icon className="w-3.5 h-3.5 flex-shrink-0" /><span>{label}</span>
@@ -112,7 +112,7 @@ export function Contact() {
 
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Questions about Famant, press, partnerships or anything else — email us or
+                Questions about Famant, press, partnerships or anything else: email us or
                 use the form below. If you want early access to Famant, the waitlist is the
                 fastest route.
               </p>
@@ -124,7 +124,7 @@ export function Contact() {
                 </a>
               </div>
               <p className="text-xs text-[#94a3b8]" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                Waitlist continues to famant.com — Famant's product site.
+                Waitlist continues to famant.com, Famant's product site.
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export function Contact() {
                 {[
                   { icon: Mail,   label: "Email",          lines: ["contact@antutive.com"]                       },
                   { icon: MapPin, label: "Headquarters",   lines: ["Gothenburg, Sweden", "Västra Götalands län"] },
-                  { icon: Clock,  label: "Business Hours", lines: ["Monday – Friday", "09:00 – 18:00 CET"]       },
+                  { icon: Clock,  label: "Business Hours", lines: ["Monday to Friday", "09:00 to 18:00 CET"]       },
                 ].map(({ icon: Icon, label, lines }, i) => (
                   <div key={i} className="flex items-start gap-4 p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5"
                     style={{ background: "#ffffff", borderColor: `${P}30`, boxShadow: "0 2px 12px rgba(15,23,42,0.05)" }}>
@@ -211,7 +211,7 @@ export function Contact() {
                   <h2 className="text-base font-bold text-[#0f172a] mb-2">Send Us a Message</h2>
                   <p className="text-xs text-[#64748b] mb-6 leading-relaxed">
                     Sending opens your own email app with the message addressed to
-                    contact@antutive.com — this website stores nothing you type here.
+                    contact@antutive.com; this website stores nothing you type here.
                   </p>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

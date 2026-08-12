@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, ArrowUpRight, Sparkles, Building2, Cpu, Hammer, Users, Database, Rocket, Boxes } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Building2, Cpu, Hammer, User, Linkedin } from "lucide-react";
 import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb } from "../components/Decor";
 import { usePageMeta, COMPANY_DESCRIPTION } from "../lib/seo";
@@ -52,6 +52,20 @@ function CompanyJourney() {
   );
 }
 
+/* ── Founder profile ─────────────────────────────────────────────────────
+   Photo: drop the final portrait (recommended 800×1000px, 4:5) into
+   public/brand/ — e.g. public/brand/vinayak-panchaman.jpg — and set
+   FOUNDER_PHOTO to "/brand/vinayak-panchaman.jpg". The placeholder below
+   renders until then; nothing else needs to change. */
+const FOUNDER_PHOTO: string | null = null;
+
+const FOUNDER_LINKEDIN = "https://www.linkedin.com/in/vinayak-panchaman/";
+
+/* DRAFT founder statement — website copy pending Vinayak Panchaman's
+   approval before it may be treated as an attributed quote. */
+const FOUNDER_QUOTE =
+  "Good technology feels like someone actually thought about your day. That's what we're trying to build here, products that earn their place in people's lives.";
+
 /* Single canonical registration card — registry-checkable facts only. */
 const companyFacts = [
   { label: "Company Name",     value: "ANTUTIVE AB"                      },
@@ -99,7 +113,7 @@ export function About() {
               <p className="text-sm text-[#64748b] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.3s both" }}>
                 Antutive was founded in Gothenburg in 2026 to build and operate its own
-                products — not to build software for hire.
+                products, not to build software for hire.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8" style={{ animation: "fadeUp 0.8s ease 0.35s both" }}>
@@ -157,21 +171,21 @@ export function About() {
                 Build products where intelligence<br />carries the everyday work.
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
-                Antutive exists to create, launch and operate its own AI-first products —
+                Antutive exists to create, launch and operate its own AI-first products:
                 software designed around intelligence from the first sketch, aimed at the
                 interpretation, coordination and follow-through that today's tools still
                 leave to people. That is the company's purpose; each product is one
                 expression of it.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
-                The first expression is Famant. It started as our own frustration — calendars
-                in three places, school forms lost in a drawer, dinner a nightly negotiation —
-                so we began building the product we wanted in our own homes. {OWNERSHIP_LINE}
+                The first expression is Famant. It started as our own frustration: calendars
+                in three places, school forms lost in a drawer, dinner a nightly negotiation.
+                So we began building the product we wanted in our own homes. {OWNERSHIP_LINE}
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 Our long-term ambition is a company that keeps doing this: products imagined,
                 built and run in-house as durable intellectual property. Future products will
-                be introduced as they are developed — announced when real, never before.
+                be introduced as they are developed, announced when real, never before.
               </p>
             </Reveal>
 
@@ -185,8 +199,8 @@ export function About() {
                   <p className="text-xs text-[#64748b] leading-relaxed">
                     AI-first is a structural statement, not a slogan: an Antutive product is
                     one where removing the intelligence removes the product. Take the
-                    assistant out of Famant and only another calendar and list app remains —
-                    that dependency is deliberate, and the company's strategy, architecture
+                    assistant out of Famant and only another calendar and list app remains.
+                    That dependency is deliberate, and the company's strategy, architecture
                     and product bar are organised around it.
                   </p>
                 </div>
@@ -197,9 +211,9 @@ export function About() {
                   </div>
                   <p className="text-xs text-[#64748b] leading-relaxed">
                     We build the Swedish way: carefully, transparently, and to last. Famant is
-                    developed with the discipline of a long-lived product — tested,
-                    documented, evaluated — and with honesty about stage as a visible brand
-                    behaviour: what works today is labelled, and what's coming is labelled too.
+                    developed with the discipline of a long-lived product: tested, documented
+                    and evaluated. Honesty about stage is a visible brand behaviour, so what
+                    works today is labelled, and what's coming is labelled too.
                   </p>
                 </div>
               </div>
@@ -220,12 +234,12 @@ export function About() {
               The Long Term
             </span>
             <h2 className="text-2xl sm:text-4xl font-bold leading-snug mt-5 mb-6" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>
-              Products imagined, built and operated in-house —<br className="hidden sm:block" />
+              Products imagined, built and operated in-house <br className="hidden sm:block" />
               <span className="grad-text-light">as durable intellectual property.</span>
             </h2>
             <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: "rgba(199,210,236,0.7)" }}>
-              Not a portfolio of promises. A company structured so each real product — starting
-              with Famant — is designed, shipped and run for the long term, with honesty about
+              Not a portfolio of promises. A company structured so each real product, starting
+              with Famant, is designed, shipped and run for the long term, with honesty about
               stage as visible brand behaviour.
             </p>
           </Reveal>
@@ -245,12 +259,12 @@ export function About() {
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 Antutive was incorporated in Gothenburg in 2026 and went straight to work on
-                its first product. The path is short so far — and every step on it is real:
+                its first product. The path is short so far, and every step on it is real:
                 the company is registry-verifiable, Famant is in development, and its waitlist
                 is open today.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
-                The next milestone is launch. It gets a date when it has one — we don't plot
+                The next milestone is launch. It gets a date when it has one. We don't plot
                 hopes on this curve.
               </p>
             </Reveal>
@@ -264,88 +278,93 @@ export function About() {
         </div>
       </section>
 
-      {/* ── TEAM — structure present, profiles pending publication consent ── */}
+      {/* ── FOUNDER — the person behind the company ── */}
       <section className="py-20 relative overflow-hidden"
         style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 60%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-30" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <LineArtScene scene="ecosystem" className="line-art--section" meaningful />
+          <LineArtScene scene="contact" className="line-art--section" />
+
           <Reveal variant="up">
-            <div className="relative p-10 rounded-3xl border text-center overflow-hidden" style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-              <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
-              <div className="relative">
-                <div className="relative inline-flex mb-6">
-                  <span className="absolute -inset-3 rounded-full" aria-hidden="true"
-                    style={{ border: `1.5px dashed ${P}60`, animation: "spinSlow 30s linear infinite" }} />
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg,${A},${P})`, boxShadow: "0 10px 26px rgba(70,88,159,0.30)" }}>
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <h2 className="text-lg font-bold text-[#0f172a] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>The people behind Antutive</h2>
-                <p className="text-sm text-[#64748b] leading-relaxed max-w-xl mx-auto">
-                  Antutive is a small founding team in Gothenburg, building Famant out of its
-                  own households' coordination pain. Founder and team profiles are being
-                  prepared for this page.
-                </p>
-              </div>
+            <div className="text-center mb-10">
+              <span className="section-eyebrow">The People</span>
+              <h2 className="section-h2 text-[#0f172a] mt-3 mb-4" style={{ fontWeight: 700 }}>
+                The people behind Antutive
+              </h2>
+              <p className="text-sm text-[#64748b] leading-relaxed max-w-xl mx-auto">
+                Antutive is a small founding team in Gothenburg, building Famant out of its
+                own households' coordination pain.
+              </p>
             </div>
           </Reveal>
-        </div>
-      </section>
 
-      {/* ── ECOSYSTEM — Antutive × Data Delimited ── */}
-      <section className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f8fafc 60%,#eef2fa 100%)" }}>
-        <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-30" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal variant="up">
-            <div className="eco-highlight relative overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 items-center">
-                <div className="flex items-center gap-3" aria-hidden="true">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg,#334155,#64748b)" }}>
-                    <Database className="w-5 h-5 text-white" />
-                  </div>
-                  <svg viewBox="0 0 48 24" className="w-12 h-6" style={{ overflow: "visible" }}>
-                    <line x1="0" y1="12" x2="48" y2="12" className="eco-connector-line" />
-                    <circle cx="24" cy="12" r="4" fill={A} className="eco-pulse-dot" />
-                  </svg>
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg,${A},${P})` }}>
-                    <Rocket className="w-5 h-5 text-white" />
+          <Reveal variant="up" delay={100}>
+            <div className="relative p-7 sm:p-10 rounded-3xl border overflow-hidden"
+              style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
+              <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
+
+              <div className="relative grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 md:gap-10 items-center">
+
+                {/* portrait — 4:5, swaps from placeholder to photo via FOUNDER_PHOTO */}
+                <div className="w-full max-w-[240px] mx-auto md:mx-0">
+                  <div className="relative rounded-2xl overflow-hidden"
+                    style={{ aspectRatio: "4 / 5", boxShadow: "0 12px 32px rgba(70,88,159,0.14)" }}>
+                    {FOUNDER_PHOTO ? (
+                      <img
+                        src={FOUNDER_PHOTO}
+                        alt="Vinayak Panchaman, Founder & CEO of Antutive"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div
+                        role="img"
+                        aria-label="Placeholder for the portrait of Vinayak Panchaman, Founder & CEO of Antutive"
+                        className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-2xl"
+                        style={{
+                          background: "linear-gradient(160deg, rgba(70,88,159,0.08), rgba(124,146,199,0.18))",
+                          border: `1.5px dashed ${P}60`,
+                        }}
+                      >
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                          style={{ background: `linear-gradient(135deg,${A},${P})`, boxShadow: "0 10px 26px rgba(70,88,159,0.30)" }}>
+                          <User className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-[11px] font-semibold text-[#64748b] text-center leading-relaxed px-4">
+                          Founder image<br />Vinayak Panchaman
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: A }}>The Ecosystem · Antutive × Data Delimited</p>
-                  <p className="text-sm text-[#334155] leading-relaxed">
-                    Antutive works alongside its sister company Data Delimited, which builds
-                    data, analytics, AI and cloud foundations. The two companies are separate
-                    and complementary: Data Delimited strengthens the intelligence and data
-                    side; Antutive turns that capability into user-facing products — starting
-                    with Famant.
-                  </p>
-                  <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold mt-3 group" style={{ color: A }}>
-                    Visit datadelimited.com <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+
+                {/* profile */}
+                <div className="text-center md:text-left">
+                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: A }}>Founder</p>
+                  <h3 className="text-2xl font-bold text-[#0f172a] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
+                    Vinayak Panchaman
+                  </h3>
+                  <p className="text-sm font-semibold text-[#64748b] mb-5">Founder &amp; CEO</p>
+
+                  <a
+                    href={FOUNDER_LINKEDIN}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Vinayak Panchaman on LinkedIn (opens in a new tab)"
+                    className="inline-flex items-center gap-2 text-sm font-semibold group"
+                    style={{ color: A }}
+                  >
+                    <Linkedin className="w-4 h-4" aria-hidden="true" />
+                    LinkedIn
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
                   </a>
-                </div>
-              </div>
 
-              {/* intelligence → products tail */}
-              <div className="mt-7 pt-6 border-t flex flex-wrap items-center gap-3" style={{ borderColor: `${P}30` }}>
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#94a3b8" }}>Where it lands</span>
-                <svg width="34" height="2" aria-hidden="true" style={{ overflow: "visible" }}>
-                  <line x1="0" y1="1" x2="34" y2="1" stroke={P} strokeWidth="2" className="flow-dash" />
-                </svg>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold text-white"
-                  style={{ background: "linear-gradient(135deg,#6B62F1,#8B7CF8)" }}>
-                  <Sparkles className="w-3 h-3" /> Famant
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ border: `1.5px dashed ${P}60`, color: "#94a3b8" }}>
-                  <Boxes className="w-3 h-3" /> future products — announced when real
-                </span>
+                  {/* Draft founder statement — pending approval (see FOUNDER_QUOTE note) */}
+                  <blockquote className="mt-6 pt-6 border-t" style={{ borderColor: `${P}30` }}>
+                    <p className="text-sm italic leading-relaxed text-[#334155]">
+                      &ldquo;{FOUNDER_QUOTE}&rdquo;
+                    </p>
+                  </blockquote>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -361,7 +380,7 @@ export function About() {
             <div className="max-w-2xl mx-auto px-4 text-center">
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>See what we're building</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
-                The product portfolio is where the company's philosophy becomes concrete —
+                The product portfolio is where the company's philosophy becomes concrete,
                 starting with Famant, our first flagship product.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">

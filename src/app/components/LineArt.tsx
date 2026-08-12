@@ -14,7 +14,7 @@ import { useEffect, useId, useRef, useState } from "react";
  *   halos/nodes/sparks — glow, emphasis dots and drifting particles
  */
 
-type Scene = "company" | "portfolio" | "family" | "intelligence" | "journey" | "contact" | "legal" | "lost" | "ecosystem";
+type Scene = "company" | "portfolio" | "family" | "intelligence" | "journey" | "contact" | "legal" | "lost";
 
 type LineArtProps = {
   scene: Scene;
@@ -134,27 +134,6 @@ const scenes: Record<Scene, SceneDef> = {
     nodes: [[146, 112, 3.5], [244, 84, 3.5], [366, 40]],
     halos: [[378, 18, 16]],
     sparks: [[205, 120], [298, 86], [340, 58]],
-  },
-
-  /* Data Delimited flows into Antutive; dotted branches carry the portfolio forward. */
-  ecosystem: {
-    viewBox: "0 0 560 220",
-    d: "M50 120 C50 80 110 80 110 120 C110 160 50 160 50 120 L110 120 C140 120 138 100 158 100 C172 100 170 124 186 124 C200 124 200 104 216 104 C232 104 240 112 256 112 C256 58 344 58 344 112 C344 166 256 166 256 112 L344 112 C392 108 402 84 448 74 C466 70 476 70 490 70",
-    extra: "M342 110 C395 110 430 110 490 110 M342 110 C390 110 402 140 448 148 C464 152 476 152 490 152",
-    washes: [
-      { cx: 80, cy: 120, rx: 52, ry: 46, tone: "violet" },
-      { cx: 300, cy: 112, rx: 66, ry: 56, tone: "blue" },
-    ],
-    nodes: [[80, 120], [300, 112], [490, 70], [490, 110, 3.5], [490, 152, 3.5]],
-    halos: [[300, 112, 24]],
-    sparks: [[178, 96], [412, 84]],
-    labels: [
-      { text: "DATA DELIMITED", x: 80 },
-      { text: "ANTUTIVE", x: 300 },
-      { text: "PRODUCTS", x: 490 },
-    ],
-    labelY: 196,
-    title: "One line flows from Data Delimited into Antutive, then branches toward products",
   },
 
   /* Contact — two people drawn by the same line, meeting in a warm spark. */
