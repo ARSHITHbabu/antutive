@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Scale } from "lucide-react";
 import { usePageMeta } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { LineArtScene } from "../components/LineArt";
 
 /* ------------------------------------------------------------------ *
@@ -83,11 +84,7 @@ function P({ children }: { children: React.ReactNode }) {
 }
 
 export function Privacy() {
-  usePageMeta({
-    title: "Privacy Policy | Antutive",
-    description: "How ANTUTIVE AB handles personal data on antutive.com.",
-    path: "/privacy",
-  });
+  usePageMeta(metaFor("/privacy"));
   return (
     <LegalShell title="Privacy Policy">
       <H2>Who we are</H2>
@@ -140,11 +137,7 @@ export function Privacy() {
 }
 
 export function Terms() {
-  usePageMeta({
-    title: "Terms of Service | Antutive",
-    description: "Terms of use for the antutive.com website, operated by ANTUTIVE AB.",
-    path: "/terms",
-  });
+  usePageMeta(metaFor("/terms"));
   return (
     <LegalShell title="Terms of Service">
       <H2>About these terms</H2>
@@ -184,11 +177,7 @@ export function Terms() {
 }
 
 export function Cookies() {
-  usePageMeta({
-    title: "Cookies | Antutive",
-    description: "Cookie and local-storage information for antutive.com.",
-    path: "/cookies",
-  });
+  usePageMeta(metaFor("/cookies"));
   return (
     <LegalShell title="Cookies">
       <H2>The short version</H2>

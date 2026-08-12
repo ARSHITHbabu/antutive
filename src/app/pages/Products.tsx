@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Sparkles, Boxes, Lightbulb, Workflow, ShieldC
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
@@ -117,12 +118,7 @@ const principles = [
 ];
 
 export function Products() {
-  usePageMeta({
-    title: "Products — built and operated by Antutive",
-    description:
-      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product.",
-    path: "/products",
-  });
+  usePageMeta(metaFor("/products"));
 
   return (
     <div style={{ background: "#f8fafc" }}>

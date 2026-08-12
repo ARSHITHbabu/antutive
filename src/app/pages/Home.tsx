@@ -5,7 +5,8 @@ import {
 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, HatchAccent, WaveDivider } from "../components/Decor";
-import { usePageMeta, COMPANY_DESCRIPTION, PRODUCT_DESCRIPTION } from "../lib/seo";
+import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 import { capabilities, WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
 
@@ -224,17 +225,13 @@ function EcosystemSection() {
 }
 
 export function Home() {
-  usePageMeta({
-    title: "Antutive — AI-first product company",
-    description: COMPANY_DESCRIPTION,
-    path: "/",
-  });
+  usePageMeta(metaFor("/"));
 
   const heroFacts = [
     { value: "Products", label: "Built in-house" },
     { value: "Famant",   label: "First flagship product" },
-    { value: "2026",     label: "Founded, Gothenburg" },
-    { value: "AB",       label: "Org.nr 559576-7228" },
+    { value: "Gothenburg", label: "Registered in Sweden" },
+    { value: "Org.nr",     label: "559576-7228" },
   ];
 
   return (
@@ -538,8 +535,8 @@ export function Home() {
                 <div>
                   <p className="text-sm font-bold text-[#0f172a]">ANTUTIVE AB · Org.nr 559576-7228</p>
                   <p className="text-xs text-[#64748b] mt-1">
-                    Swedish Aktiebolag · Gothenburg, Sweden · Founded 2026 · A registry-verifiable
-                    company building and operating its own products.
+                    Gothenburg, Sweden · A registry-verifiable company building and
+                    operating its own products.
                   </p>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import { Mail, MapPin, Clock, ArrowRight, ArrowUpRight, Send, Sparkles, Building
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { WAITLIST_URL } from "../content/famant";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
@@ -52,12 +53,7 @@ function ContactHeroCard() {
 }
 
 export function Contact() {
-  usePageMeta({
-    title: "Contact Antutive",
-    description:
-      "Contact Antutive (ANTUTIVE AB), Gothenburg, Sweden — questions about Famant, press, partnerships or general enquiries. Email contact@antutive.com.",
-    path: "/contact",
-  });
+  usePageMeta(metaFor("/contact"));
 
   const [formData, setFormData] = useState({ name: "", email: "", topic: "", message: "" });
 

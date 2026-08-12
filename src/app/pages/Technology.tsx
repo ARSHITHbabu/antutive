@@ -6,6 +6,7 @@ import {
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
+import { metaFor } from "../lib/routeMeta";
 import { capabilities, WAITLIST_URL } from "../content/famant";
 import { StatusBadge } from "./Home";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
@@ -146,12 +147,7 @@ function ArchitectureDiagram() {
 }
 
 export function Technology() {
-  usePageMeta({
-    title: "Technology — how Antutive builds AI-first products",
-    description:
-      "How Antutive builds AI-first products: intelligence as the product, confirmation before action, evaluation over adjectives. Famant, the first flagship product, is the working example — with the full architecture published as it is confirmed.",
-    path: "/technology",
-  });
+  usePageMeta(metaFor("/technology"));
 
   return (
     <div>
