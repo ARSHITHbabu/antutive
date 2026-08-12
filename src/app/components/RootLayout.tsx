@@ -216,7 +216,7 @@ export function RootLayout() {
 
       {/* ── FOOTER ── */}
       <footer className="site-footer">
-        <LineArtScene scene="ecosystem" tone="light" className="line-art--footer" />
+        <LineArtScene scene="company" tone="light" className="line-art--footer" />
         <div className="footer-grid" aria-hidden="true" />
         <div className="footer-orb footer-orb--one" aria-hidden="true" />
         <div className="footer-orb footer-orb--two" aria-hidden="true" />
@@ -265,12 +265,6 @@ export function RootLayout() {
                     <Link to={href} className="footer-link">{label}</Link>
                   </li>
                 ))}
-                <li>
-                  <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer"
-                    className="footer-link">
-                    Data Delimited ↗
-                  </a>
-                </li>
               </ul>
             </div>
 

@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 import {
   ArrowRight, ArrowUpRight, Sparkles, Building2, ShieldCheck, Cpu, Boxes,
-  Lightbulb, Workflow, Database, Rocket,
+  Lightbulb, Workflow,
 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
-import { Noise, DotMatrix, HatchAccent, WaveDivider } from "../components/Decor";
+import { Noise, DotMatrix, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
@@ -83,146 +83,14 @@ const buildThemes = [
   {
     Icon: Workflow,
     title: "Products that carry real work",
-    desc: "We start from problems people actually live with — the everyday coordination, interpretation and follow-through that today's software leaves to humans.",
+    desc: "We start from problems people actually live with: the everyday coordination, interpretation and follow-through that today's software leaves to humans.",
   },
   {
     Icon: Boxes,
     title: "Built and operated, not handed over",
-    desc: "Antutive designs, builds and runs its own products for the long term. Owning the product end-to-end is the company's model — not client delivery.",
+    desc: "Antutive designs, builds and runs its own products for the long term. Owning the product end-to-end is the company's model, not client delivery.",
   },
 ];
-
-/* ── Antutive × Data Delimited ecosystem section (dark) ── */
-const stars = [
-  { top: "8%",  left: "12%", s: 3, d: 0   }, { top: "16%", left: "78%", s: 2, d: 1.2 },
-  { top: "22%", left: "35%", s: 2, d: 2.1 }, { top: "12%", left: "55%", s: 3, d: 0.6 },
-  { top: "30%", left: "90%", s: 2, d: 1.8 }, { top: "42%", left: "6%",  s: 2, d: 2.6 },
-  { top: "55%", left: "16%", s: 3, d: 0.9 }, { top: "62%", left: "88%", s: 3, d: 1.5 },
-  { top: "74%", left: "40%", s: 2, d: 2.2 }, { top: "80%", left: "70%", s: 2, d: 0.3 },
-  { top: "88%", left: "22%", s: 3, d: 1.1 }, { top: "68%", left: "58%", s: 2, d: 2.9 },
-  { top: "36%", left: "68%", s: 2, d: 0.2 }, { top: "50%", left: "45%", s: 2, d: 1.9 },
-];
-
-function EcosystemSection() {
-  return (
-    <section className="eco-dark relative overflow-hidden">
-      <LineArtScene scene="ecosystem" tone="light" className="line-art--ecosystem-bg" meaningful />
-      <div className="absolute top-0 left-0 right-0" aria-hidden="true">
-        <WaveDivider fill="#eef2fa" />
-      </div>
-      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true" style={{ transform: "scale(-1)" }}>
-        <WaveDivider fill="#eef2fa" />
-      </div>
-      <div className="py-32">
-        {stars.map((s, i) => (
-          <span key={i} className="star-dot" aria-hidden="true"
-            style={{ top: s.top, left: s.left, width: s.s, height: s.s, animationDelay: `${s.d}s` }}/>
-        ))}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ backgroundImage: "radial-gradient(rgba(169,184,220,0.05) 1px, transparent 1px)", backgroundSize: "36px 36px" }}/>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal variant="up">
-            <div className="text-center mb-16 max-w-2xl mx-auto">
-              <span className="section-eyebrow" style={{ color: "#A9B8DC", borderColor: "rgba(169,184,220,0.35)", background: "rgba(124,146,199,0.12)" }}>The Ecosystem</span>
-              <h2 className="section-h2 mt-4 mb-5" style={{ fontWeight: 700, color: "#F3F6FC" }}>
-                Antutive is one half<br/><span className="grad-text-light">of a bigger idea.</span>
-              </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(199,210,236,0.75)" }}>
-                Turning modern AI into products people trust takes two kinds of strength:
-                deep data and intelligence foundations, and the craft of shaping them into
-                real products. Antutive is the product side. Data Delimited, our sister
-                company, is the foundation side.
-              </p>
-            </div>
-          </Reveal>
-
-          {/* connected cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-0 items-stretch max-w-5xl mx-auto mb-14">
-
-            {/* Data Delimited card → external */}
-            <Reveal variant="left" delay={80}>
-              <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer" className="eco-dark-card group" aria-label="Visit the Data Delimited website">
-                <span className="eco-tag mb-6" style={{ color: "#C7D2EC", background: "rgba(199,210,236,0.10)", border: "1px solid rgba(199,210,236,0.25)" }}>
-                  Data Delimited
-                </span>
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
-                  style={{ background: "linear-gradient(135deg,#3B4863,#64748b)", boxShadow: "0 8px 24px rgba(0,0,0,0.4)" }}>
-                  <Database className="w-5 h-5 text-white"/>
-                </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>Builds the intelligence</h3>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(199,210,236,0.72)" }}>
-                  Data platforms, analytics, AI and cloud engineering. Data Delimited
-                  works on the foundations intelligence runs on: data that flows, models
-                  that work, infrastructure that holds.
-                </p>
-                <p className="text-xs font-bold mt-6 uppercase tracking-widest" style={{ color: "rgba(199,210,236,0.55)" }}>Data & Intelligence</p>
-                <span className="eco-visit-pill">
-                  Visit datadelimited.com <ArrowUpRight className="w-3.5 h-3.5"/>
-                </span>
-              </a>
-            </Reveal>
-
-            {/* animated connector */}
-            <div className="eco-connector lg:px-3" aria-hidden="true">
-              <svg viewBox="0 0 120 60" className="w-28 h-14 rotate-90 lg:rotate-0" style={{ overflow: "visible" }}>
-                <line x1="0" y1="30" x2="120" y2="30" className="eco-connector-line" style={{ stroke: "#A9B8DC" }}/>
-                <circle cx="30" cy="30" r="4" fill="#A9B8DC" className="eco-pulse-dot"/>
-                <circle cx="60" cy="30" r="5" fill="#7C92C7" className="eco-pulse-dot" style={{ animationDelay: "0.8s" }}/>
-                <circle cx="90" cy="30" r="4" fill="#A9B8DC" className="eco-pulse-dot" style={{ animationDelay: "1.6s" }}/>
-              </svg>
-            </div>
-
-            {/* Antutive card */}
-            <Reveal variant="right" delay={160}>
-              <div className="eco-dark-card" style={{ borderColor: "rgba(124,146,199,0.40)" }}>
-                <span className="eco-tag mb-6" style={{ color: "#A9B8DC", background: "rgba(124,146,199,0.16)", border: "1px solid rgba(124,146,199,0.40)" }}>
-                  Antutive
-                </span>
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
-                  style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 8px 24px rgba(70,88,159,0.5)" }}>
-                  <Rocket className="w-5 h-5 text-white"/>
-                </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>Turns intelligence into products</h3>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(199,210,236,0.72)" }}>
-                  Antutive shapes that capability into AI-first products people use —
-                  designed around real problems, built in-house, operated for the long
-                  term. Famant is the first.
-                </p>
-                <p className="text-xs font-bold mt-6 uppercase tracking-widest" style={{ color: "#A9B8DC" }}>Products & Experience</p>
-                <span className="eco-visit-pill" style={{ background: "rgba(124,146,199,0.22)" }}>
-                  You are here
-                </span>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* bottom highlight */}
-          <Reveal variant="scale" delay={120}>
-            <div className="eco-dark-highlight max-w-3xl mx-auto text-center">
-              <p className="text-base sm:text-xl font-bold leading-snug" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>
-                Data Delimited builds the intelligence.<br className="sm:hidden"/>
-                <span className="grad-text-light"> Antutive turns it into products.</span>
-              </p>
-              <p className="text-sm mt-3" style={{ color: "rgba(199,210,236,0.65)" }}>
-                Two companies, one ecosystem — from foundations to finished products.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center mt-7">
-                <a href="https://datadelimited.com/" target="_blank" rel="noopener noreferrer" className="eco-cta-btn">
-                  Explore Data Delimited <ArrowUpRight className="w-4 h-4"/>
-                </a>
-                <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5"
-                  style={{ border: "1.5px solid rgba(169,184,220,0.35)", color: "#C7D2EC", textDecoration: "none" }}>
-                  More about Antutive <ArrowRight className="w-4 h-4"/>
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function Home() {
   usePageMeta(metaFor("/"));
@@ -269,14 +137,14 @@ export function Home() {
               <p className="text-base md:text-lg mb-4 text-[#334155] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .25s both" }}>
                 Antutive is a Swedish product company that imagines, builds and operates its
-                own AI-first products — software designed around intelligence from the first
+                own AI-first products: software designed around intelligence from the first
                 sketch, made to carry the everyday work people shouldn't have to.
               </p>
 
               <p className="text-sm mb-8 text-[#64748b] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .32s both" }}>
-                Our first flagship product is Famant, an AI assistant for family life —
-                in development, with the waitlist open.
+                Our first flagship product is Famant, an AI assistant for family life.
+                It is in development, with the waitlist open.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
@@ -350,7 +218,7 @@ export function Home() {
               </h2>
               <p className="text-sm text-[#64748b] mt-3">
                 Antutive is structured to create and operate multiple products over time.
-                Products appear here when they exist — never before.
+                Products appear here when they exist, never before.
               </p>
             </div>
           </Reveal>
@@ -369,7 +237,7 @@ export function Home() {
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(226,229,255,0.75)" }}>
                   One shared context for a family's schedules, tasks and documents, with an
                   assistant that proposes the next step and acts only on confirmation.
-                  Pre-launch — the waitlist is open.
+                  Pre-launch. The waitlist is open.
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1" style={{ color: "#C9C5FF" }}>
                   Meet Famant <ArrowRight className="w-4 h-4"/>
@@ -384,7 +252,7 @@ export function Home() {
                 <span className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#64748b" }}>What comes next</span>
                 <h3 className="text-lg font-bold text-[#0f172a] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>Room for more.</h3>
                 <p className="text-sm text-[#64748b] leading-relaxed flex-1">
-                  The company is built so new products can live here — same craft, same
+                  The company is built so new products can live here: same craft, same
                   AI-first approach, same honesty about stage. We announce products when
                   they're real, not when they're slideware.
                 </p>
@@ -419,7 +287,7 @@ export function Home() {
                     {PRODUCT_DESCRIPTION}
                   </p>
                   <p className="text-xs mb-8" style={{ color: "rgba(226,229,255,0.55)" }}>
-                    {OWNERSHIP_LINE} Famant is in development and pre-launch — capabilities
+                    {OWNERSHIP_LINE} Famant is in development and pre-launch. Capabilities
                     carry honest status labels, and real screenshots and a recorded demo will
                     be published as they become real.
                   </p>
@@ -433,7 +301,7 @@ export function Home() {
                     </a>
                   </div>
                   <p className="text-xs mt-4" style={{ color: "rgba(226,229,255,0.45)" }}>
-                    Waitlist continues to famant.com — Famant's product site.
+                    Waitlist continues to famant.com, Famant's product site.
                   </p>
                 </div>
 
@@ -475,7 +343,7 @@ export function Home() {
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 Every Antutive product is designed as model-driven behaviour with a human in
-                the loop: the intelligence reads, reasons and proposes — the person confirms
+                the loop: the intelligence reads, reasons and proposes, and the person confirms
                 before anything happens. And we describe our products in mechanisms and
                 honest statuses, never in adjectives.
               </p>
@@ -494,7 +362,7 @@ export function Home() {
                 <ol className="flex flex-col gap-4">
                   {[
                     ["Input",        "You photograph a birthday invitation."],
-                    ["Understanding","The assistant is designed to read it — date, time, place, child."],
+                    ["Understanding","The assistant is designed to read it: date, time, place, child."],
                     ["Proposal",     "It proposes the calendar event, a gift reminder and an RSVP task."],
                     ["Confirmation", "Nothing is added until a family member confirms."],
                   ].map(([step, desc], i) => (
@@ -518,10 +386,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── 6 · ECOSYSTEM — Antutive × Data Delimited ── */}
-      <EcosystemSection />
-
-      {/* ── 7 · COMPANY STRIP — verifiable identity ── */}
+      {/* ── 6 · COMPANY STRIP — verifiable identity ── */}
       <section className="py-16 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f4f6fb 60%,#eef2fa 100%)" }}>
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
@@ -548,7 +413,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── 8 · FINAL CTA — company-level ── */}
+      {/* ── 7 · FINAL CTA — company-level ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 100%)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="flip">

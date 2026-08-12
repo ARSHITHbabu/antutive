@@ -43,7 +43,7 @@ export function NotFound() {
             <Compass className="w-6 h-6 text-white" />
           </div>
         </div>
-        <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#46589F" }}>404 — Page not found</p>
+        <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#46589F" }}>404 · Page not found</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-4" style={{ fontFamily: "Sora, sans-serif" }}>
           This page doesn't exist.
         </h1>

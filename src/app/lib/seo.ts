@@ -7,7 +7,7 @@ export const SITE_URL = "https://antutive.com";
    parent product company; Famant is its first flagship product, not its
    whole identity. */
 export const COMPANY_DESCRIPTION =
-  "Antutive is an AI-first product company in Gothenburg, Sweden, building and operating its own products. Its first flagship product is Famant — an AI-powered family management and household coordination platform.";
+  "Antutive is an AI-first product company in Gothenburg, Sweden, building and operating its own products. Its first flagship product is Famant, an AI-powered family management and household coordination platform.";
 
 /* Short form for tight spots (footer bar, chips). */
 export const COMPANY_TAGLINE = "AI-first product company · Gothenburg, Sweden";

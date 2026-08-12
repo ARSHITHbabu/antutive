@@ -103,7 +103,7 @@ const principles = [
   {
     Icon: Workflow,
     title: "Real problems, real work",
-    desc: "We build for burdens people actually carry — interpretation, coordination, follow-through — not for demos.",
+    desc: "We build for burdens people actually carry: interpretation, coordination and follow-through, not demos.",
   },
   {
     Icon: ShieldCheck,
@@ -113,7 +113,7 @@ const principles = [
   {
     Icon: Boxes,
     title: "Operated for the long term",
-    desc: "We don't hand products over — we run them. Each product is durable intellectual property the company builds and keeps improving.",
+    desc: "We don't hand products over; we run them. Each product is durable intellectual property the company builds and keeps improving.",
   },
 ];
 
@@ -151,7 +151,7 @@ export function Products() {
 
               <p className="text-base max-w-xl leading-relaxed mb-4"
                 style={{ color: "#64748b", animation: "fadeUp 0.8s ease 0.25s both" }}>
-                Antutive creates and operates its own AI-first products — that's the whole
+                Antutive creates and operates its own AI-first products. That's the whole
                 company. The portfolio starts with Famant, our first flagship product, and is
                 structured to grow as new products become real.
               </p>
@@ -256,7 +256,7 @@ export function Products() {
               <p className="text-xs text-[#64748b] leading-relaxed max-w-2xl">
                 Antutive is structured around long-term product creation: the same company,
                 design system, AI approach and operating discipline are built to support more
-                than one product. Until a new product is real, these slots stay honest — and
+                than one product. Until a new product is real, these slots stay honest, and
                 empty.
               </p>
             </div>
@@ -310,7 +310,7 @@ export function Products() {
             <div className="max-w-2xl mx-auto px-4 text-center">
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Start with the flagship.</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
-                Famant is where Antutive's product philosophy is becoming real — mechanisms,
+                Famant is where Antutive's product philosophy is becoming real, mechanisms,
                 statuses and all.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">

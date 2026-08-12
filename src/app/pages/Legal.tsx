@@ -121,7 +121,7 @@ export function Privacy() {
       <H2>Your rights</H2>
       <P>
         Under the EU General Data Protection Regulation you have rights over personal data
-        we hold about you — including access, correction and erasure. To exercise them,
+        we hold about you, including access, correction and erasure. To exercise them,
         email contact@antutive.com. You also have the right to lodge a complaint with the
         Swedish data protection authority (Integritetsskyddsmyndigheten, IMY).
       </P>
@@ -187,7 +187,7 @@ export function Cookies() {
       <P>
         One item of browser session storage (<code>antutive.intro.played</code>) remembers,
         for the duration of your browser session only, that the opening logo animation has
-        already played — so it doesn't replay on every page. It contains no personal data,
+        already played, so it doesn't replay on every page. It contains no personal data,
         is never sent anywhere, and disappears when you close your browser.
       </P>
 

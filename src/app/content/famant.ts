@@ -35,7 +35,7 @@ export const capabilities: Capability[] = [
     Icon: CalendarCheck2,
     title: "Family-aware scheduling",
     mechanism:
-      "The assistant reasons over the whole household's commitments — not rule-based alarms — to spot conflicts, explain what overlaps and propose a resolution.",
+      "The assistant reasons over the whole household's commitments, not rule-based alarms, to spot conflicts, explain what overlaps and propose a resolution.",
     outcome: "One shared calendar view the family can actually trust.",
     status: "In development",
   },
@@ -43,7 +43,7 @@ export const capabilities: Capability[] = [
     Icon: ListChecks,
     title: "Task creation & delegation",
     mechanism:
-      "A request in plain language — typed or spoken — becomes a task with a suggested owner and a reminder timed to context. The assistant acts only when a family member confirms.",
+      "A request in plain language, typed or spoken, becomes a task with a suggested owner and a reminder timed to context. The assistant acts only when a family member confirms.",
     outcome: "Follow-through without one person carrying the whole list in their head.",
     status: "In development",
   },
@@ -51,7 +51,7 @@ export const capabilities: Capability[] = [
     Icon: ScanText,
     title: "Document understanding",
     mechanism:
-      "Photographed school forms, invitations and receipts are read with OCR and natural-language understanding, then turned into proposed actions — an event, a reminder, a list entry — and stored so they can be found again by asking.",
+      "Photographed school forms, invitations and receipts are read with OCR and natural-language understanding, then turned into proposed actions such as an event, a reminder or a list entry, and stored so they can be found again by asking.",
     outcome: "Paper becomes follow-through instead of a pile in a drawer.",
     status: "In development",
   },

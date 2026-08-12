@@ -24,13 +24,3 @@ export function HatchAccent({ style }: { style?: React.CSSProperties }) {
   return <div className="hatch-accent" aria-hidden="true" style={{ width: 260, height: 180, ...style }} />;
 }
 
-/* Smooth curve between a light section and whatever follows.
-   `fill` is the color of the section ABOVE the divider. */
-export function WaveDivider({ fill = "#f8fafc", flip = false }: { fill?: string; flip?: boolean }) {
-  return (
-    <svg className="wave-divider" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"
-      style={{ transform: flip ? "scaleY(-1)" : undefined }}>
-      <path d="M0,0 L0,34 C240,64 480,64 720,44 C960,24 1200,24 1440,44 L1440,0 Z" fill={fill} />
-    </svg>
-  );
-}

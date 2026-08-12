@@ -16,36 +16,36 @@ export interface RouteMeta {
 export const ROUTE_META: RouteMeta[] = [
   {
     path: "/",
-    title: "Antutive — AI-first product company",
+    title: "Antutive | AI-first product company",
     description: COMPANY_DESCRIPTION,
   },
   {
     path: "/products",
-    title: "Products — built and operated by Antutive",
+    title: "Products built and operated by Antutive",
     description:
       "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product.",
   },
   {
     path: "/famant",
-    title: "Famant — AI-powered family management platform | Antutive",
+    title: "Famant: AI-powered family management platform | Antutive",
     description: PRODUCT_DESCRIPTION,
   },
   {
     path: "/technology",
-    title: "Technology — how Antutive builds AI-first products",
+    title: "Technology: how Antutive builds AI-first products",
     description:
-      "How Antutive builds AI-first products: intelligence as the product, confirmation before action, evaluation over adjectives. Famant, the first flagship product, is the working example — with the full architecture published as it is confirmed.",
+      "How Antutive builds AI-first products: intelligence as the product, confirmation before action, evaluation over adjectives. Famant, the first flagship product, is the working example, with the full architecture published as it is confirmed.",
   },
   {
     path: "/about",
-    title: "About Antutive — an AI-first product company",
+    title: "About Antutive, an AI-first product company",
     description: COMPANY_DESCRIPTION,
   },
   {
     path: "/contact",
     title: "Contact Antutive",
     description:
-      "Contact Antutive (ANTUTIVE AB), Gothenburg, Sweden — questions about Famant, press, partnerships or general enquiries. Email contact@antutive.com.",
+      "Contact Antutive (ANTUTIVE AB) in Gothenburg, Sweden with questions about Famant, press, partnerships or general enquiries. Email contact@antutive.com.",
   },
   {
     path: "/privacy",
