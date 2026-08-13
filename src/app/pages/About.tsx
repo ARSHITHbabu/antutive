@@ -53,11 +53,10 @@ function CompanyJourney() {
 }
 
 /* ── Founder profile ─────────────────────────────────────────────────────
-   Photo: drop the final portrait (recommended 800×1000px, 4:5) into
-   public/brand/ — e.g. public/brand/vinayak-panchaman.jpg — and set
-   FOUNDER_PHOTO to "/brand/vinayak-panchaman.jpg". The placeholder below
-   renders until then; nothing else needs to change. */
-const FOUNDER_PHOTO: string | null = null;
+   Photo lives in public/brand/. The source is 1600×1433 (landscape) shown
+   in a 4:5 frame via object-cover; object-position keeps the subject,
+   seated left of center, in the crop. */
+const FOUNDER_PHOTO: string | null = "/brand/vinayak-panchaman.jpg";
 
 const FOUNDER_LINKEDIN = "https://www.linkedin.com/in/vinayak-panchaman/";
 
@@ -314,6 +313,7 @@ export function About() {
                         src={FOUNDER_PHOTO}
                         alt="Vinayak Panchaman, Founder & CEO of Antutive"
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectPosition: "36% center" }}
                       />
                     ) : (
                       <div
