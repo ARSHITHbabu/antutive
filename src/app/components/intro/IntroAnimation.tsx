@@ -76,7 +76,9 @@ export function IntroAnimation({ onComplete }: Props) {
 
     // Fit the 387 × 123 design grid to the viewport with a single transform.
     const fit = () => {
-      const target = Math.min(372, window.innerWidth * 0.78);
+      // 372px through the laptop range, then grows with the viewport (capped)
+      // so the intro is not a small mark on a large monitor.
+      const target = Math.min(window.innerWidth * 0.78, Math.max(372, window.innerWidth * 0.2422), 640);
       gsap.set(stage, { xPercent: -50, yPercent: -50, scale: target / STAGE.w });
     };
     fit();

@@ -12,7 +12,7 @@ import { capabilities, WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
 
 /* ── floating chips — company facts and product-craft signals ── */
 const chips = [
-  { Icon: Boxes,       label: "Built & operated in-house", top: "13%", left: "3.5%",  cls: "fi-a", d: 0 },
+  { Icon: Boxes,       label: "Built & operated in-house", top: "5%",  left: "3.5%",  cls: "fi-a", d: 0 },
   { Icon: Sparkles,    label: "AI-native products",        top: "7%",  left: "28%",   cls: "fi-b", d: 1.9 },
   { Icon: ShieldCheck, label: "Honest about stage",        top: "5%",  right: "28%",  cls: "fi-a", d: 0.4 },
   { Icon: Building2,   label: "Gothenburg, Sweden",        top: "10%", right: "5%",   cls: "fi-c", d: 1.1 },
@@ -23,8 +23,8 @@ const chips = [
 /* ── data network svg (hero) ── */
 function DataNetworkVisual() {
   return (
-    <div className="company-visual-stage relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
-      <svg viewBox="0 0 420 420" className="w-full max-w-[400px]" aria-hidden="true" style={{ overflow: "visible" }}>
+    <div className="company-visual-stage hero-visual-stage select-none">
+      <svg viewBox="0 0 420 420" aria-hidden="true" style={{ overflow: "visible" }}>
         <defs>
           <radialGradient id="cG"><stop offset="0%" stopColor="#46589F" stopOpacity=".45"/><stop offset="45%" stopColor="#7C92C7" stopOpacity=".18"/><stop offset="100%" stopColor="#2E3B72" stopOpacity="0"/></radialGradient>
           <radialGradient id="gG"><stop offset="0%" stopColor="#7C92C7" stopOpacity=".22"/><stop offset="100%" stopColor="#46589F" stopOpacity="0"/></radialGradient>
@@ -64,7 +64,7 @@ function DataNetworkVisual() {
 export function StatusBadge({ status }: { status: string }) {
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap"
       style={{ background: "rgba(124,146,199,0.12)", border: "1px solid rgba(124,146,199,0.35)", color: "#46589F" }}
     >
       <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#46589F" }} aria-hidden="true" />
@@ -152,10 +152,13 @@ export function Home() {
                 <Link to="/about" className="hero-btn-secondary">About Antutive</Link>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {/* 2×2 while the hero column is narrow (phones, and lg 1024–1279 where
+                  the two-column hero leaves ~450px); a single row otherwise. The value
+                  size is fluid so "Gothenburg" fits a 4-up chip on 1280–1400px laptops. */}
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3">
                 {heroFacts.map((m, i) => (
-                  <div key={m.label} className="metric-chip" style={{ animation: `fadeUp .6s ease ${.55+i*.1}s both` }}>
-                    <span className="block text-xl font-bold">{m.value}</span>
+                  <div key={m.label} className="metric-chip min-w-0" style={{ animation: `fadeUp .6s ease ${.55+i*.1}s both` }}>
+                    <span className="block text-[clamp(1.05rem,1.3vw,1.25rem)] font-bold">{m.value}</span>
                     <span className="block text-xs text-[#64748b] mt-0.5 leading-tight">{m.label}</span>
                   </div>
                 ))}
@@ -207,8 +210,8 @@ export function Home() {
       {/* ── 3 · PRODUCT PORTFOLIO ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 50%,#f8fafc 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none"/>
-        <DotMatrix style={{ top: 60, right: 30 }} />
-        <HatchAccent style={{ bottom: 50, left: 30 }} />
+        <DotMatrix style={{ top: "3.75rem", right: "1.875rem" }} />
+        <HatchAccent style={{ bottom: "3.125rem", left: "1.875rem" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-14 max-w-2xl mx-auto">
@@ -268,7 +271,7 @@ export function Home() {
       {/* ── 4 · FAMANT SPOTLIGHT — one contained product section ── */}
       <section className="famant-section py-24 relative overflow-hidden">
         <Noise />
-        <div className="famant-orbit" style={{ width: 420, height: 420, top: -140, right: -120, background: "radial-gradient(circle, rgba(107,98,241,0.20), transparent 70%)" }} />
+        <div className="famant-orbit" style={{ width: "26.25rem", height: "26.25rem", top: "-8.75rem", right: "-7.5rem", background: "radial-gradient(circle, rgba(107,98,241,0.20), transparent 70%)" }} />
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="scale">
             <div className="famant-hero-panel p-8 sm:p-12">

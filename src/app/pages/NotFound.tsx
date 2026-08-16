@@ -27,9 +27,9 @@ export function NotFound() {
       style={{ minHeight: "min(70vh, 720px)", background: "linear-gradient(135deg,#f8fafc 0%,#eef2fa 50%,#f8fafc 100%)" }}
     >
       <Noise />
-      <AuroraOrb size={420} color="rgba(124,146,199,0.16)" style={{ top: -140, right: -110 }} />
-      <AuroraOrb size={320} color="rgba(70,88,159,0.13)" delay={5} style={{ bottom: -100, left: -80 }} />
-      <DotMatrix style={{ bottom: 30, right: 24 }} />
+      <AuroraOrb size={420} color="rgba(124,146,199,0.16)" style={{ top: "-8.75rem", right: "-6.875rem" }} />
+      <AuroraOrb size={320} color="rgba(70,88,159,0.13)" delay={5} style={{ bottom: "-6.25rem", left: "-5rem" }} />
+      <DotMatrix style={{ bottom: "1.875rem", right: "1.5rem" }} />
 
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center w-full">
         <LineArtScene scene="lost" className="line-art--lost" />

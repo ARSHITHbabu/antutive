@@ -19,8 +19,8 @@ import { LineArtScene, LineArtFlourish } from "../components/LineArt";
    slots that read unmistakably as "room", not as announced products. */
 function PortfolioConstellation() {
   return (
-    <div className="relative w-full flex items-center justify-center select-none" style={{ height: 400 }}>
-      <svg viewBox="0 0 420 420" className="w-full max-w-[400px]" aria-hidden="true" style={{ overflow: "visible" }}>
+    <div className="hero-visual-stage select-none">
+      <svg viewBox="0 0 420 420" aria-hidden="true" style={{ overflow: "visible" }}>
         <defs>
           <radialGradient id="pcGlow"><stop offset="0%" stopColor="#46589F" stopOpacity=".35"/><stop offset="100%" stopColor="#46589F" stopOpacity="0"/></radialGradient>
           <radialGradient id="pcFam"><stop offset="0%" stopColor="#6B62F1" stopOpacity=".45"/><stop offset="100%" stopColor="#6B62F1" stopOpacity="0"/></radialGradient>
@@ -71,8 +71,8 @@ function PortfolioConstellation() {
 function FutureConnector({ delay = 0 }: { delay?: number }) {
   return (
     <div className="hidden md:flex items-center justify-center" aria-hidden="true">
-      <svg width="40" height="2" style={{ overflow: "visible" }}>
-        <line x1="0" y1="1" x2="40" y2="1" stroke="#7C92C7" strokeWidth="2" className="flow-dash" style={{ animationDelay: `${delay}s` }} />
+      <svg height="2" style={{ overflow: "visible", width: "2.5rem" }}>
+        <line x1="0" y1="1" x2="100%" y2="1" stroke="#7C92C7" strokeWidth="2" className="flow-dash" style={{ animationDelay: `${delay}s` }} />
       </svg>
     </div>
   );
@@ -131,9 +131,9 @@ export function Products() {
         <LineArtScene scene="portfolio" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
-        <AuroraOrb size={420} color="rgba(124,146,199,0.18)" style={{ top: -140, right: -120 }} />
-        <RingDecor spin size={360} style={{ top: -110, right: "16%", opacity: 0.7 }} />
-        <DotMatrix style={{ bottom: 30, left: 20 }} />
+        <AuroraOrb size={420} color="rgba(124,146,199,0.18)" style={{ top: "-8.75rem", right: "-7.5rem" }} />
+        <RingDecor spin size={360} style={{ top: "-6.875rem", right: "16%", opacity: 0.7 }} />
+        <DotMatrix style={{ bottom: "1.875rem", left: "1.25rem" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -286,7 +286,7 @@ export function Products() {
                 <Reveal key={title} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
                   <div className="relative p-7 rounded-3xl border h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                     style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.30)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-                    <span className="absolute -top-3 -right-1 text-[76px] font-bold leading-none select-none" aria-hidden="true"
+                    <span className="absolute -top-3 -right-1 text-[4.75rem] font-bold leading-none select-none" aria-hidden="true"
                       style={{ color: "rgba(124,146,199,0.12)", fontFamily: "Sora, sans-serif" }}>{`0${i + 1}`}</span>
                     <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5"
                       style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 8px 20px rgba(70,88,159,0.30)" }}>
