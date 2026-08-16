@@ -25,9 +25,9 @@ export function Famant() {
       {/* ── HERO — dark product panel ── */}
       <section className="famant-section py-20 relative overflow-hidden">
         <Noise />
-        <div className="famant-orbit" style={{ width: 420, height: 420, top: -140, right: -120, background: "radial-gradient(circle, rgba(107,98,241,0.20), transparent 70%)" }} />
-        <div className="famant-orbit" style={{ width: 340, height: 340, bottom: -100, left: -100, background: "radial-gradient(circle, rgba(46,196,182,0.16), transparent 70%)", animationDelay: "4s" }} />
-        <DotMatrix style={{ bottom: 40, right: 30, backgroundImage: "radial-gradient(rgba(107,98,241,0.4) 1.5px, transparent 1.5px)" }} />
+        <div className="famant-orbit" style={{ width: "26.25rem", height: "26.25rem", top: "-8.75rem", right: "-7.5rem", background: "radial-gradient(circle, rgba(107,98,241,0.20), transparent 70%)" }} />
+        <div className="famant-orbit" style={{ width: "21.25rem", height: "21.25rem", bottom: "-6.25rem", left: "-6.25rem", background: "radial-gradient(circle, rgba(46,196,182,0.16), transparent 70%)", animationDelay: "4s" }} />
+        <DotMatrix style={{ bottom: "2.5rem", right: "1.875rem", backgroundImage: "radial-gradient(rgba(107,98,241,0.4) 1.5px, transparent 1.5px)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="scale">
@@ -69,8 +69,8 @@ export function Famant() {
                 <div className="flex flex-col items-center lg:items-end relative">
                   <div className="absolute inset-0 rounded-full pointer-events-none"
                     style={{ background: "radial-gradient(circle, rgba(107,98,241,0.35), transparent 65%)", filter: "blur(40px)" }} />
-                  <video src={famantVideo} autoPlay loop muted playsInline aria-hidden="true"
-                    style={{ width: "100%", maxWidth: 320, height: 320, objectFit: "contain", position: "relative", zIndex: 1 }} />
+                  <video src={famantVideo} autoPlay loop muted playsInline aria-hidden="true" className="famant-hero-video"
+                    style={{ width: "100%", objectFit: "contain", position: "relative", zIndex: 1 }} />
                   <p className="text-xs relative z-10 lg:pr-10" style={{ color: "rgba(226,229,255,0.45)" }}>
                     Brand illustration, not product interface. Real screenshots will be
                     published as capabilities reach testing.
@@ -181,7 +181,7 @@ export function Famant() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {capabilities.map(({ Icon, title, mechanism, outcome, status }, i) => (
               <Reveal key={title} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
-                <div className="famant-card h-full flex flex-col" style={{ padding: 28 }}>
+                <div className="famant-card h-full flex flex-col" style={{ padding: "1.75rem" }}>
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="famant-icon"><Icon className="w-5 h-5 text-white" /></div>
                     <StatusBadge status={status} />
@@ -199,7 +199,7 @@ export function Famant() {
       {/* ── ONE FLOW, END TO END ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 50%,#f8fafc 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-40" />
-        <AuroraOrb size={380} color="rgba(70,88,159,0.12)" style={{ top: -80, right: -60 }} />
+        <AuroraOrb size={380} color="rgba(70,88,159,0.12)" style={{ top: "-5rem", right: "-3.75rem" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="text-center mb-12">
@@ -214,7 +214,7 @@ export function Famant() {
           <Reveal variant="scale" delay={80}>
             <div className="p-8 rounded-3xl border relative" style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.30)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
               {/* connector spine across the four steps (desktop) */}
-              <div className="hidden lg:block absolute pointer-events-none" aria-hidden="true" style={{ top: 45, left: "14%", right: "14%" }}>
+              <div className="hidden lg:block absolute pointer-events-none" aria-hidden="true" style={{ top: "2.8rem", left: "14%", right: "14%" }}>
                 <svg width="100%" height="2" style={{ overflow: "visible" }}>
                   <line x1="0" y1="1" x2="100%" y2="1" stroke="#6B62F1" strokeWidth="2" className="flow-dash" opacity="0.5" />
                 </svg>
@@ -300,7 +300,7 @@ export function Famant() {
       {/* ── STAGE & ACCESS + WAITLIST ── */}
       <section id="waitlist" className="famant-section py-24 relative overflow-hidden">
         <Noise />
-        <div className="famant-orbit" style={{ width: 380, height: 380, top: -120, left: -110, background: "radial-gradient(circle, rgba(107,98,241,0.18), transparent 70%)" }} />
+        <div className="famant-orbit" style={{ width: "23.75rem", height: "23.75rem", top: "-7.5rem", left: "-6.875rem", background: "radial-gradient(circle, rgba(107,98,241,0.18), transparent 70%)" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
             <div className="famant-hero-panel text-center p-10 sm:p-12">

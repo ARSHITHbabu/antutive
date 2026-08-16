@@ -14,7 +14,8 @@ function AntutiveLogo({ size = 36 }: { size?: number }) {
       src={logoFull}
       alt="Antutive"
       className="block w-auto object-contain"
-      style={{ height: size }}
+      /* rem so the mark scales with the fluid root size on large displays */
+      style={{ height: `${size / 16}rem` }}
     />
   );
 }
@@ -25,7 +26,7 @@ function AntutiveMark({ size = 28 }: { size?: number }) {
       src={logoMark}
       alt="Antutive"
       className="block w-auto object-contain"
-      style={{ height: size }}
+      style={{ height: `${size / 16}rem` }}
     />
   );
 }
@@ -100,7 +101,7 @@ export function RootLayout() {
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          padding: scrolled ? "8px 20px" : "14px 20px",
+          padding: scrolled ? "0.5rem 1.25rem" : "0.875rem 1.25rem",
           background: scrolled ? "rgba(248,250,252,0.72)" : "transparent",
           backdropFilter: scrolled ? "blur(12px)" : undefined,
           WebkitBackdropFilter: scrolled ? "blur(12px)" : undefined,
@@ -111,7 +112,7 @@ export function RootLayout() {
           {/* glass card */}
           <div
             className="flex justify-between items-center px-5 rounded-2xl transition-all duration-300"
-            style={{ ...headerCard, height: scrolled ? 56 : 64 }}
+            style={{ ...headerCard, height: scrolled ? "3.5rem" : "4rem" }}
           >
 
             {/* logo — full wordmark on desktop, compact mark once scrolled on small screens */}
@@ -225,9 +226,9 @@ export function RootLayout() {
             <span className="footer-signal__dot" aria-hidden="true" />
             <span>One company. A growing portfolio of AI-first products.</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 sm:gap-12">
 
-            <div className="md:col-span-1">
+            <div className="sm:col-span-2 md:col-span-3 lg:col-span-1">
               <div className="mb-4">
                 <Link to="/" aria-label="Antutive home">
                   <AntutiveLogo size={46} />

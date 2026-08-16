@@ -86,10 +86,10 @@ export function About() {
         <LineArtScene scene="journey" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
-        <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: -140, right: -110 }} />
-        <AuroraOrb size={320} color="rgba(124,146,199,0.15)" delay={6} style={{ bottom: -100, left: -80 }} />
-        <RingDecor spin size={340} style={{ top: -90, right: "12%", opacity: 0.7 }} />
-        <DotMatrix style={{ bottom: 26, left: 18 }} />
+        <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: "-8.75rem", right: "-6.875rem" }} />
+        <AuroraOrb size={320} color="rgba(124,146,199,0.15)" delay={6} style={{ bottom: "-6.25rem", left: "-5rem" }} />
+        <RingDecor spin size={340} style={{ top: "-5.625rem", right: "12%", opacity: 0.7 }} />
+        <DotMatrix style={{ bottom: "1.625rem", left: "1.125rem" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -226,14 +226,14 @@ export function About() {
         <Noise />
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
           style={{ backgroundImage: "radial-gradient(rgba(169,184,220,0.05) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
-        <RingDecor spin size={380} style={{ top: -140, right: -120, borderColor: "rgba(169,184,220,0.14)", opacity: 0.8 }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <RingDecor spin size={380} style={{ top: "-8.75rem", right: "-7.5rem", borderColor: "rgba(169,184,220,0.14)", opacity: 0.8 }} />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal variant="up">
             <span className="section-eyebrow" style={{ color: "#A9B8DC", borderColor: "rgba(169,184,220,0.35)", background: "rgba(124,146,199,0.12)" }}>
               The Long Term
             </span>
             <h2 className="text-2xl sm:text-4xl font-bold leading-snug mt-5 mb-6" style={{ color: "#F3F6FC", fontFamily: "Sora, sans-serif" }}>
-              Products imagined, built and operated in-house <br className="hidden sm:block" />
+              Products imagined, built and operated <span className="whitespace-nowrap">in-house</span> <br className="hidden sm:block" />
               <span className="grad-text-light">as durable intellectual property.</span>
             </h2>
             <p className="text-sm leading-relaxed max-w-xl mx-auto" style={{ color: "rgba(199,210,236,0.7)" }}>
@@ -302,10 +302,10 @@ export function About() {
               style={{ background: "#ffffff", borderColor: `${P}35`, boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
               <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" aria-hidden="true" />
 
-              <div className="relative grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 md:gap-10 items-center">
+              <div className="relative grid grid-cols-1 md:grid-cols-[15rem_1fr] gap-8 md:gap-10 items-center">
 
                 {/* portrait — 4:5, swaps from placeholder to photo via FOUNDER_PHOTO */}
-                <div className="w-full max-w-[240px] mx-auto md:mx-0">
+                <div className="w-full max-w-[15rem] mx-auto md:mx-0">
                   <div className="relative rounded-2xl overflow-hidden"
                     style={{ aspectRatio: "4 / 5", boxShadow: "0 12px 32px rgba(70,88,159,0.14)" }}>
                     {FOUNDER_PHOTO ? (

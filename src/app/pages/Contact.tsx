@@ -82,13 +82,13 @@ export function Contact() {
         <LineArtScene scene="contact" className="line-art--hero-edge" />
         <div className="absolute inset-0 hero-mesh-overlay opacity-40" />
         <Noise />
-        <AuroraOrb size={420} color="rgba(124,146,199,0.16)" style={{ top: -140, right: -110 }} />
-        <AuroraOrb size={320} color="rgba(70,88,159,0.13)" delay={5} style={{ bottom: -100, left: -80 }} />
-        <RingDecor spin size={330} style={{ bottom: -110, right: "10%", opacity: 0.7 }} />
-        <DotMatrix style={{ top: 90, left: 16 }} />
+        <AuroraOrb size={420} color="rgba(124,146,199,0.16)" style={{ top: "-8.75rem", right: "-6.875rem" }} />
+        <AuroraOrb size={320} color="rgba(70,88,159,0.13)" delay={5} style={{ bottom: "-6.25rem", left: "-5rem" }} />
+        <RingDecor spin size={330} style={{ bottom: "-6.875rem", right: "10%", opacity: 0.7 }} />
+        <DotMatrix style={{ top: "5.625rem", left: "1rem" }} />
         {[
           { Icon: Mail,      label: "contact@antutive.com",  top: "12%", left: "36%",  cls: "fi-a", d: 0 },
-          { Icon: MapPin,    label: "Gothenburg, Sweden",    top: "78%", left: "3%",   cls: "fi-b", d: 1.2 },
+          { Icon: MapPin,    label: "Gothenburg, Sweden",    top: "5%",  left: "3%",   cls: "fi-b", d: 1.2 },
           { Icon: Clock,     label: "Mon-Fri · CET",         top: "8%",  right: "6%",  cls: "fi-c", d: 0.6 },
         ].map(({ Icon, label, cls, d, ...pos }, i) => (
           <div key={i} className={`float-chip ${cls}`} aria-hidden="true" style={{ position: "absolute", animationDelay: `${d}s`, ...pos }}>
@@ -140,7 +140,7 @@ export function Contact() {
         style={{ background: "radial-gradient(ellipse 70% 55% at 50% 0%, #e8edf8 0%, #f1f4fb 45%, #eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
         <Noise />
-        <HatchAccent style={{ top: 40, right: 30 }} />
+        <HatchAccent style={{ top: "2.5rem", right: "1.875rem" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -187,8 +187,8 @@ export function Contact() {
                         </div>
                       </div>
                       {i < arr.length - 1 && (
-                        <div className="flex" aria-hidden="true" style={{ height: 16, marginLeft: 15 }}>
-                          <svg width="2" height="16"><line x1="1" y1="0" x2="1" y2="16" stroke={P} strokeWidth="2" className="flow-dash" /></svg>
+                        <div className="flex" aria-hidden="true" style={{ height: "1rem", marginLeft: "0.9375rem" }}>
+                          <svg width="2" style={{ height: "100%" }}><line x1="1" y1="0" x2="1" y2="100%" stroke={P} strokeWidth="2" className="flow-dash" /></svg>
                         </div>
                       )}
                     </div>

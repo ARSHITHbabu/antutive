@@ -58,9 +58,9 @@ const flowSteps = [
 
 function FlowConnector() {
   return (
-    <div className="flex justify-center" aria-hidden="true" style={{ height: 26, marginLeft: 21 }}>
-      <svg width="2" height="26" style={{ overflow: "visible", alignSelf: "center" }}>
-        <line x1="1" y1="0" x2="1" y2="26" stroke="#7C92C7" strokeWidth="2" className="flow-dash" />
+    <div className="flex justify-center" aria-hidden="true" style={{ height: "1.625rem", marginLeft: "1.3125rem" }}>
+      <svg width="2" style={{ overflow: "visible", height: "100%" }}>
+        <line x1="1" y1="0" x2="1" y2="100%" stroke="#7C92C7" strokeWidth="2" className="flow-dash" />
       </svg>
     </div>
   );
@@ -159,10 +159,10 @@ export function Technology() {
         <LineArtScene scene="intelligence" className="line-art--hero-edge" meaningful />
         <div className="absolute inset-0 hero-mesh-overlay opacity-50" />
         <Noise />
-        <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: -140, right: -110 }} />
-        <AuroraOrb size={340} color="rgba(124,146,199,0.16)" delay={5} style={{ bottom: -110, left: -90 }} />
-        <RingDecor spin size={380} style={{ top: -120, right: "8%", opacity: 0.7 }} />
-        <DotMatrix style={{ bottom: 26, left: 18 }} />
+        <AuroraOrb size={420} color="rgba(70,88,159,0.15)" style={{ top: "-8.75rem", right: "-6.875rem" }} />
+        <AuroraOrb size={340} color="rgba(124,146,199,0.16)" delay={5} style={{ bottom: "-6.875rem", left: "-5.625rem" }} />
+        <RingDecor spin size={380} style={{ top: "-7.5rem", right: "8%", opacity: 0.7 }} />
+        <DotMatrix style={{ bottom: "1.625rem", left: "1.125rem" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -201,7 +201,7 @@ export function Technology() {
       {/* ── DESIGN PRINCIPLES — numbered, on a tinted band ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(160deg,#eef2fa 0%,#f4f6fb 55%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-60" />
-        <HatchAccent style={{ top: 50, right: 30 }} />
+        <HatchAccent style={{ top: "3.125rem", right: "1.875rem" }} />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle,rgba(70,88,159,0.10),transparent 70%)", filter: "blur(60px)" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="up">
@@ -221,7 +221,7 @@ export function Technology() {
               <Reveal key={title} variant={i % 2 === 0 ? "left" : "right"} delay={i * 80}>
                 <div className="relative p-7 rounded-3xl border h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   style={{ background: "#ffffff", borderColor: "rgba(124,146,199,0.30)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}>
-                  <span className="absolute -top-3 -right-1 text-[80px] font-bold leading-none select-none" aria-hidden="true"
+                  <span className="absolute -top-3 -right-1 text-[5rem] font-bold leading-none select-none" aria-hidden="true"
                     style={{ color: "rgba(124,146,199,0.12)", fontFamily: "Sora, sans-serif" }}>{n}</span>
                   <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5"
                     style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)", boxShadow: "0 8px 20px rgba(70,88,159,0.30)" }}>
@@ -239,7 +239,7 @@ export function Technology() {
       {/* ── MECHANISM TABLE — iconized worked example ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
-        <AuroraOrb size={340} color="rgba(124,146,199,0.12)" style={{ top: -60, right: -70 }} />
+        <AuroraOrb size={340} color="rgba(124,146,199,0.12)" style={{ top: "-3.75rem", right: "-4.375rem" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <LineArtScene scene="intelligence" className="line-art--section" meaningful />
           <Reveal variant="up">
@@ -257,7 +257,7 @@ export function Technology() {
           </Reveal>
           <Reveal variant="scale">
             <div className="overflow-x-auto rounded-3xl border shadow-lg" style={{ borderColor: "rgba(124,146,199,0.28)", background: "#ffffff" }}>
-              <table className="w-full min-w-[680px]">
+              <table className="w-full min-w-[42.5rem]">
                 <thead>
                   <tr style={{ background: "linear-gradient(135deg,#2E3B72,#46589F)" }}>
                     <th className="text-left px-6 py-4 text-sm font-bold text-white whitespace-nowrap" colSpan={2}>Capability</th>
@@ -268,7 +268,7 @@ export function Technology() {
                 <tbody>
                   {capabilities.map(({ Icon, title, mechanism, status }, i) => (
                     <tr key={title} style={{ background: i % 2 === 0 ? "#ffffff" : "#f8fafc", borderTop: "1px solid rgba(124,146,199,0.16)" }}>
-                      <td className="pl-6 pr-0 py-4 align-top" style={{ width: 48 }}>
+                      <td className="pl-6 pr-0 py-4 align-top" style={{ width: "3rem" }}>
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center"
                           style={{ background: "linear-gradient(135deg,#46589F,#7C92C7)" }}>
                           <Icon className="w-4 h-4 text-white" />
@@ -291,8 +291,8 @@ export function Technology() {
         <Noise />
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
           style={{ backgroundImage: "radial-gradient(rgba(169,184,220,0.05) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
-        <RingDecor size={400} style={{ top: -150, right: -130, borderColor: "rgba(169,184,220,0.14)", opacity: 0.8 }} />
-        <RingDecor spin size={300} style={{ bottom: -120, left: -100, borderColor: "rgba(169,184,220,0.12)", opacity: 0.7 }} />
+        <RingDecor size={400} style={{ top: "-9.375rem", right: "-8.125rem", borderColor: "rgba(169,184,220,0.14)", opacity: 0.8 }} />
+        <RingDecor spin size={300} style={{ bottom: "-7.5rem", left: "-6.25rem", borderColor: "rgba(169,184,220,0.12)", opacity: 0.7 }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -337,7 +337,7 @@ export function Technology() {
       {/* ── QUALITY & HONESTY — check / cross cards ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-30" />
-        <DotMatrix style={{ top: 50, right: 26 }} />
+        <DotMatrix style={{ top: "3.125rem", right: "1.625rem" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <Reveal variant="left">
