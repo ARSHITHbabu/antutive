@@ -60,7 +60,7 @@ export function NotFound() {
           ))}
         </div>
         <Link to="/famant" className="inline-flex items-center gap-2 text-sm font-semibold group" style={{ color: "#46589F" }}>
-          Or meet Famant, the product we're building
+          Or meet Famant, our flagship product in beta
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>

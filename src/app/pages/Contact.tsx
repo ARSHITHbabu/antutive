@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { Mail, MapPin, Clock, ArrowRight, ArrowUpRight, Send, Sparkles, Building2, PenLine, Eye, Reply } from "lucide-react";
+import { Mail, MapPin, Clock, ArrowRight, Send, Sparkles, Building2, PenLine, Eye, Reply } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { WAITLIST_URL } from "../content/famant";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
 const A = "#46589F";
 const P = "#7C92C7";
 
 const topics = [
-  { value: "famant",      label: "Famant & waitlist question" },
+  { value: "famant",      label: "Famant & beta access" },
   { value: "press",       label: "Press & media" },
   { value: "partnership", label: "Partnership" },
   { value: "general",     label: "General enquiry" },
@@ -113,18 +112,18 @@ export function Contact() {
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
                 Questions about Famant, press, partnerships or anything else: email us or
-                use the form below. If you want early access to Famant, the waitlist is the
-                fastest route.
+                use the form below. If you want to try Famant, the beta is ready for
+                testing on iOS and Android.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-6" style={{ animation: "fadeUp 0.8s ease 0.4s both" }}>
                 <a href="mailto:contact@antutive.com" className="hero-btn-primary">Email contact@antutive.com</a>
-                <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
-                  Join the Famant waitlist
-                </a>
+                <Link to="/famant#beta" className="hero-btn-secondary">
+                  Try the Famant beta
+                </Link>
               </div>
               <p className="text-xs text-[#94a3b8]" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                Waitlist continues to famant.com, Famant's product site.
+                Beta access for iOS and Android is on the Famant page.
               </p>
             </div>
 
@@ -303,9 +302,9 @@ export function Contact() {
                 <Link to="/famant" className="cta-btn-primary">
                   Explore Famant <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
-                  Join the waitlist <ArrowUpRight className="w-4 h-4" />
-                </a>
+                <Link to="/famant#beta" className="cta-btn-secondary">
+                  Try the beta <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </Reveal>

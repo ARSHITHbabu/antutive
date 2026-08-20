@@ -23,12 +23,12 @@ export const ROUTE_META: RouteMeta[] = [
     path: "/products",
     title: "Products built and operated by Antutive",
     description:
-      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product.",
+      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product — now ready for beta testing.",
   },
   {
     path: "/famant",
-    title: "Famant: AI-powered family management platform | Antutive",
-    description: PRODUCT_DESCRIPTION,
+    title: "Famant: AI-powered family management app, now in beta | Antutive",
+    description: `${PRODUCT_DESCRIPTION} Now ready for beta testing on iOS and Android.`,
   },
   {
     path: "/technology",
