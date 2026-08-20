@@ -58,8 +58,7 @@ function LegalShell({ title, children }: { title: string; children: React.ReactN
             style={{ borderColor: "rgba(124,146,199,0.35)", background: "rgba(255,255,255,0.85)", color: "#64748b" }}>
             This is an interim version, published for transparency while a full document is
             prepared with legal counsel. It describes what this website actually does today.
-            The reviewed version will replace it here, with its effective date, before any
-            Famant beta opens.
+            The reviewed version will replace it here, with its effective date.
           </div>
         </div>
       </section>
@@ -111,11 +110,11 @@ export function Privacy() {
         marketing.
       </P>
 
-      <H2>The Famant waitlist</H2>
+      <H2>Famant signup and beta access</H2>
       <P>
-        The Famant waitlist is hosted on famant.com, Famant's product site, which is also
-        operated by ANTUTIVE AB. Data you submit there is governed by the notice presented
-        on that site at the point of signup.
+        Famant signup is hosted on famant.com, Famant's product site, which is also
+        operated by ANTUTIVE AB. Data you submit there, or within the Famant beta
+        application, is governed by the notice presented at the point of signup.
       </P>
 
       <H2>Your rights</H2>
@@ -130,7 +129,7 @@ export function Privacy() {
       <P>
         We will update this policy as the website and Famant evolve, and each version will
         state its date. A counsel-reviewed policy covering Famant's product data practices
-        will be published before any public beta.
+        accompanies beta access and will be published here as it is finalised.
       </P>
     </LegalShell>
   );
@@ -143,8 +142,9 @@ export function Terms() {
       <H2>About these terms</H2>
       <P>
         These terms cover the use of the antutive.com website, operated by ANTUTIVE AB,
-        org.nr 559576-7228, Gothenburg, Sweden. Famant, the product, is not yet generally
-        available; product-specific terms will be published before access opens.
+        org.nr 559576-7228, Gothenburg, Sweden. Famant, the product, is in beta and not
+        yet generally available; product-specific terms accompany beta access and will be
+        published before general availability.
       </P>
 
       <H2>Use of this website</H2>
@@ -162,9 +162,9 @@ export function Terms() {
 
       <H2>No warranties</H2>
       <P>
-        The website is provided as-is. Famant is in development; descriptions of product
-        capabilities carry status labels and describe design intent, not commitments that a
-        feature exists or will exist by a given date.
+        The website is provided as-is. Famant is in beta; descriptions of product
+        capabilities carry status labels and are not commitments that a feature will
+        remain unchanged or reach general availability by a given date.
       </P>
 
       <H2>Contact</H2>

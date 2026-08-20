@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import {
-  ArrowRight, ArrowUpRight, Sparkles, ShieldCheck, Scale, FlaskConical, Layers, Cpu,
+  ArrowRight, Sparkles, ShieldCheck, Scale, FlaskConical, Layers, Cpu,
   User, Eye, BrainCircuit, MessageSquareText, Check, X, MonitorSmartphone, Boxes, Database,
 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, WAITLIST_URL } from "../content/famant";
+import { capabilities } from "../content/famant";
 import { StatusBadge } from "./Home";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
@@ -187,9 +187,9 @@ export function Technology() {
               </p>
               <p className="text-sm text-[#64748b] max-w-xl leading-relaxed"
                 style={{ animation: "fadeUp 0.8s ease 0.32s both" }}>
-                Famant is in development. Everything here describes design and intent, labelled
-                honestly, and we update this page as the architecture is confirmed and capabilities
-                become real.
+                Famant is now in beta on iOS and Android. Everything here is labelled
+                honestly, and we update this page as the architecture is confirmed and
+                capabilities mature toward general release.
               </p>
             </div>
 
@@ -413,9 +413,9 @@ export function Technology() {
                   <Link to="/products" className="cta-btn-primary">
                     Explore our products <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
-                    Join the Famant waitlist <ArrowUpRight className="w-4 h-4" />
-                  </a>
+                  <Link to="/famant#beta" className="cta-btn-secondary">
+                    Try the Famant beta <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>

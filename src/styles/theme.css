@@ -1731,3 +1731,318 @@ body {
   .line-art--hero-edge { width: 112vw; right: -28%; opacity: .28; }
   .line-art--section { padding: .4rem; border-radius: 1.25rem; }
 }
+
+/* ── Famant real-app screenshot showcase (Famant page, #screens) ──
+   Screenshots are organized as topic groups: the phone + tablet capture
+   of the same screen sit side by side under one shared caption, with a
+   device tag overlaid on each image.
+   Below lg: horizontal swipe rail of groups (snap, hidden scrollbar).
+   From lg up: all three groups fit the container in one row — a group's
+   flex-grow is the sum of its images' aspect ratios (--group-ar) and
+   each frame's flex-grow is its own aspect ratio (--shot-ar), which
+   yields equal image heights and zero hidden overflow at 100% zoom.
+   Motion: staggered rise-in per group (gated by .famant-shots--on, same
+   IntersectionObserver pattern as Reveal), a slow idle float per frame,
+   a sheen sweep + zoom chip on hover, and a click-to-expand lightbox.
+   rem-only sizes per the fluid-scale rule. */
+.famant-shots {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 0.75rem 0.25rem 1.25rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.famant-shots::-webkit-scrollbar { display: none; }
+.famant-shot-group {
+  flex: 0 0 auto;
+  margin: 0;
+  scroll-snap-align: center;
+  /* staggered entrance — per-group transition-delay set inline */
+  opacity: 0;
+  transform: translateY(2.25rem) scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  will-change: transform, opacity;
+}
+.famant-shots--on .famant-shot-group {
+  opacity: 1;
+  transform: none;
+}
+.famant-shot-pair {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+.famant-shot-frame {
+  position: relative;
+  display: block;
+  width: fit-content;
+  padding: 0;
+  border: 1px solid rgba(124,146,199,0.35);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: transparent;
+  cursor: zoom-in;
+  box-shadow: 0 18px 44px rgba(26,28,89,0.16);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  animation: famantShotFloat 7s ease-in-out infinite;
+}
+.famant-shot-frame:hover,
+.famant-shot-frame:focus-visible {
+  border-color: rgba(107,98,241,0.55);
+  box-shadow: 0 26px 56px rgba(107,98,241,0.28);
+  outline: none;
+}
+.famant-shot-frame img {
+  display: block;
+  height: 19rem;
+  width: auto;
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.famant-shot-frame:hover img,
+.famant-shot-frame:focus-visible img {
+  transform: scale(1.045);
+}
+@keyframes famantShotFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-0.4rem); }
+}
+/* sheen sweep across the screenshot on hover (same language as .famant-cta-brand) */
+.famant-shot-sheen {
+  position: absolute;
+  top: 0; bottom: 0; left: -85%;
+  width: 55%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,0.34), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+.famant-shot-frame:hover .famant-shot-sheen,
+.famant-shot-frame:focus-visible .famant-shot-sheen { left: 135%; }
+/* always-visible device tag on each image */
+.famant-shot-devtag {
+  position: absolute;
+  bottom: 0.625rem;
+  left: 0.625rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(26,28,89,0.55);
+  border: 1px solid rgba(201,197,255,0.45);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+/* zoom affordance chip */
+.famant-shot-zoom {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(26,28,89,0.55);
+  border: 1px solid rgba(201,197,255,0.45);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(0.375rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.famant-shot-frame:hover .famant-shot-zoom,
+.famant-shot-frame:focus-visible .famant-shot-zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 768px) and (max-width: 1023.98px) { .famant-shot-frame img { height: 24rem; } }
+/* lg+ — all three topic groups visible at once, aspect ratios preserved */
+@media (min-width: 1024px) {
+  .famant-shots {
+    overflow-x: visible;
+    scroll-snap-type: none;
+    gap: 1.75rem;
+    padding: 0.75rem 0 0.5rem;
+  }
+  .famant-shot-group {
+    flex: var(--group-ar, 2) 1 0;
+    min-width: 0;
+  }
+  .famant-shot-frame {
+    flex: var(--shot-ar, 1) 1 0;
+    min-width: 0;
+    width: auto;
+  }
+  .famant-shot-frame img {
+    height: auto;
+    width: 100%;
+  }
+}
+.famant-shot-caption {
+  margin-top: 0.875rem;
+  padding: 0 0.25rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1A1C59;
+}
+/* device pill reused by the lightbox caption */
+.famant-shot-device {
+  flex-shrink: 0;
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6B62F1;
+  background: rgba(107,98,241,0.10);
+  border: 1px solid rgba(107,98,241,0.30);
+}
+
+/* ── Famant screenshot lightbox ── */
+.famant-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(13,15,46,0.82);
+  backdrop-filter: blur(10px);
+  animation: famantLbFade 0.25s ease both;
+  cursor: zoom-out;
+}
+@keyframes famantLbFade { from { opacity: 0; } to { opacity: 1; } }
+.famant-lightbox-stage {
+  margin: 0;
+  max-width: min(72rem, 92vw);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  cursor: default;
+  animation: famantLbZoom 0.35s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes famantLbZoom {
+  from { opacity: 0; transform: scale(0.92) translateY(1rem); }
+  to   { opacity: 1; transform: none; }
+}
+.famant-lightbox-stage img {
+  display: block;
+  max-height: min(78vh, 46rem);
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(201,197,255,0.35);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.5);
+}
+.famant-lightbox-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.famant-lightbox-caption .famant-shot-device {
+  color: #C9C5FF;
+  background: rgba(107,98,241,0.22);
+  border-color: rgba(201,197,255,0.4);
+}
+.famant-lightbox-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(226,229,255,0.6);
+  letter-spacing: 0.06em;
+}
+.famant-lightbox-btn {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(107,98,241,0.18);
+  border: 1px solid rgba(201,197,255,0.4);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.famant-lightbox-btn:hover { background: rgba(107,98,241,0.4); transform: scale(1.07); }
+.famant-lightbox-btn:focus-visible { outline: 2px solid #C9C5FF; outline-offset: 2px; }
+.famant-lightbox-close { top: 1.25rem; right: 1.25rem; }
+.famant-lightbox-prev  { left: 1rem;  top: 50%; transform: translateY(-50%); }
+.famant-lightbox-next  { right: 1rem; top: 50%; transform: translateY(-50%); }
+.famant-lightbox-prev:hover { transform: translateY(-50%) scale(1.07); }
+.famant-lightbox-next:hover { transform: translateY(-50%) scale(1.07); }
+@media (max-width: 640px) {
+  .famant-lightbox-prev { left: 0.5rem; }
+  .famant-lightbox-next { right: 0.5rem; }
+  .famant-lightbox-stage img { max-height: 66vh; }
+}
+
+/* calm variants for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .famant-shot-group { transition: opacity 0.4s ease; transform: none; }
+  .famant-shot-frame { animation: none; }
+  .famant-shot-frame img { transition: none; }
+  .famant-shot-sheen { display: none; }
+  .famant-lightbox,
+  .famant-lightbox-stage { animation: none; }
+}
+
+/* ── Famant beta platform buttons (store-badge style, no store claims) ── */
+.beta-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  background: #0D0F2E;
+  border: 1.5px solid rgba(201,197,255,0.35);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(13,15,46,0.45);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.beta-store-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,197,255,0.65);
+  box-shadow: 0 18px 44px rgba(107,98,241,0.35);
+}
+.beta-store-icon {
+  width: 1.625rem;
+  height: 1.625rem;
+  flex-shrink: 0;
+}
+.beta-store-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+.beta-store-kicker {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(226,229,255,0.65);
+}
+.beta-store-platform {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: Sora, sans-serif;
+}

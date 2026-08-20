@@ -16,7 +16,7 @@ function CompanyJourney() {
   const nodes = [
     { x: 40,  y: 252, r: 7,  color: "#A9B8DC", name: "Founded",     sub: "ANTUTIVE AB · Gothenburg · 2026" },
     { x: 178, y: 196, r: 8,  color: "#7C92C7", name: "Famant",      sub: "development begins" },
-    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Waitlist",    sub: "open on famant.com" },
+    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Beta",        sub: "ready for testing" },
     { x: 446, y: 48,  r: 10, color: "#2E3B72", name: "Launch",      sub: "when it's ready" },
   ];
   const curve = "M40,252 C 96,244 130,214 178,196 C 236,174 262,142 310,122 C 366,99 398,65 446,48";
@@ -259,8 +259,8 @@ export function About() {
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 Antutive was incorporated in Gothenburg in 2026 and went straight to work on
                 its first product. The path is short so far, and every step on it is real:
-                the company is registry-verifiable, Famant is in development, and its waitlist
-                is open today.
+                the company is registry-verifiable, and Famant is a working app, ready for
+                beta testing on iOS and Android today.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 The next milestone is launch. It gets a date when it has one. We don't plot

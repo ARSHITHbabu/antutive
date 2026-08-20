@@ -1,10 +1,10 @@
 import { Link } from "react-router";
-import { ArrowRight, ArrowUpRight, Sparkles, Boxes, Lightbulb, Workflow, ShieldCheck, Plus } from "lucide-react";
+import { ArrowRight, Check, Sparkles, Boxes, Lightbulb, Workflow, ShieldCheck, Plus } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
+import { capabilities, OWNERSHIP_LINE } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -51,7 +51,7 @@ function PortfolioConstellation() {
         <circle cx="210" cy="72" r="34" fill="none" stroke="rgba(107,98,241,0.4)" strokeWidth="1" className="dn-ping" style={{ animationDelay: ".9s" }}/>
         <text x="210" y="77" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ffffff" fontFamily="Sora, sans-serif">F</text>
         <text x="210" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill="#0f172a" fontFamily="Sora, sans-serif">Famant</text>
-        <text x="210" y="38" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="#6B62F1" fontFamily="Inter, sans-serif">flagship · in development</text>
+        <text x="210" y="38" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="#6B62F1" fontFamily="Inter, sans-serif">flagship · in beta</text>
 
         {/* future slots — dashed, unmistakably placeholders */}
         {[{ x: 336, y: 305, d: "0s" }, { x: 84, y: 305, d: "1.4s" }].map(({ x, y, d }) => (
@@ -176,7 +176,7 @@ export function Products() {
           <Reveal variant="up">
             <div className="flex items-baseline justify-between mb-8">
               <h2 className="text-lg font-bold text-[#0f172a]" style={{ fontFamily: "Sora, sans-serif" }}>Current</h2>
-              <span className="text-xs text-[#94a3b8]">1 product · pre-launch</span>
+              <span className="text-xs text-[#94a3b8]">1 product · in beta</span>
             </div>
           </Reveal>
 
@@ -193,7 +193,7 @@ export function Products() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
                       style={{ background: "rgba(107,98,241,0.20)", border: "1px solid rgba(107,98,241,0.45)", color: "#C9C5FF" }}>
-                      In development · waitlist open
+                      Ready for beta testing · iOS &amp; Android
                     </span>
                   </div>
                   <h3 className="text-4xl font-bold mb-3 text-white" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h3>
@@ -205,18 +205,18 @@ export function Products() {
                     <Link to="/famant" className="famant-cta-brand" style={{ textDecoration: "none" }}>
                       Explore Famant <ArrowRight className="w-4 h-4" />
                     </Link>
-                    <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
+                    <Link to="/famant#beta" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
-                      Join the waitlist <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
+                      Try Famant Beta <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                  {["Family-aware scheduling", "Task creation & delegation", "Document understanding", "Meal & household planning"].map((cap) => (
-                    <div key={cap} className="flex items-center justify-between gap-3 p-3.5 rounded-2xl"
+                  {capabilities.map(({ title }) => (
+                    <div key={title} className="flex items-center justify-between gap-3 p-3 rounded-2xl"
                       style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(107,98,241,0.30)" }}>
-                      <span className="text-sm font-semibold text-white">{cap}</span>
-                      <span className="text-xs flex-shrink-0" style={{ color: "rgba(226,229,255,0.55)" }}>In development</span>
+                      <span className="text-sm font-semibold text-white">{title}</span>
+                      <Check className="w-4 h-4 flex-shrink-0" style={{ color: "#2EC4B6" }} aria-label="Available in beta" />
                     </div>
                   ))}
                 </div>
@@ -310,8 +310,8 @@ export function Products() {
             <div className="max-w-2xl mx-auto px-4 text-center">
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Start with the flagship.</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
-                Famant is where Antutive's product philosophy is becoming real, mechanisms,
-                statuses and all.
+                Famant is where Antutive's product philosophy is real: a working app,
+                mechanisms, honest statuses and all — now in beta on iOS and Android.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/famant" className="cta-btn-primary">

@@ -37,7 +37,7 @@ export function RootLayout() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Support #anchor targets (e.g. /famant#waitlist); otherwise reset to top.
+    // Support #anchor targets (e.g. /famant#beta); otherwise reset to top.
     if (location.hash) {
       const id = location.hash.slice(1);
       requestAnimationFrame(() => {
@@ -245,7 +245,7 @@ export function RootLayout() {
                 {[
                   ["All products",     "/products"],
                   ["Famant",           "/famant"],
-                  ["Join the waitlist","/famant#waitlist"],
+                  ["Try the beta",     "/famant#beta"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link to={href} className="footer-link">{label}</Link>

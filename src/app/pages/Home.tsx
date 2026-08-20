@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import {
-  ArrowRight, ArrowUpRight, Sparkles, Building2, ShieldCheck, Cpu, Boxes,
+  ArrowRight, Check, Sparkles, Building2, ShieldCheck, Cpu, Boxes,
   Lightbulb, Workflow,
 } from "lucide-react";
 import { Reveal } from "../lib/scroll";
@@ -8,7 +8,7 @@ import { Noise, DotMatrix, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
-import { capabilities, WAITLIST_URL, OWNERSHIP_LINE } from "../content/famant";
+import { capabilities, OWNERSHIP_LINE } from "../content/famant";
 
 /* ── floating chips — company facts and product-craft signals ── */
 const chips = [
@@ -144,7 +144,7 @@ export function Home() {
               <p className="text-sm mb-8 text-[#64748b] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .32s both" }}>
                 Our first flagship product is Famant, an AI assistant for family life.
-                It is in development, with the waitlist open.
+                It's now ready for beta testing on iOS and Android.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
@@ -233,14 +233,14 @@ export function Home() {
                 style={{ background: "linear-gradient(150deg,#181A4D 0%,#242767 60%,#33368a 100%)", borderColor: "rgba(107,98,241,0.45)", boxShadow: "0 16px 48px rgba(36,39,103,0.35)", textDecoration: "none" }}>
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#C9C5FF" }}>Flagship · First product</span>
-                  <StatusBadge status="In development"/>
+                  <StatusBadge status="Ready for beta"/>
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h3>
                 <p className="text-sm font-semibold mb-3" style={{ color: "#A9A3FF" }}>AI-powered family management platform</p>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(226,229,255,0.75)" }}>
                   One shared context for a family's schedules, tasks and documents, with an
                   assistant that proposes the next step and acts only on confirmation.
-                  Pre-launch. The waitlist is open.
+                  Now in beta on iOS and Android.
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1" style={{ color: "#C9C5FF" }}>
                   Meet Famant <ArrowRight className="w-4 h-4"/>
@@ -290,27 +290,23 @@ export function Home() {
                     {PRODUCT_DESCRIPTION}
                   </p>
                   <p className="text-xs mb-8" style={{ color: "rgba(226,229,255,0.55)" }}>
-                    {OWNERSHIP_LINE} Famant is in development and pre-launch. Capabilities
-                    carry honest status labels, and real screenshots and a recorded demo will
-                    be published as they become real.
+                    {OWNERSHIP_LINE} Famant is now ready for beta testing on iOS and
+                    Android — real screenshots of the app are on the product page.
                   </p>
                   <div className="flex flex-wrap items-center gap-4">
                     <Link to="/famant" className="famant-cta-brand" style={{ textDecoration: "none" }}>
                       Explore Famant <ArrowRight className="w-4 h-4" />
                     </Link>
-                    <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
+                    <Link to="/famant#beta" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
-                      Join the waitlist <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
+                      Try the beta <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
-                  <p className="text-xs mt-4" style={{ color: "rgba(226,229,255,0.45)" }}>
-                    Waitlist continues to famant.com, Famant's product site.
-                  </p>
                 </div>
 
                 {/* compact statused capabilities — the AI-evidence, kept concise */}
                 <div className="flex flex-col gap-3">
-                  {capabilities.map(({ Icon, title, outcome, status }) => (
+                  {capabilities.map(({ Icon, title, outcome }) => (
                     <div key={title} className="flex items-center gap-4 p-4 rounded-2xl"
                       style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(107,98,241,0.30)" }}>
                       <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -321,10 +317,7 @@ export function Home() {
                         <p className="text-sm font-bold text-white">{title}</p>
                         <p className="text-xs truncate" style={{ color: "rgba(226,229,255,0.6)" }}>{outcome}</p>
                       </div>
-                      <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold flex-shrink-0"
-                        style={{ background: "rgba(107,98,241,0.20)", border: "1px solid rgba(107,98,241,0.45)", color: "#C9C5FF" }}>
-                        {status}
-                      </span>
+                      <Check className="hidden sm:block w-4 h-4 flex-shrink-0" style={{ color: "#2EC4B6" }} aria-label="Available in beta" />
                     </div>
                   ))}
                 </div>
@@ -365,7 +358,7 @@ export function Home() {
                 <ol className="flex flex-col gap-4">
                   {[
                     ["Input",        "You photograph a birthday invitation."],
-                    ["Understanding","The assistant is designed to read it: date, time, place, child."],
+                    ["Understanding","The assistant reads it: date, time, place, child."],
                     ["Proposal",     "It proposes the calendar event, a gift reminder and an RSVP task."],
                     ["Confirmation", "Nothing is added until a family member confirms."],
                   ].map(([step, desc], i) => (
@@ -380,7 +373,7 @@ export function Home() {
                   ))}
                 </ol>
                 <div className="mt-6 pt-4 border-t flex items-center gap-2" style={{ borderColor: "rgba(124,146,199,0.24)" }}>
-                  <StatusBadge status="In development"/>
+                  <StatusBadge status="In beta"/>
                   <span className="text-xs text-[#94a3b8]">The pattern every Antutive product follows.</span>
                 </div>
               </div>
