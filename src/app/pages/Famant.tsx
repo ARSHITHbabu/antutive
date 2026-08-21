@@ -355,8 +355,8 @@ export function Famant() {
           </Reveal>
           <Reveal variant="up" delay={60}>
             <p className="text-center text-xs text-[#94a3b8] mb-12 max-w-xl mx-auto">
-              Everything below is part of the current Famant beta. Statuses stay honest and
-              are updated as capabilities mature toward general release.
+              Everything below is available in the current Famant beta, described as it
+              works today.
             </p>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">

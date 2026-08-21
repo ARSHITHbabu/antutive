@@ -12,10 +12,10 @@ import {
  * Single source of truth for how Famant is described on antutive.com.
  *
  * Editorial rules (from the approved positioning strategy):
- *  - Every capability is described as a mechanism and carries an honest
- *    status label. As of 2026-08, Famant is a functional mobile app in
- *    beta on iOS and Android; capabilities are described in present
- *    tense and labelled "In beta".
+ *  - Famant is a functional mobile app, ready for beta testing on iOS
+ *    and Android (2026-08). "Beta" is the PRODUCT's release stage; the
+ *    capabilities below all exist in the current beta and are described
+ *    as mechanisms in present tense — never with individual status labels.
  *  - No integration, pricing, launch-date, user-count or accuracy claim
  *    may be added here without documented verification.
  *  - All screenshots referenced below are real captures of the working
@@ -46,14 +46,11 @@ export const OWNERSHIP_LINE =
 
 export const STAGE_LINE = "Famant is now ready for beta testing on iOS and Android.";
 
-export type CapabilityStatus = "Planned" | "In development" | "In beta" | "In private testing" | "Released";
-
 export interface Capability {
   Icon: LucideIcon;
   title: string;
   mechanism: string;
   outcome: string;
-  status: CapabilityStatus;
 }
 
 export const capabilities: Capability[] = [
@@ -63,7 +60,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "Personal and family calendars live in one shared view. The assistant reasons over the whole household's commitments, spots what overlaps and proposes a resolution.",
     outcome: "One shared calendar the family can actually trust.",
-    status: "In beta",
   },
   {
     Icon: ListChecks,
@@ -71,7 +67,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "A request in plain language, typed or spoken, becomes a task with an owner and a reminder. Chores are assigned across the family, and the assistant acts only when a member confirms.",
     outcome: "Follow-through without one person carrying the whole list in their head.",
-    status: "In beta",
   },
   {
     Icon: ClipboardList,
@@ -79,7 +74,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "Groceries, errands and everything in between live on collaborative lists any family member can update, with reminders timed to when they matter.",
     outcome: "One list everyone sees instead of five versions in five chats.",
-    status: "In beta",
   },
   {
     Icon: ScanText,
@@ -87,7 +81,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "School forms, invitations and receipts are read with OCR and natural-language understanding, turned into proposed actions — an event, a reminder, a list entry — and stored so they can be found again by asking.",
     outcome: "Paper becomes follow-through instead of a pile in a drawer.",
-    status: "In beta",
   },
   {
     Icon: Wallet,
@@ -95,7 +88,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "Household expenses and shared financial activity are tracked in one place, so the family sees where money goes without a spreadsheet ritual.",
     outcome: "A clear view of household spending, shared by default.",
-    status: "In beta",
   },
   {
     Icon: UtensilsCrossed,
@@ -103,7 +95,6 @@ export const capabilities: Capability[] = [
     mechanism:
       "Weekly meal plans grounded in the household's own preferences and history, with grocery lists generated straight from the plan.",
     outcome: "Dinner stops being a nightly negotiation.",
-    status: "In beta",
   },
 ];
 

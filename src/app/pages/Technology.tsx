@@ -8,7 +8,6 @@ import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../componen
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import { capabilities } from "../content/famant";
-import { StatusBadge } from "./Home";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -187,9 +186,9 @@ export function Technology() {
               </p>
               <p className="text-sm text-[#64748b] max-w-xl leading-relaxed"
                 style={{ animation: "fadeUp 0.8s ease 0.32s both" }}>
-                Famant is now in beta on iOS and Android. Everything here is labelled
-                honestly, and we update this page as the architecture is confirmed and
-                capabilities mature toward general release.
+                Famant is ready for beta testing on iOS and Android. Everything here
+                describes how it works today, and we update this page as the architecture
+                is confirmed.
               </p>
             </div>
 
@@ -262,11 +261,10 @@ export function Technology() {
                   <tr style={{ background: "linear-gradient(135deg,#2E3B72,#46589F)" }}>
                     <th className="text-left px-6 py-4 text-sm font-bold text-white whitespace-nowrap" colSpan={2}>Capability</th>
                     <th className="text-left px-6 py-4 text-sm font-bold text-white">Mechanism</th>
-                    <th className="text-left px-6 py-4 text-sm font-bold text-white whitespace-nowrap">Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {capabilities.map(({ Icon, title, mechanism, status }, i) => (
+                  {capabilities.map(({ Icon, title, mechanism }, i) => (
                     <tr key={title} style={{ background: i % 2 === 0 ? "#ffffff" : "#f8fafc", borderTop: "1px solid rgba(124,146,199,0.16)" }}>
                       <td className="pl-6 pr-0 py-4 align-top" style={{ width: "3rem" }}>
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -276,7 +274,6 @@ export function Technology() {
                       </td>
                       <td className="px-4 py-4 text-sm font-semibold text-[#0f172a] align-top whitespace-nowrap">{title}</td>
                       <td className="px-6 py-4 text-xs text-[#64748b] leading-relaxed align-top">{mechanism}</td>
-                      <td className="px-6 py-4 align-top"><StatusBadge status={status} /></td>
                     </tr>
                   ))}
                 </tbody>
@@ -304,16 +301,15 @@ export function Technology() {
                 The full architecture,<br /><span className="grad-text-light">published when it's confirmed.</span>
               </h2>
               <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(199,210,236,0.75)" }}>
-                Antutive's products will run on a managed cloud platform, with modern
+                Antutive's products run on managed cloud infrastructure, with modern
                 foundation models providing the reasoning and understanding layer. We are
-                finalising that architecture now for Famant: which models power which
-                capability, how the assistant is orchestrated and grounded on the user's own
-                data, how quality is evaluated, and where data lives.
+                confirming which details of Famant's architecture to publish here: which
+                models power which capability, how the assistant is orchestrated and grounded
+                on the user's own data, how quality is evaluated, and where data lives.
               </p>
               <p className="text-sm leading-relaxed mb-7" style={{ color: "rgba(199,210,236,0.75)" }}>
-                We publish infrastructure and model choices here once the plan is confirmed:
-                concretely, honestly labelled as planned until built. No name-dropping before
-                it's real.
+                We publish infrastructure and model choices here once they are confirmed:
+                concretely, and only what is real. No name-dropping.
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -363,8 +359,8 @@ export function Technology() {
                 <div className="p-6 rounded-3xl border" style={{ background: "rgba(124,146,199,0.08)", borderColor: "rgba(70,88,159,0.35)" }}>
                   <p className="text-xs font-bold uppercase tracking-wide mb-3" style={{ color: "#46589F" }}>Will claim</p>
                   {[
-                    "Capability mechanisms with honest status labels",
-                    "Design principles we are building to",
+                    "Capability mechanisms, described as they work today",
+                    "Design principles we build to",
                     "Verifiable company facts",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-2.5 mb-2 last:mb-0">

@@ -179,7 +179,7 @@ export function About() {
               <p className="text-sm text-[#64748b] leading-relaxed mb-4">
                 The first expression is Famant. It started as our own frustration: calendars
                 in three places, school forms lost in a drawer, dinner a nightly negotiation.
-                So we began building the product we wanted in our own homes. {OWNERSHIP_LINE}
+                So we built the product we wanted in our own homes. {OWNERSHIP_LINE}
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 Our long-term ambition is a company that keeps doing this: products imagined,
@@ -210,9 +210,9 @@ export function About() {
                   </div>
                   <p className="text-xs text-[#64748b] leading-relaxed">
                     We build the Swedish way: carefully, transparently, and to last. Famant is
-                    developed with the discipline of a long-lived product: tested, documented
-                    and evaluated. Honesty about stage is a visible brand behaviour, so what
-                    works today is labelled, and what's coming is labelled too.
+                    built with the discipline of a long-lived product: tested, documented
+                    and evaluated. Honesty about stage is a visible brand behaviour: the
+                    product's release stage is stated plainly, and so is what comes next.
                   </p>
                 </div>
               </div>
@@ -291,8 +291,8 @@ export function About() {
                 The people behind Antutive
               </h2>
               <p className="text-sm text-[#64748b] leading-relaxed max-w-xl mx-auto">
-                Antutive is a small founding team in Gothenburg, building Famant out of its
-                own households' coordination pain.
+                Antutive is a small founding team in Gothenburg that built Famant out of its
+                own households' coordination pain, and runs it today.
               </p>
             </div>
           </Reveal>
