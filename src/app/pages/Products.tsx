@@ -108,7 +108,7 @@ const principles = [
   {
     Icon: ShieldCheck,
     title: "Honest about stage",
-    desc: "Every capability of every product carries a status label. Screenshots are of working screens. Results are published when measured.",
+    desc: "Every product carries an honest release-stage label. Screenshots are of working screens. Results are published when measured.",
   },
   {
     Icon: Boxes,
@@ -311,7 +311,7 @@ export function Products() {
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Start with the flagship.</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
                 Famant is where Antutive's product philosophy is real: a working app,
-                mechanisms, honest statuses and all — now in beta on iOS and Android.
+                mechanisms and all — ready for beta testing on iOS and Android.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/famant" className="cta-btn-primary">

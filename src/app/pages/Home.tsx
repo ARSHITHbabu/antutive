@@ -344,9 +344,8 @@ export function Home() {
                 honest statuses, never in adjectives.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed mb-6">
-                We're finalising our cloud and model architecture and will publish it on the
-                technology page as it's confirmed. We publish measured results only once
-                we've measured them.
+                We publish our cloud and model architecture on the technology page as it's
+                confirmed, and measured results only once we've measured them.
               </p>
               <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-[#46589F] group">
                 Read about our technology <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
@@ -373,8 +372,8 @@ export function Home() {
                   ))}
                 </ol>
                 <div className="mt-6 pt-4 border-t flex items-center gap-2" style={{ borderColor: "rgba(124,146,199,0.24)" }}>
-                  <StatusBadge status="In beta"/>
-                  <span className="text-xs text-[#94a3b8]">The pattern every Antutive product follows.</span>
+                  <Check className="w-4 h-4 flex-shrink-0" style={{ color: "#2EC4B6" }} aria-hidden="true" />
+                  <span className="text-xs text-[#94a3b8]">The pattern every Antutive product follows, running in Famant today.</span>
                 </div>
               </div>
             </Reveal>
