@@ -156,8 +156,8 @@ export function PlatformBetaButtons({ align = "center" }: { align?: "center" | "
       <a href={androidBetaHref} target={androidBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
         <PlayMark />
         <span className="beta-store-text">
-          <span className="beta-store-kicker">Join the beta on</span>
-          <span className="beta-store-platform">Android</span>
+          <span className="beta-store-kicker">Android beta on</span>
+          <span className="beta-store-platform">Google Play</span>
         </span>
       </a>
     </div>
