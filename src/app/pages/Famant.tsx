@@ -149,8 +149,8 @@ export function PlatformBetaButtons({ align = "center" }: { align?: "center" | "
       <a href={iosBetaHref} target={iosBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
         <AppleMark />
         <span className="beta-store-text">
-          <span className="beta-store-kicker">Join the beta on</span>
-          <span className="beta-store-platform">iOS</span>
+          <span className="beta-store-kicker">iOS beta on</span>
+          <span className="beta-store-platform">App Store</span>
         </span>
       </a>
       <a href={androidBetaHref} target={androidBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
