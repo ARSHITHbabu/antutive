@@ -26,12 +26,12 @@ import {
 export const FAMANT_SITE_URL = "https://www.famant.com/en";
 
 /* ── Beta access links — the ONLY place platform URLs live. ──
-   TODO: Replace with final Famant iOS beta link
-   Android: Google Play listing (supplied 2026-08-23).
+   iOS: App Store listing. Android: Google Play listing.
+   (both supplied 2026-08-24)
    While a URL is empty, UI components fall back to a beta-access email
    request (see betaHref below) so no button ever navigates nowhere. */
-export const FAMANT_IOS_BETA_URL = "";
-export const FAMANT_ANDROID_BETA_URL = "https://play.google.com/store/apps/details?id=com.famant.app";
+export const FAMANT_IOS_BETA_URL = "https://apps.apple.com/in/app/famant/id6789982653";
+export const FAMANT_ANDROID_BETA_URL = "https://play.google.com/store/apps/details?id=com.famant.app&hl=en_IN";
 
 /* Safe hrefs for the platform buttons: the real link once provided,
    otherwise a working email request for beta access. */
