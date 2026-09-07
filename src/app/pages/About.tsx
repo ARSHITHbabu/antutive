@@ -260,7 +260,7 @@ export function About() {
                 Antutive was incorporated in Gothenburg in 2026 and went straight to work on
                 its first product. The path is short so far, and every step on it is real:
                 the company is registry-verifiable, and Famant is a working app, ready for
-                beta testing on iOS and Android today.
+                beta testing and available on Google Play today.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 The next milestone is launch. It gets a date when it has one. We don't plot

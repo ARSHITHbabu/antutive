@@ -12,39 +12,46 @@ import {
  * Single source of truth for how Famant is described on antutive.com.
  *
  * Editorial rules (from the approved positioning strategy):
- *  - Famant is a functional mobile app, ready for beta testing on iOS
- *    and Android (2026-08). "Beta" is the PRODUCT's release stage; the
- *    capabilities below all exist in the current beta and are described
- *    as mechanisms in present tense — never with individual status labels.
+ *  - Famant is a functional mobile app, ready for beta testing (2026-08).
+ *    Public beta access is currently promoted through Google Play only;
+ *    the App Store listing is temporarily not linked from the website
+ *    (see FAMANT_IOS_APP_STORE_LINK.docx in the project root). "Beta" is
+ *    the PRODUCT's release stage; the capabilities below all exist in the
+ *    current beta and are described as mechanisms in present tense, never
+ *    with individual status labels.
  *  - No integration, pricing, launch-date, user-count or accuracy claim
  *    may be added here without documented verification.
  *  - All screenshots referenced below are real captures of the working
- *    Famant application — never illustrations or mockups.
+ *    Famant application, never illustrations or mockups.
  * ------------------------------------------------------------------ */
 
 /* Famant's own product site (run by Antutive). */
 export const FAMANT_SITE_URL = "https://www.famant.com/en";
 
-/* ── Beta access links — the ONLY place platform URLs live. ──
-   iOS: App Store listing. Android: Google Play listing.
-   (both supplied 2026-08-24)
+/* ── Beta access links: the ONLY place platform URLs live. ──
+   Android: Google Play listing (supplied 2026-08-24).
    While a URL is empty, UI components fall back to a beta-access email
-   request (see betaHref below) so no button ever navigates nowhere. */
+   request (see betaHref below) so no button ever navigates nowhere.
+
+   iOS: the App Store listing is TEMPORARILY NOT EXPOSED on the public
+   website (since 2026-09-07) until its store description is updated.
+   The value is retained here for internal reference only and must not be
+   rendered anywhere public. The primary recovery reference is
+   FAMANT_IOS_APP_STORE_LINK.docx in the project root. */
 export const FAMANT_IOS_BETA_URL = "https://apps.apple.com/in/app/famant/id6789982653";
 export const FAMANT_ANDROID_BETA_URL = "https://play.google.com/store/apps/details?id=com.famant.app&hl=en_IN";
 
-/* Safe hrefs for the platform buttons: the real link once provided,
+/* Safe href for the platform button: the real link once provided,
    otherwise a working email request for beta access. */
 const BETA_REQUEST_MAILTO = (platform: "iOS" | "Android") =>
   `mailto:contact@antutive.com?subject=${encodeURIComponent(`Famant ${platform} beta access request`)}`;
-export const iosBetaHref = FAMANT_IOS_BETA_URL || BETA_REQUEST_MAILTO("iOS");
 export const androidBetaHref = FAMANT_ANDROID_BETA_URL || BETA_REQUEST_MAILTO("Android");
 
 /* Used identically wherever the relationship is stated. */
 export const OWNERSHIP_LINE =
   "Famant is the flagship product of Antutive (ANTUTIVE AB), built and operated in Gothenburg, Sweden.";
 
-export const STAGE_LINE = "Famant is now ready for beta testing on iOS and Android.";
+export const STAGE_LINE = "Famant is now ready for beta testing, and the beta is currently available on Google Play.";
 
 export interface Capability {
   Icon: LucideIcon;
@@ -79,7 +86,7 @@ export const capabilities: Capability[] = [
     Icon: ScanText,
     title: "Document understanding",
     mechanism:
-      "School forms, invitations and receipts are read with OCR and natural-language understanding, turned into proposed actions — an event, a reminder, a list entry — and stored so they can be found again by asking.",
+      "School forms, invitations and receipts are read with OCR and natural-language understanding, turned into proposed actions (an event, a reminder, a list entry) and stored so they can be found again by asking.",
     outcome: "Paper becomes follow-through instead of a pile in a drawer.",
   },
   {

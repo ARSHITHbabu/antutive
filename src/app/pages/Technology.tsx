@@ -186,7 +186,7 @@ export function Technology() {
               </p>
               <p className="text-sm text-[#64748b] max-w-xl leading-relaxed"
                 style={{ animation: "fadeUp 0.8s ease 0.32s both" }}>
-                Famant is ready for beta testing on iOS and Android. Everything here
+                Famant is ready for beta testing and currently available on Google Play. Everything here
                 describes how it works today, and we update this page as the architecture
                 is confirmed.
               </p>

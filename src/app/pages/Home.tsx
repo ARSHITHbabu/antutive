@@ -144,7 +144,7 @@ export function Home() {
               <p className="text-sm mb-8 text-[#64748b] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .32s both" }}>
                 Our first flagship product is Famant, an AI assistant for family life.
-                It's now ready for beta testing on iOS and Android.
+                It's now ready for beta testing, and the beta is currently available on Google Play.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
@@ -240,7 +240,7 @@ export function Home() {
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(226,229,255,0.75)" }}>
                   One shared context for a family's schedules, tasks and documents, with an
                   assistant that proposes the next step and acts only on confirmation.
-                  Now in beta on iOS and Android.
+                  Now in beta, currently available on Google Play.
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1" style={{ color: "#C9C5FF" }}>
                   Meet Famant <ArrowRight className="w-4 h-4"/>
@@ -290,8 +290,9 @@ export function Home() {
                     {PRODUCT_DESCRIPTION}
                   </p>
                   <p className="text-xs mb-8" style={{ color: "rgba(226,229,255,0.55)" }}>
-                    {OWNERSHIP_LINE} Famant is now ready for beta testing on iOS and
-                    Android — real screenshots of the app are on the product page.
+                    {OWNERSHIP_LINE} Famant is now ready for beta testing, and the beta is
+                    currently available on Google Play. Real screenshots of the app are on
+                    the product page.
                   </p>
                   <div className="flex flex-wrap items-center gap-4">
                     <Link to="/famant" className="famant-cta-brand" style={{ textDecoration: "none" }}>

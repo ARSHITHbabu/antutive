@@ -6,7 +6,7 @@ import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, famantScreenshots, iosBetaHref, androidBetaHref, OWNERSHIP_LINE, STAGE_LINE } from "../content/famant";
+import { capabilities, famantScreenshots, androidBetaHref, OWNERSHIP_LINE, STAGE_LINE } from "../content/famant";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
 const famantVideo = "/media/famant.webm";
@@ -17,17 +17,11 @@ const targetUsers = [
   { Icon: Users, title: "Multi-generation households", desc: "Homes where coordination spans grandparents, parents and children, and context matters even more." },
 ];
 
-/* ── Platform beta buttons — store-badge style, no store-listing claims.
-   Hrefs come from src/app/content/famant.ts (the single place the final
-   iOS / Android beta URLs get filled in). ── */
-function AppleMark() {
-  return (
-    <svg viewBox="0 0 384 512" aria-hidden="true" className="beta-store-icon" fill="currentColor">
-      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
-    </svg>
-  );
-}
-
+/* ── Platform beta button: store-badge style, no store-listing claims.
+   The href comes from src/app/content/famant.ts (the single place the
+   beta URLs live). Only Google Play is shown publicly for now; the App
+   Store button is temporarily withdrawn (see famant.ts and the
+   FAMANT_IOS_APP_STORE_LINK.docx reference in the project root). ── */
 function PlayMark() {
   return (
     <svg viewBox="0 0 512 512" aria-hidden="true" className="beta-store-icon" fill="currentColor">
@@ -37,7 +31,7 @@ function PlayMark() {
 }
 
 /* ── Animated screenshot gallery + lightbox ──
-   Screenshots are organized as topic groups — the phone and tablet
+   Screenshots are organized as topic groups: the phone and tablet
    capture of the same screen sit side by side under one shared caption,
    with a device tag on each image. Staggered rise-in (same
    IntersectionObserver gate as Reveal), idle float per frame, sheen +
@@ -97,7 +91,7 @@ function FamantGallery() {
                 <button key={shot.src} type="button" className="famant-shot-frame"
                   style={{ "--shot-ar": shot.width / shot.height, animationDelay: `${(index % 3) * 1.6}s` } as CSSProperties}
                   onClick={() => setActive(index)}
-                  aria-label={`View larger — ${shot.caption} (${shot.device})`}>
+                  aria-label={`View larger: ${shot.caption} (${shot.device})`}>
                   <img src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" decoding="async" />
                   <span className="famant-shot-sheen" aria-hidden="true" />
                   <span className="famant-shot-devtag">{shot.device}</span>
@@ -114,7 +108,7 @@ function FamantGallery() {
           stacking context would trap the overlay below the fixed header */}
       {shot && createPortal(
         <div className="famant-lightbox" role="dialog" aria-modal="true"
-          aria-label={`${shot.caption} — enlarged screenshot`}
+          aria-label={`${shot.caption}, enlarged screenshot`}
           onClick={() => setActive(null)}>
           <figure className="famant-lightbox-stage" onClick={(e) => e.stopPropagation()}>
             <img key={shot.src} src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} />
@@ -146,17 +140,10 @@ function FamantGallery() {
 export function PlatformBetaButtons({ align = "center" }: { align?: "center" | "start" }) {
   return (
     <div className={`flex flex-wrap gap-4 ${align === "center" ? "justify-center" : ""}`}>
-      <a href={iosBetaHref} target={iosBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
-        <AppleMark />
-        <span className="beta-store-text">
-          <span className="beta-store-kicker">iOS beta on</span>
-          <span className="beta-store-platform">App Store</span>
-        </span>
-      </a>
       <a href={androidBetaHref} target={androidBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
         <PlayMark />
         <span className="beta-store-text">
-          <span className="beta-store-kicker">Android beta on</span>
+          <span className="beta-store-kicker">Get the Famant beta on</span>
           <span className="beta-store-platform">Google Play</span>
         </span>
       </a>
@@ -170,7 +157,7 @@ export function Famant() {
   return (
     <div style={{ background: "#f8fafc" }}>
 
-      {/* ── HERO — dark product panel ── */}
+      {/* ── HERO: dark product panel ── */}
       <section className="famant-section py-20 relative overflow-hidden">
         <Noise />
         <div className="famant-orbit" style={{ width: "26.25rem", height: "26.25rem", top: "-8.75rem", right: "-7.5rem", background: "radial-gradient(circle, rgba(107,98,241,0.20), transparent 70%)" }} />
@@ -215,7 +202,7 @@ export function Famant() {
                     </a>
                   </div>
                   <p className="text-xs mt-4" style={{ color: "rgba(226,229,255,0.55)" }}>
-                    Beta available for iOS and Android
+                    Beta currently available on Google Play
                   </p>
                 </div>
                 <div className="flex flex-col items-center lg:items-end relative">
@@ -278,7 +265,7 @@ export function Famant() {
         </div>
       </section>
 
-      {/* ── REAL SCREENSHOTS — evidence of the working app ── */}
+      {/* ── REAL SCREENSHOTS: evidence of the working app ── */}
       <section id="screens" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#eef2fa 0%,#f8fafc 55%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 services-grid-bg pointer-events-none opacity-40" />
         <AuroraOrb size={360} color="rgba(107,98,241,0.10)" style={{ top: "-4rem", left: "-4rem" }} />
@@ -290,7 +277,7 @@ export function Famant() {
                 Real screens from the Famant beta
               </h2>
               <p className="text-sm text-[#64748b] mt-3">
-                Actual screenshots of Famant running on phones and tablets — your family's
+                Actual screenshots of Famant running on phones and tablets: your family's
                 members, its assistant, and its tasks, lists, events, documents, budgeting
                 and meal planning in one place.
               </p>
@@ -336,7 +323,7 @@ export function Famant() {
         </div>
       </section>
 
-      {/* ── CAPABILITIES — mechanism → outcome ── */}
+      {/* ── CAPABILITIES: mechanism → outcome ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#ffffff 0%,#f8fafc 50%,#eef2fa 100%)" }}>
         <div className="absolute inset-0 why-dots-bg pointer-events-none opacity-40" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -478,7 +465,7 @@ export function Famant() {
         </div>
       </section>
 
-      {/* ── BETA ACCESS — primary platform download/test area ── */}
+      {/* ── BETA ACCESS: primary platform download/test area ── */}
       <section id="beta" className="famant-section py-24 relative overflow-hidden">
         {/* legacy anchor: old links pointed at /famant#waitlist */}
         <span id="waitlist" aria-hidden="true" />
@@ -494,8 +481,9 @@ export function Famant() {
                   Famant is ready for beta testing.
                 </h2>
                 <p className="text-sm mb-8 max-w-lg mx-auto" style={{ color: "rgba(226,229,255,0.75)" }}>
-                  The Famant beta runs on supported iOS and Android devices. Pick your
-                  platform to start testing, and help shape the product with what you find.
+                  The Famant beta is currently available through Google Play. Install it on
+                  a supported Android device to start testing, and help shape the product
+                  with what you find.
                 </p>
                 <PlatformBetaButtons />
                 <div className="flex flex-wrap gap-4 justify-center items-center mt-6">
