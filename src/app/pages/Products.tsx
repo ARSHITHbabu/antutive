@@ -193,7 +193,7 @@ export function Products() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
                       style={{ background: "rgba(107,98,241,0.20)", border: "1px solid rgba(107,98,241,0.45)", color: "#C9C5FF" }}>
-                      Ready for beta testing · iOS &amp; Android
+                      Ready for beta testing · Google Play
                     </span>
                   </div>
                   <h3 className="text-4xl font-bold mb-3 text-white" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h3>
@@ -311,7 +311,7 @@ export function Products() {
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Start with the flagship.</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
                 Famant is where Antutive's product philosophy is real: a working app,
-                mechanisms and all — ready for beta testing on iOS and Android.
+                mechanisms and all, ready for beta testing and currently available on Google Play.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/famant" className="cta-btn-primary">

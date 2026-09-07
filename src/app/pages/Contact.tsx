@@ -112,8 +112,8 @@ export function Contact() {
               <p className="text-base text-[#334155] max-w-lg leading-relaxed mb-8"
                 style={{ animation: "fadeUp 0.8s ease 0.25s both" }}>
                 Questions about Famant, press, partnerships or anything else: email us or
-                use the form below. If you want to try Famant, the beta is ready for
-                testing on iOS and Android.
+                use the form below. If you want to try Famant, the beta is currently
+                available on Google Play.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-6" style={{ animation: "fadeUp 0.8s ease 0.4s both" }}>
@@ -123,7 +123,7 @@ export function Contact() {
                 </Link>
               </div>
               <p className="text-xs text-[#94a3b8]" style={{ animation: "fadeUp 0.8s ease 0.45s both" }}>
-                Beta access for iOS and Android is on the Famant page.
+                Beta access through Google Play is on the Famant page.
               </p>
             </div>
 
