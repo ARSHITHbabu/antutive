@@ -2,17 +2,21 @@ import { Link } from "react-router";
 import { Scale } from "lucide-react";
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
+import { FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
 import { LineArtScene } from "../components/LineArt";
 
 /* ------------------------------------------------------------------ *
  * Legal pages.
  *
- * STATUS: interim versions, written factually from what the website
+ * STATUS: interim versions, written factually from what THIS WEBSITE
  * actually does today (no analytics, no tracking cookies, no form
- * backend). Each page carries a visible "pending legal review" notice.
- * Final, counsel-reviewed versions must replace this copy before any
- * Famant beta or data-collecting feature ships — do not remove the
- * review notice until that has happened.
+ * backend — verified 2026-09-10). Each page carries a visible "pending
+ * legal review" notice.
+ *
+ * The notice must stay until counsel-reviewed documents actually exist in
+ * this repository; removing it earlier would imply a legal review that has
+ * not happened. Famant's own product/app data practices are governed by
+ * the notices presented on famant.com and inside the app, not here.
  * ------------------------------------------------------------------ */
 
 const LAST_UPDATED = "7 August 2026";
@@ -112,9 +116,12 @@ export function Privacy() {
 
       <H2>Famant signup and beta access</H2>
       <P>
-        Famant signup is hosted on famant.com, Famant's product site, which is also
-        operated by ANTUTIVE AB. Data you submit there, or within the Famant beta
-        application, is governed by the notice presented at the point of signup.
+        Famant signup is hosted on{" "}
+        <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+          className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>, Famant's
+        product site, which is also operated by ANTUTIVE AB. Data you submit there, or
+        within the Famant application, is governed by the notice presented at the point of
+        signup and inside the app.
       </P>
 
       <H2>Your rights</H2>
@@ -142,9 +149,11 @@ export function Terms() {
       <H2>About these terms</H2>
       <P>
         These terms cover the use of the antutive.com website, operated by ANTUTIVE AB,
-        org.nr 559576-7228, Gothenburg, Sweden. Famant, the product, is in beta and not
-        yet generally available; product-specific terms accompany beta access and will be
-        published before general availability.
+        org.nr 559576-7228, Gothenburg, Sweden. They do not cover the Famant product or{" "}
+        <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+          className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>. Famant,
+        the product, is in beta and not yet generally available; product-specific terms
+        accompany beta access and will be published before general availability.
       </P>
 
       <H2>Use of this website</H2>
@@ -162,9 +171,10 @@ export function Terms() {
 
       <H2>No warranties</H2>
       <P>
-        The website is provided as-is. Famant is in beta; descriptions of product
-        capabilities carry status labels and are not commitments that a feature will
-        remain unchanged or reach general availability by a given date.
+        The website is provided as-is. Famant is in beta: the capabilities described on
+        this website are described as they work in the current beta, and are not
+        commitments that a feature will remain unchanged or reach general availability by
+        a given date.
       </P>
 
       <H2>Contact</H2>
@@ -193,9 +203,11 @@ export function Cookies() {
 
       <H2>Third-party content</H2>
       <P>
-        Links to famant.com and other external sites lead to properties with their own
-        cookie practices. Following a link is your choice; nothing on this site sets
-        third-party cookies.
+        Links to{" "}
+        <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+          className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>, Google
+        Play and other external sites lead to properties with their own cookie practices.
+        Following a link is your choice; nothing on this site sets third-party cookies.
       </P>
 
       <H2>If this changes</H2>

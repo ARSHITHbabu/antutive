@@ -1,10 +1,10 @@
 import { Link } from "react-router";
-import { ArrowRight, Check, Sparkles, Boxes, Lightbulb, Workflow, ShieldCheck, Plus } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Sparkles, Boxes, Lightbulb, Workflow, ShieldCheck, Plus, Globe } from "lucide-react";
 import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, OWNERSHIP_LINE } from "../content/famant";
+import { capabilities, OWNERSHIP_LINE, FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -207,9 +207,18 @@ export function Products() {
                     </Link>
                     <Link to="/famant#beta" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
-                      Try Famant Beta <ArrowRight className="w-3.5 h-3.5" />
+                      Get the Famant beta <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
+                  {/* Antutive → Famant: the product's own site. */}
+                  <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold mt-5 group"
+                    style={{ color: "#C9C5FF" }}>
+                    <Globe className="w-4 h-4" aria-hidden="true" />
+                    Visit {FAMANT_SITE_LABEL}
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-3">
                   {capabilities.map(({ title }) => (
