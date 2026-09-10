@@ -1,9 +1,15 @@
 import { COMPANY_DESCRIPTION, PRODUCT_DESCRIPTION } from "./seo";
+import { FAMANT_ANDROID_BETA_URL, FAMANT_SITE_URL } from "../content/famant";
 
 export interface RouteMeta {
   path: string;
   title: string;
   description: string;
+  /* Optional route-scoped JSON-LD, injected into <head> as a second
+     structured-data block alongside the site-wide Organization node in
+     index.html. Prerendered at build time and kept in sync during SPA
+     navigation by usePageMeta. Only verifiable facts belong here. */
+  jsonLd?: Record<string, unknown>;
 }
 
 /* Single source of truth for per-route document metadata.
@@ -23,12 +29,33 @@ export const ROUTE_META: RouteMeta[] = [
     path: "/products",
     title: "Products built and operated by Antutive",
     description:
-      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product, now ready for beta testing.",
+      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product, with its beta currently available on Google Play.",
   },
   {
     path: "/famant",
-    title: "Famant: AI-powered family management app, now in beta | Antutive",
-    description: `${PRODUCT_DESCRIPTION} Now ready for beta testing, with the beta currently available on Google Play.`,
+    /* "beta" is the product's real release stage and stays in the metadata
+       until the Google Play distribution track is confirmed in writing. */
+    title: "Famant: AI-powered family app, beta on Google Play | Antutive",
+    description: `${PRODUCT_DESCRIPTION} Built and operated by ANTUTIVE AB; the beta is currently available on Google Play, and Famant has its own site at famant.com.`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Famant",
+      applicationCategory: "LifestyleApplication",
+      operatingSystem: "Android",
+      url: FAMANT_SITE_URL,
+      sameAs: [FAMANT_SITE_URL, FAMANT_ANDROID_BETA_URL],
+      downloadUrl: FAMANT_ANDROID_BETA_URL,
+      installUrl: FAMANT_ANDROID_BETA_URL,
+      softwareVersion: "beta",
+      description: PRODUCT_DESCRIPTION,
+      publisher: {
+        "@type": "Organization",
+        name: "ANTUTIVE AB",
+        url: "https://antutive.com/",
+        identifier: "559576-7228",
+      },
+    },
   },
   {
     path: "/technology",

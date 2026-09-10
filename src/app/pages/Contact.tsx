@@ -303,7 +303,7 @@ export function Contact() {
                   Explore Famant <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/famant#beta" className="cta-btn-secondary">
-                  Try the beta <ArrowRight className="w-4 h-4" />
+                  Get the beta <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

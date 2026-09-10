@@ -13,6 +13,11 @@ import {
  *
  * Editorial rules (from the approved positioning strategy):
  *  - Famant is a functional mobile app, ready for beta testing (2026-08).
+ *    The exact Google Play distribution track (open testing vs production)
+ *    is NOT documented anywhere in this repository, so the site must keep
+ *    describing the release stage as "beta" and must never claim general
+ *    availability or a launch. Change this only against written evidence
+ *    of the Play track, and update STAGE_LINE + routeMeta together.
  *    Public beta access is currently promoted through Google Play only;
  *    the App Store listing is temporarily not linked from the website
  *    (see FAMANT_IOS_APP_STORE_LINK.docx in the project root). "Beta" is
@@ -25,8 +30,16 @@ import {
  *    Famant application, never illustrations or mockups.
  * ------------------------------------------------------------------ */
 
-/* Famant's own product site (run by Antutive). */
+/* ── Famant's own product site (run by Antutive). ──
+   This is the Antutive → Famant hand-off used across the site: the header,
+   the footer, the Famant product page, the portfolio card and the Home
+   spotlight all link here, so a reviewer can follow
+   antutive.com → famant.com → Google Play without guessing. Keep this the
+   single place the product-site URL is written. */
 export const FAMANT_SITE_URL = "https://www.famant.com/en";
+
+/* What the link is labelled as in the UI (host only, no scheme/path). */
+export const FAMANT_SITE_LABEL = "famant.com";
 
 /* ── Beta access links: the ONLY place platform URLs live. ──
    Android: Google Play listing (supplied 2026-08-24).

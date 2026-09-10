@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router";
-import { ArrowRight, Sparkles, Users, ShieldCheck, Eye, Camera, Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Users, ShieldCheck, Eye, Camera, Maximize2, X, ChevronLeft, ChevronRight, Globe } from "lucide-react";
 import { Reveal, useVisible } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, famantScreenshots, androidBetaHref, OWNERSHIP_LINE, STAGE_LINE } from "../content/famant";
+import {
+  capabilities, famantScreenshots, androidBetaHref, OWNERSHIP_LINE, STAGE_LINE,
+  FAMANT_SITE_URL, FAMANT_SITE_LABEL,
+} from "../content/famant";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
 
 const famantVideo = "/media/famant.webm";
@@ -194,11 +197,20 @@ export function Famant() {
                   </div>
                   <div className="flex flex-wrap items-center gap-4">
                     <a href="#beta" className="famant-cta-brand">
-                      Try the Famant Beta <ArrowRight className="w-4 h-4" />
+                      Get the Famant beta <ArrowRight className="w-4 h-4" />
                     </a>
                     <a href="#screens" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
                       See the app
+                    </a>
+                    {/* Antutive → Famant: the product's own website. */}
+                    <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold group"
+                      style={{ color: "#C9C5FF" }}>
+                      <Globe className="w-4 h-4" aria-hidden="true" />
+                      Visit {FAMANT_SITE_LABEL}
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
                     </a>
                   </div>
                   <p className="text-xs mt-4" style={{ color: "rgba(226,229,255,0.55)" }}>
@@ -287,7 +299,7 @@ export function Famant() {
           <Reveal variant="up" delay={120}>
             <div className="text-center mt-6">
               <a href="#beta" className="inline-flex items-center gap-2 text-sm font-semibold group" style={{ color: "#6B62F1" }}>
-                Get beta access <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                Get the beta on Google Play <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </Reveal>
@@ -487,12 +499,21 @@ export function Famant() {
                 </p>
                 <PlatformBetaButtons />
                 <div className="flex flex-wrap gap-4 justify-center items-center mt-6">
+                  <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
+                    className="famant-cta-ghost"
+                    style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
+                    <Globe className="w-4 h-4" aria-hidden="true" />
+                    Go to {FAMANT_SITE_LABEL}
+                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
                   <Link to="/contact" className="famant-cta-ghost" style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
                     Ask us about Famant
                   </Link>
                 </div>
                 <p className="text-xs mt-5" style={{ color: "rgba(226,229,255,0.5)" }}>
-                  Famant is built and operated by Antutive in Gothenburg, Sweden.
+                  Famant is built and operated by Antutive in Gothenburg, Sweden. The
+                  product has its own site at {FAMANT_SITE_LABEL}.
                 </p>
               </div>
             </div>
