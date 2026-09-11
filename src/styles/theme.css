@@ -1126,6 +1126,17 @@ body { overflow-x: clip; }
   color: transparent;
 }
 
+/* ══ SCROLL REVEAL ARMING ════════════════════════════════════════════════════
+   Reveal targets are prerendered visible (src/app/lib/scroll.tsx). When the
+   client arms one for its entrance animation it applies the hidden state
+   under this attribute for one frame, so the switch is instant rather than a
+   visible fade-out. The attribute is removed before the reveal itself, which
+   therefore transitions normally. */
+[data-reveal-arming],
+[data-reveal-arming] * {
+  transition: none !important;
+}
+
 /* ══ JOURNEY PATH (animated curve) ═══════════════════════════════════════════ */
 .journey-line {
   stroke-dasharray: 1;
