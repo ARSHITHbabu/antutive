@@ -7,7 +7,7 @@ import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities } from "../content/famant";
+import { capabilities, STAGE_LINE, androidBetaHref } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -186,9 +186,8 @@ export function Technology() {
               </p>
               <p className="text-sm text-[#64748b] max-w-xl leading-relaxed"
                 style={{ animation: "fadeUp 0.8s ease 0.32s both" }}>
-                Famant is ready for beta testing and currently available on Google Play. Everything here
-                describes how it works today, and we update this page as the architecture
-                is confirmed.
+                {STAGE_LINE} Everything here describes how it works today, and we update
+                this page as the architecture is confirmed.
               </p>
             </div>
 
@@ -409,9 +408,10 @@ export function Technology() {
                   <Link to="/products" className="cta-btn-primary">
                     Explore our products <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <Link to="/famant#beta" className="cta-btn-secondary">
-                    Try the Famant beta <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
+                    Get Famant on Google Play <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
                 </div>
               </div>
             </div>

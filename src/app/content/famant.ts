@@ -12,18 +12,16 @@ import {
  * Single source of truth for how Famant is described on antutive.com.
  *
  * Editorial rules (from the approved positioning strategy):
- *  - Famant is a functional mobile app, ready for beta testing (2026-08).
- *    The exact Google Play distribution track (open testing vs production)
- *    is NOT documented anywhere in this repository, so the site must keep
- *    describing the release stage as "beta" and must never claim general
- *    availability or a launch. Change this only against written evidence
- *    of the Play track, and update STAGE_LINE + routeMeta together.
- *    Public beta access is currently promoted through Google Play only;
- *    the App Store listing is temporarily not linked from the website
- *    (see FAMANT_IOS_APP_STORE_LINK.docx in the project root). "Beta" is
- *    the PRODUCT's release stage; the capabilities below all exist in the
- *    current beta and are described as mechanisms in present tense, never
- *    with individual status labels.
+ *  - Famant is a functional mobile app, available on Google Play
+ *    (2026-09). The public message is exactly that: "Famant is available
+ *    on Google Play." The site does not describe a release stage, a
+ *    testing programme, gated or signup-dependent access, or any launch
+ *    date. Keep STAGE_LINE and routeMeta in step with this.
+ *    Access is promoted through Google Play only; the App Store listing is
+ *    not linked from the website (see FAMANT_IOS_APP_STORE_LINK.docx in
+ *    the project root). The capabilities below all exist in the app today
+ *    and are described as mechanisms in present tense, never with
+ *    individual status labels.
  *  - No integration, pricing, launch-date, user-count or accuracy claim
  *    may be added here without documented verification.
  *  - All screenshots referenced below are real captures of the working
@@ -41,30 +39,33 @@ export const FAMANT_SITE_URL = "https://www.famant.com/en";
 /* What the link is labelled as in the UI (host only, no scheme/path). */
 export const FAMANT_SITE_LABEL = "famant.com";
 
-/* ── Beta access links: the ONLY place platform URLs live. ──
-   Android: Google Play listing (supplied 2026-08-24).
-   While a URL is empty, UI components fall back to a beta-access email
-   request (see betaHref below) so no button ever navigates nowhere.
+/* ── Store links: the ONLY place platform URLs live. ──
+   Android: the official Famant Google Play listing (supplied 2026-08-24).
+   Every "Get Famant on Google Play" action on the site resolves to this
+   one URL. While a URL is empty, UI components fall back to an email
+   request (see androidBetaHref below) so no button ever navigates nowhere.
+   (The identifiers keep their historical *Beta* names; they are internal
+   and never rendered.)
 
-   iOS: the App Store listing is TEMPORARILY NOT EXPOSED on the public
-   website (since 2026-09-07) until its store description is updated.
-   The value is retained here for internal reference only and must not be
-   rendered anywhere public. The primary recovery reference is
+   iOS: the App Store listing is NOT EXPOSED on the public website (since
+   2026-09-07). The value is retained here for internal reference only and
+   must not be rendered anywhere public. The primary recovery reference is
    FAMANT_IOS_APP_STORE_LINK.docx in the project root. */
 export const FAMANT_IOS_BETA_URL = "https://apps.apple.com/in/app/famant/id6789982653";
 export const FAMANT_ANDROID_BETA_URL = "https://play.google.com/store/apps/details?id=com.famant.app&hl=en_IN";
 
 /* Safe href for the platform button: the real link once provided,
-   otherwise a working email request for beta access. */
-const BETA_REQUEST_MAILTO = (platform: "iOS" | "Android") =>
-  `mailto:contact@antutive.com?subject=${encodeURIComponent(`Famant ${platform} beta access request`)}`;
-export const androidBetaHref = FAMANT_ANDROID_BETA_URL || BETA_REQUEST_MAILTO("Android");
+   otherwise a working email request. */
+const ACCESS_REQUEST_MAILTO = (platform: "iOS" | "Android") =>
+  `mailto:contact@antutive.com?subject=${encodeURIComponent(`Famant ${platform} access request`)}`;
+export const androidBetaHref = FAMANT_ANDROID_BETA_URL || ACCESS_REQUEST_MAILTO("Android");
 
 /* Used identically wherever the relationship is stated. */
 export const OWNERSHIP_LINE =
   "Famant is the flagship product of Antutive (ANTUTIVE AB), built and operated in Gothenburg, Sweden.";
 
-export const STAGE_LINE = "Famant is now ready for beta testing, and the beta is currently available on Google Play.";
+/* The single public availability message. */
+export const STAGE_LINE = "Famant is available on Google Play.";
 
 export interface Capability {
   Icon: LucideIcon;
