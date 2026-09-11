@@ -114,14 +114,13 @@ export function Privacy() {
         marketing.
       </P>
 
-      <H2>Famant signup and beta access</H2>
+      <H2>Famant product data</H2>
       <P>
-        Famant signup is hosted on{" "}
+        Famant has its own product site at{" "}
         <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
-          className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>, Famant's
-        product site, which is also operated by ANTUTIVE AB. Data you submit there, or
-        within the Famant application, is governed by the notice presented at the point of
-        signup and inside the app.
+          className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>, which
+        is also operated by ANTUTIVE AB. Data you submit there, or within the Famant
+        application, is governed by the notice presented there and inside the app.
       </P>
 
       <H2>Your rights</H2>
@@ -136,7 +135,7 @@ export function Privacy() {
       <P>
         We will update this policy as the website and Famant evolve, and each version will
         state its date. A counsel-reviewed policy covering Famant's product data practices
-        accompanies beta access and will be published here as it is finalised.
+        will be published here as it is finalised.
       </P>
     </LegalShell>
   );
@@ -152,8 +151,8 @@ export function Terms() {
         org.nr 559576-7228, Gothenburg, Sweden. They do not cover the Famant product or{" "}
         <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
           className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>. Famant,
-        the product, is in beta and not yet generally available; product-specific terms
-        accompany beta access and will be published before general availability.
+        the product, is governed by its own product-specific terms, which are published
+        separately from this website.
       </P>
 
       <H2>Use of this website</H2>
@@ -171,10 +170,9 @@ export function Terms() {
 
       <H2>No warranties</H2>
       <P>
-        The website is provided as-is. Famant is in beta: the capabilities described on
-        this website are described as they work in the current beta, and are not
-        commitments that a feature will remain unchanged or reach general availability by
-        a given date.
+        The website is provided as-is. The Famant capabilities described on this website
+        are described as they work today, and are not commitments that a feature will
+        remain unchanged.
       </P>
 
       <H2>Contact</H2>

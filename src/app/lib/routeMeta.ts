@@ -29,14 +29,12 @@ export const ROUTE_META: RouteMeta[] = [
     path: "/products",
     title: "Products built and operated by Antutive",
     description:
-      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product, with its beta currently available on Google Play.",
+      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product and is available on Google Play.",
   },
   {
     path: "/famant",
-    /* "beta" is the product's real release stage and stays in the metadata
-       until the Google Play distribution track is confirmed in writing. */
-    title: "Famant: AI-powered family app, beta on Google Play | Antutive",
-    description: `${PRODUCT_DESCRIPTION} Built and operated by ANTUTIVE AB; the beta is currently available on Google Play, and Famant has its own site at famant.com.`,
+    title: "Famant: AI-powered family app on Google Play | Antutive",
+    description: `${PRODUCT_DESCRIPTION} Built and operated by ANTUTIVE AB; available on Google Play, with its own site at famant.com.`,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -47,7 +45,6 @@ export const ROUTE_META: RouteMeta[] = [
       sameAs: [FAMANT_SITE_URL, FAMANT_ANDROID_BETA_URL],
       downloadUrl: FAMANT_ANDROID_BETA_URL,
       installUrl: FAMANT_ANDROID_BETA_URL,
-      softwareVersion: "beta",
       description: PRODUCT_DESCRIPTION,
       publisher: {
         "@type": "Organization",
