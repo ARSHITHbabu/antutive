@@ -1,4 +1,8 @@
 /**
+ * PARKED — not wired into the running site. Nothing imports this module, so
+ * it is tree-shaken out of the bundle; it is kept intact so the intro can be
+ * brought back unchanged. Restoration steps: INTRO_ANIMATION_PARKED.md.
+ *
  * Antutive brand intro — a terminal-style reveal of the official logo.
  *
  * Sequence: the blue arrow fades in, the blue rectangle appears as a typing

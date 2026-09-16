@@ -69,7 +69,7 @@ export const ROUTE_META: RouteMeta[] = [
     path: "/contact",
     title: "Contact Antutive",
     description:
-      "Contact Antutive (ANTUTIVE AB) in Gothenburg, Sweden with questions about Famant, press, partnerships or general enquiries. Email contact@antutive.com.",
+      "Contact Antutive (ANTUTIVE AB) in Gothenburg, Sweden with questions about Famant, press, partnerships or general enquiries. Email vinayak@antutive.com.",
   },
   {
     path: "/privacy",

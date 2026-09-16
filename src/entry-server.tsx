@@ -6,8 +6,8 @@
  * dist/. The client entry (src/main.tsx) hydrates that markup in the
  * browser, so the page works identically with and without JavaScript.
  *
- * Note: this intentionally renders the route tree only — not <App/> — so the
- * session-gated intro overlay never appears in static HTML.
+ * Note: this intentionally renders the route tree only — not <App/>, whose
+ * only job is to own the browser router.
  */
 import { renderToString } from "react-dom/server";
 import { createMemoryRouter, RouterProvider } from "react-router";

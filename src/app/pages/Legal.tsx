@@ -95,7 +95,7 @@ export function Privacy() {
         This website, antutive.com, is operated by ANTUTIVE AB, org.nr 559576-7228,
         registered in Gothenburg, Västra Götalands län, Sweden. ANTUTIVE AB is the data
         controller for personal data described in this policy. You can reach us at{" "}
-        <a href="mailto:contact@antutive.com" className="underline" style={{ color: "#46589F" }}>contact@antutive.com</a>.
+        <a href="mailto:vinayak@antutive.com" className="underline" style={{ color: "#46589F" }}>vinayak@antutive.com</a>.
       </P>
 
       <H2>What this website collects</H2>
@@ -108,7 +108,7 @@ export function Privacy() {
 
       <H2>Email you send us</H2>
       <P>
-        If you email contact@antutive.com, we receive your email address, your name if you
+        If you email vinayak@antutive.com, we receive your email address, your name if you
         include it, and the content of your message. We use this information solely to
         respond to your enquiry. We do not sell it or share it with third parties for
         marketing.
@@ -127,7 +127,7 @@ export function Privacy() {
       <P>
         Under the EU General Data Protection Regulation you have rights over personal data
         we hold about you, including access, correction and erasure. To exercise them,
-        email contact@antutive.com. You also have the right to lodge a complaint with the
+        email vinayak@antutive.com. You also have the right to lodge a complaint with the
         Swedish data protection authority (Integritetsskyddsmyndigheten, IMY).
       </P>
 
@@ -178,7 +178,7 @@ export function Terms() {
       <H2>Contact</H2>
       <P>
         Questions about these terms:{" "}
-        <a href="mailto:contact@antutive.com" className="underline" style={{ color: "#46589F" }}>contact@antutive.com</a>.
+        <a href="mailto:vinayak@antutive.com" className="underline" style={{ color: "#46589F" }}>vinayak@antutive.com</a>.
       </P>
     </LegalShell>
   );
@@ -193,10 +193,8 @@ export function Cookies() {
 
       <H2>What the site does store</H2>
       <P>
-        One item of browser session storage (<code>antutive.intro.played</code>) remembers,
-        for the duration of your browser session only, that the opening logo animation has
-        already played, so it doesn't replay on every page. It contains no personal data,
-        is never sent anywhere, and disappears when you close your browser.
+        Nothing. This site sets no cookies and writes no local or session storage in your
+        browser at all.
       </P>
 
       <H2>Third-party content</H2>
@@ -212,7 +210,7 @@ export function Cookies() {
       <P>
         If we ever add analytics or any technology requiring consent, this page will be
         updated first and a consent mechanism added before anything is set. Questions:{" "}
-        <a href="mailto:contact@antutive.com" className="underline" style={{ color: "#46589F" }}>contact@antutive.com</a>.
+        <a href="mailto:vinayak@antutive.com" className="underline" style={{ color: "#46589F" }}>vinayak@antutive.com</a>.
       </P>
 
       <p className="text-sm mt-10">

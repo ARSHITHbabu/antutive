@@ -57,7 +57,7 @@ export const FAMANT_ANDROID_BETA_URL = "https://play.google.com/store/apps/detai
 /* Safe href for the platform button: the real link once provided,
    otherwise a working email request. */
 const ACCESS_REQUEST_MAILTO = (platform: "iOS" | "Android") =>
-  `mailto:contact@antutive.com?subject=${encodeURIComponent(`Famant ${platform} access request`)}`;
+  `mailto:vinayak@antutive.com?subject=${encodeURIComponent(`Famant ${platform} access request`)}`;
 export const androidBetaHref = FAMANT_ANDROID_BETA_URL || ACCESS_REQUEST_MAILTO("Android");
 
 /* Used identically wherever the relationship is stated. */

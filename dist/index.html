@@ -32,7 +32,7 @@
       "alternateName": "Antutive",
       "url": "https://antutive.com/",
       "logo": "https://antutive.com/brand/antutive-logo-mark.png",
-      "email": "contact@antutive.com",
+      "email": "vinayak@antutive.com",
       "legalName": "ANTUTIVE AB",
       "identifier": "559576-7228",
       "address": {
@@ -56,30 +56,7 @@
     }
     </script>
     <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-    <!-- Intro gate: pages are prerendered to static HTML, which would appear
-         before the brand intro overlay can mount. This inline script hides
-         the app root only when the intro is about to play (first load of a
-         browser session, motion allowed), and the overlay reveals it again
-         the moment it mounts. Crawlers and no-JS clients never run this, so
-         the prerendered content stays fully visible to them. -->
-    <script>
-      (function () {
-        try {
-          if (
-            !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-            sessionStorage.getItem("antutive.intro.played") === null
-          ) {
-            document.documentElement.setAttribute("data-intro-pending", "");
-            /* Failsafe: never leave the page hidden if the app fails to boot. */
-            setTimeout(function () {
-              document.documentElement.removeAttribute("data-intro-pending");
-            }, 4000);
-          }
-        } catch (e) { /* private mode etc.: show the page normally */ }
-      })();
-    </script>
-    <style>html[data-intro-pending] #root { visibility: hidden; }</style>
-    <script type="module" crossorigin src="/assets/index-Bjofevp1.js"></script>
+    <script type="module" crossorigin src="/assets/index-9EiWcTHM.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BqXKwZAk.css">
   </head>
 
