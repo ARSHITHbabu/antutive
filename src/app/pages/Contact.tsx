@@ -20,7 +20,7 @@ const topics = [
 
 function ContactHeroCard() {
   const details = [
-    { Icon: Mail,      label: "Email",          value: "contact@antutive.com"        },
+    { Icon: Mail,      label: "Email",          value: "vinayak@antutive.com"        },
     { Icon: MapPin,    label: "Headquarters",   value: "Gothenburg, Sweden"          },
     { Icon: Clock,     label: "Business Hours", value: "Mon-Fri · 09:00-18:00 CET"  },
     { Icon: Building2, label: "Company",        value: "ANTUTIVE AB · 559576-7228"   },
@@ -68,7 +68,7 @@ export function Contact() {
     const topicLabel = topics.find(t => t.value === formData.topic)?.label ?? "General enquiry";
     const subject = encodeURIComponent(`[${topicLabel}] Message from ${formData.name}`);
     const body = encodeURIComponent(`${formData.message}\n\n${formData.name}\n${formData.email}`);
-    window.location.href = `mailto:contact@antutive.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:vinayak@antutive.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -87,7 +87,7 @@ export function Contact() {
         <RingDecor spin size={330} style={{ bottom: "-6.875rem", right: "10%", opacity: 0.7 }} />
         <DotMatrix style={{ top: "5.625rem", left: "1rem" }} />
         {[
-          { Icon: Mail,      label: "contact@antutive.com",  top: "12%", left: "36%",  cls: "fi-a", d: 0 },
+          { Icon: Mail,      label: "vinayak@antutive.com",  top: "12%", left: "36%",  cls: "fi-a", d: 0 },
           { Icon: MapPin,    label: "Gothenburg, Sweden",    top: "5%",  left: "3%",   cls: "fi-b", d: 1.2 },
           { Icon: Clock,     label: "Mon-Fri · CET",         top: "8%",  right: "6%",  cls: "fi-c", d: 0.6 },
         ].map(({ Icon, label, cls, d, ...pos }, i) => (
@@ -117,7 +117,7 @@ export function Contact() {
               </p>
 
               <div className="flex flex-wrap gap-4 mb-6" style={{ animation: "fadeUp 0.8s ease 0.4s both" }}>
-                <a href="mailto:contact@antutive.com" className="hero-btn-primary">Email contact@antutive.com</a>
+                <a href="mailto:vinayak@antutive.com" className="hero-btn-primary">Email vinayak@antutive.com</a>
                 <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
                   Get Famant on Google Play
                   <span className="sr-only">(opens in a new tab)</span>
@@ -147,7 +147,7 @@ export function Contact() {
               <div className="lg:col-span-1 flex flex-col gap-5">
                 <h2 className="section-h2 text-[#0f172a] mb-2" style={{ fontWeight: 700, fontSize: "1.4rem" }}>Contact Information</h2>
                 {[
-                  { icon: Mail,   label: "Email",          lines: ["contact@antutive.com"]                       },
+                  { icon: Mail,   label: "Email",          lines: ["vinayak@antutive.com"]                       },
                   { icon: MapPin, label: "Headquarters",   lines: ["Gothenburg, Sweden", "Västra Götalands län"] },
                   { icon: Clock,  label: "Business Hours", lines: ["Monday to Friday", "09:00 to 18:00 CET"]       },
                 ].map(({ icon: Icon, label, lines }, i) => (
@@ -169,7 +169,7 @@ export function Contact() {
                   <p className="text-xs font-bold uppercase tracking-wide mb-4" style={{ color: A }}>What happens to your message</p>
                   {[
                     { Icon: PenLine, label: "You write", sub: "form or direct email" },
-                    { Icon: Eye,     label: "We read it", sub: "a person, at contact@antutive.com" },
+                    { Icon: Eye,     label: "We read it", sub: "a person, at vinayak@antutive.com" },
                     { Icon: Reply,   label: "We reply",  sub: "as quickly as we can" },
                   ].map(({ Icon, label, sub }, i, arr) => (
                     <div key={label}>
@@ -208,7 +208,7 @@ export function Contact() {
                   <h2 className="text-base font-bold text-[#0f172a] mb-2">Send Us a Message</h2>
                   <p className="text-xs text-[#64748b] mb-6 leading-relaxed">
                     Sending opens your own email app with the message addressed to
-                    contact@antutive.com; this website stores nothing you type here.
+                    vinayak@antutive.com; this website stores nothing you type here.
                   </p>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

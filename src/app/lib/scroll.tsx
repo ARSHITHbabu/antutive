@@ -16,8 +16,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
    - during hydration of prerendered HTML, an element the browser has
      already painted on screen keeps its shown state so it never flashes
      off and back on. Elements below the fold, elements mounted by client-
-     side navigation, and everything behind the intro overlay (the page is
-     invisible then) still get the full entrance animation.
+     side navigation still get the full entrance animation.
 
    The [data-reveal-arming] attribute suppresses transitions for the single
    frame in which the hidden state is applied (see theme.css), so arming is
@@ -49,10 +48,8 @@ function canAnimate(): boolean {
   return true;
 }
 
-/* Has this element already been painted inside the viewport? While the
-   intro gate hides the app root nothing has been painted yet. */
+/* Has this element already been painted inside the viewport? */
 function paintedInViewport(el: Element): boolean {
-  if (document.documentElement.hasAttribute("data-intro-pending")) return false;
   const r = el.getBoundingClientRect();
   return r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
 }
