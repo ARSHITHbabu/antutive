@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { COMPANY_DESCRIPTION } from "../lib/seo";
-import { FAMANT_SITE_URL, FAMANT_SITE_LABEL, androidBetaHref } from "../content/famant";
+import { FAMANT_SITE_URL, FAMANT_SITE_LABEL, androidBetaHref, iosBetaHref } from "../content/famant";
 import { LineArtScene } from "./LineArt";
 // Brand assets are served from public/ so they have stable same-domain URLs
 // (https://<domain>/brand/…) usable outside the bundle as well.
@@ -246,7 +246,7 @@ export function RootLayout() {
                 {[
                   ["All products",     "/products"],
                   ["Famant",           "/famant"],
-                  ["Get Famant",       "/famant#google-play"],
+                  ["Get Famant",       "/famant#get-famant"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link to={href} className="footer-link">{label}</Link>
@@ -267,6 +267,16 @@ export function RootLayout() {
                     rel="noopener noreferrer"
                     className="footer-link inline-flex items-center gap-1">
                     Famant on Google Play
+                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={iosBetaHref}
+                    target={iosBetaHref.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="footer-link inline-flex items-center gap-1">
+                    Famant on the App Store
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>

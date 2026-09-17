@@ -2016,7 +2016,8 @@ body {
   .famant-lightbox-stage { animation: none; }
 }
 
-/* ── Famant beta platform buttons (store-badge style, no store claims) ── */
+/* ── Famant store buttons: Google Play + App Store, shown side by side
+   (store-badge style, no store claims). Class names are historical. ── */
 .beta-store-btn {
   display: inline-flex;
   align-items: center;

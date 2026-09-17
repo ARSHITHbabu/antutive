@@ -7,7 +7,7 @@ import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, AuroraOrb, RingDecor, HatchAccent } from "../components/Decor";
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, STAGE_LINE, androidBetaHref } from "../content/famant";
+import { capabilities, STAGE_LINE, androidBetaHref, iosBetaHref } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -410,6 +410,10 @@ export function Technology() {
                   </Link>
                   <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
                     Get Famant on Google Play <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
+                  <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
+                    Get Famant on the App Store <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>
                 </div>

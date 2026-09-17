@@ -8,7 +8,7 @@ import { Noise, DotMatrix, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
-import { capabilities, OWNERSHIP_LINE, STAGE_LINE, androidBetaHref, FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
+import { capabilities, OWNERSHIP_LINE, STAGE_LINE, androidBetaHref, iosBetaHref, FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
 
 /* ── floating chips — company facts and product-craft signals ── */
 const chips = [
@@ -144,7 +144,7 @@ export function Home() {
               <p className="text-sm mb-8 text-[#64748b] max-w-lg leading-relaxed"
                 style={{ animation: "fadeUp .8s ease .32s both" }}>
                 Our first flagship product is Famant, an AI assistant for family life.
-                It's available on Google Play.
+                It's available on Google Play and the App Store.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10" style={{ animation: "fadeUp .8s ease .4s both" }}>
@@ -231,16 +231,16 @@ export function Home() {
             <Reveal variant="left" delay={60}>
               <Link to="/famant" className="block p-8 rounded-3xl border h-full transition-all duration-300 hover:-translate-y-1 group"
                 style={{ background: "linear-gradient(150deg,#181A4D 0%,#242767 60%,#33368a 100%)", borderColor: "rgba(107,98,241,0.45)", boxShadow: "0 16px 48px rgba(36,39,103,0.35)", textDecoration: "none" }}>
-                <div className="flex items-center justify-between gap-3 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 mb-5">
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#C9C5FF" }}>Flagship · First product</span>
-                  <StatusBadge status="On Google Play"/>
+                  <StatusBadge status="On Google Play & App Store"/>
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h3>
                 <p className="text-sm font-semibold mb-3" style={{ color: "#A9A3FF" }}>AI-powered family management platform</p>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(226,229,255,0.75)" }}>
                   One shared context for a family's schedules, tasks and documents, with an
                   assistant that proposes the next step and acts only on confirmation.
-                  Available on Google Play.
+                  Available on Google Play and the App Store.
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1" style={{ color: "#C9C5FF" }}>
                   Meet Famant <ArrowRight className="w-4 h-4"/>
@@ -297,10 +297,15 @@ export function Home() {
                     <Link to="/famant" className="famant-cta-brand" style={{ textDecoration: "none" }}>
                       Explore Famant <ArrowRight className="w-4 h-4" />
                     </Link>
-                    {/* Direct to the official Google Play listing. */}
+                    {/* Direct to the official store listings, both at the same weight. */}
                     <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
                       Get Famant on Google Play <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                    <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
+                      style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
+                      Get Famant on the App Store <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
                   </div>

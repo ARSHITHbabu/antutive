@@ -7,7 +7,7 @@ import { Noise, DotMatrix, AuroraOrb } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import {
-  capabilities, famantScreenshots, androidBetaHref, OWNERSHIP_LINE, STAGE_LINE,
+  capabilities, famantScreenshots, androidBetaHref, iosBetaHref, OWNERSHIP_LINE, STAGE_LINE,
   FAMANT_SITE_URL, FAMANT_SITE_LABEL,
 } from "../content/famant";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
@@ -20,11 +20,18 @@ const targetUsers = [
   { Icon: Users, title: "Multi-generation households", desc: "Homes where coordination spans grandparents, parents and children, and context matters even more." },
 ];
 
-/* ── Google Play button: store-badge style, no store-listing claims.
-   The href comes from src/app/content/famant.ts (the single place the
-   store URLs live). Only Google Play is shown publicly; the App Store
-   button is withdrawn (see famant.ts and the FAMANT_IOS_APP_STORE_LINK.docx
-   reference in the project root). ── */
+/* ── Store buttons: store-badge style, no store-listing claims.
+   The hrefs come from src/app/content/famant.ts (the single place the
+   store URLs live). Famant is public on both stores, so both buttons are
+   always rendered, in the same badge treatment and at the same weight. ── */
+function AppleMark() {
+  return (
+    <svg viewBox="0 0 384 512" aria-hidden="true" className="beta-store-icon" fill="currentColor">
+      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+    </svg>
+  );
+}
+
 function PlayMark() {
   return (
     <svg viewBox="0 0 512 512" aria-hidden="true" className="beta-store-icon" fill="currentColor">
@@ -150,6 +157,13 @@ export function PlatformBetaButtons({ align = "center" }: { align?: "center" | "
           <span className="beta-store-platform">Google Play</span>
         </span>
       </a>
+      <a href={iosBetaHref} target={iosBetaHref.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer" className="beta-store-btn">
+        <AppleMark />
+        <span className="beta-store-text">
+          <span className="beta-store-kicker">Download on the</span>
+          <span className="beta-store-platform">App Store</span>
+        </span>
+      </a>
     </div>
   );
 }
@@ -196,9 +210,13 @@ export function Famant() {
                     ))}
                   </div>
                   <div className="flex flex-wrap items-center gap-4">
-                    {/* Primary action: the official Google Play listing. */}
+                    {/* Primary actions: the two official store listings, equal weight. */}
                     <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-brand">
                       Get Famant on Google Play <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                    <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-brand">
+                      Get Famant on the App Store <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
                     <a href="#screens" className="famant-cta-ghost"
@@ -216,7 +234,7 @@ export function Famant() {
                     </a>
                   </div>
                   <p className="text-xs mt-4" style={{ color: "rgba(226,229,255,0.55)" }}>
-                    Available on Google Play
+                    Available on Google Play and the App Store
                   </p>
                 </div>
                 <div className="flex flex-col items-center lg:items-end relative">
@@ -299,10 +317,15 @@ export function Famant() {
           </Reveal>
           <FamantGallery />
           <Reveal variant="up" delay={120}>
-            <div className="text-center mt-6">
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mt-6">
               <a href={androidBetaHref} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold group" style={{ color: "#6B62F1" }}>
                 Get Famant on Google Play <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+              <a href={iosBetaHref} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold group" style={{ color: "#6B62F1" }}>
+                Get Famant on the App Store <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
                 <span className="sr-only">(opens in a new tab)</span>
               </a>
             </div>
@@ -421,7 +444,7 @@ export function Famant() {
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap"
                   style={{ background: "rgba(107,98,241,0.10)", border: "1px solid rgba(107,98,241,0.35)", color: "#6B62F1" }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#6B62F1" }} aria-hidden="true" />
-                  Available on Google Play
+                  Available on Google Play &amp; the App Store
                 </span>
                 <span className="text-xs text-[#94a3b8]">
                   How the assistant works in Famant today.
@@ -480,11 +503,12 @@ export function Famant() {
         </div>
       </section>
 
-      {/* ── GET FAMANT: the Google Play download area ── */}
-      <section id="google-play" className="famant-section py-24 relative overflow-hidden">
-        {/* legacy anchors: old links pointed at /famant#waitlist and /famant#beta */}
+      {/* ── GET FAMANT: the Google Play / App Store download area ── */}
+      <section id="get-famant" className="famant-section py-24 relative overflow-hidden">
+        {/* legacy anchors: old links pointed at /famant#waitlist, #beta and #google-play */}
         <span id="waitlist" aria-hidden="true" />
         <span id="beta" aria-hidden="true" />
+        <span id="google-play" aria-hidden="true" />
         <Noise />
         <div className="famant-orbit" style={{ width: "23.75rem", height: "23.75rem", top: "-7.5rem", left: "-6.875rem", background: "radial-gradient(circle, rgba(107,98,241,0.18), transparent 70%)" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,8 +521,8 @@ export function Famant() {
                   {STAGE_LINE}
                 </h2>
                 <p className="text-sm mb-8 max-w-lg mx-auto" style={{ color: "rgba(226,229,255,0.75)" }}>
-                  Get Famant for Android from Google Play and install it on a supported
-                  device to get started.
+                  Get Famant from Google Play or the App Store and install it on a
+                  supported Android or iOS device to get started.
                 </p>
                 <PlatformBetaButtons />
                 <div className="flex flex-wrap gap-4 justify-center items-center mt-6">
