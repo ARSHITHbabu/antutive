@@ -6,7 +6,7 @@ import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../componen
 import { usePageMeta } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
 import { LineArtScene, LineArtCorner, LineArtFlourish } from "../components/LineArt";
-import { STAGE_LINE, androidBetaHref } from "../content/famant";
+import { STAGE_LINE, androidBetaHref, iosBetaHref } from "../content/famant";
 
 const A = "#46589F";
 const P = "#7C92C7";
@@ -120,6 +120,10 @@ export function Contact() {
                 <a href="mailto:vinayak@antutive.com" className="hero-btn-primary">Email vinayak@antutive.com</a>
                 <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
                   Get Famant on Google Play
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+                <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
+                  Get Famant on the App Store
                   <span className="sr-only">(opens in a new tab)</span>
                 </a>
               </div>
@@ -302,6 +306,10 @@ export function Contact() {
                 </Link>
                 <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
                   Get Famant on Google Play <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+                <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="cta-btn-secondary">
+                  Get Famant on the App Store <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   <span className="sr-only">(opens in a new tab)</span>
                 </a>
               </div>

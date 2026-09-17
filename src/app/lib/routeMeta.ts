@@ -1,5 +1,5 @@
 import { COMPANY_DESCRIPTION, PRODUCT_DESCRIPTION } from "./seo";
-import { FAMANT_ANDROID_BETA_URL, FAMANT_SITE_URL } from "../content/famant";
+import { FAMANT_ANDROID_BETA_URL, FAMANT_IOS_BETA_URL, FAMANT_SITE_URL } from "../content/famant";
 
 export interface RouteMeta {
   path: string;
@@ -29,22 +29,22 @@ export const ROUTE_META: RouteMeta[] = [
     path: "/products",
     title: "Products built and operated by Antutive",
     description:
-      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product and is available on Google Play.",
+      "The Antutive product portfolio: AI-first products imagined, built and operated in-house. Famant, the AI-powered family management platform, is the first flagship product and is available on Google Play and the Apple App Store.",
   },
   {
     path: "/famant",
-    title: "Famant: AI-powered family app on Google Play | Antutive",
-    description: `${PRODUCT_DESCRIPTION} Built and operated by ANTUTIVE AB; available on Google Play, with its own site at famant.com.`,
+    title: "Famant: AI-powered family app for Android & iOS | Antutive",
+    description: `${PRODUCT_DESCRIPTION} Built and operated by ANTUTIVE AB; available on Google Play and the Apple App Store, with its own site at famant.com.`,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: "Famant",
       applicationCategory: "LifestyleApplication",
-      operatingSystem: "Android",
+      operatingSystem: ["Android", "iOS"],
       url: FAMANT_SITE_URL,
-      sameAs: [FAMANT_SITE_URL, FAMANT_ANDROID_BETA_URL],
-      downloadUrl: FAMANT_ANDROID_BETA_URL,
-      installUrl: FAMANT_ANDROID_BETA_URL,
+      sameAs: [FAMANT_SITE_URL, FAMANT_ANDROID_BETA_URL, FAMANT_IOS_BETA_URL],
+      downloadUrl: [FAMANT_ANDROID_BETA_URL, FAMANT_IOS_BETA_URL],
+      installUrl: [FAMANT_ANDROID_BETA_URL, FAMANT_IOS_BETA_URL],
       description: PRODUCT_DESCRIPTION,
       publisher: {
         "@type": "Organization",

@@ -4,7 +4,7 @@ import { Reveal } from "../lib/scroll";
 import { Noise, DotMatrix, RingDecor, AuroraOrb, HatchAccent } from "../components/Decor";
 import { usePageMeta, PRODUCT_DESCRIPTION } from "../lib/seo";
 import { metaFor } from "../lib/routeMeta";
-import { capabilities, OWNERSHIP_LINE, androidBetaHref, FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
+import { capabilities, OWNERSHIP_LINE, androidBetaHref, iosBetaHref, FAMANT_SITE_URL, FAMANT_SITE_LABEL } from "../content/famant";
 import { LineArtScene, LineArtFlourish } from "../components/LineArt";
 
 /*
@@ -51,7 +51,7 @@ function PortfolioConstellation() {
         <circle cx="210" cy="72" r="34" fill="none" stroke="rgba(107,98,241,0.4)" strokeWidth="1" className="dn-ping" style={{ animationDelay: ".9s" }}/>
         <text x="210" y="77" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ffffff" fontFamily="Sora, sans-serif">F</text>
         <text x="210" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill="#0f172a" fontFamily="Sora, sans-serif">Famant</text>
-        <text x="210" y="38" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="#6B62F1" fontFamily="Inter, sans-serif">flagship · on Google Play</text>
+        <text x="210" y="38" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="#6B62F1" fontFamily="Inter, sans-serif">flagship · Google Play &amp; App Store</text>
 
         {/* future slots — dashed, unmistakably placeholders */}
         {[{ x: 336, y: 305, d: "0s" }, { x: 84, y: 305, d: "1.4s" }].map(({ x, y, d }) => (
@@ -174,9 +174,9 @@ export function Products() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <LineArtScene scene="portfolio" className="line-art--section" />
           <Reveal variant="up">
-            <div className="flex items-baseline justify-between mb-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-8">
               <h2 className="text-lg font-bold text-[#0f172a]" style={{ fontFamily: "Sora, sans-serif" }}>Current</h2>
-              <span className="text-xs text-[#94a3b8]">1 product · on Google Play</span>
+              <span className="text-xs text-[#94a3b8]">1 product · on Google Play &amp; the App Store</span>
             </div>
           </Reveal>
 
@@ -193,7 +193,7 @@ export function Products() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
                       style={{ background: "rgba(107,98,241,0.20)", border: "1px solid rgba(107,98,241,0.45)", color: "#C9C5FF" }}>
-                      Available on Google Play
+                      Available on Google Play &amp; the App Store
                     </span>
                   </div>
                   <h3 className="text-4xl font-bold mb-3 text-white" style={{ fontFamily: "Sora, sans-serif" }}>Famant</h3>
@@ -205,10 +205,15 @@ export function Products() {
                     <Link to="/famant" className="famant-cta-brand" style={{ textDecoration: "none" }}>
                       Explore Famant <ArrowRight className="w-4 h-4" />
                     </Link>
-                    {/* Direct to the official Google Play listing. */}
+                    {/* Direct to the official store listings, both at the same weight. */}
                     <a href={androidBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
                       style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
                       Get Famant on Google Play <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                    <a href={iosBetaHref} target="_blank" rel="noopener noreferrer" className="famant-cta-ghost"
+                      style={{ borderColor: "rgba(201,197,255,0.45)", color: "#C9C5FF", background: "rgba(107,98,241,0.12)" }}>
+                      Get Famant on the App Store <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
                   </div>
@@ -322,7 +327,7 @@ export function Products() {
               <h2 className="section-h2 text-[#0f172a] mb-4" style={{ fontWeight: 700 }}>Start with the flagship.</h2>
               <p className="text-sm text-[#64748b] mb-8 leading-relaxed">
                 Famant is where Antutive's product philosophy is real: a working app,
-                mechanisms and all, available on Google Play.
+                mechanisms and all, available on Google Play and the App Store.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/famant" className="cta-btn-primary">

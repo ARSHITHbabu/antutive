@@ -202,7 +202,8 @@ export function Cookies() {
         Links to{" "}
         <a href={FAMANT_SITE_URL} target="_blank" rel="noopener noreferrer"
           className="underline" style={{ color: "#46589F" }}>{FAMANT_SITE_LABEL}</a>, Google
-        Play and other external sites lead to properties with their own cookie practices.
+        Play, the Apple App Store and other external sites lead to properties with their
+        own cookie practices.
         Following a link is your choice; nothing on this site sets third-party cookies.
       </P>
 

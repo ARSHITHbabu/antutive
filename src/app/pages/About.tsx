@@ -16,7 +16,7 @@ function CompanyJourney() {
   const nodes = [
     { x: 40,  y: 252, r: 7,  color: "#A9B8DC", name: "Founded",     sub: "ANTUTIVE AB · Gothenburg · 2026" },
     { x: 178, y: 196, r: 8,  color: "#7C92C7", name: "Famant",      sub: "development begins" },
-    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Available",   sub: "on Google Play" },
+    { x: 310, y: 122, r: 9,  color: "#46589F", name: "Available",   sub: "on Google Play & App Store" },
     { x: 446, y: 48,  r: 10, color: "#2E3B72", name: "What's next", sub: "announced when real" },
   ];
   const curve = "M40,252 C 96,244 130,214 178,196 C 236,174 262,142 310,122 C 366,99 398,65 446,48";
@@ -260,7 +260,7 @@ export function About() {
                 Antutive was incorporated in Gothenburg in 2026 and went straight to work on
                 its first product. The path is short so far, and every step on it is real:
                 the company is registry-verifiable, and Famant is a working app, available
-                on Google Play today.
+                on Google Play and the App Store today.
               </p>
               <p className="text-sm text-[#64748b] leading-relaxed">
                 What comes next is announced when it is real. We don't plot hopes on this
